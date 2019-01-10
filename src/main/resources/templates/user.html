@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入bootstrap样式 -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入bootstrap-table样式 -->
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <!-- bootstrap-table.min.js -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+    <!-- 引入中文语言包 -->
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    
+    <div>
+        <div class= form-group col-sm-2>
+            <div class="input-group col-sm-2">
+                <span class="input-group-addon" >部门</span>
+                <!--<input type="text" class="form-control" placeholder="部门名" aria-describedby="basic-addon1" id="departmentName">-->
+                <select class="select" id="select-department" style="height: 34px;width:103px">
+                    <option></option>
+                </select>
+            </div>
+        </div>
+    
+        <p class="search_p" id="button-search" style="text-align: center;">
+            <input type="button" class="btn btn-primary btn_search" value="搜索" onclick="serachUser()"/>
+        </p>
+    </div>
+
+    <div >
+        <table id="table" data-toggle="table" data-url="data1.json">
+            <!--<thead>
+            <tr>
+                <th data-field="username">username</th>
+                <th data-field="status">status</th>
+                <th data-field="ordertime">ordertime</th>
+                <th data-field="departmentname">departmentname</th>
+                <th data-field="overworktime">overworktime</th>
+                <th data-field="overworktime">overworktime</th>
+            </tr>
+            </thead>-->
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
+<script>
+
+    $(function () {
+        window.onload=function(){
+            $.get("../Department/showAllDepartment",function(data) {
+                var s=document.getElementById("select-department");
+                var jsonObj=eval(data);
+                for(i=0;i<jsonObj.length;i++){
+                    var options=document.createElement("option");
+                    options.innerHTML = jsonObj[i].departmentname;
+                    options.setAttribute("id",jsonObj[i].id);
+                    s.appendChild(options);
+                }
+            });
+        };
+    });
+    
+    $('#ordertime').datetimepicker({
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        autoclose: true,
+        startView: 3,
+        minView: "month",
+        forceParse: false,
+        language: 'zh-CN'
+
+    });
+    $("#table").bootstrapTable({ // 对应table标签的id
+        url: "../order/selectEarlyOrder", // 获取表格数据的url
+        method:"get",
+        dataType: "json",
+        contentType: "application/x-www-form-urlencoded",
+        striped:true,//隔行变色
+        cache:false,  //是否使用缓存
+        showColumns:false,// 列
+//            toobar:'#toolbar',
+        pagination: true, //分页
+        paginationLoop:false,
+        paginationPreText:'上一页',
+        paginationNextText:'下一页',
+//            showFooter:true,//显示列脚
+//            showRefresh:true,//显示刷新
+        showPaginationSwitch:false,//是否显示数据条数选择框
+        sortable: false,           //是否启用排序
+        singleSelect: false,
+        search:false, //显示搜索框
+        buttonsAlign: "right", //按钮对齐方式
+        showRefresh:false,//是否显示刷新按钮
+        sidePagination: "server", //服务端处理分页
+        pageNumber:1,
+        pageSize:5,
+        pageList:[5,10, 25, 50, 100],
+        undefinedText:'--',
+        uniqueId: "id", //每一行的唯一标识，一般为主键列
+        queryParamsType:'',
+        queryParams: queryParams,//传递参数（*）
+        columns: [
+            {
+                checkbox: true, // 显示一个勾选框
+                align: 'center', // 居中显示
+                valign: 'middle',
+            }, {
+                field: 'ordertime',
+                title: '订餐时间',
+                align: 'center',
+                valign: 'middle'
+            },{
+                field: 'overworktime',
+                title: '下班时间',
+                align: 'center',
+                valign: 'middle'
+
+            }, {
+                field: 'departmentname',
+                title: '部门名',
+                align: 'center',
+                valign: 'middle'
+            }, {
+                field: 'status',
+                title: '订餐状态',
+                align: 'center',
+                valign: 'middle',
+                formatter: function (value, row, index){ // 单元格格式化函数
+                    var text = '-';
+                    if (value == 0) {
+                        text = "取消订餐";
+                    } else if (value == 1) {
+                        text = "未取餐";
+                    } else if (value == 2) {
+                        text = "确认取餐";
+                    } else if (value == 3) {
+                        text = "缺餐";
+                    }
+                    return text;
+                }
+            },{
+                field: 'username',
+                title: '用户名',
+                align: 'center',
+                valign: 'middle'
+            }
+        ],
+        onLoadSuccess: function(){  //加载成功时执行
+            console.info("加载成功");
+        },
+        onLoadError: function(){  //加载失败时执行
+            console.info("加载数据失败");
+        }
+
+    })
+
+
+    function queryParams (params) {
+        // var departmentName=document.getElementById("departmentName");
+
+        var temp = {  //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+            pageSize: params.pageSize,  //页面大小
+            pageNumber: params.pageNumber, //页码
+            departmentName:  $("#select-department option:selected").val(), //后台请求传的查询参数
+            ordertime: $("#ordertime").val()
+            //ordertime: //$("#ordertime").val()
+            //querytime:$("#datetimepicker-end").val()
+        };
+        return temp;
+    };
+
+    function serachUser() {
+        $("#table").bootstrapTable('refresh');
+    }
+</script>
