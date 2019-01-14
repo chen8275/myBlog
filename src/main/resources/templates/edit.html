@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
@@ -8,38 +9,36 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
     <title>Hello, world!</title>
-
 </head>
 <body class="container">
 <br/>
-<h1>用户列表</h1>
+<h1>修改用户</h1>
 <br/><br/>
 <div class="with:80%">
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>User Name</th>
-            <th>Password</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr  th:each="user : ${users}">
-            <th scope="row" th:text="${user.id}">1</th>
-            <td th:text="${user.username}">neo</td>
-            <td th:text="${user.password}">Otto</td>
-            <td><a th:href="@{/front/toEdit(id=${user.id})}">edit</a></td>
-            <td><a th:href="@{/front/delete(id=${user.id})}">delete</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-<div class="form-group">
-    <div class="col-sm-2 control-label">
-        <a href="/toAdd" th:href="@{/front/toAdd}" class="btn btn-info">add</a>
-    </div>
+    <form class="form-horizontal"   th:action="@{/front/edit}" th:object="${user}"  method="post">
+        <input type="hidden" name="id" th:value="*{id}" />
+        <div class="form-group">
+            <label for="userName" class="col-sm-2 control-label">userName</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="username"  id="userName" th:value="*{username}" placeholder="userName"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label" >Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" name="password" id="password"  th:value="*{password}" placeholder="Password"/>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="Submit" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <a href="/toAdd" th:href="@{/front/listUsers}" class="btn btn-info">Back</a>
+            </div>
+
+        </div>
+    </form>
 </div>
 
 <!-- Optional JavaScript -->

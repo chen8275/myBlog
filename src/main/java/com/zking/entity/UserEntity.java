@@ -4,9 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- * Created by Administrator on 2017/5/12.
- */
 
 @Entity(name="table_user")
 public class UserEntity {

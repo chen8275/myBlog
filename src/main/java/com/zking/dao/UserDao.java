@@ -17,6 +17,5 @@ public interface UserDao extends CrudRepository<UserEntity,Long>{
     @Override
     public List<UserEntity> findAll();
     public UserEntity findUserEntityById(Long id);
-  
     
 }

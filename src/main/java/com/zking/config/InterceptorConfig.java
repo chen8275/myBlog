@@ -20,7 +20,7 @@
     
      @Override
      public void addInterceptors(InterceptorRegistry registry) {
-         registry.addInterceptor(new LogCostInterceptor()).addPathPatterns("/**").excludePathPatterns("/front/login","/front/loginPage","/front/register","/user/**");
+         registry.addInterceptor(new LogCostInterceptor()).addPathPatterns("/**").excludePathPatterns("/front/login","/front/loginPage","/front/register","/user/**","/fish/**","/shop/**");
          super.addInterceptors(registry);
      }
  }

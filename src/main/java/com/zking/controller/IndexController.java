@@ -6,9 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/5/12.
@@ -40,9 +42,42 @@ public class IndexController {
     }
     //查看用户页面
     @RequestMapping("/listUsers")
-    public String users(){
+    public String users(Model model){
+        List<UserEntity> list = userDao.findAll();
+        model.addAttribute("users",list);
         return "user";
     }
+    
+    //增加用户
+    @RequestMapping("/toAdd")
+    public String add(){
+        return "add";
+    }
+    @RequestMapping("/add")
+    public String add(UserEntity user) {
+        userDao.save(user);
+        return "redirect:/front/listUsers";
+    }
+    //删除用户
+    @RequestMapping("/delete")
+    public String delete(long id){
+        userDao.delete(id);
+        return "redirect:/front/listUsers";
+    }
+    //编辑用户
+    @RequestMapping("/toEdit")
+    public String edit(Model model,long id){
+        UserEntity userEntity = userDao.findUserEntityById(id);
+        model.addAttribute("user",userEntity);
+        return "edit";
+    }
+    @RequestMapping("/edit")
+    public String editUser(UserEntity user){
+        userDao.save(user);
+        return "redirect:/front/listUsers";
+    }
+  
+    
     //登陆方法
     @RequestMapping("/loginPage")
     public String loginPage(HttpServletRequest request){

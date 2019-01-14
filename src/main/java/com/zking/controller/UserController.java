@@ -7,11 +7,9 @@
   */
  package com.zking.controller;
  
- import com.github.pagehelper.PageHelper;
- import com.github.pagehelper.PageInfo;
+
  import com.zking.dao.UserDao;
  import com.zking.entity.UserEntity;
- import com.zking.service.UserService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +29,6 @@
      
      @Autowired
      private UserDao userDao;
-     @Autowired
-     UserService userService;
      
     @GetMapping(value = "/listUsers")
      public ResultModel selectUserByAll(){
@@ -62,14 +58,5 @@
             return ResultTools.result(404,e.getMessage(),null);
         }
     }
-     
-    @PostMapping(value = "getUsersList")
-     public PageInfo<UserEntity> getUsersList(int pageNum, int pageSize){
-        //使用分页插件,核心代码就这一行
-        PageHelper.startPage(pageNum, pageSize);
-        List<UserEntity> list = userService.getList(pageNum,pageSize);
-        PageInfo<UserEntity> pageInfo = new PageInfo<UserEntity>(list);
-        return pageInfo;
-    }
-     
+    
  }
