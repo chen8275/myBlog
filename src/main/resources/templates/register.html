@@ -1,39 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <title>Hello, world!</title>
 </head>
 <body>
-<div class="web_login">
+<div class="form-group" style="padding-top:100px;width: 800px;margin: auto;">
     <form name="form2" id="regUser" accept-charset="utf-8"  action="/front/addregister" method="post">
-        <ul class="reg_form" id="reg-ul">
-            <div id="userCue" class="cue">快速注册请注意格式</div>
-            <li>
-                <label for="username"  class="input-tips2">用户名：</label>
-                <div class="inputOuter2">
-                    <input type="text" id="username" name="username" maxlength="16" class="inputstyle2"/>
+        
+        <h4>快速注册请注意格式</h4>
+        <br/>
+        <label for="username"  class="input-tips2">用户名：</label>
+                <div class="col-sm-6">
+                    <input type="text" id="username" name="username" maxlength="16" class="form-control" placeholder="userName"/>
                 </div>
-            </li>
-            <li>
-                <label for="password" class="input-tips2">密码：</label>
-                <div class="inputOuter2">
-                    <input type="password" id="password"  name="password" maxlength="16" class="inputstyle2"/>
+
+        <label for="password" class="input-tips2">密码：</label>
+                <div class="col-sm-6">
+                    <input type="password" id="password"  name="password" maxlength="16" class="form-control" placeholder="Password"/>
                 </div>
-            </li>
-            <li>
-                <label for="password2" class="input-tips2">确认密码：</label>
-                <div class="inputOuter2">
-                    <input type="password" id="password2" name="password2" maxlength="16" class="inputstyle2" />
+
+
+        <label for="password2" class="input-tips2">确认密码：</label>
+                <div class="col-sm-6">
+                    <input type="password" id="password2" name="password2" maxlength="16" class="form-control" placeholder="Password"/>
                 </div>
-            </li>
-            <li>
+            
+           <br/><br/>
                 <div class="inputArea">
-                    <input type="submit" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="同意协议并注册"/> <a href="#" class="zcxy" target="_blank">注册协议</a>
+                    <button type="submit" class="btn btn-default">同意协议并注册</button> <a href="#" class="zcxy" target="_blank">注册协议</a>
                 </div>
-            </li><div class="cl"></div>
-        </ul>
+        
     </form>
 </div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
