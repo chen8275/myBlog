@@ -4,47 +4,104 @@
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <title>Hello, world!</title>
 </head>
 <body>
-<div class="form-group" style="padding-top:100px;width: 800px;margin: auto;">
-    <form name="form2" id="regUser" accept-charset="utf-8"  action="/front/addregister" method="post">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Blog</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">项目</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        菜单
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="#">EJB</a></li>
+                        <li><a href="#">Jasper Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" th:text="${session.userName}">
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">jmeter</a></li>
+                    <li><a href="#">EJB</a></li>
+                    <li><a href="#">Jasper Report</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                    <li class="divider"></li>
+                    <li><a th:href="@{/front/logout}">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" th:unless="${session.userName}">
+            <li><a href="/front/register"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+            <li><a href="/front/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <form class="form-horizontal col-sm-offset-3" role="form" accept-charset="utf-8" action="/front/addregister" method="post">
         
-        <h4>快速注册请注意格式</h4>
         <br/>
-        <label for="username"  class="input-tips2">用户名：</label>
-                <div class="col-sm-6">
-                    <input type="text" id="username" name="username" maxlength="16" class="form-control" placeholder="userName"/>
-                </div>
-
-        <label for="password" class="input-tips2">密码：</label>
-                <div class="col-sm-6">
-                    <input type="password" id="password"  name="password" maxlength="16" class="form-control" placeholder="Password"/>
-                </div>
-
-
-        <label for="password2" class="input-tips2">确认密码：</label>
-                <div class="col-sm-6">
-                    <input type="password" id="password2" name="password2" maxlength="16" class="form-control" placeholder="Password"/>
-                </div>
-            
-           <br/><br/>
-                <div class="inputArea">
-                    <button type="submit" class="btn btn-default">同意协议并注册</button> <a href="#" class="zcxy" target="_blank">注册协议</a>
-                </div>
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">用户名：</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="username" id="username" placeholder="userName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">密码：</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password2" class="col-sm-2 control-label">确认密码：</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" name="password2" id="password2" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">同意协议并注册</button>
+            </div>
+        </div>
         
     </form>
-</div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<br><br><br><br><br><br>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>blog<br>
+        <small>© Copyright XXX. by the helloTiger.</small>
+    </p>
+</div>
 
 </body>
 </html>

@@ -1,19 +1,72 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <title>Hello, world!</title>
 </head>
 <body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Blog</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">项目</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        菜单
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="#">EJB</a></li>
+                        <li><a href="#">Jasper Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" th:text="${session.userName}">
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">jmeter</a></li>
+                    <li><a href="#">EJB</a></li>
+                    <li><a href="#">Jasper Report</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                    <li class="divider"></li>
+                    <li><a th:href="@{/front/logout}">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" th:unless="${session.userName}">
+            <li><a href="/front/register"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+            <li><a href="/front/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+        </ul>
+    </div>
+</nav>
+
 <form class="form-signin" action="/front/loginPage" method="post" style="padding-top:100px;width: 300px;margin: auto;">
-    <h1 class="h3 mb-3 font-weight-normal" style="margin: auto;">Please sign in</h1>
+    <h1 class="h3 mb-3 font-weight-normal" style="margin: auto;">Please sign in</h1><br><br>
     <label  class="sr-only">Email address</label>
-    <input type="text" id="username" name="username" class="form-control" placeholder="Email address" required="" autofocus="" ></input>
+    <input type="text" id="username" name="username" class="form-control" placeholder="userName" required="" autofocus="" ></input>
     <label  class="sr-only">Password</label>
     <input type="text" id="password" name="password" class="form-control" placeholder="Password" required=""></input>
     <div class="checkbox mb-3">
@@ -22,14 +75,15 @@
         </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    <br><br><br>
+    <p class="mt-5 mb-3 text-muted col-xs-offset-4">© 2017-2018</p>
 </form>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<br><br><br>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>blog<br>
+        <small>© Copyright XXX. by the helloTiger.</small>
+    </p>
+</div>
 
 </body>
 </html>
