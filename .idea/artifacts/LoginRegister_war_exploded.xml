@@ -60,12 +60,13 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.41" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:1.5.3.RELEASE" />
-          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:2.1.5.RELEASE" />
-          <element id="library" level="project" name="Maven: ognl:ognl:3.0.8" />
-          <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.0.RELEASE" />
-          <element id="library" level="project" name="Maven: nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring4:3.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.0.5" />
           <element id="library" level="project" name="Maven: org.codehaus.groovy:groovy:2.4.10" />
+          <element id="library" level="project" name="Maven: nz.net.ultraq.thymeleaf:thymeleaf-expression-processor:1.1.2" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.54" />
           <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:4.1.0" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:0.9.4" />

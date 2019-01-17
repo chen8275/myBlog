@@ -76,8 +76,18 @@ public class IndexController {
         userDao.save(user);
         return "redirect:/front/listUsers";
     }
-  
-    
+    //进入主页
+    @RequestMapping("/show")
+    public String moveShow(){
+        return "show";
+    }
+    //登出
+    @RequestMapping("/logout")
+    public String moveOut(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.setAttribute("userName","false");
+        return "show";
+    }
     //登陆方法
     @RequestMapping("/loginPage")
     public String loginPage(HttpServletRequest request){
@@ -88,7 +98,7 @@ public class IndexController {
         UserEntity userEntity = userDao.findByUsernameAndPassword(username,password);
         logger.info(userEntity.getUsername());
         if (userEntity!=null){
-            return "hello";
+            return "show";
         }else {
             return "login";
         }
