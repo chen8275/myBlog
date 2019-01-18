@@ -1,21 +1,25 @@
 package com.zking.mapper;
 
 import com.zking.entity.User;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
+@Mapper
+public interface UserMapper {
+    int deleteByPrimaryKey(Long id);
 
-/**
- * Created by Administrator on 2017/5/12.
- */
+    int insert(User record);
 
-@Repository
-public interface UserMapper extends CrudRepository<User,Long>{
+    int insertSelective(User record);
 
-    public User findByUsernameAndPassword(String username, String password);
-    @Override
-    public List<User> findAll();
-    public User findUserEntityById(Long id);
+    User selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(User user);
+
+    int updateByPrimaryKey(User record);
+    
+    
+    User selectByUsernameAndPassword(@Param("username") String username,@Param("password") String password);
+    
     
 }

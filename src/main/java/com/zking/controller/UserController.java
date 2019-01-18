@@ -8,15 +8,17 @@
  package com.zking.controller;
  
 
- import com.zking.mapper.UserMapper;
  import com.zking.entity.User;
+ import com.zking.mapper.UserMapper;
+ import com.zking.service.UserService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
+
  import java.util.HashMap;
- import java.util.List;
  import java.util.Map;
+
 
  /**
   * @auther chendesheng
@@ -25,11 +27,28 @@
  @RestController
  @RequestMapping(value = "/user")
  public class UserController {
-     
      @Autowired
-     private UserMapper userMapper;
-     
-    @GetMapping(value = "/listUsers")
+     UserService userService;
+     @PostMapping("updateUserById")
+     public ResultModel updateUser(String username,String phone,String trueName,String birthday,String gender,String email,String personalBrief){
+         try {
+             User user = new User();
+             
+             user.setUsername(username);
+             user.setPhone(phone);
+             user.setTrueName(trueName);
+             user.setBirthday(birthday);
+             user.setGender(gender);
+             user.setPersonalBrief(personalBrief);
+             user.setEmail(email);
+             int updateNumber = userService.updateByPrimaryKeySelective(user);
+             return ResultTools.result(200,"",null);
+             
+         }catch (Exception e){
+             return ResultTools.result(404,e.getMessage(),null);
+         }
+     }
+    /*@GetMapping(value = "/listUsers")
      public ResultModel selectUserByAll(){
         try {
             List<User> users = userMapper.findAll();
@@ -56,6 +75,7 @@
         }catch (Exception e){
             return ResultTools.result(404,e.getMessage(),null);
         }
-    }
+    }*/
+    
     
  }

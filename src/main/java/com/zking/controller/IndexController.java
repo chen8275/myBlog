@@ -1,12 +1,11 @@
 package com.zking.controller;
 
-import com.zking.mapper.UserMapper;
 import com.zking.entity.User;
+import com.zking.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,9 +16,10 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
     
     Logger logger = LoggerFactory.getLogger(IndexController.class);
+    
     @Autowired
-    private UserMapper userMapper;
-
+    UserService userService;
+    
     //index页面
     @RequestMapping("/index")
     public String index() {
@@ -61,7 +61,7 @@ public class IndexController {
         String password = request.getParameter("password");
         HttpSession session = request.getSession();
         session.setAttribute("userName",username);
-        User user = userMapper.findByUsernameAndPassword(username,password);
+        User user = userService.selectByUsernameAndPassword(username,password);
         logger.info(user.getUsername());
         if (user !=null){
             return "show";
@@ -79,17 +79,12 @@ public class IndexController {
             User user = new User();
             user.setUsername(username);
             user.setPassword(password);
-            userMapper.save(user);
+            userService.insertSelective(user);
             return "index";
         }else {
             return "register";
         }
     }
-    //personData
-    @RequestMapping("personData")
-    public String personData(Model model){
-        model.addAttribute("personData","personData");
-        return "user";
-    }
-
+    
+    
 }

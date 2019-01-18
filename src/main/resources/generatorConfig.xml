@@ -58,58 +58,11 @@
 
         <!-- 配置表的映射 -->
         
-        <table schema="test" tableName="article" domainObjectName="Article"
+        <table schema="test" tableName="user" domainObjectName="User"
                enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-        <table schema="test" tableName="article_likes_record" domainObjectName="ArticleLikesRecord"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="categories" domainObjectName="Categories"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="comment_likes_record" domainObjectName="CommentLikesRecord"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="comment_record" domainObjectName="CommentRecord"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="feedback" domainObjectName="Feedback"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="leave_message_likes_record" domainObjectName="LeaveMessageLikesRecord"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="leave_message_record" domainObjectName="LeaveMessageRecord"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="privateword" domainObjectName="Privateword"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="role" domainObjectName="Role"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="tags" domainObjectName="Tags"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="user_role" domainObjectName="userRole"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="visitor" domainObjectName="Visitor"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
+        
        
         
     </context>

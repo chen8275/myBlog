@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.User" >
+    <constructor >
+      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="avatar_img_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="birthday" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="gender" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="personal_brief" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="recently_landed" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="true_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, avatar_img_url, birthday, email, gender, password, personal_brief, phone, recently_landed, 
+    true_name, username
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zking.entity.User" >
+    insert into user (id, avatar_img_url, birthday, 
+      email, gender, password, 
+      personal_brief, phone, recently_landed, 
+      true_name, username)
+    values (#{id,jdbcType=BIGINT}, #{avatarImgUrl,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{personalBrief,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{recentlyLanded,jdbcType=VARCHAR}, 
+      #{trueName,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.entity.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="avatarImgUrl != null" >
+        avatar_img_url,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="personalBrief != null" >
+        personal_brief,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="recentlyLanded != null" >
+        recently_landed,
+      </if>
+      <if test="trueName != null" >
+        true_name,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="avatarImgUrl != null" >
+        #{avatarImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="personalBrief != null" >
+        #{personalBrief,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="recentlyLanded != null" >
+        #{recentlyLanded,jdbcType=VARCHAR},
+      </if>
+      <if test="trueName != null" >
+        #{trueName,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.User" >
+    update user
+    <set >
+      <if test="avatarImgUrl != null" >
+        avatar_img_url = #{avatarImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="personalBrief != null" >
+        personal_brief = #{personalBrief,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="recentlyLanded != null" >
+        recently_landed = #{recentlyLanded,jdbcType=VARCHAR},
+      </if>
+      <if test="trueName != null" >
+        true_name = #{trueName,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.User" >
+    update user
+    set avatar_img_url = #{avatarImgUrl,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      personal_brief = #{personalBrief,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      recently_landed = #{recentlyLanded,jdbcType=VARCHAR},
+      true_name = #{trueName,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+    
+
+    <select id="selectByUsernameAndPassword" resultType="com.zking.entity.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where username = #{username} 
+        and password = #{password}
+    </select>  
+    
+</mapper>

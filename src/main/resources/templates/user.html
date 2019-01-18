@@ -73,69 +73,80 @@
                 <li><a href="https://wrapbootstrap.com?ref=skelly" target="_ext">悄悄话</a></li>
             </ul>
         </div><!--/span-->
+        
         <!--右侧-->
         <div class="col-sm-8 col-md-9 main">
-            <form role="form">
+            
+            
+            <form role="form" action="/front/saveUser" method="post">
                 <!--<div class="form-group">
-                    <img src="images/Huuzii.jpg" class="img-circle">
+                    <img src="http://chen-tiger.oss-cn-beijing.aliyuncs.com/18-12-28/45195413.jpg" class="img-circle">
                     <input type="file" id="inputfile">
                 </div>-->
                 <div class="form-group">
                     <label for="username" class="col-sm-2 control-label">昵称</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="username" placeholder="请输入名字">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="请输入昵称">
                     </div>
                 </div>
                 <br><br><hr>
+                
                 <div class="form-group">
-                    <label for="phoneNumber" class="col-sm-2 control-label">手机</label>
+                    <label for="phone" class="col-sm-2 control-label">手机</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="phoneNumber" placeholder="请输入手机号">
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号">
                     </div>
                 </div>
                 <br><br><hr>
+                
                 <div class="form-group">
-                <label for="name" class="col-sm-2 control-label">姓名</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="name" placeholder="请输入姓名">
+                    <label for="trueName" class="col-sm-2 control-label">姓名</label>
+                    <div class="col-sm-6">
+                    <input type="text" class="form-control" name="trueName" id="trueName" placeholder="请输入姓名">
+                    </div>
                 </div>
-            </div>
                 <br><br><hr>
+                
                 <div class="form-group">
                     <label for="birthday" class="col-sm-2 control-label">生日</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="birthday" placeholder="请输入生日">
+                        <input type="text" class="form-control" name="birthday" id="birthday" placeholder="请输入生日">
                     </div>
                 </div>
                 <br><br><hr>
+                
                 <div class="form-group">
                     <label class="col-sm-2 control-label">性别</label>
                     <div class="col-sm-6">
                         <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 男
+                            <input type="radio" id="male" name="gender" value="male" checked> 男
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 女
+                            <input type="radio" id="female" name="gender"  value="female"> 女
                         </label>
                     </div>
                 </div>
                 <br><br><hr>
+                
                 <div class="form-group">
                     <label for="email" class="col-sm-2 control-label">邮箱</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
+                        <input type="text" class="form-control" name="email" id="email" placeholder="请输入邮箱">
                     </div>
                 </div>
                 <br><br><hr>
+                
                 <div class="form-group">
-                    <label for="personSay" class="col-sm-2 control-label">个人简介</label>
+                    <label for="personalBrief" class="col-sm-2 control-label">个人简介</label>
                     <div class="col-sm-6">
-                        <textarea class="form-control" id="personSay"></textarea>
+                        <textarea class="form-control" name="personalBrief" id="personalBrief"></textarea>
                     </div>
                 </div>
                 <br><br><hr>
                 <button type="submit" class="btn btn-default">保存</button>
             </form>
+            
+            
             
         </div><!--/row-->
     </div>
