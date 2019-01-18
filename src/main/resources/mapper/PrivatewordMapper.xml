@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.mapper.PrivatewordMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.Privateword" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="privateWord" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="publisherId" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="replierId" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="replyContent" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="publisherDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, privateWord, publisherId, replierId, replyContent, publisherDate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from privateword
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from privateword
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.entity.Privateword" >
+    insert into privateword (id, privateWord, publisherId, 
+      replierId, replyContent, publisherDate
+      )
+    values (#{id,jdbcType=INTEGER}, #{privateword,jdbcType=VARCHAR}, #{publisherid,jdbcType=VARCHAR}, 
+      #{replierid,jdbcType=VARCHAR}, #{replycontent,jdbcType=VARCHAR}, #{publisherdate,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.entity.Privateword" >
+    insert into privateword
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="privateword != null" >
+        privateWord,
+      </if>
+      <if test="publisherid != null" >
+        publisherId,
+      </if>
+      <if test="replierid != null" >
+        replierId,
+      </if>
+      <if test="replycontent != null" >
+        replyContent,
+      </if>
+      <if test="publisherdate != null" >
+        publisherDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="privateword != null" >
+        #{privateword,jdbcType=VARCHAR},
+      </if>
+      <if test="publisherid != null" >
+        #{publisherid,jdbcType=VARCHAR},
+      </if>
+      <if test="replierid != null" >
+        #{replierid,jdbcType=VARCHAR},
+      </if>
+      <if test="replycontent != null" >
+        #{replycontent,jdbcType=VARCHAR},
+      </if>
+      <if test="publisherdate != null" >
+        #{publisherdate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.Privateword" >
+    update privateword
+    <set >
+      <if test="privateword != null" >
+        privateWord = #{privateword,jdbcType=VARCHAR},
+      </if>
+      <if test="publisherid != null" >
+        publisherId = #{publisherid,jdbcType=VARCHAR},
+      </if>
+      <if test="replierid != null" >
+        replierId = #{replierid,jdbcType=VARCHAR},
+      </if>
+      <if test="replycontent != null" >
+        replyContent = #{replycontent,jdbcType=VARCHAR},
+      </if>
+      <if test="publisherdate != null" >
+        publisherDate = #{publisherdate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.Privateword" >
+    update privateword
+    set privateWord = #{privateword,jdbcType=VARCHAR},
+      publisherId = #{publisherid,jdbcType=VARCHAR},
+      replierId = #{replierid,jdbcType=VARCHAR},
+      replyContent = #{replycontent,jdbcType=VARCHAR},
+      publisherDate = #{publisherdate,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

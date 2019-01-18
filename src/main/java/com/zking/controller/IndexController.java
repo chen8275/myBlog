@@ -1,7 +1,7 @@
 package com.zking.controller;
 
-import com.zking.dao.UserDao;
-import com.zking.entity.UserEntity;
+import com.zking.mapper.UserMapper;
+import com.zking.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
-/**
- * Created by Administrator on 2017/5/12.
- */
 
 @Controller
 @RequestMapping("/front/*")
@@ -22,7 +18,7 @@ public class IndexController {
     
     Logger logger = LoggerFactory.getLogger(IndexController.class);
     @Autowired
-    private UserDao userDao;
+    private UserMapper userMapper;
 
     //index页面
     @RequestMapping("/index")
@@ -40,42 +36,12 @@ public class IndexController {
     public String login(){
         return "login";
     }
-    //查看用户页面
-    @RequestMapping("/listUsers")
-    public String users(Model model){
-        List<UserEntity> list = userDao.findAll();
-        model.addAttribute("users",list);
+    //个人中心
+    @RequestMapping("/user")
+    public String user(){
         return "user";
     }
     
-    //增加用户
-    @RequestMapping("/toAdd")
-    public String add(){
-        return "add";
-    }
-    @RequestMapping("/add")
-    public String add(UserEntity user) {
-        userDao.save(user);
-        return "redirect:/front/listUsers";
-    }
-    //删除用户
-    @RequestMapping("/delete")
-    public String delete(long id){
-        userDao.delete(id);
-        return "redirect:/front/listUsers";
-    }
-    //编辑用户
-    @RequestMapping("/toEdit")
-    public String edit(Model model,long id){
-        UserEntity userEntity = userDao.findUserEntityById(id);
-        model.addAttribute("user",userEntity);
-        return "edit";
-    }
-    @RequestMapping("/edit")
-    public String editUser(UserEntity user){
-        userDao.save(user);
-        return "redirect:/front/listUsers";
-    }
     //进入主页
     @RequestMapping("/show")
     public String moveShow(){
@@ -95,9 +61,9 @@ public class IndexController {
         String password = request.getParameter("password");
         HttpSession session = request.getSession();
         session.setAttribute("userName",username);
-        UserEntity userEntity = userDao.findByUsernameAndPassword(username,password);
-        logger.info(userEntity.getUsername());
-        if (userEntity!=null){
+        User user = userMapper.findByUsernameAndPassword(username,password);
+        logger.info(user.getUsername());
+        if (user !=null){
             return "show";
         }else {
             return "login";
@@ -110,14 +76,20 @@ public class IndexController {
         String password = request.getParameter("password");
         String password2 = request.getParameter("password2");
         if (password.equals(password2)){
-            UserEntity userEntity = new UserEntity();
-            userEntity.setUsername(username);
-            userEntity.setPassword(password);
-            userDao.save(userEntity);
+            User user = new User();
+            user.setUsername(username);
+            user.setPassword(password);
+            userMapper.save(user);
             return "index";
         }else {
             return "register";
         }
+    }
+    //personData
+    @RequestMapping("personData")
+    public String personData(Model model){
+        model.addAttribute("personData","personData");
+        return "user";
     }
 
 }

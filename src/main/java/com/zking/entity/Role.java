@@ -1,19 +1,16 @@
 package com.zking.entity;
 
-public class Shop {
+public class Role {
     private Integer id;
 
     private String name;
 
-    private String location;
-
-    public Shop(Integer id, String name, String location) {
+    public Role(Integer id, String name) {
         this.id = id;
         this.name = name;
-        this.location = location;
     }
 
-    public Shop() {
+    public Role() {
         super();
     }
 
@@ -31,13 +28,5 @@ public class Shop {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location == null ? null : location.trim();
     }
 }

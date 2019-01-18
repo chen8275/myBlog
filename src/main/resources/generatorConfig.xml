@@ -20,7 +20,7 @@
         <!-- jdbc的数据库连接 -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://127.0.0.1/test?useUnicode=true"
+                connectionURL="jdbc:mysql://127.0.0.1/tiger?useUnicode=true"
                 userId="chen"
                 password="chen1996">
         </jdbcConnection>
@@ -51,29 +51,66 @@
         </sqlMapGenerator>
 
         <!-- targetPackage：mapper接口dao生成的位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zking.dao" targetProject="./src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zking.mapper" targetProject="./src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
         <!-- 配置表的映射 -->
         
-        <table schema="test" tableName="shop" domainObjectName="Shop"
+        <table schema="test" tableName="article" domainObjectName="Article"
                enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-        <table schema="test" tableName="person" domainObjectName="Person"
+        <table schema="test" tableName="article_likes_record" domainObjectName="ArticleLikesRecord"
                enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-        <table schema="test" tableName="fish" domainObjectName="Fish"
+        <table schema="test" tableName="categories" domainObjectName="Categories"
                enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-        <table schema="test" tableName="user" domainObjectName="User"
+        <table schema="test" tableName="comment_likes_record" domainObjectName="CommentLikesRecord"
                enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
+        <table schema="test" tableName="comment_record" domainObjectName="CommentRecord"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="feedback" domainObjectName="Feedback"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="leave_message_likes_record" domainObjectName="LeaveMessageLikesRecord"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="leave_message_record" domainObjectName="LeaveMessageRecord"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="privateword" domainObjectName="Privateword"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="role" domainObjectName="Role"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="tags" domainObjectName="Tags"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="user_role" domainObjectName="userRole"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="visitor" domainObjectName="Visitor"
+               enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+       
         
     </context>
 </generatorConfiguration>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.mapper.LeaveMessageLikesRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.LeaveMessageLikesRecord" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="pageName" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="pId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="likerId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="likeDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pageName, pId, likerId, likeDate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from leave_message_likes_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from leave_message_likes_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.entity.LeaveMessageLikesRecord" >
+    insert into leave_message_likes_record (id, pageName, pId, 
+      likerId, likeDate)
+    values (#{id,jdbcType=INTEGER}, #{pagename,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
+      #{likerid,jdbcType=INTEGER}, #{likedate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.entity.LeaveMessageLikesRecord" >
+    insert into leave_message_likes_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="pagename != null" >
+        pageName,
+      </if>
+      <if test="pid != null" >
+        pId,
+      </if>
+      <if test="likerid != null" >
+        likerId,
+      </if>
+      <if test="likedate != null" >
+        likeDate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pagename != null" >
+        #{pagename,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="likerid != null" >
+        #{likerid,jdbcType=INTEGER},
+      </if>
+      <if test="likedate != null" >
+        #{likedate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.LeaveMessageLikesRecord" >
+    update leave_message_likes_record
+    <set >
+      <if test="pagename != null" >
+        pageName = #{pagename,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        pId = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="likerid != null" >
+        likerId = #{likerid,jdbcType=INTEGER},
+      </if>
+      <if test="likedate != null" >
+        likeDate = #{likedate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.LeaveMessageLikesRecord" >
+    update leave_message_likes_record
+    set pageName = #{pagename,jdbcType=VARCHAR},
+      pId = #{pid,jdbcType=INTEGER},
+      likerId = #{likerid,jdbcType=INTEGER},
+      likeDate = #{likedate,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

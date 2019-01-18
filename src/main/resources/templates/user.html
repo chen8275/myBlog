@@ -1,52 +1,153 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <scrip src="js/dashboard.js"></scrip>
     <title>Hello, world!</title>
-
 </head>
-<body class="container">
-<br/>
-<h1>用户列表</h1>
-<br/><br/>
-<div class="with:80%">
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>User Name</th>
-            <th>Password</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr  th:each="user : ${users}">
-            <th scope="row" th:text="${user.id}">1</th>
-            <td th:text="${user.username}">neo</td>
-            <td th:text="${user.password}">Otto</td>
-            <td><a th:href="@{/front/toEdit(id=${user.id})}">edit</a></td>
-            <td><a th:href="@{/front/delete(id=${user.id})}">delete</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-<div class="form-group">
-    <div class="col-sm-2 control-label">
-        <a href="/toAdd" th:href="@{/front/toAdd}" class="btn btn-info">add</a>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Blog</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{/front/show}">首页</a></li>
+                <li><a href="#">项目</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        菜单
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="#">EJB</a></li>
+                        <li><a href="#">Jasper Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" th:text="${session.userName}">
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{/front/user}">个人中心</a></li>
+                    <li><a href="#">网站后台管理</a></li>
+                    <li><a href="#">反馈</a></li>
+                    <li class="divider"></li>
+                    <li><a th:href="@{/front/logout}">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" th:unless="${session.userName}">
+            <li><a href="/front/register"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+            <li><a href="/front/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+        </ul>
     </div>
+</nav>
+<div class="container-fluid">
+    
+    <div class="row row-offcanvas row-offcanvas-left">
+        <!--左侧-->
+        <div class="col-sm-4 col-md-3 sidebar-offcanvas text-center" id="sidebar" role="navigation" >
+            <ul class="nav nav-sidebar">
+                <li class="active"><a th:href="@{/front/personData}">个人资料</a></li>
+                <li><a href="http://bootstrapzero.com" target="_ext">友情链接</a></li>
+                <li><a href="http://bootstrap.theme.cards" target="_ext">评论留言</a></li>
+                <li><a href="https://wrapbootstrap.com?ref=skelly" target="_ext">悄悄话</a></li>
+            </ul>
+        </div><!--/span-->
+        <!--右侧-->
+        <div class="col-sm-8 col-md-9 main">
+            <form role="form">
+                <!--<div class="form-group">
+                    <img src="images/Huuzii.jpg" class="img-circle">
+                    <input type="file" id="inputfile">
+                </div>-->
+                <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">昵称</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="username" placeholder="请输入名字">
+                    </div>
+                </div>
+                <br><br><hr>
+                <div class="form-group">
+                    <label for="phoneNumber" class="col-sm-2 control-label">手机</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="phoneNumber" placeholder="请输入手机号">
+                    </div>
+                </div>
+                <br><br><hr>
+                <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">姓名</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="name" placeholder="请输入姓名">
+                </div>
+            </div>
+                <br><br><hr>
+                <div class="form-group">
+                    <label for="birthday" class="col-sm-2 control-label">生日</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="birthday" placeholder="请输入生日">
+                    </div>
+                </div>
+                <br><br><hr>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">性别</label>
+                    <div class="col-sm-6">
+                        <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 男
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 女
+                        </label>
+                    </div>
+                </div>
+                <br><br><hr>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">邮箱</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
+                    </div>
+                </div>
+                <br><br><hr>
+                <div class="form-group">
+                    <label for="personSay" class="col-sm-2 control-label">个人简介</label>
+                    <div class="col-sm-6">
+                        <textarea class="form-control" id="personSay"></textarea>
+                    </div>
+                </div>
+                <br><br><hr>
+                <button type="submit" class="btn btn-default">保存</button>
+            </form>
+            
+        </div><!--/row-->
+    </div>
+</div><!--/.container-->
+<br><br>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>blog<br>
+        <small>© Copyright XXX. by the helloTiger.</small>
+    </p>
 </div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

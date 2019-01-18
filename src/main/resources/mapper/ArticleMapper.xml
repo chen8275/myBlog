@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.mapper.ArticleMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.Article" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="articleId" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="author" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="originalAuthor" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleTitle" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleTags" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleType" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleCategories" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="publishDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="updateDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleUrl" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="likes" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="lastArticleId" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="nextArticleId" jdbcType="BIGINT" javaType="java.lang.Long" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.zking.entity.ArticleWithBLOBs" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="articleId" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="author" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="originalAuthor" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleTitle" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleTags" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleType" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleCategories" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="publishDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="updateDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="articleUrl" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="likes" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="lastArticleId" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="nextArticleId" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="articleContent" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
+      <arg column="articleTabloid" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, articleId, author, originalAuthor, articleTitle, articleTags, articleType, articleCategories, 
+    publishDate, updateDate, articleUrl, likes, lastArticleId, nextArticleId
+  </sql>
+  <sql id="Blob_Column_List" >
+    articleContent, articleTabloid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from article
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.entity.ArticleWithBLOBs" >
+    insert into article (id, articleId, author, 
+      originalAuthor, articleTitle, articleTags, 
+      articleType, articleCategories, publishDate, 
+      updateDate, articleUrl, likes, 
+      lastArticleId, nextArticleId, articleContent, 
+      articleTabloid)
+    values (#{id,jdbcType=INTEGER}, #{articleid,jdbcType=BIGINT}, #{author,jdbcType=VARCHAR}, 
+      #{originalauthor,jdbcType=VARCHAR}, #{articletitle,jdbcType=VARCHAR}, #{articletags,jdbcType=VARCHAR}, 
+      #{articletype,jdbcType=VARCHAR}, #{articlecategories,jdbcType=VARCHAR}, #{publishdate,jdbcType=VARCHAR}, 
+      #{updatedate,jdbcType=VARCHAR}, #{articleurl,jdbcType=VARCHAR}, #{likes,jdbcType=INTEGER}, 
+      #{lastarticleid,jdbcType=BIGINT}, #{nextarticleid,jdbcType=BIGINT}, #{articlecontent,jdbcType=LONGVARCHAR}, 
+      #{articletabloid,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.entity.ArticleWithBLOBs" >
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="articleid != null" >
+        articleId,
+      </if>
+      <if test="author != null" >
+        author,
+      </if>
+      <if test="originalauthor != null" >
+        originalAuthor,
+      </if>
+      <if test="articletitle != null" >
+        articleTitle,
+      </if>
+      <if test="articletags != null" >
+        articleTags,
+      </if>
+      <if test="articletype != null" >
+        articleType,
+      </if>
+      <if test="articlecategories != null" >
+        articleCategories,
+      </if>
+      <if test="publishdate != null" >
+        publishDate,
+      </if>
+      <if test="updatedate != null" >
+        updateDate,
+      </if>
+      <if test="articleurl != null" >
+        articleUrl,
+      </if>
+      <if test="likes != null" >
+        likes,
+      </if>
+      <if test="lastarticleid != null" >
+        lastArticleId,
+      </if>
+      <if test="nextarticleid != null" >
+        nextArticleId,
+      </if>
+      <if test="articlecontent != null" >
+        articleContent,
+      </if>
+      <if test="articletabloid != null" >
+        articleTabloid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="articleid != null" >
+        #{articleid,jdbcType=BIGINT},
+      </if>
+      <if test="author != null" >
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="originalauthor != null" >
+        #{originalauthor,jdbcType=VARCHAR},
+      </if>
+      <if test="articletitle != null" >
+        #{articletitle,jdbcType=VARCHAR},
+      </if>
+      <if test="articletags != null" >
+        #{articletags,jdbcType=VARCHAR},
+      </if>
+      <if test="articletype != null" >
+        #{articletype,jdbcType=VARCHAR},
+      </if>
+      <if test="articlecategories != null" >
+        #{articlecategories,jdbcType=VARCHAR},
+      </if>
+      <if test="publishdate != null" >
+        #{publishdate,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null" >
+        #{updatedate,jdbcType=VARCHAR},
+      </if>
+      <if test="articleurl != null" >
+        #{articleurl,jdbcType=VARCHAR},
+      </if>
+      <if test="likes != null" >
+        #{likes,jdbcType=INTEGER},
+      </if>
+      <if test="lastarticleid != null" >
+        #{lastarticleid,jdbcType=BIGINT},
+      </if>
+      <if test="nextarticleid != null" >
+        #{nextarticleid,jdbcType=BIGINT},
+      </if>
+      <if test="articlecontent != null" >
+        #{articlecontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="articletabloid != null" >
+        #{articletabloid,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.ArticleWithBLOBs" >
+    update article
+    <set >
+      <if test="articleid != null" >
+        articleId = #{articleid,jdbcType=BIGINT},
+      </if>
+      <if test="author != null" >
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="originalauthor != null" >
+        originalAuthor = #{originalauthor,jdbcType=VARCHAR},
+      </if>
+      <if test="articletitle != null" >
+        articleTitle = #{articletitle,jdbcType=VARCHAR},
+      </if>
+      <if test="articletags != null" >
+        articleTags = #{articletags,jdbcType=VARCHAR},
+      </if>
+      <if test="articletype != null" >
+        articleType = #{articletype,jdbcType=VARCHAR},
+      </if>
+      <if test="articlecategories != null" >
+        articleCategories = #{articlecategories,jdbcType=VARCHAR},
+      </if>
+      <if test="publishdate != null" >
+        publishDate = #{publishdate,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null" >
+        updateDate = #{updatedate,jdbcType=VARCHAR},
+      </if>
+      <if test="articleurl != null" >
+        articleUrl = #{articleurl,jdbcType=VARCHAR},
+      </if>
+      <if test="likes != null" >
+        likes = #{likes,jdbcType=INTEGER},
+      </if>
+      <if test="lastarticleid != null" >
+        lastArticleId = #{lastarticleid,jdbcType=BIGINT},
+      </if>
+      <if test="nextarticleid != null" >
+        nextArticleId = #{nextarticleid,jdbcType=BIGINT},
+      </if>
+      <if test="articlecontent != null" >
+        articleContent = #{articlecontent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="articletabloid != null" >
+        articleTabloid = #{articletabloid,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zking.entity.ArticleWithBLOBs" >
+    update article
+    set articleId = #{articleid,jdbcType=BIGINT},
+      author = #{author,jdbcType=VARCHAR},
+      originalAuthor = #{originalauthor,jdbcType=VARCHAR},
+      articleTitle = #{articletitle,jdbcType=VARCHAR},
+      articleTags = #{articletags,jdbcType=VARCHAR},
+      articleType = #{articletype,jdbcType=VARCHAR},
+      articleCategories = #{articlecategories,jdbcType=VARCHAR},
+      publishDate = #{publishdate,jdbcType=VARCHAR},
+      updateDate = #{updatedate,jdbcType=VARCHAR},
+      articleUrl = #{articleurl,jdbcType=VARCHAR},
+      likes = #{likes,jdbcType=INTEGER},
+      lastArticleId = #{lastarticleid,jdbcType=BIGINT},
+      nextArticleId = #{nextarticleid,jdbcType=BIGINT},
+      articleContent = #{articlecontent,jdbcType=LONGVARCHAR},
+      articleTabloid = #{articletabloid,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.Article" >
+    update article
+    set articleId = #{articleid,jdbcType=BIGINT},
+      author = #{author,jdbcType=VARCHAR},
+      originalAuthor = #{originalauthor,jdbcType=VARCHAR},
+      articleTitle = #{articletitle,jdbcType=VARCHAR},
+      articleTags = #{articletags,jdbcType=VARCHAR},
+      articleType = #{articletype,jdbcType=VARCHAR},
+      articleCategories = #{articlecategories,jdbcType=VARCHAR},
+      publishDate = #{publishdate,jdbcType=VARCHAR},
+      updateDate = #{updatedate,jdbcType=VARCHAR},
+      articleUrl = #{articleurl,jdbcType=VARCHAR},
+      likes = #{likes,jdbcType=INTEGER},
+      lastArticleId = #{lastarticleid,jdbcType=BIGINT},
+      nextArticleId = #{nextarticleid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
