@@ -27,6 +27,7 @@
  @RestController
  @RequestMapping(value = "/Categories")
  public class CategoriesController {
+     
      @Autowired
      CategoriesService categoriesService;
      

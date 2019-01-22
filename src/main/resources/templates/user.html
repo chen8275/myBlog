@@ -42,7 +42,7 @@
                         <li><a href="#">标签</a></li>
                         <li><a href="#">更新</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">友链</a></li>
+                        <li><a th:href="@{/front/friendLink}">友链</a></li>
                         <li class="divider"></li>
                         <li><a href="#">关于我</a></li>
                     </ul>
@@ -157,7 +157,9 @@
                     </div>
                     <br><br><hr>
                     <button type="submit" class="btn btn-default">保存</button>
+                    <br><br>
                 </form>
+                <br><br>
             </div>
             <div id="basicSetting">
                 <form role="form" action="/front/saveUser" method="post">
@@ -212,10 +214,10 @@
             </div>
             <div id="privateWord" class="col-xs-offset-1 col-sm-6">
                 <div class="zhangSay">
-                    <span class="word">生命中有一些人与我们擦肩了，却来不及遇见</span>
-                    <span class="word">遇见了，却来不及相识</span>
-                    <span class="word">相识了，却来不及熟悉</span>
-                    <span class="word">熟悉了，却还是要说再见...</span>
+                    <span class="word">生命中有一些人与我们擦肩了，却来不及遇见</span><br>
+                    <span class="word">遇见了，却来不及相识</span><br>
+                    <span class="word">相识了，却来不及熟悉</span><br>
+                    <span class="word">熟悉了，却还是要说再见...</span><br>
                     <hr>
                 </div>
                 <div class="panel panel-danger">

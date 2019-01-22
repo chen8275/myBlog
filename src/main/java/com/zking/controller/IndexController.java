@@ -8,6 +8,7 @@ import com.zking.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -101,5 +102,12 @@ public class IndexController {
         model.addAttribute("article",new Article());
         return "write";
     }
-    
+    //进入友链页面
+    @RequestMapping("/friendLink")
+    public String write(Model model,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String username = session.getAttribute("userName").toString();
+        model.addAttribute("userName",username);
+        return "friendLink";
+    }
 }
