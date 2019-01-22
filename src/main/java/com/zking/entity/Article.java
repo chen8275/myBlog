@@ -28,8 +28,13 @@ public class Article {
     private Long lastarticleid;
 
     private Long nextarticleid;
-
-    public Article(Integer id, Long articleid, String author, String originalauthor, String articletitle, String articletags, String articletype, String articlecategories, String publishdate, String updatedate, String articleurl, Integer likes, Long lastarticleid, Long nextarticleid) {
+    
+    /**
+     * 文章内容
+     */
+    private String articleContent;
+    
+    public Article(Integer id, Long articleid, String author, String originalauthor, String articletitle, String articletags, String articletype, String articlecategories, String publishdate, String updatedate, String articleurl, Integer likes, Long lastarticleid, Long nextarticleid, String articleContent) {
         this.id = id;
         this.articleid = articleid;
         this.author = author;
@@ -44,8 +49,17 @@ public class Article {
         this.likes = likes;
         this.lastarticleid = lastarticleid;
         this.nextarticleid = nextarticleid;
+        this.articleContent = articleContent;
     }
-
+    
+    public String getArticleContent() {
+        return articleContent;
+    }
+    
+    public void setArticleContent(String articleContent) {
+        this.articleContent = articleContent;
+    }
+    
     public Article() {
         super();
     }

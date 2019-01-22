@@ -9,15 +9,12 @@
  
 
  import com.zking.entity.User;
- import com.zking.mapper.UserMapper;
  import com.zking.service.UserService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
-
- import java.util.HashMap;
- import java.util.Map;
+ 
 
 
  /**

@@ -1,14 +1,19 @@
 package com.zking.controller;
 
+import com.zking.entity.Article;
+import com.zking.entity.Categories;
 import com.zking.entity.User;
+import com.zking.service.CategoriesService;
 import com.zking.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @Controller
@@ -20,6 +25,8 @@ public class IndexController {
     @Autowired
     UserService userService;
     
+    @Autowired
+    CategoriesService categoriesService;
     //index页面
     @RequestMapping("/index")
     public String index() {
@@ -86,5 +93,13 @@ public class IndexController {
         }
     }
     
+    //进入写博客页
+    @RequestMapping("/write")
+    public String write(Model model, Article article){
+        List<Categories> categories = categoriesService.list();
+        model.addAttribute("categories",categories);
+        model.addAttribute("article",new Article());
+        return "write";
+    }
     
 }

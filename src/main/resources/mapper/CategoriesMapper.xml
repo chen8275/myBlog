@@ -5,10 +5,11 @@
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="categoryName" jdbcType="VARCHAR" javaType="java.lang.String" />
+        <arg column="display_name" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    id, categoryName
+    id, categoryName,display_name
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -57,4 +58,10 @@
     set categoryName = #{categoryname,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="listCategories" resultType="com.zking.entity.Categories">
+        select
+        <include refid="Base_Column_List" />
+        from categories
+  </select>  
 </mapper>

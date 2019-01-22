@@ -4,12 +4,23 @@ public class Categories {
     private Integer id;
 
     private String categoryname;
-
-    public Categories(Integer id, String categoryname) {
+    
+    private String displayname;
+    
+    public String getDisplayname() {
+        return displayname;
+    }
+    
+    public void setDisplayname(String displayname) {
+        this.displayname = displayname;
+    }
+    
+    public Categories(Integer id, String categoryname, String displayname) {
         this.id = id;
         this.categoryname = categoryname;
+        this.displayname = displayname;
     }
-
+    
     public Categories() {
         super();
     }
