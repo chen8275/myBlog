@@ -11,6 +11,16 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <scrip src="js/dashboard.js"></scrip>
     <title>Hello, world!</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#basicSetting,#leaveMessage,#privateWord').css("display","none");
+            $('.clickLi').click(function () {
+                var flag = $(this).attr('class').substring(8);
+                $('#personalDate,#basicSetting,#leaveMessage,#privateWord').css("display","none");
+                $("#" + flag).css("display","block");
+            });
+        });
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -70,96 +80,160 @@
         <!--左侧-->
         <div class="col-sm-4 col-md-3 sidebar-offcanvas text-center" id="sidebar" role="navigation" >
             <ul class="nav nav-sidebar">
-                <li class="active"><a th:href="@{/front/personData}">个人资料</a></li>
-                <li><a href="http://bootstrapzero.com" target="_ext">友情链接</a></li>
-                <li><a href="http://bootstrap.theme.cards" target="_ext">评论留言</a></li>
-                <li><a href="https://wrapbootstrap.com?ref=skelly" target="_ext">悄悄话</a></li>
+                <li class="clickLi personalDate"><a><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
+                <li class="clickLi basicSetting"><a><span class="glyphicon glyphicon-asterisk"></span> 安全设置</a></li>
+                <li class="clickLi leaveMessage"><a><span class="glyphicon glyphicon-comment"></span> 评论留言</a></li>
+                <li class="clickLi privateWord"><a><span class="glyphicon glyphicon-headphones"></span> 悄悄话</a></li>
             </ul>
         </div><!--/span-->
         
         <!--右侧-->
         <div class="col-sm-8 col-md-9 main">
             
-            
-            <form role="form" action="/front/saveUser" method="post">
-                <!--<div class="form-group">
-                    <img src="http://chen-tiger.oss-cn-beijing.aliyuncs.com/18-12-28/45195413.jpg" class="img-circle">
-                    <input type="file" id="inputfile">
-                </div>-->
-                <div class="form-group">
-                    <label for="username" class="col-sm-2 control-label">昵称</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="username" id="username" placeholder="请输入昵称">
+            <div id="personalDate">
+                <form role="form" action="/front/saveUser" method="post">
+                    <!--<div class="form-group">
+                        <img src="http://chen-tiger.oss-cn-beijing.aliyuncs.com/18-12-28/45195413.jpg" class="img-circle">
+                        <input type="file" id="inputfile">
+                    </div>-->
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">昵称</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="请输入昵称">
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">手机</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号">
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="trueName" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="trueName" id="trueName" placeholder="请输入姓名">
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="birthday" class="col-sm-2 control-label">生日</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="birthday" id="birthday" placeholder="请输入生日">
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-6">
+                            <label class="radio-inline">
+                                <input type="radio" id="male" name="gender" value="male" checked> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" id="female" name="gender"  value="female"> 女
+                            </label>
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">邮箱</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="email" id="email" placeholder="请输入邮箱">
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="personalBrief" class="col-sm-2 control-label">个人简介</label>
+                        <div class="col-sm-6">
+                            <textarea class="form-control" name="personalBrief" id="personalBrief"></textarea>
+                        </div>
+                    </div>
+                    <br><br><hr>
+                    <button type="submit" class="btn btn-default">保存</button>
+                </form>
+            </div>
+            <div id="basicSetting">
+                <form role="form" action="/front/saveUser" method="post">
+                    
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">手机</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号">
+                        </div>
+                    </div>
+                    <br><br><hr>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">新密码</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="password" id="password" placeholder="填写你的密码">
+                        </div>
+                    </div>
+                    <br><br><hr>
+                    <div class="form-group">
+                        <label for="password2" class="col-sm-2 control-label">确认密码</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="password2" id="password2" placeholder="再次填写你的密码">
+                        </div>
+                    </div>
+                    <br><br><hr>
+                    <button type="submit" class="btn btn-default">保存</button>
+                </form>
+            </div>
+            <div id="leaveMessage">
+                <div class="tabbable" id="tabs-630675">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="#panel-119933" data-toggle="tab">Section 1</a>
+                        </li>
+                        <li class="active">
+                            <a href="#panel-271772" data-toggle="tab">Section 2</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="panel-119933">
+                            <p>
+                                I'm in Section 1.
+                            </p>
+                        </div>
+                        <div class="tab-pane active" id="panel-271772">
+                            <p>
+                                Howdy, I'm in Section 2.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <br><br><hr>
-                
-                <div class="form-group">
-                    <label for="phone" class="col-sm-2 control-label">手机</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号">
+            </div>
+            <div id="privateWord" class="col-xs-offset-1 col-sm-6">
+                <div class="zhangSay">
+                    <span class="word">生命中有一些人与我们擦肩了，却来不及遇见</span>
+                    <span class="word">遇见了，却来不及相识</span>
+                    <span class="word">相识了，却来不及熟悉</span>
+                    <span class="word">熟悉了，却还是要说再见...</span>
+                    <hr>
+                </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">你一言我一语</h3>
+                    </div>
+                    <div class="panel-body">
+                        <textarea class="form-control" rows="3"></textarea>
                     </div>
                 </div>
-                <br><br><hr>
-                
-                <div class="form-group">
-                    <label for="trueName" class="col-sm-2 control-label">姓名</label>
-                    <div class="col-sm-6">
-                    <input type="text" class="form-control" name="trueName" id="trueName" placeholder="请输入姓名">
-                    </div>
-                </div>
-                <br><br><hr>
-                
-                <div class="form-group">
-                    <label for="birthday" class="col-sm-2 control-label">生日</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="birthday" id="birthday" placeholder="请输入生日">
-                    </div>
-                </div>
-                <br><br><hr>
-                
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">性别</label>
-                    <div class="col-sm-6">
-                        <label class="radio-inline">
-                            <input type="radio" id="male" name="gender" value="male" checked> 男
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" id="female" name="gender"  value="female"> 女
-                        </label>
-                    </div>
-                </div>
-                <br><br><hr>
-                
-                <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label">邮箱</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="email" id="email" placeholder="请输入邮箱">
-                    </div>
-                </div>
-                <br><br><hr>
-                
-                <div class="form-group">
-                    <label for="personalBrief" class="col-sm-2 control-label">个人简介</label>
-                    <div class="col-sm-6">
-                        <textarea class="form-control" name="personalBrief" id="personalBrief"></textarea>
-                    </div>
-                </div>
-                <br><br><hr>
-                <button type="submit" class="btn btn-default">保存</button>
-            </form>
-            
-            
+                <button type="button" class="userSayBtn">Send</button>
+            </div>
             
         </div><!--/row-->
     </div>
 </div><!--/.container-->
-<br><br>
-<div class="jumbotron text-center" style="margin-bottom:0">
-    <p>blog<br>
-        <small>© Copyright XXX. by the helloTiger.</small>
-    </p>
-</div>
+
+
 
 
 
