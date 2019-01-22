@@ -35,7 +35,7 @@
                         <li class="divider"></li>
                         <li><a th:href="@{/front/friendLink}">友链</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">关于我</a></li>
+                        <li><a th:href="@{/front/aboutme}">关于我</a></li>
                     </ul>
                 </li>
             </ul>
@@ -52,7 +52,7 @@
                 <ul class="dropdown-menu">
                     <li><a th:href="@{/front/user}">个人中心</a></li>
                     <li><a href="#">网站后台管理</a></li>
-                    <li><a href="#">反馈</a></li>
+                    <li><a id="modal-870181" href="#modal-container-870181" role="button" class="btn" data-toggle="modal">反馈</a></li>
                     <li class="divider"></li>
                     <li><a th:href="@{/front/logout}">退出登录</a></li>
                 </ul>
@@ -127,5 +127,25 @@
     </p>
 </div>
 
+
+<!--反馈-->
+<div class="modal fade" id="modal-container-870181" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    标题
+                </h4>
+            </div>
+            <div class="modal-body">
+                内容...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -34,7 +34,7 @@
                         <li class="divider"></li>
                         <li><a th:href="@{/front/friendLink}">友链</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">关于我</a></li>
+                        <li><a th:href="@{/front/aboutme}">关于我</a></li>
                     </ul>
                 </li>
             </ul>
@@ -51,7 +51,7 @@
                 <ul class="dropdown-menu">
                     <li><a th:href="@{/front/user}">个人中心</a></li>
                     <li><a href="#">网站后台管理</a></li>
-                    <li><a href="#">反馈</a></li>
+                    <li><a id="modal-870181" href="#modal-container-870181" role="button" class="btn" data-toggle="modal">反馈</a></li>
                     <li class="divider"></li>
                     <li><a th:href="@{/front/logout}">退出登录</a></li>
                 </ul>
@@ -71,11 +71,11 @@
             <div class="col-xs-offset-3 col-sm-9">
                 <!--大佬博客-->
                 <div class="col-sm-9">
-                    <br><br>
+                    <br>
                     <div class="site-inner-people-top">
                         <h4><span class="glyphicon glyphicon-tree-conifer"></span><span><bold>大佬博客</bold></span></h4>
                     </div>
-                    <br><br>
+                    <br>
                     <div class="site-inner-mid">
                         <div class="col-sm-3" style="padding: 10px">
                             <p>
@@ -148,11 +148,11 @@
 
                 <!--友情链接-->
                 <div class="col-sm-9">
-                    <br><br>
+                    <br>
                     <div class="site-inner-link-top">
                         <h4><span class="glyphicon glyphicon-tree-conifer"></span><span><bold>友情链接</bold></span></h4>
                     </div>
-                    <br><br>
+                    <br>
                     <div class="site-inner-friend-inner">
                         <div class="col-sm-3" style="padding: 10px">
                             <p>
@@ -193,11 +193,11 @@
                 
                 <!--链接公告-->
                 <div class="col-sm-9">
-                    <br><br>
+                    <br>
                     <div class="site-inner-info-top">
                         <h4><span class="glyphicon glyphicon-tree-conifer"></span><span><bold>链接公告</bold></span></h4>
                     </div>
-                    <br><br>
+                    <br>
                     <div class="site-inner-info-inner">
                         <p>任何一个行业，如果靠自己不断去探索和挖掘的话，对于自己的成长固然重要，但是有时站在巨人的肩膀上望向前方，你会发现
                             成功和梦想其实就在前方。</p>
@@ -238,7 +238,7 @@
                                 </div>
                                 <div class="comment-top-input" th:unless="${userName}">
                                     <div class="goToLogin">
-                                        &nbsp;&nbsp;&nbsp;<a id="toLogin">登录</a>后才可以发表留言呦...
+                                        &nbsp;&nbsp;&nbsp;<a href="/front/login">登录</a>后才可以发表留言呦...
                                     </div>
                                 </div>
                                 <div class="commentBtn">
@@ -261,6 +261,9 @@
     
 </div>
 
+
+
+
 <br><br><br>
 <div class="jumbotron text-center" style="margin-bottom:0">
     <p>blog<br>
@@ -268,5 +271,25 @@
     </p>
 </div>
 
+
+<!--反馈-->
+<div class="modal fade" id="modal-container-870181" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    标题
+                </h4>
+            </div>
+            <div class="modal-body">
+                内容...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

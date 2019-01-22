@@ -110,4 +110,9 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "friendLink";
     }
+    //进入关于我页面
+    @RequestMapping("/aboutme")
+    public String about(){
+        return "aboutme";
+    }
 }
