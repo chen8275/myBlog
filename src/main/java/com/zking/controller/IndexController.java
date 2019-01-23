@@ -149,4 +149,9 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "admin";
     }
+    //进入404页面
+    @RequestMapping("/404")
+    public String four(){
+        return "404";
+    }
 }
