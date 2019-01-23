@@ -133,4 +133,12 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "tags";
     }
+    //进入分类页面
+    @RequestMapping("/categories")
+    public String categories(Model model,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String username = session.getAttribute("userName").toString();
+        model.addAttribute("userName",username);
+        return "categories";
+    }
 }
