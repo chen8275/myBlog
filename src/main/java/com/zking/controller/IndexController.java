@@ -124,4 +124,13 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "update";
     }
+    
+    //进入标签页面
+    @RequestMapping("/tags")
+    public String tags(Model model,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String username = session.getAttribute("userName").toString();
+        model.addAttribute("userName",username);
+        return "tags";
+    }
 }

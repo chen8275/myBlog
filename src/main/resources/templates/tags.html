@@ -1,14 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    
+
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <scrip src="js/dashboard.js"></scrip>
     <title>Hello, world!</title>
 </head>
 <body>
@@ -40,6 +43,9 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
+            <li>
+                <a th:href="@{/front/write}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
+            </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" th:text="${session.userName}">
                     <b class="caret"></b>
@@ -61,28 +67,51 @@
     </div>
 </nav>
 
-<form class="form-signin" action="/front/loginPage" method="post" style="padding-top:100px;width: 300px;margin: auto;">
-    <h1 class="h3 mb-3 font-weight-normal" style="margin: auto;">Please sign in</h1><br><br>
-    <label  class="sr-only">Email address</label>
-    <input type="text" id="username" name="username" class="form-control" placeholder="userName" required="" autofocus="" ></input>
-    <label  class="sr-only">Password</label>
-    <input type="text" id="password" name="password" class="form-control" placeholder="Password" required=""></input>
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me" >Remember me</input>
-        </label>
+<div id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-offset-3 col-sm-9">
+                <!--tags-->
+                <div class="allTags">
+                    <div style="height: 550px">
+                        
+                    </div>
+                </div>
+                
+                <!--leave message-->
+                <div class="col-sm-7">
+                    <div class="comment" style="margin: 50px auto 50px">
+                        <div class="comment-top">
+                            <div class="comment-top-input" th:if="${userName}">
+                                <textarea id="comment" class="form-control" placeholder="客官，来说两句吧..." rows="3"></textarea>
+                            </div>
+                            <div class="comment-top-input" th:unless="${userName}">
+                                <div class="goToLogin">
+                                    &nbsp;&nbsp;&nbsp;<a href="/front/login">登录</a>后才可以发表留言呦...
+                                </div>
+                            </div>
+                            <div class="commentBtn">
+                                <button id="commentBtn" type="button" class="am-btn am-btn-secondary">发表留言</button>
+                            </div>
+                        </div>
+                        <div class="comment-bottom">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <br><br><br>
-    <p class="mt-5 mb-3 text-muted col-xs-offset-4">© 2017-2018</p>
-</form>
+</div>
+
 <br><br><br>
 <div class="jumbotron text-center" style="margin-bottom:0">
     <p>blog<br>
         <small>© Copyright XXX. by the helloTiger.</small>
     </p>
 </div>
-
 
 <!--反馈-->
 <div class="modal fade" id="modal-container-870181" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -113,5 +142,8 @@
         </div>
     </div>
 </div>
+
+
+
 </body>
 </html>
