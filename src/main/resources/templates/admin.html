@@ -7,7 +7,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-   
 
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -41,7 +40,6 @@
                 </li>
             </ul>
         </div>
-
         <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
             <li>
                 <a th:href="@{/front/write}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
@@ -59,7 +57,6 @@
                 </ul>
             </li>
         </ul>
-
         <ul class="nav navbar-nav navbar-right" th:unless="${session.userName}">
             <li><a href="/front/register"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
             <li><a href="/front/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
@@ -67,83 +64,9 @@
     </div>
 </nav>
 
-<div id="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-offset-3 col-sm-9">
-                <!--左侧-->
-                <div class="col-sm-3">
-                    <div class="categories">
-                        <div class="categories-title">
-                            <h3 style="font-size: 20px">Categories</h3>
-                        </div>
-                        <div class="categories-comment">
 
-                        </div>
-                    </div>
-                </div>
-                <!--右侧-->
-                <div class="col-sm-6">
-                    <div class="categoryTimeline">
-                        <!--消除留言先加载视觉效果-->
-                        <div class="timeline timeline-wrap">
-                            <div class="timeline-row">
-                                    <span class="node" style="-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;">
-                                        <i class=""></i>
-                                    </span>
-                                <h1 class="title"></h1>
-                            </div>
-                            <div class="timeline-row-major">
-                                <div style="height: 88.4px">
-                                </div>
-                            </div>
-                            <div class="timeline-row-major">
-                                <div style="height: 88.4px">
-                                </div>
-                            </div>
-                            <div class="timeline-row-major">
-                                <div style="height: 88.4px">
-                                </div>
-                            </div>
-                            <div class="timeline-row-major">
-                                <div style="height: 88.4px">
-                                </div>
-                            </div>
-                            <div class="timeline-row-major">
-                                <div style="height: 88.4px">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-                <br><br><br><br>
-                <!--leave message-->
-                <div class="col-sm-9">
-                    <div class="comment" style="margin: 50px auto 50px">
-                        <div class="comment-top">
-                            <div class="comment-top-input" th:if="${userName}">
-                                <textarea id="comment" class="form-control" placeholder="客官，来说两句吧..." rows="3"></textarea>
-                            </div>
-                            <div class="comment-top-input" th:unless="${userName}">
-                                <div class="goToLogin">
-                                    &nbsp;&nbsp;&nbsp;<a href="/front/login">登录</a>后才可以发表留言呦...
-                                </div>
-                            </div>
-                            <div class="commentBtn">
-                                <button id="commentBtn" type="button" class="am-btn am-btn-secondary">发表留言</button>
-                            </div>
-                        </div>
-                        <div class="comment-bottom">
 
-                        </div>
-                    </div>
-                </div>
-                
 
-            </div>
-        </div>
-    </div>
-</div>
 
 <br><br><br>
 <div class="jumbotron text-center" style="margin-bottom:0">
@@ -181,7 +104,6 @@
         </div>
     </div>
 </div>
-
 
 </body>
 </html>

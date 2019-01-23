@@ -141,4 +141,12 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "categories";
     }
+    //进入后台管理页面
+    @RequestMapping("/admin")
+    public String admin(Model model,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String username = session.getAttribute("userName").toString();
+        model.addAttribute("userName",username);
+        return "admin";
+    }
 }
