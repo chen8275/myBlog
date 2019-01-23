@@ -115,4 +115,13 @@ public class IndexController {
     public String about(){
         return "aboutme";
     }
+    
+    //进入更新页面
+    @RequestMapping("/update")
+    public String update(Model model,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String username = session.getAttribute("userName").toString();
+        model.addAttribute("userName",username);
+        return "update";
+    }
 }

@@ -30,7 +30,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">分类</a></li>
                         <li><a href="#">标签</a></li>
-                        <li><a href="#">更新</a></li>
+                        <li><a th:href="@{/front/update}">更新</a></li>
                         <li class="divider"></li>
                         <li><a th:href="@{/front/friendLink}">友链</a></li>
                         <li class="divider"></li>
@@ -227,11 +227,11 @@
                         </p>
                     </div>
                 </div>
-                <br><br>
+               
                 <!--留言-->
                 <div class="col-sm-9">
                     <div class="zhy-link-word">
-                        <div class="comment" style="margin: 0 auto 50px">
+                        <div class="comment" style="margin: 50px auto 50px">
                             <div class="comment-top">
                                 <div class="comment-top-input" th:if="${userName}">
                                     <textarea id="comment" class="form-control" placeholder="客官，来说两句吧..." rows="3"></textarea>
