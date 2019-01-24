@@ -7,12 +7,32 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    
+    
     <scrip src="js/dashboard.js"></scrip>
     <title>Hello, world!</title>
     <script type="text/javascript">
         $(document).ready(function(){
+            $('#birthday').datetimepicker({
+                format: 'yyyy-mm-dd',
+                weekStart: 1,
+                autoclose: true,
+                startView: 3,
+                minView: "month",
+                forceParse: false,
+                language: 'zh-CN'
+
+            });
+            
+            
+            
             $('#basicSetting,#leaveMessage,#privateWord').css("display","none");
             $('.clickLi').click(function () {
                 var flag = $(this).attr('class').substring(8);
@@ -91,6 +111,15 @@
         <div class="col-sm-8 col-md-9 main">
             
             <div id="personalDate">
+                
+              <!--  <div class= form-group col-sm-2>
+                    <div class="input-group  col-sm-2">
+                        <span class="input-group-addon" >日期</span>
+                        <input class="form-control" type="text"  id="ordertime" ng-model="effectivityendtime" data-date-format="yyyy-mm">
+                    </div>
+                </div>-->
+                
+                
                 <form role="form" action="/front/saveUser" method="post">
                     <!--<div class="form-group">
                         <img src="http://chen-tiger.oss-cn-beijing.aliyuncs.com/18-12-28/45195413.jpg" class="img-circle">
@@ -123,7 +152,8 @@
                     <div class="form-group">
                         <label for="birthday" class="col-sm-2 control-label">生日</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="birthday" id="birthday" placeholder="请输入生日">
+                            <input class="form-control" type="text"  name="birthday" id="birthday" ng-model="effectivityendtime" data-date-format="yyyy-mm" placeholder="请输入生日">
+                            <!--<input type="text" class="form-control" name="birthday" id="birthday" placeholder="请输入生日">-->
                         </div>
                     </div>
                     <br><br><hr>
@@ -266,6 +296,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 
