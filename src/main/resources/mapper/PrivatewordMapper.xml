@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zking.mapper.PrivatewordMapper" >
-  <resultMap id="BaseResultMap" type="com.zking.entity.Privateword" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.PrivateWord" >
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="privateWord" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="publisherId" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="publisherId" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="replierId" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="replyContent" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="publisherDate" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -24,15 +24,16 @@
     delete from privateword
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zking.entity.Privateword" >
+    
+  <insert id="insert" parameterType="com.zking.entity.PrivateWord" >
     insert into privateword (id, privateWord, publisherId, 
       replierId, replyContent, publisherDate
       )
-    values (#{id,jdbcType=INTEGER}, #{privateword,jdbcType=VARCHAR}, #{publisherid,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{privateword,jdbcType=VARCHAR}, #{publisherid,jdbcType=INTEGER}, 
       #{replierid,jdbcType=VARCHAR}, #{replycontent,jdbcType=VARCHAR}, #{publisherdate,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.zking.entity.Privateword" >
+  <insert id="insertSelective" parameterType="com.zking.entity.PrivateWord" >
     insert into privateword
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -62,7 +63,7 @@
         #{privateword,jdbcType=VARCHAR},
       </if>
       <if test="publisherid != null" >
-        #{publisherid,jdbcType=VARCHAR},
+        #{publisherid,jdbcType=INTEGER},
       </if>
       <if test="replierid != null" >
         #{replierid,jdbcType=VARCHAR},
@@ -75,7 +76,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.Privateword" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.PrivateWord" >
     update privateword
     <set >
       <if test="privateword != null" >
@@ -96,7 +97,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zking.entity.Privateword" >
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.PrivateWord" >
     update privateword
     set privateWord = #{privateword,jdbcType=VARCHAR},
       publisherId = #{publisherid,jdbcType=VARCHAR},

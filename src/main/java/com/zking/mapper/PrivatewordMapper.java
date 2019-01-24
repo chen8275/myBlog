@@ -1,17 +1,23 @@
 package com.zking.mapper;
 
-import com.zking.entity.Privateword;
+import com.zking.entity.PrivateWord;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface PrivatewordMapper {
     int deleteByPrimaryKey(Integer id);
+    
+    /**
+     * 插入悄悄话
+     */
+    int insert(PrivateWord record);
 
-    int insert(Privateword record);
+    
+    int insertSelective(PrivateWord record);
 
-    int insertSelective(Privateword record);
+    PrivateWord selectByPrimaryKey(Integer id);
 
-    Privateword selectByPrimaryKey(Integer id);
+    int updateByPrimaryKeySelective(PrivateWord record);
 
-    int updateByPrimaryKeySelective(Privateword record);
-
-    int updateByPrimaryKey(Privateword record);
+    int updateByPrimaryKey(PrivateWord record);
 }

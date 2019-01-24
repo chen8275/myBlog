@@ -10,12 +10,14 @@
 
  import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.User;
+ import com.zking.service.PrivateWordService;
  import com.zking.service.UserService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
 
+ import javax.servlet.http.HttpServletRequest;
  import java.util.HashMap;
  import java.util.List;
  import java.util.Map;
@@ -30,6 +32,8 @@
  public class UserController {
      @Autowired
      UserService userService;
+     @Autowired
+     PrivateWordService privateWordService;
     
     @PostMapping(value = "/findUserIdByUsername")
      public ResultModel findUserIdByUsername(String username){
@@ -44,6 +48,23 @@
             return ResultTools.result(404,e.getMessage(),null);
         }
     }
+     /**
+      * 发布悄悄话
+      * @param privateWord 悄悄话内容
+      */
+     @PostMapping(value = "/sendPrivateWord")
+     public ResultModel sendPrivateWord(String privateWord, String username){
+         
+         try {
+             return privateWordService.publishPrivateWord(privateWord,username);
+             
+         }catch (Exception e){
+             return ResultTools.result(404,e.getMessage(),null);
+         }
+         
+     }
+    
+    
      
     /*
     @PostMapping(value = "/selectUserById")
