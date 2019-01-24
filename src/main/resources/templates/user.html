@@ -18,7 +18,7 @@
     
     <scrip src="js/dashboard.js"></scrip>
     <title>Hello, world!</title>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         $(document).ready(function(){
             $('#birthday').datetimepicker({
                 format: 'yyyy-mm-dd',
@@ -32,7 +32,6 @@
             });
             
             
-            
             $('#basicSetting,#leaveMessage,#privateWord').css("display","none");
             $('.clickLi').click(function () {
                 var flag = $(this).attr('class').substring(8);
@@ -40,7 +39,7 @@
                 $("#" + flag).css("display","block");
             });
         });
-    </script>
+    </script>-->
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -126,9 +125,9 @@
                         <input type="file" id="inputfile">
                     </div>-->
                     <div class="form-group">
-                        <label for="username" class="col-sm-2 control-label">昵称</label>
+                        <label for="username" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="username" id="username" placeholder="请输入昵称">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名">
                         </div>
                     </div>
                     <br><br><hr>
@@ -193,11 +192,11 @@
             </div>
             <div id="basicSetting">
                 <form role="form" action="/front/saveUser" method="post">
-                    
+
                     <div class="form-group">
-                        <label for="phone" class="col-sm-2 control-label">手机</label>
+                        <label for="username" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号">
+                            <input type="text" class="form-control" name="username2" id="username2" placeholder="请输入用户名">
                         </div>
                     </div>
                     <br><br><hr>
@@ -244,6 +243,7 @@
             </div>
             <div id="privateWord" class="col-xs-offset-1 col-sm-6">
                 <div class="zhangSay">
+                    <br><br><br>
                     <span class="word">生命中有一些人与我们擦肩了，却来不及遇见</span><br>
                     <span class="word">遇见了，却来不及相识</span><br>
                     <span class="word">相识了，却来不及熟悉</span><br>

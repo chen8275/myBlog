@@ -10,8 +10,14 @@
  import com.zking.entity.User;
  import com.zking.mapper.UserMapper;
  import com.zking.service.UserService;
+ import com.zking.util.ResultModel;
+ import com.zking.util.ResultTools;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
+
+ import javax.servlet.http.HttpServletRequest;
+ import java.util.HashMap;
+ import java.util.Map;
 
  /**
   * @auther chendesheng
@@ -21,6 +27,8 @@
  public class UserServiceImpl implements UserService{
      @Autowired
      UserMapper userMapper;
+     @Autowired
+     UserService userService;
      
      @Override
      public User selectByUsernameAndPassword(String username, String password) {
@@ -31,15 +39,25 @@
      public int insertSelective(User user) {
          return userMapper.insertSelective(user);
      }
-    
-     @Override
-     public int updateByPrimaryKeySelective(User user) {
-         return userMapper.updateByPrimaryKeySelective(user);
-     }
-    
+     
      @Override
      public int findUserIdByUsername(String username) {
          return userMapper.findUserIdByUsername(username);
      }
+    
+     @Override
+     public ResultModel updateByPrimaryKeySelective(String username,String password,Integer userId) {
+         
+         User user = new User();
+         user.setId(userId);
+         user.setUsername(username);
+         user.setPassword(password);
+         int status = userMapper.updateByPrimaryKeySelective(user);
+         Map<String,Object> map = new HashMap<String,Object>();
+         map.put("content",status);
+         return ResultTools.result(200,"",map);
+     }
+     
+     
     
  }

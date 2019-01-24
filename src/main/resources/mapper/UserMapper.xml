@@ -164,6 +164,8 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
     
+    
+    
 
     <select id="selectByUsernameAndPassword" resultType="com.zking.entity.User">
         select

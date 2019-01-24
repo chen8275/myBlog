@@ -36,9 +36,25 @@ $(document).ready(function () {
             });
         }
     });
-    
-    
-    
+
+    //生日选择器
+    $('#birthday').datetimepicker({
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        autoclose: true,
+        startView: 3,
+        minView: "month",
+        forceParse: false,
+        language: 'zh-CN'
+
+    });
+    //左侧选项卡切换
+    $('#basicSetting,#leaveMessage,#privateWord').css("display","none");
+    $('.clickLi').click(function () {
+        var flag = $(this).attr('class').substring(8);
+        $('#personalDate,#basicSetting,#leaveMessage,#privateWord').css("display","none");
+        $("#" + flag).css("display","block");
+    });
     
     
 });

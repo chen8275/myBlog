@@ -14,7 +14,7 @@ public interface UserMapper {
 
     User selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(User user);
+    
 
     int updateByPrimaryKey(User record);
     
@@ -24,4 +24,7 @@ public interface UserMapper {
     User selectByUsernameAndPassword(@Param("username") String username,@Param("password") String password);
     
     int findUserIdByUsername(String username);
+    
+    int updateByPrimaryKeySelective(User user);
+    
 }

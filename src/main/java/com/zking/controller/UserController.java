@@ -65,26 +65,26 @@
          
      }
     
+     /**
+      * 安全设置更新用户名和密码
+      * @param username 用户名
+      * @param username 密码
+      */
+      @PostMapping(value = "/updateUsernameAndPassword")
+      public ResultModel updateUsernameAndPassword(String username, String password,HttpServletRequest request){
+         String userName = request.getSession().getAttribute("userName").toString();
+         int userId = userService.findUserIdByUsername(userName);
+         try {
+             return userService.updateByPrimaryKeySelective(username,password,userId);
+        
+         }catch (Exception e){
+             return ResultTools.result(404,e.getMessage(),null);
+         }
+    
+     }
     
      
-    /*
-    @PostMapping(value = "/selectUserById")
-     public ResultModel selectUserById(Long id){
-        try {
-            if (null == id){
-                return ResultTools.result(1001,"",null);
-            }
-            User user = userMapper.findUserEntityById(id);
-            if (null == user){
-                return ResultTools.result(1002,"",null);
-            }
-            Map<String,Object> map = new HashMap<String,Object>();
-            map.put("content", user);
-            return ResultTools.result(200,"",map);
-        }catch (Exception e){
-            return ResultTools.result(404,e.getMessage(),null);
-        }
-    }*/
+    
     
     
  }

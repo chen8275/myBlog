@@ -8,6 +8,9 @@
  package com.zking.service;
 
  import com.zking.entity.User;
+ import com.zking.util.ResultModel;
+
+ import javax.servlet.http.HttpServletRequest;
 
  /**
   * @auther chendesheng
@@ -16,6 +19,8 @@
  public interface UserService {
      User selectByUsernameAndPassword(String username,String password);
      int insertSelective(User user);
-     int updateByPrimaryKeySelective(User user);
      int findUserIdByUsername(String username);
+    
+     ResultModel updateByPrimaryKeySelective(String username, String password, Integer userId);
+     
  }
