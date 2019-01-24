@@ -56,5 +56,41 @@ $(document).ready(function () {
         $("#" + flag).css("display","block");
     });
     
+    //安全设置更改密码
+    $('#updateUsernameAndPassword').click(function () {
+     
+        var username = $('#username2');
+        var password = $('#password');
+        var password2 = $('#password2');
+        if (password.val() != password2.val()){
+            alert("密码不一致！！");
+        } else{
+            $.ajax({
+                type:'post',
+                url:'../user/updateUsernameAndPassword',
+                dataType:'json',
+                data:{
+                    username:username.val(),
+                    password:password.val()
+                },
+                success:function (data) {
+                    alert("hello");
+                    if(data['errcode'] == 404){
+                        $.get("/login",function(data,status,xhr){
+                            window.location.replace("/login");
+                        });
+                    } else {
+                        if(data['errcode'] == 200){
+                            alert("密码修改成功");
+                        }
+                        
+                    }
+                },
+                error:function () {
+                    alert("修改密码失败");
+                }
+            });
+        }
+    });
     
 });
