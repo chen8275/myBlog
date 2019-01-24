@@ -48,13 +48,14 @@
             return ResultTools.result(404,e.getMessage(),null);
         }
     }
+    
      /**
       * 发布悄悄话
       * @param privateWord 悄悄话内容
       */
      @PostMapping(value = "/sendPrivateWord")
-     public ResultModel sendPrivateWord(String privateWord, String username){
-         
+     public ResultModel sendPrivateWord(String privateWord, HttpServletRequest request){
+         String username = request.getSession().getAttribute("userName").toString();
          try {
              return privateWordService.publishPrivateWord(privateWord,username);
              
