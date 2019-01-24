@@ -1,7 +1,8 @@
 package com.zking.entity;
 
 public class User {
-    private Long id;
+    
+    private Integer id;
 
     private String avatarImgUrl;
 
@@ -22,8 +23,8 @@ public class User {
     private String trueName;
 
     private String username;
-
-    public User(Long id, String avatarImgUrl, String birthday, String email, String gender, String password, String personalBrief, String phone, String recentlyLanded, String trueName, String username) {
+    
+    public User(Integer id, String avatarImgUrl, String birthday, String email, String gender, String password, String personalBrief, String phone, String recentlyLanded, String trueName, String username) {
         this.id = id;
         this.avatarImgUrl = avatarImgUrl;
         this.birthday = birthday;
@@ -36,19 +37,19 @@ public class User {
         this.trueName = trueName;
         this.username = username;
     }
-
+    
     public User() {
         super();
     }
-
-    public Long getId() {
+    
+    public Integer getId() {
         return id;
     }
-
-    public void setId(Long id) {
+    
+    public void setId(Integer id) {
         this.id = id;
     }
-
+    
     public String getAvatarImgUrl() {
         return avatarImgUrl;
     }

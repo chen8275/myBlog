@@ -1,6 +1,7 @@
 package com.zking.entity;
 
 public class Feedback {
+    
     private Integer id;
 
     private String contactinfo;

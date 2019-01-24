@@ -3,7 +3,7 @@
 <mapper namespace="com.zking.mapper.UserMapper" >
   <resultMap id="BaseResultMap" type="com.zking.entity.User" >
     <constructor >
-      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="avatar_img_url" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="birthday" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -24,18 +24,18 @@
     select 
     <include refid="Base_Column_List" />
     from user
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from user
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.zking.entity.User" >
     insert into user (id, avatar_img_url, birthday, 
       email, gender, password, 
       personal_brief, phone, recently_landed, 
       true_name, username)
-    values (#{id,jdbcType=BIGINT}, #{avatarImgUrl,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{avatarImgUrl,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{personalBrief,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{recentlyLanded,jdbcType=VARCHAR}, 
       #{trueName,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR})
@@ -79,7 +79,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        #{id,jdbcType=BIGINT},
+        #{id,jdbcType=INTEGER},
       </if>
       <if test="avatarImgUrl != null" >
         #{avatarImgUrl,jdbcType=VARCHAR},
@@ -147,7 +147,7 @@
         username = #{username,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zking.entity.User" >
     update user
@@ -161,7 +161,7 @@
       recently_landed = #{recentlyLanded,jdbcType=VARCHAR},
       true_name = #{trueName,jdbcType=VARCHAR},
       username = #{username,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
   </update>
     
 
@@ -171,6 +171,11 @@
         from user
         where username = #{username} 
         and password = #{password}
-    </select>  
-    
+    </select>
+    <select id="findUserIdByUsername" resultType="java.lang.Integer">
+        select
+        id
+        from user
+        where username = #{username}
+    </select>
 </mapper>

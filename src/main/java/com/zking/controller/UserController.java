@@ -8,13 +8,17 @@
  package com.zking.controller;
  
 
+ import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.User;
  import com.zking.service.UserService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
- 
+
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
 
 
  /**
@@ -26,36 +30,22 @@
  public class UserController {
      @Autowired
      UserService userService;
-     @PostMapping("updateUserById")
-     public ResultModel updateUser(String username,String phone,String trueName,String birthday,String gender,String email,String personalBrief){
-         try {
-             User user = new User();
-             
-             user.setUsername(username);
-             user.setPhone(phone);
-             user.setTrueName(trueName);
-             user.setBirthday(birthday);
-             user.setGender(gender);
-             user.setPersonalBrief(personalBrief);
-             user.setEmail(email);
-             int updateNumber = userService.updateByPrimaryKeySelective(user);
-             return ResultTools.result(200,"",null);
-             
-         }catch (Exception e){
-             return ResultTools.result(404,e.getMessage(),null);
-         }
-     }
-    /*@GetMapping(value = "/listUsers")
-     public ResultModel selectUserByAll(){
+    
+    @PostMapping(value = "/findUserIdByUsername")
+     public ResultModel findUserIdByUsername(String username){
         try {
-            List<User> users = userMapper.findAll();
+            int userId = userService.findUserIdByUsername(username);
+            
             Map<String,Object> map = new HashMap<String,Object>();
-            map.put("content",users);
+            map.put("content",userId);
             return ResultTools.result(200,"",map);
         }catch (Exception e){
+            
             return ResultTools.result(404,e.getMessage(),null);
         }
     }
+     
+    /*
     @PostMapping(value = "/selectUserById")
      public ResultModel selectUserById(Long id){
         try {

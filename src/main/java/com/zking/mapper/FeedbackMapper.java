@@ -1,10 +1,16 @@
 package com.zking.mapper;
 
 import com.zking.entity.Feedback;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface FeedbackMapper {
     int deleteByPrimaryKey(Integer id);
-
+    
+    
+    /**
+     * 插入feedback
+     */
     int insert(Feedback record);
 
     int insertSelective(Feedback record);
@@ -16,4 +22,6 @@ public interface FeedbackMapper {
     int updateByPrimaryKeyWithBLOBs(Feedback record);
 
     int updateByPrimaryKey(Feedback record);
+    
+    
 }

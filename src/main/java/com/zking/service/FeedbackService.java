@@ -7,15 +7,13 @@
   */
  package com.zking.service;
 
- import com.zking.entity.User;
+ import com.zking.entity.Feedback;
 
  /**
   * @auther chendesheng
-  * @date 2019/1/18
+  * @date 2019/1/23
   */
- public interface UserService {
-     User selectByUsernameAndPassword(String username,String password);
-     int insertSelective(User user);
-     int updateByPrimaryKeySelective(User user);
-     int findUserIdByUsername(String username);
+ public interface FeedbackService {
+     
+     int insertFeedback(Feedback feedback);
  }
