@@ -122,16 +122,15 @@ $(document).ready(function () {
             $.ajax({
                 type:'post',
                 url:'../user/savePersonalDate',
+                contentType: 'application/json; charset=UTF-8',
                 dataType:'json',
-                data:{
-                    username:username.val(),
+                data:JSON.stringify({ username:username.val(),
                     phone:phone.val(),
                     trueName:trueName.val(),
                     birthday:birthday.val(),
                     gender:genderValue,
                     email:email.val(),
-                    personalBrief:personalBrief.val()
-                },
+                    personalBrief:personalBrief.val() }),
                 success:function (data) {
                     alert("yes");
                     if(data['errcode'] == 404){
@@ -142,7 +141,7 @@ $(document).ready(function () {
                         if(data['errcode'] == 200){
                             alert("更改个人信息成功,重新登录后生效");
                             $.get("/login",function(data,status,xhr){
-                                window.location.replace("/login");
+                                window.location.replace("/front/login");
                             });
                         } else if (data['errcode'] == 1003){
                             dangerNotice("该昵称已被占用");
