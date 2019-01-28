@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface UserMapper {
+    
     int deleteByPrimaryKey(Long id);
 
     int insert(User record);
@@ -13,8 +14,6 @@ public interface UserMapper {
     int insertSelective(User record);
 
     User selectByPrimaryKey(Long id);
-
-    
 
     int updateByPrimaryKey(User record);
     
@@ -26,5 +25,9 @@ public interface UserMapper {
     int findUserIdByUsername(String username);
     
     int updateByPrimaryKeySelective(User user);
+    
+    int savePersonalDate();
+    
+    User findUsernameByUsername(String username);
     
 }

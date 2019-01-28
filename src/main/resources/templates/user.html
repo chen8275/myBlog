@@ -119,11 +119,7 @@
                 </div>-->
                 
                 
-                <form role="form" action="/front/saveUser" method="post">
-                    <!--<div class="form-group">
-                        <img src="http://chen-tiger.oss-cn-beijing.aliyuncs.com/18-12-28/45195413.jpg" class="img-circle">
-                        <input type="file" id="inputfile">
-                    </div>-->
+                <form role="form">
                     <div class="form-group">
                         <label for="username" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-6">
@@ -159,7 +155,7 @@
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">性别</label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" id="genderTable">
                             <label class="radio-inline">
                                 <input type="radio" id="male" name="gender" value="male" checked> 男
                             </label>
@@ -185,7 +181,7 @@
                         </div>
                     </div>
                     <br><br><hr>
-                    <button type="submit" class="btn btn-default">保存</button>
+                    <button type="submit" class="btn btn-default" id="savePersonalDateBtn">保存</button>
                     <br><br>
                 </form>
                 <br><br>

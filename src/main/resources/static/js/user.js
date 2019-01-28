@@ -92,5 +92,22 @@ $(document).ready(function () {
             });
         }
     });
+
+
+
+    //保存个人资料
+    var savePersonalDateBtn = $('#savePersonalDateBtn');
+    var username = $('#username');
+    var phone = $('#phone');
+    var trueName = $('#trueName');
+    var birthday = $('#birthday');
+    var gender = $('#genderTable input');
+    var email = $('#email');
+    var personalBrief = $('#personalBrief');
+    
+    
+    
+    
+    
     
 });
