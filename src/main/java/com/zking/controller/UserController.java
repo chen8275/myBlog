@@ -87,18 +87,50 @@
       * @param user 用户
       */
      @PostMapping(value = "/savePersonalDate")
-     public ResultModel savePersonalDate(User user, HttpServletRequest request){
+     public ResultModel savePersonalDate(@RequestBody User user, HttpServletRequest request){
          
          String userName = request.getSession().getAttribute("userName").toString();
          try {
              return userService.savePersonalDate(user,userName);
-             
          }catch (Exception e){
              return ResultTools.result(404,e.getMessage(),null);
          }
     
      }
+     /**
+      * 获取个人信息
+      * 
+      */
+     @RequestMapping(value = "/getUserPersonalInfo")
+     public ResultModel getUserPersonalInfoByUsername(HttpServletRequest request){
     
+         String userName = request.getSession().getAttribute("userName").toString();
+         try {
+             return userService.getUserPersonalInfoByUsername(userName);
+         }catch (Exception e){
+             return ResultTools.result(404,e.getMessage(),null);
+         }
     
+     }
+     
+     
+     /**
+      * 更新个人信息
+      * @param user 用户
+      */
+     @PostMapping(value = "update")
+     public JSONObject updateByPrimaryKey(@RequestBody User user){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int status = userService.updateByPrimaryKeySelective(user);
+             jsonObject.put("msg:","更新成功");
+             jsonObject.put("data",status);
+             
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
     
  }

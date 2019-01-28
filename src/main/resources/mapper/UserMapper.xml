@@ -113,6 +113,7 @@
       </if>
     </trim>
   </insert>
+    
   <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.User" >
     update user
     <set >
@@ -149,6 +150,9 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+    
+    
+    
   <update id="updateByPrimaryKey" parameterType="com.zking.entity.User" >
     update user
     set avatar_img_url = #{avatarImgUrl,jdbcType=VARCHAR},
@@ -186,39 +190,44 @@
         from user
         where username = #{username}
     </select>
-
+    <select id="getUserPersonalInfo" resultType="com.zking.entity.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where username = #{username}
+    </select>
     <update id="savePersonalDate" parameterType="com.zking.entity.User" >
         update user
         <set >
-            <if test="avatarImgUrl != null" >
-                avatar_img_url = #{avatarImgUrl,jdbcType=VARCHAR},
+            <if test="user.avatarImgUrl != null" >
+                avatar_img_url = #{user.avatarImgUrl,jdbcType=VARCHAR},
             </if>
-            <if test="birthday != null" >
-                birthday = #{birthday,jdbcType=VARCHAR},
+            <if test="user.birthday != null" >
+                birthday = #{user.birthday,jdbcType=VARCHAR},
             </if>
-            <if test="email != null" >
-                email = #{email,jdbcType=VARCHAR},
+            <if test="user.email != null" >
+                email = #{user.email,jdbcType=VARCHAR},
             </if>
-            <if test="gender != null" >
-                gender = #{gender,jdbcType=VARCHAR},
+            <if test="user.gender != null" >
+                gender = #{user.gender,jdbcType=VARCHAR},
             </if>
-            <if test="password != null" >
-                password = #{password,jdbcType=VARCHAR},
+            <if test="user.password != null" >
+                password = #{user.password,jdbcType=VARCHAR},
             </if>
-            <if test="personalBrief != null" >
-                personal_brief = #{personalBrief,jdbcType=VARCHAR},
+            <if test="user.personalBrief != null" >
+                personal_brief = #{user.personalBrief,jdbcType=VARCHAR},
             </if>
-            <if test="phone != null" >
-                phone = #{phone,jdbcType=VARCHAR},
+            <if test="user.phone != null" >
+                phone = #{user.phone,jdbcType=VARCHAR},
             </if>
-            <if test="recentlyLanded != null" >
-                recently_landed = #{recentlyLanded,jdbcType=VARCHAR},
+            <if test="user.recentlyLanded != null" >
+                recently_landed = #{user.recentlyLanded,jdbcType=VARCHAR},
             </if>
-            <if test="trueName != null" >
-                true_name = #{trueName,jdbcType=VARCHAR},
+            <if test="user.trueName != null" >
+                true_name = #{user.trueName,jdbcType=VARCHAR},
             </if>
-            <if test="username != null" >
-                username = #{username,jdbcType=VARCHAR},
+            <if test="user.username != null" >
+                username = #{user.username,jdbcType=VARCHAR},
             </if>
         </set>
         where username = #{username,jdbcType=INTEGER}

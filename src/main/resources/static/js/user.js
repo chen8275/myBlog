@@ -96,22 +96,19 @@ $(document).ready(function () {
 
 
     //保存个人资料
-    $('#savePersonalDateBtn').click(function () {
-        alert("hello");
-    })
-  
-    
-    /*var username = $('#username');
+    var username = $('#username');
     var phone = $('#phone');
     var trueName = $('#trueName');
     var birthday = $('#birthday');
     var gender = $('#genderTable input');
     var email = $('#email');
     var personalBrief = $('#personalBrief');
-    savePersonalDateBtn.click(function () {
-        alert("hello");
+    $('#savePersonalDateBtn').click(function () {
+        
         var usernameValue = username.val();
         var genderValue = "male";
+        console.log(usernameValue);
+        console.log(genderValue);
         if(usernameValue.length === 0){
             alert("昵称不能为空");
         } else if(!gender[0].checked && !gender[1].checked){
@@ -124,7 +121,7 @@ $(document).ready(function () {
             }
             $.ajax({
                 type:'post',
-                url:'/savePersonalDate',
+                url:'../user/savePersonalDate',
                 dataType:'json',
                 data:{
                     username:username.val(),
@@ -134,13 +131,12 @@ $(document).ready(function () {
                     gender:genderValue,
                     email:email.val(),
                     personalBrief:personalBrief.val()
-                    
                 },
                 success:function (data) {
-                    alert("hello");
+                    alert("yes");
                     if(data['errcode'] == 404){
                         $.get("/login",function(data,status,xhr){
-                            window.location.replace("/login");
+                            window.location.replace("/front/login");
                         });
                     } else {
                         if(data['errcode'] == 200){
@@ -160,7 +156,7 @@ $(document).ready(function () {
             });
         }
     });
-*/
+
 
 
 

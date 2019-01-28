@@ -24,4 +24,8 @@
      ResultModel updateByPrimaryKeySelective(String username, String password, Integer userId);
      boolean usernameIsExit(String username);
      ResultModel savePersonalDate(User user,String username);
+     ResultModel getUserPersonalInfoByUsername(String username);
+     
+     int updateByPrimaryKeySelective(User user);
+     
  }

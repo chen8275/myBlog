@@ -70,12 +70,27 @@
              if (usernameIsExit(user.getUsername())){
                  return ResultTools.result(1003,"",null);
              }
-             return ResultTools.result(200,"",null);
          }
          int status = userMapper.savePersonalDate(user, username);
          Map<String,Object> map = new HashMap<String,Object>();
          map.put("content",status);
          return ResultTools.result(200,"",map);
+     }
+    
+     @Override
+     public ResultModel getUserPersonalInfoByUsername(String username) {
+         
+         User user = userMapper.getUserPersonalInfo(username);
+         Map<String,Object> map = new HashMap<String,Object>();
+         map.put("content",user);
+         return ResultTools.result(200,"",map);
+     }
+    
+    
+     @Override
+     public int updateByPrimaryKeySelective(User user) {
+         
+         return userMapper.updateByPrimaryKeySelective(user);
      }
     
     
