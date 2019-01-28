@@ -108,12 +108,12 @@
         <!--右侧-->
         <div class="col-sm-8 col-md-9 main">
             
-            <div id="personalDate">
+            <div id="personalDate" th:object="${user}">
                 <form role="form">
                     <div class="form-group">
                         <label for="username" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名" th:value="*{username}">
                         </div>
                     </div>
                     <br><br><hr>
@@ -121,7 +121,7 @@
                     <div class="form-group">
                         <label for="phone" class="col-sm-2 control-label">手机</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号" th:value="*{phone}">
                         </div>
                     </div>
                     <br><br><hr>
@@ -129,7 +129,7 @@
                     <div class="form-group">
                         <label for="trueName" class="col-sm-2 control-label">姓名</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="trueName" id="trueName" placeholder="请输入姓名">
+                            <input type="text" class="form-control" name="trueName" id="trueName" placeholder="请输入姓名" th:value="*{trueName}">
                         </div>
                     </div>
                     <br><br><hr>
@@ -137,7 +137,7 @@
                     <div class="form-group">
                         <label for="birthday" class="col-sm-2 control-label">生日</label>
                         <div class="col-sm-6">
-                            <input class="form-control" type="text"  name="birthday" id="birthday" ng-model="effectivityendtime" data-date-format="yyyy-mm" placeholder="请输入生日">
+                            <input class="form-control" type="text"  name="birthday" id="birthday" ng-model="effectivityendtime" data-date-format="yyyy-mm" placeholder="请输入生日" th:value="*{birthday}">
                             <!--<input type="text" class="form-control" name="birthday" id="birthday" placeholder="请输入生日">-->
                         </div>
                     </div>
@@ -159,7 +159,7 @@
                     <div class="form-group">
                         <label for="email" class="col-sm-2 control-label">邮箱</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="email" id="email" placeholder="请输入邮箱">
+                            <input type="text" class="form-control" name="email" id="email" placeholder="请输入邮箱" th:value="*{email}" >
                         </div>
                     </div>
                     <br><br><hr>
@@ -167,7 +167,7 @@
                     <div class="form-group">
                         <label for="personalBrief" class="col-sm-2 control-label">个人简介</label>
                         <div class="col-sm-6">
-                            <textarea class="form-control" name="personalBrief" id="personalBrief"></textarea>
+                            <textarea class="form-control" name="personalBrief" id="personalBrief" th:value="*{personalBrief}"></textarea>
                         </div>
                     </div>
                     <br><br><hr>

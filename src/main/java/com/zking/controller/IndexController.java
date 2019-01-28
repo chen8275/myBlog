@@ -3,6 +3,7 @@ package com.zking.controller;
 import com.zking.entity.Article;
 import com.zking.entity.Categories;
 import com.zking.entity.User;
+import com.zking.mapper.UserMapper;
 import com.zking.service.CategoriesService;
 import com.zking.service.UserService;
 import org.slf4j.Logger;
@@ -28,6 +29,10 @@ public class IndexController {
     
     @Autowired
     CategoriesService categoriesService;
+    
+    @Autowired
+    UserMapper userMapper;
+    
     //index页面
     @RequestMapping("/index")
     public String index() {
@@ -46,7 +51,10 @@ public class IndexController {
     }
     //个人中心
     @RequestMapping("/user")
-    public String user(){
+    public String user(Model model,HttpServletRequest request){
+        String userName = request.getSession().getAttribute("userName").toString();
+        User user = userMapper.getUserPersonalInfo(userName);
+        model.addAttribute("user",user);
         return "user";
     }
     
