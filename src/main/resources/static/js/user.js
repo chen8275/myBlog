@@ -159,6 +159,78 @@ $(document).ready(function () {
 
 
 
+//填充用户评论
+    function putInCommentInfo(date) {
+        var comment = $('.comment');
+        comment.empty();
+        if(date['result'].length == 0){
+            comment.append($('<div class="noComment">' +
+                '你还没有任何评论哦' +
+                '</div>'));
+        } else {
+            var amList = $('<ul class="am-list"></ul>');
+            $.each(date['result'], function (index, obj) {
+                amList.append($('<li class="am-g am-list-item-dated">' +
+                    '<a target="_blank" href="/findArticle?articleId=' + obj['articleId'] + '&originalAuthor=' + obj['originalAuthor'] + '" style="padding: 5px 0 2px 0" class="leaveMessageTitle am-list-item-hd">' + obj['articleTitle'] + '</a>' +
+                    '<span class="am-list-date" style="color: #a7baaa">' + obj['commentDate'] + '</span>' +
+                    '<div class="leaveMessageContent">' +
+                    obj['answerer'] + '：' +obj['commentContent'] +
+                    '</div>' +
+                    '<span class="reply"><span class="replyNum">' + obj['replyNum'] + '</span>个回复</span>' +
+                    '</li>'))
+            });
+            var amListNewsBd = $('<div class="am-list-news-bd"></div>');
+            amListNewsBd.append(amList);
+            amListNewsBd.append($('<div class="my-row" id="page-father">' +
+                '<div id="commentPagination">' +
+                '<ul class="am-pagination  am-pagination-centered">' +
+                '<li class="am-disabled"><a href="#">&laquo; 上一页</a></li>' +
+                '<li class="am-active"><a href="#">1</a></li>' +
+                '<li><a href="#">2</a></li>' +
+                '<li><a href="#">3</a></li>' +
+                '<li><a href="#">4</a></li>' +
+                '<li><a href="#">5</a></li>' +
+                '<li><a href="#">下一页 &raquo;</a></li>' +
+                '</ul>' +
+                '</div>' +
+                '</div>'));
+            comment.append(amListNewsBd);
+        }
+    }
+//填充用户留言
+    function putInLeaveMessageInfo(data) {
+        var userLeaveMessage = $('.userLeaveMessage');
+        userLeaveMessage.empty();
+        if(data['result'].length == 0){
+            userLeaveMessage.append($('<div class="noLeaveMessage">' +
+                '你还没有任何留言哦' +
+                '</div>'))
+        } else {
+            var amList = $('<ul class="am-list"></ul>');
+            $.each(data['result'], function (index, obj) {
+                amList.append($('<li class="am-g am-list-item-dated">' +
+                    '<a target="_blank" href="/' + obj['pageName'] + '" class="leaveMessageTitle am-list-item-hd ">' + obj['answerer'] + "：" + obj['leaveMessageContent'] + '</a>' +
+                    '<span class="am-list-date">' + obj['leaveMessageDate'] + '</span>' +
+                    '</li>'));
+            })
+            var amListNewsBd = $('<div class="am-list-news-bd"></div>');
+            amListNewsBd.append(amList);
+            amListNewsBd.append($('<div class="my-row" id="page-father">' +
+                '<div id="leaveMessagePagination">' +
+                '<ul class="am-pagination  am-pagination-centered">' +
+                '<li class="am-disabled"><a href="">&laquo; 上一页</a></li>' +
+                '<li class="am-active"><a href="">1</a></li>' +
+                '<li><a href="">2</a></li>' +
+                '<li><a href="">3</a></li>' +
+                '<li><a href="">4</a></li>' +
+                '<li><a href="">5</a></li>' +
+                '<li><a href="">下一页 &raquo;</a></li>' +
+                '</ul>' +
+                '</div>' +
+                '</div>'));
+            userLeaveMessage.append(amListNewsBd);
+        }
+    }
 
 
 

@@ -153,4 +153,14 @@
       likes = #{likes,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    
+    
+  <select id="getUserLeaveMessage" resultType="com.zking.entity.LeaveMessageRecord" >
+        select
+        <include refid="Base_Column_List" />
+        from leave_message_record
+        where answererId = #{answererid,jdbcType=INTEGER}
+  </select>
+    
 </mapper>
