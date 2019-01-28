@@ -180,4 +180,48 @@
         from user
         where username = #{username}
     </select>
+    <select id="findUsernameByUsername" resultType="com.zking.entity.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where username = #{username}
+    </select>
+
+    <update id="savePersonalDate" parameterType="com.zking.entity.User" >
+        update user
+        <set >
+            <if test="avatarImgUrl != null" >
+                avatar_img_url = #{avatarImgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday != null" >
+                birthday = #{birthday,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null" >
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null" >
+                gender = #{gender,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null" >
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="personalBrief != null" >
+                personal_brief = #{personalBrief,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null" >
+                phone = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="recentlyLanded != null" >
+                recently_landed = #{recentlyLanded,jdbcType=VARCHAR},
+            </if>
+            <if test="trueName != null" >
+                true_name = #{trueName,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null" >
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where username = #{username,jdbcType=INTEGER}
+    </update>
+    
 </mapper>

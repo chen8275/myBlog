@@ -96,18 +96,74 @@ $(document).ready(function () {
 
 
     //保存个人资料
-    var savePersonalDateBtn = $('#savePersonalDateBtn');
-    var username = $('#username');
+    $('#savePersonalDateBtn').click(function () {
+        alert("hello");
+    })
+  
+    
+    /*var username = $('#username');
     var phone = $('#phone');
     var trueName = $('#trueName');
     var birthday = $('#birthday');
     var gender = $('#genderTable input');
     var email = $('#email');
     var personalBrief = $('#personalBrief');
-    
-    
-    
-    
-    
-    
+    savePersonalDateBtn.click(function () {
+        alert("hello");
+        var usernameValue = username.val();
+        var genderValue = "male";
+        if(usernameValue.length === 0){
+            alert("昵称不能为空");
+        } else if(!gender[0].checked && !gender[1].checked){
+            alert("性别不能为空");
+        } else {
+            if(gender[0].checked){
+                genderValue = "male";
+            } else {
+                genderValue = "female";
+            }
+            $.ajax({
+                type:'post',
+                url:'/savePersonalDate',
+                dataType:'json',
+                data:{
+                    username:username.val(),
+                    phone:phone.val(),
+                    trueName:trueName.val(),
+                    birthday:birthday.val(),
+                    gender:genderValue,
+                    email:email.val(),
+                    personalBrief:personalBrief.val()
+                    
+                },
+                success:function (data) {
+                    alert("hello");
+                    if(data['errcode'] == 404){
+                        $.get("/login",function(data,status,xhr){
+                            window.location.replace("/login");
+                        });
+                    } else {
+                        if(data['errcode'] == 200){
+                            alert("更改个人信息成功,重新登录后生效");
+                            $.get("/login",function(data,status,xhr){
+                                window.location.replace("/login");
+                            });
+                        } else if (data['errcode'] == 1003){
+                            dangerNotice("该昵称已被占用");
+                        }  else {
+                            dangerNotice("更改个人信息失败");
+                        }
+                    }
+                },
+                error:function () {
+                }
+            });
+        }
+    });
+*/
+
+
+
+
+
 });

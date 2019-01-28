@@ -30,4 +30,5 @@ public interface UserMapper {
     
     User findUsernameByUsername(String username);
     
+    int savePersonalDate(@Param("user") User user, @Param("username") String username);
 }

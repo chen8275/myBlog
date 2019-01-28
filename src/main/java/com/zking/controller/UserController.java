@@ -82,8 +82,22 @@
          }
     
      }
+     /**
+      * 保存个人信息
+      * @param user 用户
+      */
+     @PostMapping(value = "/savePersonalDate")
+     public ResultModel savePersonalDate(User user, HttpServletRequest request){
+         
+         String userName = request.getSession().getAttribute("userName").toString();
+         try {
+             return userService.savePersonalDate(user,userName);
+             
+         }catch (Exception e){
+             return ResultTools.result(404,e.getMessage(),null);
+         }
     
-     
+     }
     
     
     
