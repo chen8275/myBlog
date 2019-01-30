@@ -44,6 +44,17 @@ public class IndexController {
     public String register(){
         return "register";
     }
+    //判断是不是登陆状态，不是返回0
+    @RequestMapping("isLogin")
+    public int isLogin(HttpServletRequest request){
+        String userName = request.getSession().getAttribute("userName").toString();
+        if ("".equals(userName)||userName == "false"){
+            return 0;
+        }else 
+            {
+                return 1;
+            }
+    }
     //登陆页面
     @RequestMapping("/login")
     public String login(HttpServletRequest request){
