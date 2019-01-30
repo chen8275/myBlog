@@ -225,33 +225,16 @@
                             本人会长期清理无法访问的链接，请保证自己的链接长期有效<br><br>
                             有需要互换友链的朋友也可在下方给我留言。经核实后将上挂本站点 ^_^
                         </p>
+                        <br><br><br>
                     </div>
                 </div>
                
                 <!--留言-->
                 <div class="col-sm-9">
                     <div class="zhy-link-word">
-                        <div class="comment" style="margin: 50px auto 50px">
-                            <div class="comment-top">
-                                <div class="comment-top-input" th:if="${userName}">
-                                    <textarea id="comment" class="form-control" placeholder="客官，来说两句吧..." rows="3"></textarea>
-                                </div>
-                                <div class="comment-top-input" th:unless="${userName}">
-                                    <div class="goToLogin">
-                                        &nbsp;&nbsp;&nbsp;<a href="/front/login">登录</a>后才可以发表留言呦...
-                                    </div>
-                                </div>
-                                <div class="commentBtn">
-                                    <button id="commentBtn" type="button" class="am-btn am-btn-secondary">发表留言</button>
-                                </div>
-                            </div>
-                            <div class="comment-bottom">
-                                
-                            </div>
-                        </div>
+                            <div class="comment"></div>
                     </div>
                 </div>
-                
                 
                 
             </div>
@@ -305,5 +288,23 @@
 
 <script src="../js/all.js"></script>
 <script src="../js/leaveMessage.js"></script>
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="../js/Valine.min.js"></script>
+<script>
+    new Valine({
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV,
+        el: '.comment',
+        emoticon_url: 'https://cloud.panjunwen.com/alu',
+        emoticon_list: ["吐.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png"],
+        app_id: 'kdQs34lL7suNPnkPmq8APkA8-gzGzoHsz', // 这里填写上面得到的APP ID
+        app_key: 'YEXD5D7qjfwvA8C0LzUMpTvh', // 这里填写上面得到的APP KEY
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // 留言框占位提示文字
+    });
+</script>
 </body>
 </html>

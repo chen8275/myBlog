@@ -68,7 +68,9 @@
 <div id="main">
     <div class="container">
         <div class="row">
+            
             <div class="col-xs-offset-3 col-sm-9">
+                
                 <br><br>
                 <h3><em>chen</em></h3>
                 <br>
@@ -88,7 +90,18 @@
                 </blockquote>
                 <p><strong>个签：</strong>学会长大，学会承受。学会哭过之后，还可以微笑地拥抱爸爸妈妈。</p>
                 <p><strong>最后：</strong>昔风不起，唯有努力生存。</p>
+                <br><br><br>
+               
             </div>
+            
+            <!--留言-->
+            <div class="col-xs-offset-3 col-sm-6">
+                <div class="zhy-link-word">
+                    <div class="comment"></div>
+                </div>
+            </div>
+            
+            
         </div>
     </div>
 </div>
@@ -132,5 +145,20 @@
 
 
 <script src="../js/all.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="../js/Valine.min.js"></script>
+<script>
+    new Valine({
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV,
+        el: '.comment',
+        emoticon_url: 'https://cloud.panjunwen.com/alu',
+        emoticon_list: ["吐.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png"],
+        app_id: 'kdQs34lL7suNPnkPmq8APkA8-gzGzoHsz', // 这里填写上面得到的APP ID
+        app_key: 'YEXD5D7qjfwvA8C0LzUMpTvh', // 这里填写上面得到的APP KEY
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // 留言框占位提示文字
+    });
+</script>
 </body>
 </html>
