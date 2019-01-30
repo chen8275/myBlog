@@ -157,13 +157,22 @@
 
     
     
-  <select id="getUserLeaveMessage" resultType="com.zking.entity.LeaveMessageRecord" >
+    <select id="getUserLeaveMessage" resultType="com.zking.entity.LeaveMessageRecord" >
         select
         <include refid="Base_Column_List" />
       ,
         <include refid="Blob_Column_List" />
         from leave_message_record
         where answererId = #{answererid,jdbcType=INTEGER}
-  </select>
+    </select>
+    <insert id="insertLeaveMessage" parameterType="com.zking.entity.LeaveMessageRecord" >
+    insert into leave_message_record (id, pageName, pId, 
+      answererId, respondentId, leaveMessageDate, 
+      likes, leaveMessageContent)
+    values (#{id,jdbcType=INTEGER}, #{pagename,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
+      #{answererid,jdbcType=INTEGER}, #{respondentid,jdbcType=INTEGER}, #{leavemessagedate,jdbcType=VARCHAR}, 
+      #{likes,jdbcType=INTEGER}, #{leavemessagecontent,jdbcType=LONGVARCHAR})
+  </insert>
+    
     
 </mapper>

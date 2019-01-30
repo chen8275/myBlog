@@ -99,6 +99,7 @@
      }
      /**
       * 获取个人信息
+      * 
       */
      @RequestMapping(value = "/getUserPersonalInfo")
      public ResultModel getUserPersonalInfoByUsername(HttpServletRequest request){

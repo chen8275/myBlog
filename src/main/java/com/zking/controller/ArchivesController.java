@@ -8,34 +8,28 @@
  package com.zking.controller;
 
  import com.alibaba.fastjson.JSONObject;
- import com.zking.entity.Article;
- import com.zking.service.ArticleService;
- import com.zking.service.LeaveMessageService;
+ import com.zking.entity.Archives;
+ import com.zking.service.ArchiveService;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.RequestBody;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
 
- import javax.servlet.http.HttpServletRequest;
-
-
  /**
   * @auther chendesheng
-  * @date 2019/1/28
+  * @date 2019/1/30
   */
  @RestController
- @RequestMapping(value = "/leaveMessage")
- public class LeaveMessageController {
+ @RequestMapping(value = "/archives")
+ public class ArchivesController {
      
      @Autowired
-     LeaveMessageService leaveMessageService;
-    
-     @RequestMapping("/publishLeaveMessage")
-     public JSONObject publishLeaveMessage(String leaveMessageContent, String pageName, HttpServletRequest request){
-         String answerer = request.getSession().getAttribute("userName").toString();
+     ArchiveService archiveService;
+     @RequestMapping("/insertArchive")
+     public JSONObject insertArchive(@RequestBody Archives archives){
          JSONObject jsonObject = new JSONObject();
          try {
-             int status = leaveMessageService.insertLeaveMessage(leaveMessageContent,pageName,answerer);
+             int status = archiveService.insert(archives);
              jsonObject.put("msg:","插入成功");
              jsonObject.put("status:",status);
             
@@ -45,6 +39,4 @@
          }
          return jsonObject;
      }
-     
-    
  }

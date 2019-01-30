@@ -27,10 +27,10 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User user);
     
     int savePersonalDate();
-    
     User findUsernameByUsername(String username);
-    
     int savePersonalDate(@Param("user") User user, @Param("username") String username);
-    
     User getUserPersonalInfo(String username);
+    String findUsernameById(int id);
+    int findIdByUsername(String username);
+    
 }

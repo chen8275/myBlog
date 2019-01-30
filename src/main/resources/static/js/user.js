@@ -134,13 +134,13 @@ $(document).ready(function () {
                 success:function (data) {
                     alert("yes");
                     if(data['errcode'] == 404){
-                        $.get("/login",function(data,status,xhr){
+                        $.get("../front/login",function(data,status,xhr){
                             window.location.replace("/front/login");
                         });
                     } else {
                         if(data['errcode'] == 200){
                             alert("更改个人信息成功,重新登录后生效");
-                            $.get("/login",function(data,status,xhr){
+                            $.get("../front/login",function(data,status,xhr){
                                 window.location.replace("/front/login");
                             });
                         } else if (data['errcode'] == 1003){

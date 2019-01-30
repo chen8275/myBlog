@@ -12,4 +12,6 @@
   * @date 2019/1/18
   */
  public class ArticleWithBLOBs {
+     
+     
  }

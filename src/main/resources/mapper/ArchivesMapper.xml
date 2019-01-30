@@ -57,4 +57,15 @@
     set archiveName = #{archivename,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="findArchiveNameByArchiveName" resultType="java.lang.Integer" >
+        select
+        NULLIF(MAX(id),0)
+        from archives
+        where archiveName = #{archiveName,jdbcType=VARCHAR}
+  </select>
+  <insert id="addArchiveName" parameterType="com.zking.entity.Archives" >
+    insert into archives(archiveName)
+    values  (#{archivename,jdbcType=VARCHAR})
+  </insert>
 </mapper>

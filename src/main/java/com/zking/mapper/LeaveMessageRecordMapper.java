@@ -2,6 +2,7 @@ package com.zking.mapper;
 
 import com.zking.entity.LeaveMessageRecord;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 @Mapper
@@ -16,4 +17,6 @@ public interface LeaveMessageRecordMapper {
     
     
     List<LeaveMessageRecord> getUserLeaveMessage(int answererId);
+    int insertLeaveMessage(LeaveMessageRecord record);
+    
 }

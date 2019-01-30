@@ -1,6 +1,7 @@
 package com.zking.entity;
 
 public class Article {
+    
     private Integer id;
 
     private Long articleid;
@@ -30,11 +31,15 @@ public class Article {
     private Long nextarticleid;
     
     /**
+     * 文章摘要
+     */
+    private String articletabloid;
+    /**
      * 文章内容
      */
-    private String articleContent;
+    private String articlecontent;
     
-    public Article(Integer id, Long articleid, String author, String originalauthor, String articletitle, String articletags, String articletype, String articlecategories, String publishdate, String updatedate, String articleurl, Integer likes, Long lastarticleid, Long nextarticleid, String articleContent) {
+    public Article(Integer id, Long articleid, String author, String originalauthor, String articletitle, String articletags, String articletype, String articlecategories, String publishdate, String updatedate, String articleurl, Integer likes, Long lastarticleid, Long nextarticleid, String articletabloid, String articlecontent) {
         this.id = id;
         this.articleid = articleid;
         this.author = author;
@@ -49,15 +54,24 @@ public class Article {
         this.likes = likes;
         this.lastarticleid = lastarticleid;
         this.nextarticleid = nextarticleid;
-        this.articleContent = articleContent;
+        this.articletabloid = articletabloid;
+        this.articlecontent = articlecontent;
     }
     
-    public String getArticleContent() {
-        return articleContent;
+    public String getArticletabloid() {
+        return articletabloid;
     }
     
-    public void setArticleContent(String articleContent) {
-        this.articleContent = articleContent;
+    public void setArticletabloid(String articletabloid) {
+        this.articletabloid = articletabloid;
+    }
+    
+    public String getArticlecontent() {
+        return articlecontent;
+    }
+    
+    public void setArticlecontent(String articlecontent) {
+        this.articlecontent = articlecontent;
     }
     
     public Article() {

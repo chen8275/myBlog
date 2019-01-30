@@ -27,5 +27,6 @@
      ResultModel getUserPersonalInfoByUsername(String username);
      
      int updateByPrimaryKeySelective(User user);
-     
+     String findUsernameById(int id);
+     int findIdByUsername(String username);
  }

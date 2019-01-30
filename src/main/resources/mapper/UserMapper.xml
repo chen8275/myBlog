@@ -4,22 +4,25 @@
   <resultMap id="BaseResultMap" type="com.zking.entity.User" >
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="avatar_img_url" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="avatarImgUrl" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="birthday" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="gender" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="personal_brief" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="personalBrief" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="recently_landed" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="true_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="recentlyLanded" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="trueName" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+    
+    
   <sql id="Base_Column_List" >
-    id, avatar_img_url, birthday, email, gender, password, personal_brief, phone, recently_landed, 
-    true_name, username
+    id, avatarImgUrl, birthday, email, gender, password, personalBrief, phone, recentlyLanded, 
+    trueName, username
   </sql>
+    
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
@@ -31,10 +34,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.zking.entity.User" >
-    insert into user (id, avatar_img_url, birthday, 
+    insert into user (id, avatarImgUrl, birthday, 
       email, gender, password, 
-      personal_brief, phone, recently_landed, 
-      true_name, username)
+      personalBrief, phone, recentlyLanded, 
+      trueName, username)
     values (#{id,jdbcType=INTEGER}, #{avatarImgUrl,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{personalBrief,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{recentlyLanded,jdbcType=VARCHAR}, 
@@ -118,7 +121,7 @@
     update user
     <set >
       <if test="avatarImgUrl != null" >
-        avatar_img_url = #{avatarImgUrl,jdbcType=VARCHAR},
+          avatarImgUrl = #{avatarImgUrl,jdbcType=VARCHAR},
       </if>
       <if test="birthday != null" >
         birthday = #{birthday,jdbcType=VARCHAR},
@@ -133,16 +136,16 @@
         password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="personalBrief != null" >
-        personal_brief = #{personalBrief,jdbcType=VARCHAR},
+          personalBrief = #{personalBrief,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
       </if>
       <if test="recentlyLanded != null" >
-        recently_landed = #{recentlyLanded,jdbcType=VARCHAR},
+          recentlyLanded = #{recentlyLanded,jdbcType=VARCHAR},
       </if>
       <if test="trueName != null" >
-        true_name = #{trueName,jdbcType=VARCHAR},
+          trueName = #{trueName,jdbcType=VARCHAR},
       </if>
       <if test="username != null" >
         username = #{username,jdbcType=VARCHAR},
@@ -155,15 +158,15 @@
     
   <update id="updateByPrimaryKey" parameterType="com.zking.entity.User" >
     update user
-    set avatar_img_url = #{avatarImgUrl,jdbcType=VARCHAR},
+    set avatarImgUrl = #{avatarImgUrl,jdbcType=VARCHAR},
       birthday = #{birthday,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      personal_brief = #{personalBrief,jdbcType=VARCHAR},
+      personalBrief = #{personalBrief,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      recently_landed = #{recentlyLanded,jdbcType=VARCHAR},
-      true_name = #{trueName,jdbcType=VARCHAR},
+      recentlyLanded = #{recentlyLanded,jdbcType=VARCHAR},
+      trueName = #{trueName,jdbcType=VARCHAR},
       username = #{username,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -198,9 +201,9 @@
     </select>
     <update id="savePersonalDate" parameterType="com.zking.entity.User" >
         update user
-        <set >
+        <set>
             <if test="user.avatarImgUrl != null" >
-                avatar_img_url = #{user.avatarImgUrl,jdbcType=VARCHAR},
+                avatarImgUrl = #{user.avatarImgUrl,jdbcType=VARCHAR},
             </if>
             <if test="user.birthday != null" >
                 birthday = #{user.birthday,jdbcType=VARCHAR},
@@ -215,16 +218,16 @@
                 password = #{user.password,jdbcType=VARCHAR},
             </if>
             <if test="user.personalBrief != null" >
-                personal_brief = #{user.personalBrief,jdbcType=VARCHAR},
+                personalBrief = #{user.personalBrief,jdbcType=VARCHAR},
             </if>
             <if test="user.phone != null" >
                 phone = #{user.phone,jdbcType=VARCHAR},
             </if>
             <if test="user.recentlyLanded != null" >
-                recently_landed = #{user.recentlyLanded,jdbcType=VARCHAR},
+                recentlyLanded = #{user.recentlyLanded,jdbcType=VARCHAR},
             </if>
             <if test="user.trueName != null" >
-                true_name = #{user.trueName,jdbcType=VARCHAR},
+                trueName = #{user.trueName,jdbcType=VARCHAR},
             </if>
             <if test="user.username != null" >
                 username = #{user.username,jdbcType=VARCHAR},
@@ -232,5 +235,16 @@
         </set>
         where username = #{username,jdbcType=INTEGER}
     </update>
-    
+    <select id="findUsernameById" resultType="java.lang.String">
+        select
+        username
+        from user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="findIdByUsername" resultType="java.lang.Integer">
+        select
+        id
+        from user
+        where username = #{username,jdbcType=INTEGER}
+    </select>
 </mapper>

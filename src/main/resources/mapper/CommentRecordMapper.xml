@@ -13,6 +13,7 @@
       <arg column="likes" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
+    
   <resultMap id="ResultMapWithBLOBs" type="com.zking.entity.CommentRecord" >
     <constructor >
       <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
@@ -26,6 +27,8 @@
       <arg column="commentContent" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+    
+    
   <sql id="Base_Column_List" >
     id, pId, articleId, originalAuthor, answererId, respondentId, commentDate, likes
   </sql>

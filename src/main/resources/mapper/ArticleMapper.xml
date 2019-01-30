@@ -39,13 +39,16 @@
       <arg column="articleTabloid" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+    
   <sql id="Base_Column_List" >
     id, articleId, author, originalAuthor, articleTitle, articleTags, articleType, articleCategories, 
     publishDate, updateDate, articleUrl, likes, lastArticleId, nextArticleId
   </sql>
+    
   <sql id="Blob_Column_List" >
     articleContent, articleTabloid
   </sql>
+    
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -58,8 +61,9 @@
     delete from article
     where id = #{id,jdbcType=INTEGER}
   </delete>
+    
   <insert id="insert" parameterType="com.zking.entity.ArticleWithBLOBs" >
-    insert into article (id, articleId, author, 
+    insert into article(id, articleId, author, 
       originalAuthor, articleTitle, articleTags, 
       articleType, articleCategories, publishDate, 
       updateDate, articleUrl, likes, 
@@ -72,110 +76,109 @@
       #{lastarticleid,jdbcType=BIGINT}, #{nextarticleid,jdbcType=BIGINT}, #{articlecontent,jdbcType=LONGVARCHAR}, 
       #{articletabloid,jdbcType=LONGVARCHAR})
   </insert>
+    
   <insert id="insertSelective" parameterType="com.zking.entity.ArticleWithBLOBs" >
     insert into article
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="articleid != null" >
+      <if test="article.articleid != null" >
         articleId,
       </if>
-      <if test="author != null" >
+      <if test="article.author != null" >
         author,
       </if>
-      <if test="originalauthor != null" >
+      <if test="article.originalauthor != null" >
         originalAuthor,
       </if>
-      <if test="articletitle != null" >
+      <if test="article.articletitle != null" >
         articleTitle,
       </if>
-      <if test="articletags != null" >
+      <if test="article.articletags != null" >
         articleTags,
       </if>
-      <if test="articletype != null" >
+      <if test="article.articletype != null" >
         articleType,
       </if>
-      <if test="articlecategories != null" >
+      <if test="article.articlecategories != null" >
         articleCategories,
       </if>
-      <if test="publishdate != null" >
+      <if test="article.publishdate != null" >
         publishDate,
       </if>
-      <if test="updatedate != null" >
+      <if test="article.updatedate != null" >
         updateDate,
       </if>
-      <if test="articleurl != null" >
+      <if test="article.articleurl != null" >
         articleUrl,
       </if>
-      <if test="likes != null" >
+      <if test="article.likes != null" >
         likes,
       </if>
-      <if test="lastarticleid != null" >
+      <if test="article.lastarticleid != null" >
         lastArticleId,
       </if>
-      <if test="nextarticleid != null" >
+      <if test="article.nextarticleid != null" >
         nextArticleId,
       </if>
-      <if test="articlecontent != null" >
+      <if test="article.articlecontent != null" >
         articleContent,
       </if>
-      <if test="articletabloid != null" >
+      <if test="article.articletabloid != null" >
         articleTabloid,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
+      <if test="article.articleid != null" >
+        #{article.articleid,jdbcType=BIGINT},
       </if>
-      <if test="articleid != null" >
-        #{articleid,jdbcType=BIGINT},
+      <if test="article.author != null" >
+        #{article.author,jdbcType=VARCHAR},
       </if>
-      <if test="author != null" >
-        #{author,jdbcType=VARCHAR},
+      <if test="article.originalauthor != null" >
+        #{article.originalauthor,jdbcType=VARCHAR},
       </if>
-      <if test="originalauthor != null" >
-        #{originalauthor,jdbcType=VARCHAR},
+      <if test="article.articletitle != null" >
+        #{article.articletitle,jdbcType=VARCHAR},
       </if>
-      <if test="articletitle != null" >
-        #{articletitle,jdbcType=VARCHAR},
+      <if test="article.articletags != null" >
+        #{article.articletags,jdbcType=VARCHAR},
       </if>
-      <if test="articletags != null" >
-        #{articletags,jdbcType=VARCHAR},
+      <if test="article.articletype != null" >
+        #{article.articletype,jdbcType=VARCHAR},
       </if>
-      <if test="articletype != null" >
-        #{articletype,jdbcType=VARCHAR},
+      <if test="article.articlecategories != null" >
+        #{article.articlecategories,jdbcType=VARCHAR},
       </if>
-      <if test="articlecategories != null" >
-        #{articlecategories,jdbcType=VARCHAR},
+      <if test="article.publishdate != null" >
+        #{article.publishdate,jdbcType=VARCHAR},
       </if>
-      <if test="publishdate != null" >
-        #{publishdate,jdbcType=VARCHAR},
+      <if test="article.updatedate != null" >
+        #{article.updatedate,jdbcType=VARCHAR},
       </if>
-      <if test="updatedate != null" >
-        #{updatedate,jdbcType=VARCHAR},
+      <if test="article.articleurl != null" >
+        #{article.articleurl,jdbcType=VARCHAR},
       </if>
-      <if test="articleurl != null" >
-        #{articleurl,jdbcType=VARCHAR},
+      <if test="article.likes != null" >
+        #{article.likes,jdbcType=INTEGER},
       </if>
-      <if test="likes != null" >
-        #{likes,jdbcType=INTEGER},
+      <if test="article.lastarticleid != null" >
+        #{article.lastarticleid,jdbcType=BIGINT},
       </if>
-      <if test="lastarticleid != null" >
-        #{lastarticleid,jdbcType=BIGINT},
+      <if test="article.nextarticleid != null" >
+        #{article.nextarticleid,jdbcType=BIGINT},
       </if>
-      <if test="nextarticleid != null" >
-        #{nextarticleid,jdbcType=BIGINT},
+      <if test="article.articlecontent != null" >
+        #{article.articlecontent,jdbcType=LONGVARCHAR},
       </if>
-      <if test="articlecontent != null" >
-        #{articlecontent,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="articletabloid != null" >
-        #{articletabloid,jdbcType=LONGVARCHAR},
+      <if test="article.articletabloid != null" >
+        #{article.articletabloid,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.ArticleWithBLOBs" >
+    
+    
+    
+    
+    <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.ArticleWithBLOBs" >
     update article
     <set >
       <if test="articleid != null" >
@@ -225,8 +228,8 @@
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zking.entity.ArticleWithBLOBs" >
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zking.entity.ArticleWithBLOBs" >
     update article
     set articleId = #{articleid,jdbcType=BIGINT},
       author = #{author,jdbcType=VARCHAR},
@@ -244,8 +247,8 @@
       articleContent = #{articlecontent,jdbcType=LONGVARCHAR},
       articleTabloid = #{articletabloid,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.zking.entity.Article" >
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zking.entity.Article" >
     update article
     set articleId = #{articleid,jdbcType=BIGINT},
       author = #{author,jdbcType=VARCHAR},
@@ -261,5 +264,156 @@
       lastArticleId = #{lastarticleid,jdbcType=BIGINT},
       nextArticleId = #{nextarticleid,jdbcType=BIGINT}
     where id = #{id,jdbcType=INTEGER}
-  </update>
+    </update>
+    
+    <select id="findEndArticleId" resultType="com.zking.entity.Article">
+        select
+        articleId
+        from article
+        order by id desc limit 1
+    </select>
+    
+    
+    
+    
+    
+    <insert id="insertArticle" parameterType="com.zking.entity.ArticleWithBLOBs" >
+        insert into article
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="articleid != null" >
+                articleId,
+            </if>
+            <if test="author != null" >
+                author,
+            </if>
+            <if test="originalauthor != null" >
+                originalAuthor,
+            </if>
+            <if test="articletitle != null" >
+                articleTitle,
+            </if>
+            <if test="articletags != null" >
+                articleTags,
+            </if>
+            <if test="articletype != null" >
+                articleType,
+            </if>
+            <if test="articlecategories != null" >
+                articleCategories,
+            </if>
+            <if test="publishdate != null" >
+                publishDate,
+            </if>
+            <if test="updatedate != null" >
+                updateDate,
+            </if>
+            <if test="articleurl != null" >
+                articleUrl,
+            </if>
+            <if test="likes != null" >
+                likes,
+            </if>
+            <if test="lastarticleid != null" >
+                lastArticleId,
+            </if>
+            <if test="nextarticleid != null" >
+                nextArticleId,
+            </if>
+            <if test="articlecontent != null" >
+                articleContent,
+            </if>
+            <if test="articletabloid != null" >
+                articleTabloid,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="articleid != null" >
+                #{articleid,jdbcType=BIGINT},
+            </if>
+            <if test="author != null" >
+                #{author,jdbcType=VARCHAR},
+            </if>
+            <if test="originalauthor != null" >
+                #{originalauthor,jdbcType=VARCHAR},
+            </if>
+            <if test="articletitle != null" >
+                #{articletitle,jdbcType=VARCHAR},
+            </if>
+            <if test="articletags != null" >
+                #{articletags,jdbcType=VARCHAR},
+            </if>
+            <if test="articletype != null" >
+                #{articletype,jdbcType=VARCHAR},
+            </if>
+            <if test="articlecategories != null" >
+                #{articlecategories,jdbcType=VARCHAR},
+            </if>
+            <if test="publishdate != null" >
+                #{publishdate,jdbcType=VARCHAR},
+            </if>
+            <if test="updatedate != null" >
+                #{updatedate,jdbcType=VARCHAR},
+            </if>
+            <if test="articleurl != null" >
+                #{articleurl,jdbcType=VARCHAR},
+            </if>
+            <if test="likes != null" >
+                #{likes,jdbcType=INTEGER},
+            </if>
+            <if test="lastarticleid != null" >
+                #{lastarticleid,jdbcType=BIGINT},
+            </if>
+            <if test="nextarticleid != null" >
+                #{nextarticleid,jdbcType=BIGINT},
+            </if>
+            <if test="articlecontent != null" >
+                #{articlecontent,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="articletabloid != null" >
+                #{articletabloid,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    
+    <update id="updateArticleLastId" parameterType="com.zking.entity.Article" >
+    update article
+    set
+      lastArticleId = #{lastarticleid,jdbcType=BIGINT}
+    where articleId = #{articleid,jdbcType=BIGINT}
+    </update>
+    <update id="updateArticleNextId" parameterType="com.zking.entity.Article" >
+    update article
+    set
+      nextArticleId = #{nextarticleid,jdbcType=BIGINT}
+    where articleId = #{articleid,jdbcType=BIGINT}
+    </update>
+    <update id="updateArticleById" parameterType="com.zking.entity.Article" >
+    update article
+    set articleId = #{articleid,jdbcType=BIGINT},
+      author = #{author,jdbcType=VARCHAR},
+      originalAuthor = #{originalauthor,jdbcType=VARCHAR},
+      articleTitle = #{articletitle,jdbcType=VARCHAR},
+      articleTags = #{articletags,jdbcType=VARCHAR},
+      articleType = #{articletype,jdbcType=VARCHAR},
+      articleCategories = #{articlecategories,jdbcType=VARCHAR},
+      publishDate = #{publishdate,jdbcType=VARCHAR},
+      updateDate = #{updatedate,jdbcType=VARCHAR},
+      articleUrl = #{articleurl,jdbcType=VARCHAR},
+      likes = #{likes,jdbcType=INTEGER},
+      lastArticleId = #{lastarticleid,jdbcType=BIGINT},
+      nextArticleId = #{nextarticleid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="getArticleUrlById" parameterType="java.lang.Integer">
+        select
+        articleId,originalAuthor
+        from article
+        where id = #{id,jdbcType=INTEGER}
+    </select>
 </mapper>

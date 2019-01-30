@@ -30,9 +30,11 @@
      CommentRecordMapper commentRecordMapper;
      @Override
      public ResultModel getUserComment(int answererId) {
+         
          List<CommentRecord> commentRecords = commentRecordMapper.getUserComment(answererId);
          HashMap<String,Object> map = new HashMap<>();
          map.put("content:",commentRecords);
          return ResultTools.result(200,"",map);
+         
      }
  }

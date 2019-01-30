@@ -10,35 +10,30 @@
  import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Article;
  import com.zking.service.ArticleService;
- import com.zking.service.LeaveMessageService;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.RequestBody;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
-
- import javax.servlet.http.HttpServletRequest;
-
-
  /**
   * @auther chendesheng
-  * @date 2019/1/28
+  * @date 2019/1/29
   */
  @RestController
- @RequestMapping(value = "/leaveMessage")
- public class LeaveMessageController {
+ @RequestMapping(value = "/article")
+ public class ArticleController {
+     
      
      @Autowired
-     LeaveMessageService leaveMessageService;
-    
-     @RequestMapping("/publishLeaveMessage")
-     public JSONObject publishLeaveMessage(String leaveMessageContent, String pageName, HttpServletRequest request){
-         String answerer = request.getSession().getAttribute("userName").toString();
+     ArticleService articleService;
+     @RequestMapping("/insertArticle")
+     public JSONObject insertArticle(@RequestBody Article article){
          JSONObject jsonObject = new JSONObject();
          try {
-             int status = leaveMessageService.insertLeaveMessage(leaveMessageContent,pageName,answerer);
+             int status = articleService.insert(article);
+
              jsonObject.put("msg:","插入成功");
              jsonObject.put("status:",status);
-            
+             
          }catch (Exception e){
              e.printStackTrace();
              jsonObject.put("code:",500);
@@ -46,5 +41,11 @@
          return jsonObject;
      }
      
-    
+     
+     
+     
+     
+     
+     
+     
  }

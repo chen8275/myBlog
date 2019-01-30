@@ -93,5 +93,15 @@
          return userMapper.updateByPrimaryKeySelective(user);
      }
     
+     @Override
+     public String findUsernameById(int id) {
+         return userMapper.findUsernameById(id);
+     }
+    
+     @Override
+     public int findIdByUsername(String username) {
+         return userMapper.findIdByUsername(username);
+     }
+    
     
  }

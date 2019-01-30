@@ -17,17 +17,6 @@ public class LeaveMessageRecord {
 
     private String leavemessagecontent;
 
-    public LeaveMessageRecord(Integer id, String pagename, Integer pid, Integer answererid, Integer respondentid, String leavemessagedate, Integer likes, String leavemessagecontent) {
-        this.id = id;
-        this.pagename = pagename;
-        this.pid = pid;
-        this.answererid = answererid;
-        this.respondentid = respondentid;
-        this.leavemessagedate = leavemessagedate;
-        this.likes = likes;
-        this.leavemessagecontent = leavemessagecontent;
-    }
-
     public LeaveMessageRecord() {
         super();
     }
@@ -79,7 +68,6 @@ public class LeaveMessageRecord {
     public void setLeavemessagedate(String leavemessagedate) {
         this.leavemessagedate = leavemessagedate == null ? null : leavemessagedate.trim();
     }
-
     public Integer getLikes() {
         return likes;
     }
@@ -94,5 +82,13 @@ public class LeaveMessageRecord {
 
     public void setLeavemessagecontent(String leavemessagecontent) {
         this.leavemessagecontent = leavemessagecontent == null ? null : leavemessagecontent.trim();
+    }
+    
+    public LeaveMessageRecord(String pagename, Integer answererid, Integer respondentid, String leavemessagedate, String leavemessagecontent) {
+        this.pagename = pagename;
+        this.answererid = answererid;
+        this.respondentid = respondentid;
+        this.leavemessagedate = leavemessagedate;
+        this.leavemessagecontent = leavemessagecontent;
     }
 }

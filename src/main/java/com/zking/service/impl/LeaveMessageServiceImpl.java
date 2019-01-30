@@ -6,11 +6,16 @@
   * into with Tuhu.cn
   */
  package com.zking.service.impl;
+ import com.alibaba.fastjson.JSONArray;
+ import com.alibaba.fastjson.JSONObject;
+ import com.github.pagehelper.PageHelper;
+ import com.github.pagehelper.PageInfo;
+ import com.zking.constant.SiteOwner;
  import com.zking.entity.LeaveMessageRecord;
  import com.zking.mapper.LeaveMessageRecordMapper;
  import com.zking.service.LeaveMessageService;
- import com.zking.util.ResultModel;
- import com.zking.util.ResultTools;
+ import com.zking.service.UserService;
+ import com.zking.util.TimeUtil;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
 
@@ -23,15 +28,20 @@
   */
  @Service
  public class LeaveMessageServiceImpl implements LeaveMessageService {
+     
      @Autowired
      LeaveMessageRecordMapper leaveMessageRecordMapper;
-     
+     @Autowired
+     UserService userService;
+    
+    
      @Override
-     public ResultModel getUserLeaveMessage(int answererId) {
-         List<LeaveMessageRecord> leaveMessageRecords = leaveMessageRecordMapper.getUserLeaveMessage(answererId);
-         HashMap<String,Object> map = new HashMap<>();
-         map.put("content:",leaveMessageRecords);
-         return ResultTools.result(200,"",map);
+     public int insertLeaveMessage(String leaveMessageContent, String pageName, String answerer) {
+         
+         TimeUtil timeUtil = new TimeUtil();
+         String nowStr = timeUtil.getFormatDateForFive();
+         LeaveMessageRecord leaveMessage = new LeaveMessageRecord(pageName, userService.findIdByUsername(answerer), userService.findIdByUsername(SiteOwner.SITE_OWNER), nowStr, leaveMessageContent);
+         
+         return leaveMessageRecordMapper.insertLeaveMessage(leaveMessage);
      }
-     
  }

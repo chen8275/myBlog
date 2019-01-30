@@ -46,7 +46,9 @@ public class IndexController {
     }
     //登陆页面
     @RequestMapping("/login")
-    public String login(){
+    public String login(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.setAttribute("userName","false");
         return "login";
     }
     //个人中心
