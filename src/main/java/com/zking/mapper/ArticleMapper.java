@@ -4,6 +4,8 @@ import com.zking.entity.Article;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 @Mapper
 public interface ArticleMapper { 
     
@@ -29,6 +31,8 @@ public interface ArticleMapper {
     void updateArticleNextId(@Param("nextArticleId") long nextArticleId, @Param("articleId") long articleId);
     void updateArticleById(Article article);
     Article getArticleUrlById(Integer id);
+    List<Article> findArticleByCategory(String category);
+    List<Article> findAllArticlesPartInfo();
     
     
 }

@@ -42,4 +42,12 @@
       */
      @Transactional
      JSONObject updateArticleById(Article article);
+     /**
+      * 分页获得该分类下的所有文章
+      * @param category 分类名
+      * @param rows 一页大小
+      * @param pageNum 页数
+      * @return
+      */
+     JSONObject findArticleByCategory(String category, int rows, int pageNum);
  }

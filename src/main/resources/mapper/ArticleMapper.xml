@@ -416,4 +416,21 @@
         from article
         where id = #{id,jdbcType=INTEGER}
     </select>
+    <select id="findArticleByCategory" resultType="com.zking.entity.Article">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from article
+        where articleCategories = #{category,jdbcType=VARCHAR}
+        order by id desc
+    </select>
+    <select id="findAllArticlesPartInfo" resultType="com.zking.entity.Article">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from article
+        order by id desc
+    </select>
 </mapper>

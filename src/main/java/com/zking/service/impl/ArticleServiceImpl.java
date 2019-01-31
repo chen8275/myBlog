@@ -7,7 +7,11 @@
   */
  package com.zking.service.impl;
 
+ import com.alibaba.fastjson.JSONArray;
  import com.alibaba.fastjson.JSONObject;
+ import com.github.pagehelper.PageHelper;
+ import com.github.pagehelper.PageInfo;
+ import com.zking.component.StringAndArray;
  import com.zking.entity.Article;
  import com.zking.mapper.ArticleMapper;
  import com.zking.service.ArchiveService;
@@ -18,6 +22,7 @@
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
 
+ import java.util.List;
 
 
  /**
@@ -118,5 +123,60 @@
          //本博客中的URL
          articleReturn.put("articleUrl","/findArticle?articleId=" + a.getArticleid() + "&originalAuthor=" + a.getOriginalauthor());
          return articleReturn;
+     }
+    
+     @Override
+     public JSONObject findArticleByCategory(String category, int rows, int pageNum) {
+         List<Article> articles;
+         PageInfo<Article> pageInfo;
+         JSONArray articleJsonArray = new JSONArray();
+         PageHelper.startPage(pageNum, rows);
+         if("".equals(category)){
+             articles = articleMapper.findAllArticlesPartInfo();
+             category = "全部分类";
+         } else {
+             articles = articleMapper.findArticleByCategory(category);
+         }
+         pageInfo = new PageInfo<>(articles);
+         articleJsonArray = timeLineReturn(articleJsonArray, articles);
+         JSONObject pageJson = new JSONObject();
+         pageJson.put("pageNum",pageInfo.getPageNum());
+         pageJson.put("pageSize",pageInfo.getPageSize());
+         pageJson.put("total",pageInfo.getTotal());
+         pageJson.put("pages",pageInfo.getPages());
+         pageJson.put("isFirstPage",pageInfo.isIsFirstPage());
+         pageJson.put("isLastPage",pageInfo.isIsLastPage());
+    
+         JSONObject jsonObject = new JSONObject();
+         jsonObject.put("status",200);
+         jsonObject.put("result",articleJsonArray);
+         jsonObject.put("category",category);
+         jsonObject.put("pageInfo",pageJson);
+    
+         return jsonObject;
+     }
+    
+    
+    
+    
+    
+    
+     /**
+      * 封装时间线中数据成JsonArray形式
+      */
+     private JSONArray timeLineReturn(JSONArray articleJsonArray, List<Article> articles){
+         JSONObject articleJson;
+         for(Article article : articles){
+             String[] tagsArray = StringAndArray.stringToArray(article.getArticletags());
+             articleJson = new JSONObject();
+             articleJson.put("articleId", article.getArticleid());
+             articleJson.put("originalAuthor", article.getOriginalauthor());
+             articleJson.put("articleTitle", article.getArticletitle());
+             articleJson.put("articleCategories", article.getArticlecategories());
+             articleJson.put("publishDate", article.getPublishdate());
+             articleJson.put("articleTags", tagsArray);
+             articleJsonArray.add(articleJson);
+         }
+         return articleJsonArray;
      }
  }
