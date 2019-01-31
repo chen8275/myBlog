@@ -100,7 +100,7 @@ function ajaxFirst(currentPage) {
             if(data['status'] == 200){
                 putInAllTags(data);
             } else {
-                
+                alert("hello");
                 putInTagArticleInfo(data);
                 scrollTo(0,0);//回到顶部
 
