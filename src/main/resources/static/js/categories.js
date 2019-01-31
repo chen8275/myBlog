@@ -66,8 +66,8 @@ $.ajax({
 
 function ajaxFirst(currentPage,category1) {
     $.ajax({
-        type:'GET',
-        url:'/getCategoryArticle',
+        type:'POST',
+        url:'../categories/getCategoryArticle',
         dataType:'json',
         data:{
             category:category1,
@@ -101,7 +101,7 @@ ajaxFirst(1,category);
 
 $.ajax({
     type:'GET',
-    url:'/findCategoriesNameAndArticleNum',
+    url:'../categories/findCategoriesNameAndArticleNum',
     dataType:'json',
     data:{
     },

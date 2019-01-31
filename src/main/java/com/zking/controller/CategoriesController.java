@@ -15,10 +15,7 @@
  import com.zking.util.ResultTools;
  import com.zking.util.TransCodingUtil;
  import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.web.bind.annotation.GetMapping;
- import org.springframework.web.bind.annotation.RequestMapping;
- import org.springframework.web.bind.annotation.RequestParam;
- import org.springframework.web.bind.annotation.RestController;
+ import org.springframework.web.bind.annotation.*;
 
  import javax.servlet.http.HttpServletRequest;
  import java.util.HashMap;
@@ -30,7 +27,7 @@
   * @date 2019/1/22
   */
  @RestController
- @RequestMapping(value = "/Categories")
+ @RequestMapping(value = "/categories")
  public class CategoriesController {
      
      @Autowired
@@ -56,7 +53,7 @@
       * 获得分类下的所有文章
       * @return
       */
-     @GetMapping("/getCategoryArticle")
+     @PostMapping("/getCategoryArticle")
      public JSONObject getCategoryArticle(@RequestParam("category") String category,
                                           HttpServletRequest request){
         
