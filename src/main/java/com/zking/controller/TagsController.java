@@ -12,10 +12,7 @@
  import com.zking.service.TagService;
  import com.zking.util.TransCodingUtil;
  import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.web.bind.annotation.PostMapping;
- import org.springframework.web.bind.annotation.RequestMapping;
- import org.springframework.web.bind.annotation.RequestParam;
- import org.springframework.web.bind.annotation.RestController;
+ import org.springframework.web.bind.annotation.*;
 
  import javax.servlet.http.HttpServletRequest;
 
@@ -31,12 +28,18 @@
      @Autowired
      ArticleService articleService;
     
+     @GetMapping("/getTagCloud")
+     public JSONObject getTagCloud(){
+         return tagService.findTagsCloud();
+     }
+    
+    
      /**
       * 分页获得该标签下的文章
       * @param tag
       * @return
       */
-     @PostMapping("/getTagArticle")
+     @RequestMapping("/getTagArticle")
      public JSONObject getTagArticle(@RequestParam("tag") String tag,
                                      HttpServletRequest request){
          try {
