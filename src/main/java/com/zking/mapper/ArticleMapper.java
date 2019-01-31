@@ -34,5 +34,7 @@ public interface ArticleMapper {
     List<Article> findArticleByCategory(String category);
     List<Article> findAllArticlesPartInfo();
     
+    int countArticleCategoryByCategory(@Param("category") String category);
+    
     
 }

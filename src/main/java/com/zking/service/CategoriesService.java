@@ -7,6 +7,7 @@
   */
  package com.zking.service;
 
+ import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Categories;
 
  import java.util.List;
@@ -16,5 +17,15 @@
   * @date 2019/1/22
   */
  public interface CategoriesService {
+     
+     /**
+      * 获得所有分类信息
+      * @return
+      */
      List<Categories> list();
+     /**
+      * 获得所有的分类以及该分类的文章总数
+      * @return
+      */
+     JSONObject findCategoriesNameAndArticleNum();
  }

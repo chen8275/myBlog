@@ -433,4 +433,10 @@
         from article
         order by id desc
     </select>
+    <select id="countArticleCategoryByCategory" resultType="java.lang.Integer">
+        select
+        count(*)
+        from article
+        where articleCategories = #{category,jdbcType=VARCHAR}
+    </select>
 </mapper>

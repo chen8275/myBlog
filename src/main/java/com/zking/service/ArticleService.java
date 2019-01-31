@@ -50,4 +50,10 @@
       * @return
       */
      JSONObject findArticleByCategory(String category, int rows, int pageNum);
+     /**
+      * 计算该分类文章的数目
+      * @param category 分类名
+      * @return 该分类下文章的数目
+      */
+     int countArticleCategoryByCategory(String category);
  }

@@ -20,4 +20,6 @@ public interface CategoriesMapper {
     int updateByPrimaryKey(Categories record);
     
     List<Categories> listCategories();
+    
+    List<String> findCategoriesName();
 }

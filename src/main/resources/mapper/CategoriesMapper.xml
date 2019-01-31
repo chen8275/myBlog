@@ -63,5 +63,10 @@
         select
         <include refid="Base_Column_List" />
         from categories
-  </select>  
+  </select>
+    <select id="findCategoriesName" resultType="java.lang.String">
+        select
+        categoryname
+        from categories
+    </select>
 </mapper>

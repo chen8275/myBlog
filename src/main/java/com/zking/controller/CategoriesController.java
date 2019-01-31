@@ -63,4 +63,15 @@
         
          return articleService.findArticleByCategory(category, rows, pageNum);
      }
+    
+     /**
+      * 获得所有分类名以及每个分类名的文章数目
+      * @return
+      */
+     @GetMapping("/findCategoriesNameAndArticleNum")
+     public JSONObject findCategoriesNameAndArticleNum(){
+        
+         return categoriesService.findCategoriesNameAndArticleNum();
+     }
+    
  }

@@ -179,4 +179,9 @@
          }
          return articleJsonArray;
      }
+    
+     @Override
+     public int countArticleCategoryByCategory(String category) {
+         return articleMapper.countArticleCategoryByCategory(category);
+     }
  }
