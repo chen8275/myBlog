@@ -70,4 +70,14 @@
       tagSize = #{tagsize,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+
+    <select id="findTagsCloud" resultType="com.zking.entity.Tags">
+        select
+        <include refid="Base_Column_List" />
+        from tags
+        order by id desc
+    </select>  
+    
 </mapper>

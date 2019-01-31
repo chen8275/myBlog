@@ -37,7 +37,10 @@
      CategoriesService categoriesService;
      @Autowired
      ArticleService articleService;
-     
+     /**
+      * 查找所有分类
+      * @return
+      */
      @RequestMapping(value = "/listCategories")
      public ResultModel selectUserByAll(){
         try {
@@ -49,7 +52,10 @@
             return ResultTools.result(404,e.getMessage(),null);
         }
     }
-    
+     /**
+      * 获得分类下的所有文章
+      * @return
+      */
      @GetMapping("/getCategoryArticle")
      public JSONObject getCategoryArticle(@RequestParam("category") String category,
                                           HttpServletRequest request){

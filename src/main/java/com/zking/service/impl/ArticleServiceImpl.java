@@ -184,4 +184,48 @@
      public int countArticleCategoryByCategory(String category) {
          return articleMapper.countArticleCategoryByCategory(category);
      }
+    
+     @Override
+     public JSONObject findArticleByTag(String tag, int rows, int pageNum) {
+         
+         PageHelper.startPage(pageNum, rows);
+         List<Article> articles = articleMapper.findArticleByTag(tag);
+         PageInfo<Article> pageInfo = new PageInfo<>(articles);
+         JSONObject articleJson;
+         JSONArray articleJsonArray = new JSONArray();
+         //二次判断标签是否匹配
+         for(Article article : articles){
+             String[] tagsArray = StringAndArray.stringToArray(article.getArticletags());
+             for(String str : tagsArray){
+                 if(str.equals(tag)){
+                     articleJson = new JSONObject();
+                     articleJson.put("articleId", article.getArticleid());
+                     articleJson.put("originalAuthor", article.getOriginalauthor());
+                     articleJson.put("articleTitle", article.getArticletitle());
+                     articleJson.put("articleCategories", article.getArticlecategories());
+                     articleJson.put("publishDate", article.getPublishdate());
+                     articleJson.put("articleTags", tagsArray);
+                     articleJsonArray.add(articleJson);
+                 }
+             }
+         }
+    
+         JSONObject pageJson = new JSONObject();
+         pageJson.put("pageNum",pageInfo.getPageNum());
+         pageJson.put("pageSize",pageInfo.getPageSize());
+         pageJson.put("total",pageInfo.getTotal());
+         pageJson.put("pages",pageInfo.getPages());
+         pageJson.put("isFirstPage",pageInfo.isIsFirstPage());
+         pageJson.put("isLastPage",pageInfo.isIsLastPage());
+    
+         JSONObject jsonObject = new JSONObject();
+         jsonObject.put("status",201);
+         jsonObject.put("result",articleJsonArray);
+         jsonObject.put("tag",tag);
+         jsonObject.put("pageInfo",pageJson);
+         return jsonObject;
+     }
+     
+     
+     
  }
