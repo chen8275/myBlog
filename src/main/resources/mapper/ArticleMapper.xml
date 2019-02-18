@@ -448,4 +448,11 @@
         where articleTags like '%${tag}%' 
         order by id desc
     </select>
+    <select id="listArticles" resultType="com.zking.entity.Article">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from article
+    </select>
 </mapper>

@@ -4,8 +4,10 @@ import com.zking.entity.Article;
 import com.zking.entity.Categories;
 import com.zking.entity.User;
 import com.zking.mapper.UserMapper;
+import com.zking.service.ArticleService;
 import com.zking.service.CategoriesService;
 import com.zking.service.UserService;
+import com.zking.util.TimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 
@@ -29,7 +32,8 @@ public class IndexController {
     
     @Autowired
     CategoriesService categoriesService;
-    
+    @Autowired
+    ArticleService articleService;
     @Autowired
     UserMapper userMapper;
     
@@ -123,6 +127,25 @@ public class IndexController {
         model.addAttribute("article",new Article());
         return "write";
     }
+    @RequestMapping("/saveArticle")
+    public String save(Article article,HttpServletRequest request){
+        String username = request.getSession().getAttribute("userName").toString(); 
+        article.setAuthor(username);
+        TimeUtil timeUtil = new TimeUtil();
+        String nowDate = timeUtil.getFormatDateForThree();
+        article.setPublishdate(nowDate);
+        article.setUpdatedate(nowDate);
+        //设置摘要,取前40个字
+        if(article.getArticlecontent().length() > 40){
+            article.setArticletabloid(article.getArticlecontent().substring(0, 40));
+        }else {
+            article.setArticletabloid(article.getArticlecontent().substring(0, article.getArticlecontent().length()));
+        }
+        articleService.insert(article);
+        return "publishSuccess";
+    }
+    
+    
     //进入友链页面
     @RequestMapping("/friendLink")
     public String write(Model model,HttpServletRequest request){

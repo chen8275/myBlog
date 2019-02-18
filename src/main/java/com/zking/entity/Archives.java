@@ -1,6 +1,7 @@
 package com.zking.entity;
 
 public class Archives {
+    
     private Integer id;
 
     private String archivename;

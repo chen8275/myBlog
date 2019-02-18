@@ -225,7 +225,11 @@
          jsonObject.put("pageInfo",pageJson);
          return jsonObject;
      }
-     
-     
-     
+    
+     @Override
+     public List<Article> listArticles() {
+         return articleMapper.listArticles();
+     }
+    
+    
  }

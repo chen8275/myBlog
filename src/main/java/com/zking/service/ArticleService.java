@@ -11,6 +11,8 @@
  import com.zking.entity.Article;
  import org.springframework.transaction.annotation.Transactional;
 
+ import java.util.List;
+
  /**
   * @auther chendesheng
   * @date 2019/1/29
@@ -62,4 +64,10 @@
       * @return
       */
      JSONObject findArticleByTag(String tag, int rows, int pageNum);
+     /**
+      * 获得所有文章
+      * @return
+      */
+     List<Article> listArticles();
+     
  }

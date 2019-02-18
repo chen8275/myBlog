@@ -33,6 +33,7 @@ public interface ArticleMapper {
     Article getArticleUrlById(Integer id);
     List<Article> findArticleByCategory(String category);
     List<Article> findAllArticlesPartInfo();
+    List<Article> listArticles();
     
     int countArticleCategoryByCategory(@Param("category") String category);
     List<Article> findArticleByTag(@Param("tag") String tag);
