@@ -71,18 +71,15 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-offset-1 col-sm-6">
-            <h2>标题</h2>
-            <h5>副标题</h5>
-            <div class="fakeimg">图像</div>
-            <p>一些文本..</p>
-            <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
-            <br>
-            <h2>标题</h2>
-            <h5>副标题</h5>
-            <div class="fakeimg">图像</div>
-            <p>一些文本..</p>
-            <p>菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
-            <br><br>
+            <div th:each="article:${articles}">
+                <h3 th:text="${article.articletitle}">标题</h3>
+                <h5><strong>by <span th:text="${article.author}">open</span> posted on <span th:text="${article.publishdate}">2014/06/17</span> under <a th:text="${article.articletype}">字体</a></strong></h5>
+                <br>
+                <p th:text="${article.articletabloid}">菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
+                <h5><a href="#">阅读全文<span class="glyphicon glyphicon-chevron-right"></span></a></h5>
+                <br>
+            </div>
+            
             <div class="col-xs-offset-1 col-sm-7">
                 <ul class="pager">
                     <li class="previous"><a href="#">&larr; Older</a></li>

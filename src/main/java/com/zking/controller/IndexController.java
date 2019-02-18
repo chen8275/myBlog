@@ -80,7 +80,6 @@ public class IndexController {
     public String moveShow(Model model){
         List<Article> articles = articleService.listArticles();
         model.addAttribute("articles",articles);
-        
         return "show";
     }
     //登出
@@ -92,7 +91,10 @@ public class IndexController {
     }
     //登陆方法
     @RequestMapping("/loginPage")
-    public String loginPage(HttpServletRequest request){
+    public String loginPage(HttpServletRequest request,Model model){
+        List<Article> articles = articleService.listArticles();
+        model.addAttribute("articles",articles);
+        
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         HttpSession session = request.getSession();
@@ -139,8 +141,8 @@ public class IndexController {
         article.setPublishdate(nowDate);
         article.setUpdatedate(nowDate);
         //设置摘要,取前40个字
-        if(article.getArticlecontent().length() > 40){
-            article.setArticletabloid(article.getArticlecontent().substring(0, 40));
+        if(article.getArticlecontent().length() > 200){
+            article.setArticletabloid(article.getArticlecontent().substring(0, 200));
         }else {
             article.setArticletabloid(article.getArticlecontent().substring(0, article.getArticlecontent().length()));
         }
