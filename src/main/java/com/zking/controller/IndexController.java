@@ -14,9 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.tautua.markdownpapers.Markdown;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.util.Date;
 import java.util.List;
 
@@ -84,7 +89,9 @@ public class IndexController {
     }
     //登出
     @RequestMapping("/logout")
-    public String moveOut(HttpServletRequest request){
+    public String moveOut(HttpServletRequest request,Model model){
+        List<Article> articles = articleService.listArticles();
+        model.addAttribute("articles",articles);
         HttpSession session = request.getSession();
         session.setAttribute("userName","false");
         return "show";
@@ -132,6 +139,8 @@ public class IndexController {
         model.addAttribute("article",new Article());
         return "write";
     }
+    
+    //发布文章
     @RequestMapping("/saveArticle")
     public String save(Article article,HttpServletRequest request){
         String username = request.getSession().getAttribute("userName").toString(); 
@@ -149,8 +158,27 @@ public class IndexController {
         articleService.insert(article);
         return "publishSuccess";
     }
-    
-    
+    //进入文章详情页
+    @RequestMapping("/detail")
+    public String detail(){
+        return "detail";
+    }
+    //显示文章详细信息
+    @RequestMapping("/detail/{id}")
+    public String detail(@PathVariable("id") Integer id, Model model){
+        Article article = articleService.getById(id);
+        Markdown markdown = new Markdown();
+        try {
+            StringWriter out = new StringWriter();
+            markdown.transform(new StringReader(article.getArticlecontent()), out);
+            out.flush();
+            article.setArticlecontent(out.toString());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        model.addAttribute("article", article);
+        return "detail";
+    }
     //进入友链页面
     @RequestMapping("/friendLink")
     public String write(Model model,HttpServletRequest request){

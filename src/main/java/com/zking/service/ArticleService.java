@@ -69,5 +69,9 @@
       * @return
       */
      List<Article> listArticles();
-     
+     /**
+      * 通过id获得文章
+      * @return
+      */
+     Article getById(int id);
  }

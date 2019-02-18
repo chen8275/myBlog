@@ -61,7 +61,17 @@
          }
      }
      
-     
+     @RequestMapping(value = "/getById")
+     public ResultModel getById(Integer id){
+         try {
+             Article article = articleService.getById(id);
+             Map<String,Object> map = new HashMap<String,Object>();
+             map.put("content",article);
+             return ResultTools.result(200,"",map);
+         }catch (Exception e){
+             return ResultTools.result(404,e.getMessage(),null);
+         }
+     }
      
      
  }

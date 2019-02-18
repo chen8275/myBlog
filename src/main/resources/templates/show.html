@@ -76,7 +76,7 @@
                 <h5><strong>by <span th:text="${article.author}">open</span> posted on <span th:text="${article.publishdate}">2014/06/17</span> under <a th:text="${article.articletype}">字体</a></strong></h5>
                 <br>
                 <p th:text="${article.articletabloid}">菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！菜鸟教程，学的不仅是技术，更是梦想！！！</p>
-                <h5><a href="#">阅读全文<span class="glyphicon glyphicon-chevron-right"></span></a></h5>
+                <h5><a th:href="@{'/front/detail/'+${article.articleid}}">阅读全文<span class="glyphicon glyphicon-chevron-right"></span></a></h5>
                 <br>
             </div>
             

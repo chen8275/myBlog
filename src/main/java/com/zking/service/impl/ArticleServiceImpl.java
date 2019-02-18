@@ -231,5 +231,10 @@
          return articleMapper.listArticles();
      }
     
+     @Override
+     public Article getById(int id) {
+         return articleMapper.selectByPrimaryKey(id);
+     }
+    
     
  }

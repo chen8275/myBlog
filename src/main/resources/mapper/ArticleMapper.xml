@@ -49,7 +49,7 @@
     articleContent, articleTabloid
   </sql>
     
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultType="com.zking.entity.Article" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     ,
