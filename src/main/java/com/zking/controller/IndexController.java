@@ -77,7 +77,10 @@ public class IndexController {
     
     //进入主页
     @RequestMapping("/show")
-    public String moveShow(){
+    public String moveShow(Model model){
+        List<Article> articles = articleService.listArticles();
+        model.addAttribute("articles",articles);
+        
         return "show";
     }
     //登出
