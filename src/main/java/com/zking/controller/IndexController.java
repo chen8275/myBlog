@@ -189,6 +189,8 @@ public class IndexController {
         return "aboutme";
     }
     
+    
+    
     //进入更新页面
     @RequestMapping("/update")
     public String update(Model model,HttpServletRequest request){
@@ -215,12 +217,12 @@ public class IndexController {
         return "categories";
     }
     //进入后台管理页面
-    @RequestMapping("/admin")
-    public String admin(Model model,HttpServletRequest request){
+    @RequestMapping("/superadmin")
+    public String superadmin(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
         String username = session.getAttribute("userName").toString();
         model.addAttribute("userName",username);
-        return "admin";
+        return "superadmin";
     }
     //进入404页面
     @RequestMapping("/404")

@@ -455,4 +455,5 @@
         <include refid="Blob_Column_List" />
         from article
     </select>
+    
 </mapper>
