@@ -16,6 +16,7 @@
  import com.zking.mapper.ArticleMapper;
  import com.zking.service.ArchiveService;
  import com.zking.service.ArticleService;
+ import com.zking.service.VisitorService;
  import com.zking.util.TimeUtil;
  import org.slf4j.Logger;
  import org.slf4j.LoggerFactory;
@@ -39,6 +40,8 @@
      ArchiveService archiveService;
      @Autowired
      ArticleService articleService;
+     @Autowired
+     VisitorService visitorService;
     
      
      @Override
@@ -239,6 +242,45 @@
      @Override
      public int countArticleNum() {
          return articleMapper.countArticle();
+     }
+     
+     //todo 
+     // 每篇文章的浏览量需要pageName来查找
+     @Override
+     public JSONObject getArticleManagement(int rows, int pageNum) {
+         PageHelper.startPage(pageNum, rows);
+         List<Article> articles = articleMapper.getArticleManagement();
+         PageInfo<Article> pageInfo = new PageInfo<>(articles);
+         JSONArray returnJsonArray = new JSONArray();
+         JSONObject returnJson = new JSONObject();
+         JSONObject articleJson;
+         for(Article article : articles){
+             articleJson = new JSONObject();
+             articleJson.put("id",article.getId());
+             articleJson.put("articleId",article.getArticleid());
+             articleJson.put("originalAuthor",article.getOriginalauthor());
+             articleJson.put("articleTitle",article.getArticletitle());
+             articleJson.put("articleCategories",article.getArticlecategories());
+             articleJson.put("publishDate",article.getPublishdate());
+//             String pageName = "findArticle?articleId=" + article.getArticleid() + "&originalAuthor=" + article.getOriginalauthor();
+             String pageName = "findArticle?articleId=1533196734&originalAuthor=张海洋";
+             articleJson.put("visitorNum",visitorService.getNumByPageName(pageName));
+        
+             returnJsonArray.add(articleJson);
+         }
+         returnJson.put("status",200);
+         returnJson.put("result",returnJsonArray);
+         JSONObject pageJson = new JSONObject();
+         pageJson.put("pageNum",pageInfo.getPageNum());
+         pageJson.put("pageSize",pageInfo.getPageSize());
+         pageJson.put("total",pageInfo.getTotal());
+         pageJson.put("pages",pageInfo.getPages());
+         pageJson.put("isFirstPage",pageInfo.isIsFirstPage());
+         pageJson.put("isLastPage",pageInfo.isIsLastPage());
+    
+         returnJson.put("pageInfo",pageJson);
+    
+         return returnJson;
      }
     
     

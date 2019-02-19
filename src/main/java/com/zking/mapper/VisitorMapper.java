@@ -3,6 +3,7 @@ package com.zking.mapper;
 import com.zking.entity.Visitor;
 import org.apache.ibatis.annotations.Mapper;
 
+
 @Mapper
 public interface VisitorMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +15,5 @@ public interface VisitorMapper {
     int updateByPrimaryKey(Visitor record);
     
     long getAllVisitor();
+    long getVisitorNumByPageName(String pageName);
 }

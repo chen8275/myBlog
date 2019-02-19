@@ -7,6 +7,8 @@
   */
  package com.zking.service;
 
+ import com.alibaba.fastjson.JSONObject;
+
  /**
   * @auther chendesheng
   * @date 2019/2/19
@@ -18,4 +20,16 @@
       * @return
       */
      long getAllVisitor();
+     /**
+      * 通过页名获得总访问量和访客量
+      * @param pageName 页名
+      * @return
+      */
+     JSONObject getVisitorNumByPageName(String pageName);
+     /**
+      * 通过页名获得访客量
+      * @param pageName 页名
+      * @return 访客量
+      */
+     long getNumByPageName(String pageName);
  }

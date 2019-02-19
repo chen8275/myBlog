@@ -14,7 +14,10 @@
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.GetMapping;
  import org.springframework.web.bind.annotation.RequestMapping;
+ import org.springframework.web.bind.annotation.RequestParam;
  import org.springframework.web.bind.annotation.RestController;
+
+ import java.security.Principal;
 
  /**
   * @auther chendesheng
@@ -46,5 +49,16 @@
          returnJson.put("articleNum", articleService.countArticleNum());
          return returnJson;
      }
+     /**
+      * 获得文章管理
+      * @return
+      */
+     @GetMapping("/getArticleManagement")
+     public JSONObject getArticleManagement(@RequestParam("rows") String rows,
+                                            @RequestParam("pageNum") String pageNum){
+        
+         return articleService.getArticleManagement(Integer.parseInt(rows), Integer.parseInt(pageNum));
+     }
+    
     
  }

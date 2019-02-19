@@ -79,5 +79,10 @@
       * @return
       */
      int countArticleNum();
+    
+     /**
+      * 分页获得文章管理
+      */
+     JSONObject getArticleManagement(int rows, int pageNum);
      
  }

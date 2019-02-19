@@ -94,6 +94,12 @@
         select
         visitorNum
         from visitor
-        where pageName = "totalVisitor";
-    </select>  
+        where pageName = "totalVisitor"
+    </select>
+    <select id="getVisitorNumByPageName" resultType="java.lang.Long" >
+        select
+        visitorNum
+        from visitor
+        where pageName = #{ pageName,jdbcType=LONGVARCHAR }
+    </select>
 </mapper>

@@ -7,6 +7,7 @@
   */
  package com.zking.service.impl;
 
+ import com.alibaba.fastjson.JSONObject;
  import com.zking.mapper.VisitorMapper;
  import com.zking.service.VisitorService;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,20 @@
      public long getAllVisitor() {
          return visitorMapper.getAllVisitor();
      }
-     
+    
+     @Override
+     public JSONObject getVisitorNumByPageName(String pageName) {
+         long totalVisitor = visitorMapper.getVisitorNumByPageName("totalVisitor");
+         long pageVisitor = visitorMapper.getVisitorNumByPageName(pageName);
+         JSONObject jsonObject = new JSONObject();
+         jsonObject.put("totalVisitor", totalVisitor);
+         jsonObject.put("pageVisitor", pageVisitor);
+         return jsonObject;
+     }
+    
+     @Override
+     public long getNumByPageName(String pageName) {
+         return visitorMapper.getVisitorNumByPageName(pageName);
+     }
+    
  }

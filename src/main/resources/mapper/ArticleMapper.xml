@@ -460,4 +460,13 @@
         count(*) 
         from article
     </select>
+    
+    <select id="getArticleManagement" resultType="com.zking.entity.Article">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from article
+        order by id desc 
+    </select>
 </mapper>

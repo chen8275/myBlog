@@ -39,4 +39,6 @@ public interface ArticleMapper {
     List<Article> findArticleByTag(@Param("tag") String tag);
     int countArticle();
     
+    List<Article> getArticleManagement();
+    
 }
