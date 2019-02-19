@@ -236,6 +236,10 @@
          return articleMapper.selectByPrimaryKey(id);
      }
     
+     @Override
+     public int countArticleNum() {
+         return articleMapper.countArticle();
+     }
     
     
  }

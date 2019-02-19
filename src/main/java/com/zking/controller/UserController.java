@@ -132,5 +132,24 @@
          }
          return jsonObject;
      }
+     
+     /**
+      * 获得用户总数
+      * 
+      */
+     @RequestMapping("/countUserNum")
+     public JSONObject countUserNum(){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int num = userService.countUserNum();
+             jsonObject.put("code:","200");
+             jsonObject.put("data",num);
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
     
  }

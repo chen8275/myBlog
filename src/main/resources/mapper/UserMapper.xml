@@ -247,4 +247,9 @@
         from user
         where username = #{username,jdbcType=INTEGER}
     </select>
+    <select id="countUser" resultType="java.lang.Integer">
+        select
+        count(*)
+        from user
+    </select>
 </mapper>

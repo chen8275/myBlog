@@ -32,5 +32,6 @@ public interface UserMapper {
     User getUserPersonalInfo(String username);
     String findUsernameById(int id);
     int findIdByUsername(String username);
+    int countUser();
     
 }

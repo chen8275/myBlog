@@ -89,4 +89,11 @@
     set visitorNum = #{visitornum,jdbcType=BIGINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    
+    <select id="getAllVisitor" resultType="java.lang.Long" >
+        select
+        visitorNum
+        from visitor
+        where pageName = "totalVisitor";
+    </select>  
 </mapper>

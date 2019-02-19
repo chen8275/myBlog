@@ -103,5 +103,10 @@
          return userMapper.findIdByUsername(username);
      }
     
+     @Override
+     public int countUserNum() {
+         return userMapper.countUser();
+     }
+    
     
  }

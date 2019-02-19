@@ -455,5 +455,9 @@
         <include refid="Blob_Column_List" />
         from article
     </select>
-    
+    <select id="countArticle" resultType="java.lang.Integer">
+        select
+        count(*) 
+        from article
+    </select>
 </mapper>

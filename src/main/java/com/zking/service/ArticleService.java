@@ -74,6 +74,10 @@
       * @return
       */
      Article getById(int id);
-     
+     /**
+      * 获得文章总数
+      * @return
+      */
+     int countArticleNum();
      
  }

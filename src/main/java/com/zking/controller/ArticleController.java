@@ -76,7 +76,24 @@
          }
      }
     
-     
+     /**
+      * 获得文章总数
+      *
+      */
+     @RequestMapping("/countArticleNum")
+     public JSONObject countArticleNum(){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int num = articleService.countArticleNum();
+             jsonObject.put("code:","200");
+             jsonObject.put("data",num);
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
      
      
  }
