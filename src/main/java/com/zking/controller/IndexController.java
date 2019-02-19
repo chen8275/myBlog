@@ -158,12 +158,8 @@ public class IndexController {
         articleService.insert(article);
         return "publishSuccess";
     }
-    /*//进入文章详情页
-    @RequestMapping("/detail")
-    public String detail(){
-        return "detail";
-    }*/
-    //显示文章详细信息
+    
+    //进入文章详情页
     @RequestMapping("/detail/{id}")
     public String detail(@PathVariable("id") Integer id, Model model){
         Article article = articleService.getById(id);
