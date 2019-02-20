@@ -9,6 +9,9 @@
 
  import com.alibaba.fastjson.JSONArray;
  import com.alibaba.fastjson.JSONObject;
+ import com.github.pagehelper.PageHelper;
+ import com.github.pagehelper.PageInfo;
+ import com.zking.entity.Article;
  import com.zking.entity.Categories;
  import com.zking.mapper.CategoriesMapper;
  import com.zking.service.ArticleService;
@@ -51,6 +54,34 @@
          }
          returnJson.put("status",200);
          returnJson.put("result",categoryJsonArray);
+         return returnJson;
+     }
+    
+     @Override
+     public JSONObject getCategoriesManagement(int rows, int pageNum) {
+         PageHelper.startPage(pageNum, rows);
+         List<Categories> Categorieses = categoriesMapper.listCategories();
+         PageInfo<Categories> pageInfo = new PageInfo<>(Categorieses);
+         JSONArray returnJsonArray = new JSONArray();
+         JSONObject returnJson = new JSONObject();
+         JSONObject articleJson;
+         for(Categories article : Categorieses){
+             articleJson = new JSONObject();
+             articleJson.put("categoryName",article.getCategoryname());
+             returnJsonArray.add(articleJson);
+         }
+         returnJson.put("status",200);
+         returnJson.put("result",returnJsonArray);
+         JSONObject pageJson = new JSONObject();
+         pageJson.put("pageNum",pageInfo.getPageNum());
+         pageJson.put("pageSize",pageInfo.getPageSize());
+         pageJson.put("total",pageInfo.getTotal());
+         pageJson.put("pages",pageInfo.getPages());
+         pageJson.put("isFirstPage",pageInfo.isIsFirstPage());
+         pageJson.put("isLastPage",pageInfo.isIsLastPage());
+    
+         returnJson.put("pageInfo",pageJson);
+    
          return returnJson;
      }
  }

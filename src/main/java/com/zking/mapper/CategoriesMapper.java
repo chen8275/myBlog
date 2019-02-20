@@ -22,4 +22,6 @@ public interface CategoriesMapper {
     List<Categories> listCategories();
     
     List<String> findCategoriesName();
+    
+    
 }

@@ -28,4 +28,8 @@
       * @return
       */
      JSONObject findCategoriesNameAndArticleNum();
+     /**
+      * 分页获得分类管理
+      */
+     JSONObject getCategoriesManagement(int rows, int pageNum);
  }

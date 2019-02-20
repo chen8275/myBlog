@@ -50,7 +50,7 @@
         var articleManagementTable = $('.articleManagementTable');
         articleManagementTable.empty();
         $.each(data['result'], function (index, obj) {
-            articleManagementTable.append($('<tr id="a' + obj['id'] + '"><td><a href="findArticle?articleId=' + obj['articleId'] + '&originalAuthor=' + obj['originalAuthor'] + '">' + obj['articleTitle'] + '</a></td><td>' + obj['publishDate'] + '</td><td>' + obj['articleCategories'] + '</td> <td><span class="am-badge am-badge-success">' + obj['visitorNum'] + '</span></td>' +
+            articleManagementTable.append($('<tr id="a' + obj['id'] + '"><td><a href="detail/' + obj['id']  + '">' + obj['articleTitle'] + '</a></td><td>' + obj['publishDate'] + '</td><td>' + obj['articleCategories'] + '</td> <td><span class="am-badge am-badge-success">' + obj['visitorNum'] + '</span></td>' +
                 '<td>' +
                 '<div class="am-dropdown" data-am-dropdown>' +
                 '<button class="articleManagementBtn articleEditor am-btn am-btn-secondary">编辑</button>' +
@@ -340,4 +340,83 @@
                 alert("获取悄悄话失败");
             }
         });
+    });
+
+
+    
+    
+    
+    
+    
+    
+    
+    //填充分类管理
+    function putInCategoriesManagement(data) {
+        var categoriesManagementTable = $('.categoriesManagementTable');
+        categoriesManagementTable.empty();
+        $.each(data['result'], function (index, obj) {
+            categoriesManagementTable.append($('<tr id="a' + obj['id'] + '"><td><a href="findArticle?articleId=' + obj['articleId'] + '&originalAuthor=' + obj['originalAuthor'] + '">' + obj['categoryName'] + '</a></td>' +
+                '<td>' +
+                '<div class="am-dropdown" data-am-dropdown>' +
+                '<button class="articleManagementBtn articleEditor am-btn am-btn-secondary">编辑</button>' +
+                '<button class="articleDeleteBtn articleDelete am-btn am-btn-danger">删除</button>' +
+                '</div>' +
+                '</td>' +
+                '</tr>'));
+        });
+        articleManagementTable.append($('<div class="my-row" id="page-father">' +
+            '<div id="articleManagementPagination">' +
+            '<ul class="am-pagination  am-pagination-centered">' +
+            '</ul>' +
+            '</div>' +
+            '</div>'));
+
+        $('.articleManagementBtn').click(function () {
+            var $this = $(this);
+            var id = $this.parent().parent().parent().attr("id").substring(1);
+            window.location.replace("/editor?id=" + id);
+        });
+
+        $('.articleDeleteBtn').click(function () {
+            var $this = $(this);
+            deleteArticleId = $this.parent().parent().parent().attr("id").substring(1);
+            alert(deleteArticleId);
+            $('#deleteAlter').modal('open');
+        })
+    }
+
+    //获得分类管理
+    function getCategoriesManagement(currentPage) {
+        $.ajax({
+            type:'get',
+            url:'/getCategoriesManagement',
+            dataType:'json',
+            data:{
+                rows:10,
+                pageNum:currentPage
+            },
+            success:function (data) {
+                putInCategoriesManagement(data);
+                scrollTo(0,0);//回到顶部
+
+                //分页
+                $("#articleManagementPagination").paging({
+                    rows:data['pageInfo']['pageSize'],//每页显示条数
+                    pageNum:data['pageInfo']['pageNum'],//当前所在页码
+                    pages:data['pageInfo']['pages'],//总页数
+                    total:data['pageInfo']['total'],//总记录数
+                    callback:function(currentPage){
+                        getCategoriesManagement(currentPage);
+                    }
+                });
+            },
+            error:function () {
+                alert("获取文章信息失败");
+            }
+        });
+    }
+
+    //点击分类管理
+    $('.superAdminList .articleCategories').click(function () {
+        getCategoriesManagement(1);
     });

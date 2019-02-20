@@ -13,6 +13,7 @@
  import org.springframework.web.bind.annotation.*;
 
  import javax.servlet.http.HttpServletRequest;
+ import java.security.Principal;
 
 
  /**
@@ -33,6 +34,8 @@
      FeedbackService feedbackService;
      @Autowired
      PrivateWordService privateWordService;
+     @Autowired
+     CategoriesService categoriesService;
      
      /**
       * 获得统计信息
@@ -109,5 +112,18 @@
          }
          return privateWordService.replyPrivateWord(replyContent, username, Integer.parseInt(id));
      }
+    
+     /**
+      * 获得分类管理
+      * @return
+      */
+     @GetMapping("/getCategoriesManagement")
+     public JSONObject getCategoriesManagement(
+                                            @RequestParam("rows") String rows,
+                                            @RequestParam("pageNum") String pageNum){
+         
+         return categoriesService.getCategoriesManagement(Integer.parseInt(rows), Integer.parseInt(pageNum));
+     }
+    
     
  }
