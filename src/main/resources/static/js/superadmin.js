@@ -54,6 +54,7 @@
             alert(id);
             window.location.replace("/front/editor?id=" + id);
         });
+        
         $('.articleDeleteBtn').click(function () {
             var $this = $(this);
             deleteId = $this.parent().parent().parent().attr("id").substring(1);
