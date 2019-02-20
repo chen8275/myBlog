@@ -7,6 +7,7 @@
   */
  package com.zking.service;
 
+ import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Feedback;
 
  /**
@@ -14,6 +15,14 @@
   * @date 2019/1/23
   */
  public interface FeedbackService {
-     
+     /**
+      * 提交反馈
+      * @return
+      */
      int insertFeedback(Feedback feedback);
+     /**
+      * 获得所有的反馈
+      * @return
+      */
+     JSONObject getAllFeedback(int rows, int pageNum);
  }

@@ -9,6 +9,7 @@
 
  import com.alibaba.fastjson.JSONObject;
  import com.zking.service.ArticleService;
+ import com.zking.service.FeedbackService;
  import com.zking.service.UserService;
  import com.zking.service.VisitorService;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,8 @@
      ArticleService articleService;
      @Autowired
      VisitorService visitorService;
+     @Autowired
+     FeedbackService feedbackService;
      
      /**
       * 获得统计信息
@@ -70,6 +73,16 @@
              return 0;
          }
          return articleService.deleteArticle(Integer.parseInt(id));
+     }
+     /**
+      * 分页获得所有反馈信息
+      * @param rows 一页大小
+      * @param pageNum 当前页
+      */
+     @GetMapping("/getAllFeedback")
+     public JSONObject getAllFeedback(@RequestParam("rows") String rows,
+                                      @RequestParam("pageNum") String pageNum){
+         return feedbackService.getAllFeedback(Integer.parseInt(rows),Integer.parseInt(pageNum));
      }
     
  }

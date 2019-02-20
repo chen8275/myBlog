@@ -112,4 +112,12 @@
       feedbackDate = #{feedbackdate,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <select id="getAllFeedback" resultType="com.zking.entity.Feedback">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from feedback
+    </select>
 </mapper>
