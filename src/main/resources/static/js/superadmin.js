@@ -51,11 +51,12 @@
         $('.articleManagementBtn').click(function () {
             var $this = $(this);
             var id = $this.parent().parent().parent().attr("id").substring(1);
-            window.location.replace("/editor?id=" + id);
+            alert(id);
+            window.location.replace("/front/editor?id=" + id);
         });
         $('.articleDeleteBtn').click(function () {
             var $this = $(this);
-            deleteArticleId = $this.parent().parent().parent().attr("id").substring(1);
+            deleteId = $this.parent().parent().parent().attr("id").substring(1);
             $('#deleteAlter').modal('open');
         })
     }
@@ -95,3 +96,26 @@
     $('.superAdminList .articleManagement').click(function () {
         getArticleManagement(1);
     });
+
+    //文章管理删除文章
+    $('.sureArticleDeleteBtn').click(function () {
+        $.ajax({
+            type:'get',
+            url:'../superAdmin/deleteArticle',
+            dataType:'json',
+            data:{
+                id:deleteId
+            },
+            success:function (data) {
+                if(data == 1){
+                    alert("删除文章成功");
+                    getArticleManagement(1);
+                } else {
+                    alert("删除文章失败");
+                }
+            },
+            error:function () {
+                alert("删除失败");
+            }
+        });
+    })

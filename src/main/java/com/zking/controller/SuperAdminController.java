@@ -59,6 +59,17 @@
         
          return articleService.getArticleManagement(Integer.parseInt(rows), Integer.parseInt(pageNum));
      }
-    
+     /**
+      * 删除文章
+      * @param id 文章id
+      * @return 1--删除成功   0--删除失败
+      */
+     @GetMapping("/deleteArticle")
+     public int deleteArticle(@RequestParam("id") String id){
+         if("".equals(id) || id == null){
+             return 0;
+         }
+         return articleService.deleteArticle(Integer.parseInt(id));
+     }
     
  }

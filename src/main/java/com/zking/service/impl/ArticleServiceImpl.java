@@ -283,5 +283,18 @@
          return returnJson;
      }
     
+     @Override
+     public int deleteArticle(Integer id) {
+         try {
+             //删除本篇文章
+             articleMapper.deleteByPrimaryKey(id);
+             
+         }catch (Exception e){
+             logger.error("删除文章失败，文章id=" + id);
+             return 0;
+         }
+         return 1;
+     }
+    
     
  }

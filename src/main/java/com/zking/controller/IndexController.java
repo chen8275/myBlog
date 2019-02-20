@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.tautua.markdownpapers.Markdown;
@@ -159,6 +160,17 @@ public class IndexController {
         return "publishSuccess";
     }
     
+    
+    /*//编辑文章
+    @GetMapping("/write")
+    public String editor(HttpServletRequest request){
+        String id = request.getParameter("id");
+        if(!"".equals(id)){
+            request.getSession().setAttribute("id", id);
+        }
+        return "write";
+    }
+    */
     //进入文章详情页
     @RequestMapping("/detail/{id}")
     public String detail(@PathVariable("id") Integer id, Model model){

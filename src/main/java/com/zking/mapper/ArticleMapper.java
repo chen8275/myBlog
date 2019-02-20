@@ -41,4 +41,5 @@ public interface ArticleMapper {
     
     List<Article> getArticleManagement();
     
+    
 }
