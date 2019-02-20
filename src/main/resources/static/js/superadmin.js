@@ -191,7 +191,7 @@
     function getAllFeedback(currentPage) {
         $.ajax({
             type:'get',
-            url:'/getAllFeedback',
+            url:'../superAdmin/getAllFeedback',
             dataType:'json',
             data:{
                 rows:10,
