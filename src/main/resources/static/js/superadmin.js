@@ -5,6 +5,24 @@
         $("#" + flag).css("display","block");
     });
 
+    // 失败消息盒
+    function dangerNotice(notice) {
+        $('.dangerNotice').html(notice);
+        $('.dangerNoticeAlert').css("display","block");
+        var closeNoticeBox = setTimeout(function () {
+            $('.dangerNoticeAlert').css("display","none");
+        },3000);
+    }
+    // 成功消息盒
+    function successNotice(notice) {
+        $('.successNotice').html(notice);
+        $('.successNoticeAlert').css("display","block");
+        var closeNoticeBox = setTimeout(function () {
+            $('.successNoticeAlert').css("display","none");
+        },3000);
+    }
+
+
     //获取统计信息
     function getStatisticsInfo() {
         $.ajax({
@@ -109,10 +127,10 @@
             },
             success:function (data) {
                 if(data == 1){
-                    alert("删除文章成功");
+                    successNotice("删除文章成功");
                     getArticleManagement(1);
                 } else {
-                    alert("删除文章失败");
+                    dangerNotice("删除文章失败")
                 }
             },
             error:function () {
