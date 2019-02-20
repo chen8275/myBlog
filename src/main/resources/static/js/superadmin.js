@@ -364,7 +364,7 @@
                 '</td>' +
                 '</tr>'));
         });
-        articleManagementTable.append($('<div class="my-row" id="page-father">' +
+        categoriesManagementTable.append($('<div class="my-row" id="page-father">' +
             '<div id="articleManagementPagination">' +
             '<ul class="am-pagination  am-pagination-centered">' +
             '</ul>' +
@@ -385,11 +385,13 @@
         })
     }
 
+    
+    
     //获得分类管理
     function getCategoriesManagement(currentPage) {
         $.ajax({
             type:'get',
-            url:'/getCategoriesManagement',
+            url:'../superAdmin/getCategoriesManagement',
             dataType:'json',
             data:{
                 rows:10,
