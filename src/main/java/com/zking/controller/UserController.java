@@ -151,5 +151,22 @@
          }
          return jsonObject;
      }
-    
+     /**
+      * 通过用户名查找id
+      *
+      */
+     @RequestMapping("/findIdByUserName")
+     public JSONObject findIdByUserName(String userName){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int id = userService.findIdByUsername(userName);
+             jsonObject.put("code:","200");
+             jsonObject.put("data",id);
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
  }

@@ -12,7 +12,8 @@
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
 
- import java.security.Principal;
+ import javax.servlet.http.HttpServletRequest;
+
 
  /**
   * @auther chendesheng
@@ -89,6 +90,24 @@
      public JSONObject getAllPrivateWord(){
          return privateWordService.getAllPrivateWord();
      }
-     
+     /**
+      * 回复悄悄话
+      * @return
+      */
+     @PostMapping("/replyPrivateWord")
+     public JSONObject replyPrivateWord(HttpServletRequest request,
+                                        @RequestParam("replyContent") String replyContent,
+                                        @RequestParam("id") String id){
+         String username;
+         JSONObject jsonObject;
+         try {
+             username = request.getSession().getAttribute("userName").toString();
+         } catch (NullPointerException e){
+             jsonObject = new JSONObject();
+             jsonObject.put("status",403);
+             return jsonObject;
+         }
+         return privateWordService.replyPrivateWord(replyContent, username, Integer.parseInt(id));
+     }
     
  }

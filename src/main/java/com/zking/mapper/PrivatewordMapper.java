@@ -2,6 +2,7 @@ package com.zking.mapper;
 
 import com.zking.entity.PrivateWord;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -22,6 +23,8 @@ public interface PrivatewordMapper {
      * 获得所有悄悄话
      */
     List<PrivateWord> getAllPrivateWord();
+    
+    void replyPrivateWord(@Param("replyContent") String replyContent, @Param("replierId") int replierId, @Param("id") int id);
         
 
 }

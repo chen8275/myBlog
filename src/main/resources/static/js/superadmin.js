@@ -293,7 +293,7 @@
             } else {
                 $.ajax({
                     type:'post',
-                    url:'/replyPrivateWord',
+                    url:'../superAdmin/replyPrivateWord',
                     dataType:'json',
                     data:{
                         replyId:replyId,
@@ -325,7 +325,7 @@
     $('.superAdminList .privateWord').click(function () {
         $.ajax({
             type:'post',
-            url:'/getAllPrivateWord',
+            url:'../superAdmin/getAllPrivateWord',
             dataType:'json',
             data:{
             },

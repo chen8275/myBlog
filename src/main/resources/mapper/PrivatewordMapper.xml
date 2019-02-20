@@ -111,4 +111,11 @@
         <include refid="Base_Column_List" />
         from privateword
     </select>
+    <update id="replyPrivateWord" parameterType="com.zking.entity.PrivateWord" >
+    update privateword
+    set 
+      replierId = #{replierId,jdbcType=VARCHAR},
+      replyContent = #{replyContent,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>

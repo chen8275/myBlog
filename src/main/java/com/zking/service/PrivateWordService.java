@@ -9,6 +9,7 @@
  
  import com.alibaba.fastjson.JSONObject;
  import com.zking.util.ResultModel;
+ import org.springframework.transaction.annotation.Transactional;
 
  /**
   * @auther chendesheng
@@ -22,5 +23,13 @@
       * @return
       */
      JSONObject getAllPrivateWord();
+     /**
+      * 回复悄悄话
+      * @param replyContent 回复内容
+      * @param username 回复人
+      * @return
+      */
+     @Transactional
+     JSONObject replyPrivateWord(String replyContent, String username, int id);
     
  }

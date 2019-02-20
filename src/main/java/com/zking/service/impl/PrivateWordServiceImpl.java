@@ -100,4 +100,17 @@
          System.out.println("getAllPrivateWord result is " + returnJson);
          return returnJson;
      }
+    
+     @Override
+     public JSONObject replyPrivateWord(String replyContent, String username, int id) {
+         JSONObject returnJson = new JSONObject();
+         privatewordMapper.replyPrivateWord(replyContent, userService.findIdByUsername(username), id);
+         
+         returnJson.put("status",200);
+         JSONObject replyJson = new JSONObject();
+         replyJson.put("replyContent",replyContent);
+         replyJson.put("replierId",id);
+         returnJson.put("result",replyJson);
+         return returnJson;
+     }
  }
