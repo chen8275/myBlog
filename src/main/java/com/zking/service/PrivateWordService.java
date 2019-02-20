@@ -7,6 +7,7 @@
   */
  package com.zking.service;
  
+ import com.alibaba.fastjson.JSONObject;
  import com.zking.util.ResultModel;
 
  /**
@@ -16,4 +17,10 @@
  public interface PrivateWordService {
     
      ResultModel publishPrivateWord(String privateWordContent, String username);
+     /**
+      * 获得所有悄悄内容
+      * @return
+      */
+     JSONObject getAllPrivateWord();
+    
  }

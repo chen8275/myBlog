@@ -106,4 +106,9 @@
       publisherDate = #{publisherdate,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <select id="getAllPrivateWord" resultType="com.zking.entity.PrivateWord">
+        select
+        <include refid="Base_Column_List" />
+        from privateword
+    </select>
 </mapper>

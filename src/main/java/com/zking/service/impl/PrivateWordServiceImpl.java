@@ -7,6 +7,8 @@
   */
  package com.zking.service.impl;
 
+ import com.alibaba.fastjson.JSONArray;
+ import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.PrivateWord;
  import com.zking.mapper.PrivatewordMapper;
  import com.zking.service.PrivateWordService;
@@ -18,9 +20,7 @@
  import org.springframework.stereotype.Service;
 
  import java.text.SimpleDateFormat;
- import java.util.Date;
- import java.util.HashMap;
- import java.util.Map;
+ import java.util.*;
 
  /**
   * @auther chendesheng
@@ -46,5 +46,58 @@
          map.put("content",status);
          return ResultTools.result(200,"",map);
         
+     }
+    
+     @Override
+     public JSONObject getAllPrivateWord() {
+         
+         List<PrivateWord> privateWords = privatewordMapper.getAllPrivateWord();
+    
+         JSONObject returnJson = new JSONObject();
+         JSONObject userJson;
+         JSONArray allJsonArray = new JSONArray();
+         JSONObject newUserJson;
+    
+         returnJson.put("status",200);
+         List<String> publishers = new ArrayList<>();
+         String publisher;
+         for(PrivateWord privateWord : privateWords){
+             userJson = new JSONObject();
+             userJson.put("privateWord", privateWord.getPrivateword());
+             publisher = userService.findUsernameById(privateWord.getPublisherid());
+             userJson.put("publisher", publisher);
+             userJson.put("publisherDate", privateWord.getPublisherdate());
+             userJson.put("id", privateWord.getId());
+             if(privateWord.getReplycontent() == null){
+                 userJson.put("replier","");
+                 userJson.put("replyContent","");
+             } else {
+                 userJson.put("replyContent",privateWord.getReplycontent());
+                 userJson.put("replier",userService.findUsernameById(privateWord.getReplierid()));
+             }
+             if(!publishers.contains(publisher)){
+                 publishers.add(publisher);
+                 newUserJson = new JSONObject();
+                 newUserJson.put("publisher",publisher);
+                 newUserJson.put("content",new JSONArray());
+                 allJsonArray.add(newUserJson);
+             }
+             for(int i=0;i<allJsonArray.size();i++){
+                 JSONObject arrayUser = (JSONObject) allJsonArray.get(i);
+                 if(arrayUser.get("publisher").equals(publisher)){
+                     JSONArray jsonArray = (JSONArray) arrayUser.get("content");
+                     jsonArray.add(userJson);
+                     arrayUser.put("publisher", publisher);
+                     arrayUser.put("content", jsonArray);
+                     allJsonArray.remove(i);
+                
+                     allJsonArray.add(arrayUser);
+                     break;
+                 }
+             }
+         }
+         returnJson.put("result",allJsonArray);
+         System.out.println("getAllPrivateWord result is " + returnJson);
+         return returnJson;
      }
  }

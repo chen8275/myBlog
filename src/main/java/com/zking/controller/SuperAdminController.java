@@ -8,15 +8,9 @@
  package com.zking.controller;
 
  import com.alibaba.fastjson.JSONObject;
- import com.zking.service.ArticleService;
- import com.zking.service.FeedbackService;
- import com.zking.service.UserService;
- import com.zking.service.VisitorService;
+ import com.zking.service.*;
  import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.web.bind.annotation.GetMapping;
- import org.springframework.web.bind.annotation.RequestMapping;
- import org.springframework.web.bind.annotation.RequestParam;
- import org.springframework.web.bind.annotation.RestController;
+ import org.springframework.web.bind.annotation.*;
 
  import java.security.Principal;
 
@@ -36,6 +30,8 @@
      VisitorService visitorService;
      @Autowired
      FeedbackService feedbackService;
+     @Autowired
+     PrivateWordService privateWordService;
      
      /**
       * 获得统计信息
@@ -84,7 +80,15 @@
                                       @RequestParam("pageNum") String pageNum){
          return feedbackService.getAllFeedback(Integer.parseInt(rows),Integer.parseInt(pageNum));
      }
+     
+     /**
+      * 获得所有悄悄话
+      * @return
+      */
+     @PostMapping("/getAllPrivateWord")
+     public JSONObject getAllPrivateWord(){
+         return privateWordService.getAllPrivateWord();
+     }
+     
     
-     
-     
  }
