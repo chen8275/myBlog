@@ -296,12 +296,12 @@
                     url:'../superAdmin/replyPrivateWord',
                     dataType:'json',
                     data:{
-                        replyId:replyId,
+                        id:replyId,
                         replyContent:textarea
                     },
                     success:function (data) {
                         if(data['status'] == 403){
-                            $.get("/toLogin",function(data,status,xhr){
+                            $.get("../front/login",function(data,status,xhr){
                                 window.location.replace("/login");
                             });
                         } else {
@@ -314,7 +314,7 @@
                         }
                     },
                     error:function () {
-                        alert("获取悄悄话失败");
+                        alert("获取悄悄话失败！！！");
                     }
                 });
             }
