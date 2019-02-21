@@ -1,4 +1,6 @@
-
+    var deleteId="";
+    var deleteCategoriesId="";
+    
     $('.superAdminList .superAdminClick').click(function () {
         var flag = $(this).attr('class').substring(16);
         $('#statistics,#articleManagement,#articleComment,#articleCategories,#friendLink,#userFeedback,#privateWord').css("display","none");
@@ -69,7 +71,6 @@
         $('.articleManagementBtn').click(function () {
             var $this = $(this);
             var id = $this.parent().parent().parent().attr("id").substring(1);
-            alert(id);
             window.location.replace("/front/editor?id=" + id);
         });
         
@@ -374,13 +375,13 @@
         $('.categoriesManagementBtn').click(function () {
             var $this = $(this);
             var id = $this.parent().parent().parent().attr("id").substring(1);
-            window.location.replace("/editor?id=" + id);
+            window.location.replace("/front/editor?id=" + id);
         });
 
         $('.categoriesDeleteBtn').click(function () {
             var $this = $(this);
             deleteCategoriesId = $this.parent().parent().parent().attr("id").substring(1);
-            $('#deleteAlter').modal('open');
+            $('#deleteCategory').modal('open');
         })
     }
 
@@ -423,7 +424,7 @@
     });
 
     //分类管理删除分类
-    $('.categoriesDeleteBtn').click(function () {
+    $('.sureCategoriesDeleteBtn').click(function () {
         $.ajax({
             type:'get',
             url:'../superAdmin/deleteCategories',
