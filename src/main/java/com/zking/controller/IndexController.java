@@ -29,6 +29,9 @@ import java.util.List;
 import java.util.Random;
 
 
+/**
+ * @author chendesheng
+ */
 @Controller
 @RequestMapping("/front/*")
 public class IndexController {
@@ -47,18 +50,26 @@ public class IndexController {
     @Autowired
     TagService tagService;
     
-    //index页面
+    /**
+     * 进入index首页
+     * @return
+     */
     @RequestMapping("/index")
     public String index() {
         return "index";
     }
-
-    //注册页面
+    /**
+     * 进入注册页面
+     * @return
+     */
     @RequestMapping("/register")
     public String register(){
         return "register";
     }
-    //判断是不是登陆状态，不是返回0
+    /**
+     * 判断是不是登陆状态
+     * @return 是返回1，不是返回0
+     */
     @RequestMapping("isLogin")
     public int isLogin(HttpServletRequest request){
         String userName = request.getSession().getAttribute("userName").toString();
@@ -69,14 +80,20 @@ public class IndexController {
                 return 1;
             }
     }
-    //登陆页面
+    /**
+     * 进入登陆页面
+     * @return 
+     */
     @RequestMapping("/login")
     public String login(HttpServletRequest request){
         HttpSession session = request.getSession();
         session.setAttribute("userName","false");
         return "login";
     }
-    //个人中心
+    /**
+     * 进入个人中心页面
+     * @return
+     */
     @RequestMapping("/user")
     public String user(Model model,HttpServletRequest request){
         String userName = request.getSession().getAttribute("userName").toString();
@@ -84,15 +101,20 @@ public class IndexController {
         model.addAttribute("user",user);
         return "user";
     }
-    
-    //进入主页
+    /**
+     * 进入博客首页
+     * @return
+     */
     @RequestMapping("/show")
     public String moveShow(Model model){
         List<Article> articles = articleService.listArticles();
         model.addAttribute("articles",articles);
         return "show";
     }
-    //登出
+    /**
+     * 登出
+     * @return
+     */
     @RequestMapping("/logout")
     public String moveOut(HttpServletRequest request,Model model){
         List<Article> articles = articleService.listArticles();
@@ -101,7 +123,10 @@ public class IndexController {
         session.setAttribute("userName","false");
         return "show";
     }
-    //登陆方法
+    /**
+     * 登陆
+     * @return
+     */
     @RequestMapping("/loginPage")
     public String loginPage(HttpServletRequest request,Model model){
         List<Article> articles = articleService.listArticles();
@@ -119,7 +144,10 @@ public class IndexController {
             return "login";
         }
     }
-    //注册方法
+    /**
+     * 注册
+     * @return
+     */
     @RequestMapping("/addregister")
     public String register(HttpServletRequest request){
         String username = request.getParameter("username");
@@ -135,8 +163,10 @@ public class IndexController {
             return "register";
         }
     }
-    
-    //进入写博客页
+    /**
+     * 进入写博客页面
+     * @return
+     */
     @RequestMapping("/write")
     public String write(Model model, Article article){
         List<Categories> categories = categoriesService.list();
@@ -144,8 +174,10 @@ public class IndexController {
         model.addAttribute("article",new Article());
         return "write";
     }
-    
-    //发布文章
+    /**
+     * 发布文章
+     * @return
+     */
     @RequestMapping("/saveArticle")
     public String save(Article article,HttpServletRequest request){
         String username = request.getSession().getAttribute("userName").toString(); 
@@ -173,8 +205,10 @@ public class IndexController {
         articleService.insert(article);
         return "publishSuccess";
     }
-    
-    //进入文章详情页
+    /**
+     * 进入文章详情页
+     * @return
+     */
     @RequestMapping("/detail/{id}")
     public String detail(@PathVariable("id") Integer id, Model model){
         Article article = articleService.getById(id);
@@ -190,7 +224,10 @@ public class IndexController {
         model.addAttribute("article", article);
         return "detail";
     }
-    //进入友链页面
+    /**
+     * 进入友链页面
+     * @return
+     */
     @RequestMapping("/friendLink")
     public String write(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
@@ -198,15 +235,19 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "friendLink";
     }
-    //进入关于我页面
+    /**
+     * 进入关于我页面
+     * @return
+     */
     @RequestMapping("/aboutme")
     public String about(){
         return "aboutme";
     }
     
-    
-    
-    //进入更新页面
+    /**
+     * 进入更新页面
+     * @return
+     */
     @RequestMapping("/update")
     public String update(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
@@ -214,8 +255,10 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "update";
     }
-    
-    //进入标签页面
+    /**
+     * 进入标签页面
+     * @return
+     */
     @RequestMapping("/tags")
     public String tags(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
@@ -223,7 +266,10 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "tags";
     }
-    //进入分类页面
+    /**
+     * 进入分类页面
+     * @return
+     */
     @RequestMapping("/categories")
     public String categories(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
@@ -231,7 +277,10 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "categories";
     }
-    //进入后台管理页面
+    /**
+     * 进入后台管理页面
+     * @return
+     */
     @RequestMapping("/superadmin")
     public String superadmin(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
@@ -239,7 +288,10 @@ public class IndexController {
         model.addAttribute("userName",username);
         return "superadmin";
     }
-    //进入404页面
+    /**
+     * 进入404
+     * @return
+     */
     @RequestMapping("/404")
     public String four(){
         return "404";
