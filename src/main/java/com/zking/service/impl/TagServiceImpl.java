@@ -36,4 +36,21 @@
          jsonObject.put("tagsNum",tags.size());
          return jsonObject;
      }
+    
+     @Override
+     public int insertTag(Tags record) {
+         return tagsMapper.insert(record);
+     }
+    
+     @Override
+     public void addTags(String tags, int tagSize) {
+         if(tagsMapper.findIsExitByTagName(tags) == 0){
+             Tags t = new Tags();
+             t.setTagname(tags);
+             t.setTagsize(tagSize);
+             tagsMapper.insert(t);
+         }
+     }
+     
+     
  }

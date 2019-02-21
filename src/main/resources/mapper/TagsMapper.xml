@@ -73,11 +73,16 @@
 
 
 
-    <select id="findTagsCloud" resultType="com.zking.entity.Tags">
+  <select id="findTagsCloud" resultType="com.zking.entity.Tags">
         select
         <include refid="Base_Column_List" />
         from tags
         order by id desc
-    </select>  
-    
+  </select>
+  <select id="findIsExitByTagName" parameterType="java.lang.String">
+        select
+        IFNULL(max(id),0)
+        from tags
+        tagName = #{tagName,jdbcType=VARCHAR},
+  </select>
 </mapper>

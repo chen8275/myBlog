@@ -8,6 +8,7 @@
  package com.zking.service;
  
  import com.alibaba.fastjson.JSONObject;
+ import com.zking.entity.Tags;
 
 
  /**
@@ -22,4 +23,15 @@
       * @return
       */
      JSONObject findTagsCloud();
+     /**
+      * 插入标签
+      * @return
+      */
+     int insertTag(Tags record);
+     /**
+      * 加入标签
+      * @param tags 一群标签
+      * @param tagSize 标签大小
+      */
+     void addTags(String tags, int tagSize);
  }

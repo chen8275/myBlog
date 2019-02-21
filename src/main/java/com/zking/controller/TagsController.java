@@ -8,6 +8,7 @@
  package com.zking.controller;
 
  import com.alibaba.fastjson.JSONObject;
+ import com.zking.entity.Tags;
  import com.zking.service.ArticleService;
  import com.zking.service.TagService;
  import com.zking.util.TransCodingUtil;
@@ -43,9 +44,7 @@
      public JSONObject getTagArticle(@RequestParam("tag") String tag,
                                      HttpServletRequest request){
          try {
-             
              tag = TransCodingUtil.unicodeToString(tag);
-             
          } catch (Exception e){
          }
          if("".equals(tag)){
@@ -57,4 +56,30 @@
          }
      }
     
+     /**
+      * 插入标签
+      * @param tagName 标签名
+      * @param tagSize 标签大小               
+      * @return
+      */
+     @RequestMapping("/insertTag")
+     public JSONObject insertTag(String tagName,Integer tagSize){
+         Tags tags = new Tags();
+         tags.setTagname(tagName);
+         tags.setTagsize(tagSize);
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int status = tagService.insertTag(tags);
+             jsonObject.put("code:","200");
+             jsonObject.put("data",status);
+             jsonObject.put("msg:","插入成功");
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
+     
+     
  }
