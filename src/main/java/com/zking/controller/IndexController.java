@@ -154,11 +154,13 @@ public class IndexController {
         String nowDate = timeUtil.getFormatDateForThree();
         //插入标签
         String tagName = article.getArticletags();
-        //live
-        System.out.println(tagName);
         int tagSize = (int)(Math.random() * 5 + 1);
         tagService.addTags(tagName,tagSize);
-        
+        //插入分类
+        String categoryName = article.getArticlecategories();
+        Categories categories = new Categories();
+        categories.setCategoryname(categoryName);
+        categoriesService.insertCategories(categories);
         
         article.setPublishdate(nowDate);
         article.setUpdatedate(nowDate);
