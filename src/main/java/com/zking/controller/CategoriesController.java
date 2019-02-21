@@ -94,5 +94,26 @@
          }
          return jsonObject;
      }
+     
+     /**
+      * 插入分类记录
+      */
+     @RequestMapping("/insertCategoriesRecord")
+     public JSONObject insertCategoriesRecord(String categoryName){
+         JSONObject jsonObject = new JSONObject();
+         Categories categories = new Categories();
+         categories.setCategoryname(categoryName);
+         try {
+             int status = categoriesService.insertCategories(categories);
+             jsonObject.put("code:","200");
+             jsonObject.put("msg:","插入成功");
+             jsonObject.put("data",status);
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
     
  }

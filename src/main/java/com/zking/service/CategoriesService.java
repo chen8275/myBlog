@@ -25,6 +25,11 @@
       */
      List<Categories> list();
      /**
+      * 插入分类记录
+      * @return
+      */
+     int insertCategories(Categories categories);
+     /**
       * 获得所有的分类以及该分类的文章总数
       * @return
       */
@@ -46,4 +51,5 @@
       * @return 1--删除成功  0--删除失败
       */
      String selectCategoryNameById(Integer id);
+     
  }

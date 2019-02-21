@@ -46,6 +46,11 @@
      }
     
      @Override
+     public int insertCategories(Categories categories) {
+         return categoriesMapper.insert(categories);
+     }
+    
+     @Override
      public JSONObject findCategoriesNameAndArticleNum() {
          
          List<String> categoryNames = categoriesMapper.findCategoriesName();
