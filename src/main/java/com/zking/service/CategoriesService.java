@@ -9,6 +9,7 @@
 
  import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Categories;
+ import org.springframework.transaction.annotation.Transactional;
 
  import java.util.List;
 
@@ -32,4 +33,11 @@
       * 分页获得分类管理
       */
      JSONObject getCategoriesManagement(int rows, int pageNum);
+     /**
+      * 通过id删除分类
+      * @param id 分类id
+      * @return 1--删除成功  0--删除失败
+      */
+     @Transactional
+     int deleteCategories(Integer id);
  }

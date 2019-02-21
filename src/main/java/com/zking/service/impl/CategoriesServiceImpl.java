@@ -16,6 +16,8 @@
  import com.zking.mapper.CategoriesMapper;
  import com.zking.service.ArticleService;
  import com.zking.service.CategoriesService;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
 
@@ -27,6 +29,7 @@
   */
  @Service
  public class CategoriesServiceImpl implements CategoriesService {
+     private Logger logger = LoggerFactory.getLogger(CategoriesServiceImpl.class);
      
      @Autowired
      CategoriesMapper categoriesMapper;
@@ -65,9 +68,10 @@
          JSONArray returnJsonArray = new JSONArray();
          JSONObject returnJson = new JSONObject();
          JSONObject articleJson;
-         for(Categories article : Categorieses){
+         for(Categories category : Categorieses){
              articleJson = new JSONObject();
-             articleJson.put("categoryName",article.getCategoryname());
+             articleJson.put("id",category.getId());
+             articleJson.put("categoryName",category.getCategoryname());
              returnJsonArray.add(articleJson);
          }
          returnJson.put("status",200);
@@ -83,5 +87,18 @@
          returnJson.put("pageInfo",pageJson);
     
          return returnJson;
+     }
+    
+     @Override
+     public int deleteCategories(Integer id) {
+         try {
+             
+             categoriesMapper.deleteByPrimaryKey(id);
+             
+         }catch (Exception e){
+             logger.error("删除分类失败，分类id=" + id);
+             return 0;
+         }
+         return 1;
      }
  }

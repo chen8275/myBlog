@@ -124,6 +124,18 @@
          
          return categoriesService.getCategoriesManagement(Integer.parseInt(rows), Integer.parseInt(pageNum));
      }
-    
+     
+     /**
+      * 删除分类
+      * @param id 分类id
+      * @return 1--删除成功   0--删除失败
+      */
+     @GetMapping("/deleteCategories")
+     public int deleteCategories(@RequestParam("id") String id){
+         if("".equals(id) || id == null){
+             return 0;
+         }
+         return categoriesService.deleteCategories(Integer.parseInt(id));
+     }
     
  }

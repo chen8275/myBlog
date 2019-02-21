@@ -358,8 +358,8 @@
             categoriesManagementTable.append($('<tr id="a' + obj['id'] + '"><td><a href="findArticle?articleId=' + obj['articleId'] + '&originalAuthor=' + obj['originalAuthor'] + '">' + obj['categoryName'] + '</a></td>' +
                 '<td>' +
                 '<div class="am-dropdown" data-am-dropdown>' +
-                '<button class="articleManagementBtn articleEditor am-btn am-btn-secondary">编辑</button>' +
-                '<button class="articleDeleteBtn articleDelete am-btn am-btn-danger">删除</button>' +
+                '<button class="categoriesManagementBtn articleEditor am-btn am-btn-secondary">编辑</button>' +
+                '<button class="categoriesDeleteBtn articleDelete am-btn am-btn-danger">删除</button>' +
                 '</div>' +
                 '</td>' +
                 '</tr>'));
@@ -371,16 +371,15 @@
             '</div>' +
             '</div>'));
 
-        $('.articleManagementBtn').click(function () {
+        $('.categoriesManagementBtn').click(function () {
             var $this = $(this);
             var id = $this.parent().parent().parent().attr("id").substring(1);
             window.location.replace("/editor?id=" + id);
         });
 
-        $('.articleDeleteBtn').click(function () {
+        $('.categoriesDeleteBtn').click(function () {
             var $this = $(this);
-            deleteArticleId = $this.parent().parent().parent().attr("id").substring(1);
-            alert(deleteArticleId);
+            deleteCategoriesId = $this.parent().parent().parent().attr("id").substring(1);
             $('#deleteAlter').modal('open');
         })
     }
@@ -422,3 +421,26 @@
     $('.superAdminList .articleCategories').click(function () {
         getCategoriesManagement(1);
     });
+
+    //分类管理删除分类
+    $('.categoriesDeleteBtn').click(function () {
+        $.ajax({
+            type:'get',
+            url:'../superAdmin/deleteCategories',
+            dataType:'json',
+            data:{
+                id:deleteCategoriesId
+            },
+            success:function (data) {
+                if(data == 1){
+                    successNotice("删除分类成功");
+                    getCategoriesManagement(1);
+                } else {
+                    dangerNotice("删除分类失败")
+                }
+            },
+            error:function () {
+                alert("删除失败");
+            }
+        });
+    })
