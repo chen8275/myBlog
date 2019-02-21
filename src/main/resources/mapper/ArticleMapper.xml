@@ -464,7 +464,6 @@
         count(*) 
         from article
     </select>
-    
     <select id="getArticleManagement" resultType="com.zking.entity.Article">
         select
         <include refid="Base_Column_List" />
@@ -473,4 +472,17 @@
         from article
         order by id desc 
     </select>
+    <select id="countByCategoryName" resultType="java.lang.Integer">
+        select
+        count(*) 
+        from article
+        where articleCategories = #{categoryName,jdbcType=VARCHAR}
+    </select>
+    <select id="countByTags" resultType="java.lang.Integer">
+        select
+        count(*) 
+        from article
+        where articleTags = #{tagsName,jdbcType=VARCHAR}
+    </select>
+
 </mapper>

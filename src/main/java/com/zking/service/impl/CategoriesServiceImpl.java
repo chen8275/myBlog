@@ -118,4 +118,9 @@
      public String selectCategoryNameById(Integer id) {
          return categoriesMapper.selectCategoryNameById(id);
      }
+    
+     @Override
+     public int deleteByCategoryName(String categoryName) {
+         return categoriesMapper.deleteByCategoryName(categoryName);
+     }
  }

@@ -81,6 +81,18 @@
      int countArticleNum();
     
      /**
+      * 获得分类名获得文章总数
+      * @return
+      */
+     int countArticleByCategoryName(String categoryName);
+     /**
+      * 获得分类名获得文章总数
+      * @return
+      */
+     int countArticleByTags(String tagsName);
+     
+     
+     /**
       * 分页获得文章管理
       */
      JSONObject getArticleManagement(int rows, int pageNum);

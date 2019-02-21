@@ -115,5 +115,22 @@
          }
          return jsonObject;
      }
-    
+     /**
+      * 通过分类名删除分类
+      *
+      */
+     @RequestMapping("/deleteByCategoryName")
+     public JSONObject deleteByCategoryName(String categoryName){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int status = categoriesService.deleteByCategoryName(categoryName);
+             jsonObject.put("code:","200");
+             jsonObject.put("data",status);
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
  }

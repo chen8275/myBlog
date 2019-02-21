@@ -14,9 +14,7 @@
  import com.zking.component.StringAndArray;
  import com.zking.entity.Article;
  import com.zking.mapper.ArticleMapper;
- import com.zking.service.ArchiveService;
- import com.zking.service.ArticleService;
- import com.zking.service.VisitorService;
+ import com.zking.service.*;
  import com.zking.util.TimeUtil;
  import org.slf4j.Logger;
  import org.slf4j.LoggerFactory;
@@ -42,6 +40,10 @@
      ArticleService articleService;
      @Autowired
      VisitorService visitorService;
+     @Autowired
+     CategoriesService categoriesService;
+     @Autowired
+     TagService tagService;
     
      
      @Override
@@ -50,7 +52,6 @@
          return  articleMapper.insertSelective(article);
      }
     
-     
      
      @Override
      public JSONObject insertArticle(Article article) {
@@ -172,6 +173,7 @@
          for(Article article : articles){
              String[] tagsArray = StringAndArray.stringToArray(article.getArticletags());
              articleJson = new JSONObject();
+             articleJson.put("id",article.getId());
              articleJson.put("articleId", article.getArticleid());
              articleJson.put("originalAuthor", article.getOriginalauthor());
              articleJson.put("articleTitle", article.getArticletitle());
@@ -243,7 +245,17 @@
      public int countArticleNum() {
          return articleMapper.countArticle();
      }
-     
+    
+     @Override
+     public int countArticleByCategoryName(String categoryName) {
+         return articleMapper.countByCategoryName(categoryName);
+     }
+    
+     @Override
+     public int countArticleByTags(String tagsName) {
+         return articleMapper.countByTags(tagsName);
+     }
+    
      //todo 
      // 每篇文章的浏览量需要pageName来查找
      @Override
@@ -288,6 +300,17 @@
          try {
              //删除本篇文章
              articleMapper.deleteByPrimaryKey(id);
+             // TODO: 2019/2/21  删除文章的同时删除分类和标签
+             //删除本篇文章的tag和categories,count(categoryName)==1时删除分类或标签   
+             Article article = articleMapper.selectByPrimaryKey(id);
+             String categoryName = article.getArticlecategories();
+             String tagsName = article.getArticletags();
+             int countByCategoryName = articleMapper.countByCategoryName(categoryName);
+             int countByTagsName = articleMapper.countByTags(tagsName);
+             if (countByCategoryName == 1){
+                 
+             }
+             
              
          }catch (Exception e){
              logger.error("删除文章失败，文章id=" + id);

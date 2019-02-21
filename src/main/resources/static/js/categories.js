@@ -20,7 +20,7 @@ function putInTagArticleInfo(data) {
         var content = $('<div class="content am-comment-main am-animation-slide-top am-animation-delay-1"></div>');
         content.append($('<header class="am-comment-hd" style="background: #fff">' +
             '<div class="contentTitle am-comment-meta">' +
-            '<a href="/findArticle?articleId=' + obj['articleId'] + '&originalAuthor=' + obj['originalAuthor'] + '">' + obj['articleTitle'] + '</a>' +
+            '<a href="detail/' + obj['id']  +'">' + obj['articleTitle'] + '</a>' +
             '</div>' +
             '</header>'));
         var amCommentBd = $('<div class="am-comment-bd"></div>');

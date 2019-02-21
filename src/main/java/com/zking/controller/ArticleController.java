@@ -94,6 +94,25 @@
          }
          return jsonObject;
      }
+    
+     /**
+      * 通过分类名获取文章总数
+      * @param categoryName
+      */
+     @RequestMapping("/countArticlesByCategoryName")
+     public JSONObject countArticlesByCategoryName(String categoryName){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int num = articleService.countArticleByCategoryName(categoryName);
+             jsonObject.put("code:","200");
+             jsonObject.put("data",num);
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
      
      
  }

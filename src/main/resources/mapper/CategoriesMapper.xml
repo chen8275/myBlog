@@ -27,6 +27,12 @@
     delete from categories
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <delete id="deleteByCategoryName" parameterType="java.lang.String" >
+    delete from categories
+    where categoryName = #{categoryName,jdbcType=VARCHAR}
+  </delete>
+    
+    
   <insert id="insert" parameterType="com.zking.entity.Categories" >
     insert into categories (id, categoryName)
     values (#{id,jdbcType=INTEGER}, #{categoryname,jdbcType=VARCHAR})

@@ -51,5 +51,10 @@
       * @return 1--删除成功  0--删除失败
       */
      String selectCategoryNameById(Integer id);
-     
+     /**
+      * 通过categoryName删除分类
+      * @param categoryName 分类名
+      * @return 1--删除成功  0--删除失败
+      */
+     int deleteByCategoryName(String categoryName);
  }
