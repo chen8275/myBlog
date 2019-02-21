@@ -2,11 +2,11 @@ package com.zking.mapper;
 
 import com.zking.entity.Categories;
 import org.apache.ibatis.annotations.Mapper;
-
 import java.util.List;
 
 @Mapper
 public interface CategoriesMapper {
+    
     int deleteByPrimaryKey(Integer id);
     int insert(Categories record);
     int insertSelective(Categories record);
@@ -17,5 +17,6 @@ public interface CategoriesMapper {
     List<Categories> listCategories();
     List<String> findCategoriesName();
     
+    String selectCategoryNameById(Integer id);
     
 }

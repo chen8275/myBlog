@@ -40,4 +40,10 @@
       */
      @Transactional
      int deleteCategories(Integer id);
+     /**
+      * 通过id查找分类名
+      * @param id 分类id
+      * @return 1--删除成功  0--删除失败
+      */
+     String selectCategoryNameById(Integer id);
  }

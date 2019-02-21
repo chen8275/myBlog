@@ -21,6 +21,7 @@
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
 
+ import javax.sound.midi.Soundbank;
  import java.util.List;
 
  /**
@@ -35,6 +36,8 @@
      CategoriesMapper categoriesMapper;
      @Autowired
      ArticleService articleService;
+     @Autowired
+     CategoriesService categoriesService;
      
      
      @Override
@@ -94,8 +97,8 @@
          try {
              
              //删除此分类下的文章，需要通过id获取categoryName
-             
-             
+             String categoryName = categoriesService.selectCategoryNameById(id);
+             articleService.deleteArticleByCategoryName(categoryName);
              //删除分类
              categoriesMapper.deleteByPrimaryKey(id);
              
@@ -104,5 +107,10 @@
              return 0;
          }
          return 1;
+     }
+    
+     @Override
+     public String selectCategoryNameById(Integer id) {
+         return categoriesMapper.selectCategoryNameById(id);
      }
  }

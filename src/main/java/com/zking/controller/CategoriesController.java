@@ -76,5 +76,23 @@
         
          return categoriesService.findCategoriesNameAndArticleNum();
      }
+     /**
+      * 通过id查找categoryName
+      *
+      */
+     @RequestMapping("/selectCategoryNameById")
+     public JSONObject selectCategoryNameById(Integer id){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             String categoryName = categoriesService.selectCategoryNameById(id);
+             jsonObject.put("code:","200");
+             jsonObject.put("data",categoryName);
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
     
  }

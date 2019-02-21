@@ -17,6 +17,12 @@
     from categories
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectCategoryNameById" resultType="java.lang.String">
+        select
+        categoryName
+        from categories
+        where id = #{id,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from categories
     where id = #{id,jdbcType=INTEGER}
