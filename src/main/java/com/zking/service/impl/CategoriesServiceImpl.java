@@ -93,6 +93,10 @@
      public int deleteCategories(Integer id) {
          try {
              
+             //删除此分类下的文章，需要通过id获取categoryName
+             
+             
+             //删除分类
              categoriesMapper.deleteByPrimaryKey(id);
              
          }catch (Exception e){

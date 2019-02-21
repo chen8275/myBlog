@@ -61,6 +61,10 @@
     delete from article
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <delete id="deleteByCategoryName" parameterType="java.lang.String" >
+    delete from article
+    where  articleCategories = #{categoryName,jdbcType=INTEGER}
+  </delete>
     
   <insert id="insert" parameterType="com.zking.entity.ArticleWithBLOBs" >
     insert into article(id, articleId, author, 

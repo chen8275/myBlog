@@ -137,5 +137,17 @@
          }
          return categoriesService.deleteCategories(Integer.parseInt(id));
      }
+     /**
+      * 通过categoryName删除文章
+      * @param categoryName 文章categoryName
+      * @return 1--删除成功   0--删除失败
+      */
+     @PostMapping("/deleteArticlesByCategoryName")
+     public int deleteArticlesByCategoryName(@RequestParam("categoryName") String categoryName){
+         if("".equals(categoryName) || categoryName == null){
+             return 0;
+         }
+         return articleService.deleteArticleByCategoryName(categoryName);
+     }
     
  }

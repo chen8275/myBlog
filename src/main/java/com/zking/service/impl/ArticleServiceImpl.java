@@ -296,5 +296,19 @@
          return 1;
      }
     
+     
+     @Override
+     public int deleteArticleByCategoryName(String categoryName) {
+         try {
+             //通过分类名删除文章
+             articleMapper.deleteByCategoryName(categoryName);
+        
+         }catch (Exception e){
+             logger.error("删除文章失败，文章categoryName=" + categoryName);
+             return 0;
+         }
+         return 1;
+     }
+    
     
  }

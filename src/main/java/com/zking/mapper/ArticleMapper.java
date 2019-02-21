@@ -10,6 +10,7 @@ import java.util.List;
 public interface ArticleMapper { 
     
     int deleteByPrimaryKey(Integer id);
+    int deleteByCategoryName(String categoryName);
     
     /**
      * 插入文章
@@ -40,6 +41,7 @@ public interface ArticleMapper {
     int countArticle();
     
     List<Article> getArticleManagement();
+    
     
     
 }

@@ -91,5 +91,12 @@
       */
      @Transactional
      int deleteArticle(Integer id);
+     /**
+      * 通过categoryName删除文章
+      * @param categoryName 文章id
+      * @return 1--删除成功  0--删除失败
+      */
+     @Transactional
+     int deleteArticleByCategoryName(String categoryName);
      
  }
