@@ -13,10 +13,12 @@
  import com.zking.entity.Tags;
  import com.zking.mapper.TagsMapper;
  import com.zking.service.TagService;
+ import org.slf4j.LoggerFactory;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
 
  import java.util.List;
+ import java.util.logging.Logger;
 
  /**
   * @auther chendesheng
@@ -24,9 +26,12 @@
   */
  @Service
  public class TagServiceImpl implements TagService {
-    
+     private org.slf4j.Logger logger = LoggerFactory.getLogger(ArticleServiceImpl.class);
+     
      @Autowired
      TagsMapper tagsMapper;
+     @Autowired
+     TagService tagService;
      @Override
      public JSONObject findTagsCloud() {
          List<Tags> tags = tagsMapper.findTagsCloud();
@@ -43,14 +48,22 @@
      }
     
      @Override
-     public void addTags(String tags, int tagSize) {
-         if(tagsMapper.findIsExitByTagName(tags) == 0){
+     public void addTags(String tagName, int tagSize) {
+         
+         if(tagsMapper.findIsExitByTagName(tagName) == 0){
              Tags t = new Tags();
-             t.setTagname(tags);
+             t.setTagname(tagName);
              t.setTagsize(tagSize);
              tagsMapper.insert(t);
          }
      }
+    
+     @Override
+     public Integer IsExitByTagName(String tagName) {
      
-     
+         return tagsMapper.findIsExitByTagName(tagName);
+         
+     }
+    
+    
  }

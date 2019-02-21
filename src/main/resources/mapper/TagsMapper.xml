@@ -79,10 +79,10 @@
         from tags
         order by id desc
   </select>
-  <select id="findIsExitByTagName" parameterType="java.lang.String">
+  <select id="findIsExitByTagName" resultType="java.lang.Integer">
         select
         IFNULL(max(id),0)
         from tags
-        tagName = #{tagName,jdbcType=VARCHAR},
+        where tagName = #{tagName,jdbcType=VARCHAR}
   </select>
 </mapper>

@@ -80,6 +80,25 @@
          }
          return jsonObject;
      }
+    
+     /**
+      * 判断标签是否存在
+      *
+      */
+     @RequestMapping("/IsExitByTagName")
+     public JSONObject IsExitByTagName(String tagName){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int status = tagService.IsExitByTagName(tagName);
+             jsonObject.put("code:","200");
+             jsonObject.put("data",status);
+            
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("code:","500");
+         }
+         return jsonObject;
+     }
      
      
  }

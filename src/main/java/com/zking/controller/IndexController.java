@@ -6,6 +6,7 @@ import com.zking.entity.User;
 import com.zking.mapper.UserMapper;
 import com.zking.service.ArticleService;
 import com.zking.service.CategoriesService;
+import com.zking.service.TagService;
 import com.zking.service.UserService;
 import com.zking.util.TimeUtil;
 import org.slf4j.Logger;
@@ -25,6 +26,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 
 @Controller
@@ -42,6 +44,8 @@ public class IndexController {
     ArticleService articleService;
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    TagService tagService;
     
     //index页面
     @RequestMapping("/index")
@@ -148,6 +152,14 @@ public class IndexController {
         article.setAuthor(username);
         TimeUtil timeUtil = new TimeUtil();
         String nowDate = timeUtil.getFormatDateForThree();
+        //插入标签
+        String tagName = article.getArticletags();
+        //live
+        System.out.println(tagName);
+        int tagSize = (int)(Math.random() * 5 + 1);
+        tagService.addTags(tagName,tagSize);
+        
+        
         article.setPublishdate(nowDate);
         article.setUpdatedate(nowDate);
         //设置摘要,取前40个字
@@ -160,17 +172,6 @@ public class IndexController {
         return "publishSuccess";
     }
     
-    
-    /*//编辑文章
-    @GetMapping("/write")
-    public String editor(HttpServletRequest request){
-        String id = request.getParameter("id");
-        if(!"".equals(id)){
-            request.getSession().setAttribute("id", id);
-        }
-        return "write";
-    }
-    */
     //进入文章详情页
     @RequestMapping("/detail/{id}")
     public String detail(@PathVariable("id") Integer id, Model model){

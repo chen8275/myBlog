@@ -34,4 +34,9 @@
       * @param tagSize 标签大小
       */
      void addTags(String tags, int tagSize);
+     /**
+      * 判断标签是否存在
+      * @return
+      */
+     Integer IsExitByTagName(String tagName);
  }
