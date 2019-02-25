@@ -132,7 +132,6 @@ $(document).ready(function () {
                     email:email.val(),
                     personalBrief:personalBrief.val() }),
                 success:function (data) {
-                    alert("yes");
                     if(data['errcode'] == 404){
                         $.get("../front/login",function(data,status,xhr){
                             window.location.replace("/front/login");

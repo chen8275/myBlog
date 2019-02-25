@@ -450,18 +450,17 @@
         });
     })
 
-    //分类管理删除分类
-    var categoryName = $('#categoryName').val();
-    
+    //分类管理编辑分类
+    var categoryName = $("#categoryName");
     $('.sureCategoriesEditorBtn').click(function () {
-        alert(categoryName);
+
         $.ajax({
             type:'get',
             url:'../superAdmin/editorCategoryNameById',
             dataType:'json',
             data:{
                 id:editorId,
-                categoryName:categoryName
+                categoryName:categoryName.val()
             },
             success:function (data) {
                 if(data == 1){
