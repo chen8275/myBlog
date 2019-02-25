@@ -128,4 +128,9 @@
      public int deleteByCategoryName(String categoryName) {
          return categoriesMapper.deleteByCategoryName(categoryName);
      }
+    
+     @Override
+     public int updateCategoryNameById(Categories categories) {
+         return categoriesMapper.updateByPrimaryKey(categories);
+     }
  }

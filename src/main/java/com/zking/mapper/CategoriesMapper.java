@@ -20,5 +20,5 @@ public interface CategoriesMapper {
     List<String> findCategoriesName();
     
     String selectCategoryNameById(Integer id);
-    
+
 }

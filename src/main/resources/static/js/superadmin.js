@@ -1,5 +1,6 @@
     var deleteId="";
     var deleteCategoriesId="";
+    var editorId = "";
     
     $('.superAdminList .superAdminClick').click(function () {
         var flag = $(this).attr('class').substring(16);
@@ -371,11 +372,14 @@
             '</ul>' +
             '</div>' +
             '</div>'));
-
+       
+       
+        
         $('.categoriesManagementBtn').click(function () {
             var $this = $(this);
-            var id = $this.parent().parent().parent().attr("id").substring(1);
-            window.location.replace("/front/editor?id=" + id);
+            editorId = $this.parent().parent().parent().attr("id").substring(1);
+            $('#editorCategory').modal('open');
+            //window.location.replace("/front/editor?id=" + id);
         });
 
         $('.categoriesDeleteBtn').click(function () {
@@ -445,3 +449,32 @@
             }
         });
     })
+
+    //分类管理删除分类
+    var categoryName = $('#categoryName').val();
+    
+    $('.sureCategoriesEditorBtn').click(function () {
+        alert(categoryName);
+        $.ajax({
+            type:'get',
+            url:'../superAdmin/editorCategoryNameById',
+            dataType:'json',
+            data:{
+                id:editorId,
+                categoryName:categoryName
+            },
+            success:function (data) {
+                if(data == 1){
+                    successNotice("编辑分类成功");
+                    getCategoriesManagement(1);
+                } else {
+                    dangerNotice("编辑分类失败")
+                }
+            },
+            error:function () {
+                alert("编辑失败");
+            }
+        });
+    })
+    
+    

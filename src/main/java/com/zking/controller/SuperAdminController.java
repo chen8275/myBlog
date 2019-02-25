@@ -8,6 +8,7 @@
  package com.zking.controller;
 
  import com.alibaba.fastjson.JSONObject;
+ import com.zking.entity.Categories;
  import com.zking.service.*;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
@@ -149,5 +150,21 @@
          }
          return articleService.deleteArticleByCategoryName(categoryName);
      }
-    
+     /**
+      * 编辑文章
+      * @param id 文章id
+      * @param categoryName 分类名
+      * @return 1--编辑成功   0--编辑失败
+      */
+     @GetMapping("/editorCategoryNameById")
+     public int editorCategoryNameById(@RequestParam("id") int id,@RequestParam("categoryName") String categoryName){
+         if("".equals(id) || id == 0||"".equals(categoryName) || categoryName == null){
+             return 0;
+         }
+         Categories categories = new Categories();
+         categories.setId(id);
+         categories.setCategoryname(categoryName);
+         
+         return categoriesService.updateCategoryNameById(categories);
+     }
  }

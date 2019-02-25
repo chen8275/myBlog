@@ -57,4 +57,9 @@
       * @return 1--删除成功  0--删除失败
       */
      int deleteByCategoryName(String categoryName);
+     /**
+      * 更新分类记录
+      * @return
+      */
+     int updateCategoryNameById(Categories categories);
  }

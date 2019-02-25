@@ -81,4 +81,5 @@
         categoryname
         from categories
     </select>
+  
 </mapper>
