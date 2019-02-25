@@ -21,6 +21,11 @@
     delete from tags
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <delete id="deleteByTagsName" parameterType="java.lang.String" >
+    delete from tags
+    where tagName = #{tagsName,jdbcType=VARCHAR}
+  </delete>   
+    
   <insert id="insert" parameterType="com.zking.entity.Tags" >
     insert into tags (id, tagName, tagSize
       )

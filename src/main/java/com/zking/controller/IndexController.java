@@ -12,10 +12,8 @@ import com.zking.util.TimeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.tautua.markdownpapers.Markdown;
@@ -24,9 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 
 /**
@@ -168,11 +164,26 @@ public class IndexController {
      * @return
      */
     @RequestMapping("/write")
-    public String write(Model model, Article article){
+    public String write(Model model){
         List<Categories> categories = categoriesService.list();
         model.addAttribute("categories",categories);
         model.addAttribute("article",new Article());
         return "write";
+    }
+    /**
+     * 进入文章编辑页面
+     * @return
+     */
+    @RequestMapping("/writeUpdate/{id}")
+    public String update(@PathVariable("id") Integer id, Model model){
+        Article article = articleService.getById(id);
+        List<Categories> categories = categoriesService.list();
+        
+        model.addAttribute("target", article);
+        model.addAttribute("categories", categories);
+        model.addAttribute("article", new Article());
+    
+        return "writeUpdate";
     }
     /**
      * 发布文章

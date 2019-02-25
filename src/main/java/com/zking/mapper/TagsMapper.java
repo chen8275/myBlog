@@ -9,6 +9,7 @@ import java.util.List;
 @Mapper
 public interface TagsMapper {
     int deleteByPrimaryKey(Integer id);
+    int deleteByTagsName(String tagsName);
     
     int insert(Tags record);
     int findIsExitByTagName(String tagName);

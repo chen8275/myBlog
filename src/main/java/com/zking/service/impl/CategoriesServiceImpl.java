@@ -16,6 +16,7 @@
  import com.zking.mapper.CategoriesMapper;
  import com.zking.service.ArticleService;
  import com.zking.service.CategoriesService;
+ import com.zking.service.TagService;
  import org.slf4j.Logger;
  import org.slf4j.LoggerFactory;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,8 @@
      ArticleService articleService;
      @Autowired
      CategoriesService categoriesService;
+     @Autowired
+     TagService tagService;
      
      
      @Override
@@ -100,10 +103,12 @@
      @Override
      public int deleteCategories(Integer id) {
          try {
-             
              //删除此分类下的文章，需要通过id获取categoryName
              String categoryName = categoriesService.selectCategoryNameById(id);
              articleService.deleteArticleByCategoryName(categoryName);
+             
+             //todo 删除分类后删除文章，删除文章后删除标签
+             
              //删除分类
              categoriesMapper.deleteByPrimaryKey(id);
              

@@ -14,6 +14,8 @@
  import com.zking.component.StringAndArray;
  import com.zking.entity.Article;
  import com.zking.mapper.ArticleMapper;
+ import com.zking.mapper.CategoriesMapper;
+ import com.zking.mapper.TagsMapper;
  import com.zking.service.*;
  import com.zking.util.TimeUtil;
  import org.slf4j.Logger;
@@ -44,6 +46,10 @@
      CategoriesService categoriesService;
      @Autowired
      TagService tagService;
+     @Autowired
+     CategoriesMapper categoriesMapper;
+     @Autowired
+     TagsMapper tagsMapper;
     
      
      @Override
@@ -298,8 +304,7 @@
      @Override
      public int deleteArticle(Integer id) {
          try {
-             //删除本篇文章
-             articleMapper.deleteByPrimaryKey(id);
+             
              // TODO: 2019/2/21  删除文章的同时删除分类和标签
              //删除本篇文章的tag和categories,count(categoryName)==1时删除分类或标签   
              Article article = articleMapper.selectByPrimaryKey(id);
@@ -308,9 +313,14 @@
              int countByCategoryName = articleMapper.countByCategoryName(categoryName);
              int countByTagsName = articleMapper.countByTags(tagsName);
              if (countByCategoryName == 1){
-                 
+                 categoriesMapper.deleteByCategoryName(categoryName);
              }
-             
+             if (countByTagsName == 1){
+                 tagsMapper.deleteByTagsName(tagsName);
+             }
+    
+             //删除本篇文章
+             articleMapper.deleteByPrimaryKey(id);
              
          }catch (Exception e){
              logger.error("删除文章失败，文章id=" + id);
