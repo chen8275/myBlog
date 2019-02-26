@@ -13,7 +13,7 @@ function putInAllTags(data) {
         '</div>'));
     var allTagsCloud = $('<div class="allTagsCloud categories-comment am-animation-slide-top"></div>');
     $.each(data['result'], function (index, obj) {
-        allTagsCloud.append($('<a href="/tags?tag=' + obj['tagname'] + '" style="font-size:' + obj['tagSize'] + 'px">' + obj['tagname'] + '</a>'));
+        allTagsCloud.append($('<a href="/front/tags?tag=' + obj['tagname'] + '" style="font-size:' + obj['tagSize'] + 'px">' + obj['tagname'] + '</a>'));
     });
     allTags.append(allTagsCloud);
 }
@@ -22,6 +22,7 @@ function putInAllTags(data) {
 
 //添加该标签的所有文章信息
 function putInTagArticleInfo(data) {
+    
     var siteInner = $('.site-inner');
     siteInner.empty();
     var timeLine = $('<div class="timeline timeline-wrap"></div>');
