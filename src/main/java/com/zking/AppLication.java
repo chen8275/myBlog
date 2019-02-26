@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Properties;
 
@@ -15,6 +16,7 @@ import java.util.Properties;
 
 @SpringBootApplication
 @ServletComponentScan("com.zking.config")
+@EnableTransactionManagement
 public class AppLication {
     public static void main(String[] args) {
         SpringApplication.run(AppLication.class, args);

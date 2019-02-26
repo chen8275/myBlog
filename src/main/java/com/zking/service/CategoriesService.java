@@ -62,4 +62,5 @@
       * @return
       */
      int updateCategoryNameById(Categories categories);
+     
  }
