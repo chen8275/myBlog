@@ -1,7 +1,7 @@
 package com.zking.constant;
 
 /**
- * @author: zhangocean
+ * @author: chendesheng
  * @Date: 2018/6/9 19:45
  * Describe: 阿里云连接密钥
  */

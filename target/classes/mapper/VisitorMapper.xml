@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.mapper.VisitorMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.Visitor" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="visitorNum" jdbcType="BIGINT" javaType="java.lang.Long" />
+    </constructor>
+  </resultMap>
+    
+  <resultMap id="ResultMapWithBLOBs" type="com.zking.entity.Visitor" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="visitorNum" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="pageName" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+    
+    
+  <sql id="Base_Column_List" >
+    id, visitorNum
+  </sql>
+  <sql id="Blob_Column_List" >
+    pageName
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from visitor
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from visitor
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.entity.Visitor" >
+    insert into visitor (id, visitorNum, pageName
+      )
+    values (#{id,jdbcType=INTEGER}, #{visitornum,jdbcType=BIGINT}, #{pagename,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.entity.Visitor" >
+    insert into visitor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="visitornum != null" >
+        visitorNum,
+      </if>
+      <if test="pagename != null" >
+        pageName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="visitornum != null" >
+        #{visitornum,jdbcType=BIGINT},
+      </if>
+      <if test="pagename != null" >
+        #{pagename,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.Visitor" >
+    update visitor
+    <set >
+      <if test="visitornum != null" >
+        visitorNum = #{visitornum,jdbcType=BIGINT},
+      </if>
+      <if test="pagename != null" >
+        pageName = #{pagename,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zking.entity.Visitor" >
+    update visitor
+    set visitorNum = #{visitornum,jdbcType=BIGINT},
+      pageName = #{pagename,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.Visitor" >
+    update visitor
+    set visitorNum = #{visitornum,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    
+    <select id="getAllVisitor" resultType="java.lang.Long" >
+        select
+        visitorNum
+        from visitor
+        where pageName = "totalVisitor"
+    </select>
+    <select id="getVisitorNumByPageName" resultType="java.lang.Long" >
+        select
+        visitorNum
+        from visitor
+        where pageName = #{ pageName,jdbcType=LONGVARCHAR }
+    </select>
+</mapper>

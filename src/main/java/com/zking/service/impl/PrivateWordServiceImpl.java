@@ -60,6 +60,7 @@
     
          returnJson.put("status",200);
          List<String> publishers = new ArrayList<>();
+         
          String publisher;
          for(PrivateWord privateWord : privateWords){
              userJson = new JSONObject();

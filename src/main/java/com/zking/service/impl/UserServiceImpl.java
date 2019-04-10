@@ -57,6 +57,7 @@
          map.put("content",status);
          return ResultTools.result(200,"",map);
      }
+     
     
      @Override
      public boolean usernameIsExit(String username) {

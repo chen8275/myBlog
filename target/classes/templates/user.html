@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    
+    
+    <scrip src="js/dashboard.js"></scrip>
+    <title>Hello, world!</title>
+    <!--<script type="text/javascript">
+        $(document).ready(function(){
+            $('#birthday').datetimepicker({
+                format: 'yyyy-mm-dd',
+                weekStart: 1,
+                autoclose: true,
+                startView: 3,
+                minView: "month",
+                forceParse: false,
+                language: 'zh-CN'
+
+            });
+            
+            
+            $('#basicSetting,#leaveMessage,#privateWord').css("display","none");
+            $('.clickLi').click(function () {
+                var flag = $(this).attr('class').substring(8);
+                $('#personalDate,#basicSetting,#leaveMessage,#privateWord').css("display","none");
+                $("#" + flag).css("display","block");
+            });
+        });
+    </script>-->
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/front/show}">Tiger Blog</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{/front/show}">首页</a></li>
+                <li><a href="https://github.com/Huuzii77">项目</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        菜单
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/front/categories}">分类</a></li>
+                        <li><a th:href="@{/front/tags}">标签</a></li>
+                        <li><a th:href="@{/front/update}">更新</a></li>
+                        <li class="divider"></li>
+                        <li><a th:href="@{/front/friendLink}">友链</a></li>
+                        <li class="divider"></li>
+                        <li><a th:href="@{/front/aboutme}">关于我</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
+            <li>
+                <a th:href="@{/front/write}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a> 
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span th:text="${session.userName}">用户</span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{/front/user}">个人中心</a></li>
+                    <li><a th:href="@{/front/superadmin}">网站后台管理</a></li>
+                    <li><a id="modal-870181" href="#modal-container-870181" role="button" class="btn" data-toggle="modal">反馈</a></li>
+                    <li class="divider"></li>
+                    <li><a th:href="@{/front/logout}">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" th:unless="${session.userName}">
+            <li><a href="/front/register"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+            <li><a href="/front/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    
+    <div class="row row-offcanvas row-offcanvas-left">
+        <!--左侧-->
+        <div class="col-sm-4 col-md-3 sidebar-offcanvas text-center" id="sidebar" role="navigation" >
+            <ul class="nav nav-sidebar">
+                <li class="clickLi personalDate"><a><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
+                <li class="clickLi basicSetting"><a><span class="glyphicon glyphicon-asterisk"></span> 安全设置</a></li>
+                <li class="clickLi leaveMessage"><a><span class="glyphicon glyphicon-comment"></span> 评论留言</a></li>
+                <li class="clickLi privateWord"><a><span class="glyphicon glyphicon-headphones"></span> 悄悄话</a></li>
+            </ul>
+        </div><!--/span-->
+        
+        <!--右侧-->
+        <div class="col-sm-8 col-md-9 main">
+            
+            <div id="personalDate" th:object="${user}">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名" th:value="*{username}">
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">手机</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号" th:value="*{phone}">
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="trueName" class="col-sm-2 control-label">姓名</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="trueName" id="trueName" placeholder="请输入姓名" th:value="*{trueName}">
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="birthday" class="col-sm-2 control-label">生日</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text"  name="birthday" id="birthday" ng-model="effectivityendtime" data-date-format="yyyy-mm" placeholder="请输入生日" th:value="*{birthday}">
+                            <!--<input type="text" class="form-control" name="birthday" id="birthday" placeholder="请输入生日">-->
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-6" id="genderTable">
+                            <label class="radio-inline">
+                                <input type="radio" id="male" name="gender" value="male" checked> 男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" id="female" name="gender"  value="female"> 女
+                            </label>
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">邮箱</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="email" id="email" placeholder="请输入邮箱" th:value="*{email}" >
+                        </div>
+                    </div>
+                    <br><br><hr>
+
+                    <div class="form-group">
+                        <label for="personalBrief" class="col-sm-2 control-label">个人简介</label>
+                        <div class="col-sm-6">
+                            <textarea class="form-control" name="personalBrief" id="personalBrief" th:value="*{personalBrief}"></textarea>
+                        </div>
+                    </div>
+                    <br><br><hr>
+                    <button type="button" id="savePersonalDateBtn" class="btn btn-default" >保存</button>
+                    <br><br>
+                </form>
+                <br><br>
+            </div>
+            
+            
+            <div id="basicSetting">
+                <form role="form">
+
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">用户名</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="username2" id="username2" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                    <br><br><hr>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">新密码</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="password" id="password" placeholder="填写你的密码">
+                        </div>
+                    </div>
+                    <br><br><hr>
+                    <div class="form-group">
+                        <label for="password2" class="col-sm-2 control-label">确认密码</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="password2" id="password2" placeholder="再次填写你的密码">
+                        </div>
+                    </div>
+                    <br><br><hr>
+                    <button type="submit" class="btn btn-default" id="updateUsernameAndPassword">保存</button>
+                </form>
+            </div>
+            
+            
+            
+            <div id="leaveMessage">
+                <div class="tabbable" id="tabs-630675">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="#panel-one" data-toggle="tab">评论</a>
+                        </li>
+                        <li class="active">
+                            <a href="#panel-two" data-toggle="tab">留言</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="panel-one">
+                            <div class="noComment">
+                                你还没有任何评论哦
+                            </div>
+                        </div>
+                        <div class="tab-pane active" id="panel-two">
+                            <div class="noLeaveMessage">
+                                你还没有任何留言哦
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            <div id="privateWord" class="col-xs-offset-1 col-sm-6">
+                <div class="zhangSay">
+                    <br><br><br>
+                    <span class="word">生命中有一些人与我们擦肩了，却来不及遇见</span><br>
+                    <span class="word">遇见了，却来不及相识</span><br>
+                    <span class="word">相识了，却来不及熟悉</span><br>
+                    <span class="word">熟悉了，却还是要说再见...</span><br>
+                    <hr>
+                </div>
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">你一言我一语</h3>
+                    </div>
+                    <div class="panel-body">
+                        <textarea class="form-control" rows="3" id="userSay"></textarea>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" id="userSayBtn">Send</button>
+            </div>
+            
+        </div><!--/row-->
+    </div>
+</div><!--/.container-->
+
+
+
+<!--反馈-->
+<div class="modal fade" id="modal-container-870181" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    反馈
+                </h4>
+                <p>您对于本博客网站有任何意见或是存在Bug的地方，欢迎进行反馈</p>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label>非常感谢您抽出时间填写问题反馈。必填</label>
+                        <textarea id="feedbackFormContent" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackFormQQ">留下联系方式</label>
+                        <input type="text" class="form-control" id="feedbackFormQQ" placeholder="方便留下微信或是QQ联系你吗？选填">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary" id="feedbackFormBtn" data-dismiss="modal">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="../js/all.js"></script>
+<script src="../js/user.js"></script>
+</body>
+</html>

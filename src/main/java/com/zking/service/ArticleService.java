@@ -90,8 +90,14 @@
       * @return
       */
      int countArticleByTags(String tagsName);
-     
-     
+    
+     /**
+      * 分页获得所有文章
+      * @param pageNum
+      * @param pageSize
+      * @return
+      */
+     List<Article> listAllArticles(int pageNum,int pageSize);
      /**
       * 分页获得文章管理
       */

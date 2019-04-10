@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.mapper.LeaveMessageRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.LeaveMessageRecord" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="pageName" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="pId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="answererId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="respondentId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="leaveMessageDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="likes" jdbcType="INTEGER" javaType="java.lang.Integer" />
+        <arg column="leaveMessageContent" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.zking.entity.LeaveMessageRecord" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="pageName" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="pId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="answererId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="respondentId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="leaveMessageDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="likes" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="leaveMessageContent" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pageName, pId, answererId, respondentId, leaveMessageDate, likes
+  </sql>
+  <sql id="Blob_Column_List" >
+    leaveMessageContent
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from leave_message_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from leave_message_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.entity.LeaveMessageRecord" >
+    insert into leave_message_record (id, pageName, pId, 
+      answererId, respondentId, leaveMessageDate, 
+      likes, leaveMessageContent)
+    values (#{id,jdbcType=INTEGER}, #{pagename,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
+      #{answererid,jdbcType=INTEGER}, #{respondentid,jdbcType=INTEGER}, #{leavemessagedate,jdbcType=VARCHAR}, 
+      #{likes,jdbcType=INTEGER}, #{leavemessagecontent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.entity.LeaveMessageRecord" >
+    insert into leave_message_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="pagename != null" >
+        pageName,
+      </if>
+      <if test="pid != null" >
+        pId,
+      </if>
+      <if test="answererid != null" >
+        answererId,
+      </if>
+      <if test="respondentid != null" >
+        respondentId,
+      </if>
+      <if test="leavemessagedate != null" >
+        leaveMessageDate,
+      </if>
+      <if test="likes != null" >
+        likes,
+      </if>
+      <if test="leavemessagecontent != null" >
+        leaveMessageContent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pagename != null" >
+        #{pagename,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="answererid != null" >
+        #{answererid,jdbcType=INTEGER},
+      </if>
+      <if test="respondentid != null" >
+        #{respondentid,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagedate != null" >
+        #{leavemessagedate,jdbcType=VARCHAR},
+      </if>
+      <if test="likes != null" >
+        #{likes,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagecontent != null" >
+        #{leavemessagecontent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.LeaveMessageRecord" >
+    update leave_message_record
+    <set >
+      <if test="pagename != null" >
+        pageName = #{pagename,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        pId = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="answererid != null" >
+        answererId = #{answererid,jdbcType=INTEGER},
+      </if>
+      <if test="respondentid != null" >
+        respondentId = #{respondentid,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagedate != null" >
+        leaveMessageDate = #{leavemessagedate,jdbcType=VARCHAR},
+      </if>
+      <if test="likes != null" >
+        likes = #{likes,jdbcType=INTEGER},
+      </if>
+      <if test="leavemessagecontent != null" >
+        leaveMessageContent = #{leavemessagecontent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zking.entity.LeaveMessageRecord" >
+    update leave_message_record
+    set pageName = #{pagename,jdbcType=VARCHAR},
+      pId = #{pid,jdbcType=INTEGER},
+      answererId = #{answererid,jdbcType=INTEGER},
+      respondentId = #{respondentid,jdbcType=INTEGER},
+      leaveMessageDate = #{leavemessagedate,jdbcType=VARCHAR},
+      likes = #{likes,jdbcType=INTEGER},
+      leaveMessageContent = #{leavemessagecontent,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.LeaveMessageRecord" >
+    update leave_message_record
+    set pageName = #{pagename,jdbcType=VARCHAR},
+      pId = #{pid,jdbcType=INTEGER},
+      answererId = #{answererid,jdbcType=INTEGER},
+      respondentId = #{respondentid,jdbcType=INTEGER},
+      leaveMessageDate = #{leavemessagedate,jdbcType=VARCHAR},
+      likes = #{likes,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+    
+    
+    <select id="getUserLeaveMessage" resultType="com.zking.entity.LeaveMessageRecord" >
+        select
+        <include refid="Base_Column_List" />
+      ,
+        <include refid="Blob_Column_List" />
+        from leave_message_record
+        where answererId = #{answererid,jdbcType=INTEGER}
+    </select>
+    <insert id="insertLeaveMessage" parameterType="com.zking.entity.LeaveMessageRecord" >
+    insert into leave_message_record (id, pageName, pId, 
+      answererId, respondentId, leaveMessageDate, 
+      likes, leaveMessageContent)
+    values (#{id,jdbcType=INTEGER}, #{pagename,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
+      #{answererid,jdbcType=INTEGER}, #{respondentid,jdbcType=INTEGER}, #{leavemessagedate,jdbcType=VARCHAR}, 
+      #{likes,jdbcType=INTEGER}, #{leavemessagecontent,jdbcType=LONGVARCHAR})
+  </insert>
+    
+    
+</mapper>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <scrip src="js/dashboard.js"></scrip>
+    <title>Hello, world!</title>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/front/show}">Tiger Blog</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{/front/show}">首页</a></li>
+                <li><a href="https://github.com/Huuzii77">项目</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        菜单
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/front/categories}">分类</a></li>
+                        <li><a th:href="@{/front/tags}">标签</a></li>
+                        <li><a th:href="@{/front/update}">更新</a></li>
+                        <li class="divider"></li>
+                        <li><a th:href="@{/front/friendLink}">友链</a></li>
+                        <li class="divider"></li>
+                        <li><a th:href="@{/front/aboutme}">关于我</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
+            <li>
+                <a th:href="@{/front/write}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span th:text="${session.userName}">用户</span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="@{/front/user}">个人中心</a></li>
+                    <li><a th:href="@{/front/superadmin}">网站后台管理</a></li>
+                    <li><a id="modal-870181" href="#modal-container-870181" role="button" class="btn" data-toggle="modal">反馈</a></li>
+                    <li class="divider"></li>
+                    <li><a th:href="@{/front/logout}">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" th:unless="${session.userName}">
+            <li><a href="/front/register"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+            <li><a href="/front/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-offset-3 col-sm-9">
+                <!--大佬博客-->
+                <div class="col-sm-9">
+                    <br>
+                    <div class="site-inner-people-top">
+                        <h4><span class="glyphicon glyphicon-tree-conifer"></span><span><bold>大佬博客</bold></span></h4>
+                    </div>
+                    <br>
+                    <div class="site-inner-mid">
+                        <div class="col-sm-3" style="padding: 10px">
+                            <p>
+                                
+                                <a href="http://blog.didispace.com/" target="_blank">程序猿DD</a>
+                            </p>
+                            <p>
+                                
+                                <a href="https://www.liaoxuefeng.com/" target="_blank">廖雪峰的官方网站</a>
+                            </p>
+                            <p>
+                                
+                                <a href="http://cxytiandi.com/" target="_blank">猿天地</a>
+                            </p>
+                            <p>
+                                
+                                <a href="https://www.bysocket.com/" target="_blank">泥瓦匠BYSocket</a>
+                            </p>
+                            <p>
+                                
+                                <a href="https://since1986.github.io/blog/" target="_blank">Since1986</a>
+                            </p>
+                        </div>
+                        <div class="col-sm-3" style="padding: 10px">
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="http://www.tianshouzhi.com/" target="_blank">田守枝Java技术博客</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="http://blog.itmyhome.com/" target="_blank">麦田技术博客</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="http://blog.720ui.com/" target="_blank">梁桂钊</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="http://www.icnws.com/" target="_blank">城南往事</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="http://techblog.pub/" target="_blank">原创博客技术联盟</a>
+                            </p>
+                        </div>
+                        <div class="col-sm-3" style="padding: 10px">
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="http://www.ityouknow.com/" target="_blank">纯洁的微笑</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="https://blog.52itstyle.com/" target="_blank">小柒博客</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="http://www.spring4all.com/" target="_blank">spring4all</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="http://cmsblogs.com/" target="_blank">chenssy </a>
+                            </p>
+                            <p>
+                                <i class="fa fa-unlock-alt fa-lg"></i>
+                                <a href="https://crossoverjie.top/" target="_blank">crossoverJie</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--友情链接-->
+                <div class="col-sm-9">
+                    <br>
+                    <div class="site-inner-link-top">
+                        <h4><span class="glyphicon glyphicon-tree-conifer"></span><span><bold>友情链接</bold></span></h4>
+                    </div>
+                    <br>
+                    <div class="site-inner-friend-inner">
+                        <div class="col-sm-3" style="padding: 10px">
+                            <p>
+                                <i class="fa fa-street-view fa-lg"></i>
+                                <a href="http://junxuelian.cn/" target="_blank">一名行进中的码农</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-street-view fa-lg"></i>
+                                <a href="https://sailengsi.com/" target="_blank">赛冷思个人博客</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-street-view fa-lg"></i>
+                                <a href="http://www.csxll.top/" target="_blank">陈晓雷个人博客</a>
+                            </p>
+                        </div>
+                        <div class="col-sm-3" style="padding: 10px">
+                            <p>
+                                <i class="fa fa-street-view fa-lg"></i>
+                                <a href="http://www.lipan.xyz/" target="_blank">Li Pan's 博客</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-street-view fa-lg"></i>
+                                <a href="https://naget.github.io/" target="_blank">naget的小屋</a>
+                            </p>
+                        </div>
+                        <div class="col-sm-3" style="padding: 10px">
+                            <p>
+                                <i class="fa fa-street-view fa-lg"></i>
+                                <a href="https://sanii.cn/" target="_blank">SAn Blog</a>
+                            </p>
+                            <p>
+                                <i class="fa fa-street-view fa-lg"></i>
+                                <a href="http://www.liuzhaopo.top/" target="_blank">会打篮球的程序猿</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--链接公告-->
+                <div class="col-sm-9">
+                    <br>
+                    <div class="site-inner-info-top">
+                        <h4><span class="glyphicon glyphicon-tree-conifer"></span><span><bold>链接公告</bold></span></h4>
+                    </div>
+                    <br>
+                    <div class="site-inner-info-inner">
+                        <p>任何一个行业，如果靠自己不断去探索和挖掘的话，对于自己的成长固然重要，但是有时站在巨人的肩膀上望向前方，你会发现
+                            成功和梦想其实就在前方。</p>
+                        <p>很感谢在我对于未来迷茫时帮助过我的人，也十分感谢那些素未谋面的大佬们在工作之余为我们分享技术前沿的风景。在此衷心的感谢他们，也希望更多的人在他们的帮助下共同进步。</p>
+                        <p><u><i>如果以上链接有涉及个人隐私问题，请及时联系我进行整改。</i></u></p>
+                    </div>
+                </div>
+                
+                <!--友链须知-->
+                <div class="col-sm-9">
+                    <br><br>
+                    <div class="site-inner-know-top">
+                        <h4><span class="glyphicon glyphicon-tree-conifer"></span><span><bold>友链须知</bold></span></h4>
+                    </div>
+                    <br><br>
+                    <div class="site-inner-know-inner">
+                        <blockquote>
+                            <ul>
+                                <li>请确认贵站可正常访问</li>
+                                <li>原创博客、技术博客、游记博客优先</li>
+                                <li>二十篇以上个人原创文章，两个月内有新文章更新</li>
+                            </ul>
+                        </blockquote>
+                        <p style="font-size: 14px">
+                            本人会长期清理无法访问的链接，请保证自己的链接长期有效<br><br>
+                            有需要互换友链的朋友也可在下方给我留言。经核实后将上挂本站点 ^_^
+                        </p>
+                        <br><br><br>
+                    </div>
+                </div>
+               
+                <!--留言-->
+                <div class="col-sm-9">
+                    <div class="zhy-link-word">
+                            <div class="comment"></div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+
+<br><br><br>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>blog<br>
+        <small>© Copyright XXX. by the helloTiger.</small>
+    </p>
+</div>
+
+
+<!--反馈-->
+<div class="modal fade" id="modal-container-870181" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    反馈
+                </h4>
+                <p>您对于本博客网站有任何意见或是存在Bug的地方，欢迎进行反馈</p>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label>非常感谢您抽出时间填写问题反馈。必填</label>
+                        <textarea id="feedbackFormContent" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackFormQQ">留下联系方式</label>
+                        <input type="text" class="form-control" id="feedbackFormQQ" placeholder="方便留下微信或是QQ联系你吗？选填">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button> <button type="button" class="btn btn-primary" id="feedbackFormBtn" data-dismiss="modal">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/all.js"></script>
+<script src="../js/leaveMessage.js"></script>
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="../js/Valine.min.js"></script>
+<script>
+    new Valine({
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV,
+        el: '.comment',
+        emoticon_url: 'https://cloud.panjunwen.com/alu',
+        emoticon_list: ["吐.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png"],
+        app_id: 'kdQs34lL7suNPnkPmq8APkA8-gzGzoHsz', // 这里填写上面得到的APP ID
+        app_key: 'YEXD5D7qjfwvA8C0LzUMpTvh', // 这里填写上面得到的APP KEY
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // 留言框占位提示文字
+    });
+</script>
+</body>
+</html>

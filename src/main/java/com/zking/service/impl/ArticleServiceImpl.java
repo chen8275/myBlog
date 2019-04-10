@@ -262,6 +262,11 @@
          return articleMapper.countByTags(tagsName);
      }
     
+     @Override
+     public List<Article> listAllArticles(int pageNum, int pageSize) {
+         return articleMapper.listArticlesPage(pageNum,pageSize);
+     }
+    
      //todo 
      // 每篇文章的浏览量需要pageName来查找
      @Override

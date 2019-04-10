@@ -20,7 +20,7 @@
      User selectByUsernameAndPassword(String username,String password);
      int insertSelective(User user);
      int findUserIdByUsername(String username);
-    
+     
      ResultModel updateByPrimaryKeySelective(String username, String password, Integer userId);
      boolean usernameIsExit(String username);
      ResultModel savePersonalDate(User user,String username);

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.mapper.TagsMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.Tags" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="tagName" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="tagSize" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, tagName, tagSize
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tags
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tags
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByTagsName" parameterType="java.lang.String" >
+    delete from tags
+    where tagName = #{tagsName,jdbcType=VARCHAR}
+  </delete>   
+    
+  <insert id="insert" parameterType="com.zking.entity.Tags" >
+    insert into tags (id, tagName, tagSize
+      )
+    values (#{id,jdbcType=INTEGER}, #{tagname,jdbcType=VARCHAR}, #{tagsize,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.entity.Tags" >
+    insert into tags
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="tagname != null" >
+        tagName,
+      </if>
+      <if test="tagsize != null" >
+        tagSize,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tagname != null" >
+        #{tagname,jdbcType=VARCHAR},
+      </if>
+      <if test="tagsize != null" >
+        #{tagsize,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.Tags" >
+    update tags
+    <set >
+      <if test="tagname != null" >
+        tagName = #{tagname,jdbcType=VARCHAR},
+      </if>
+      <if test="tagsize != null" >
+        tagSize = #{tagsize,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.Tags" >
+    update tags
+    set tagName = #{tagname,jdbcType=VARCHAR},
+      tagSize = #{tagsize,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+  <select id="findTagsCloud" resultType="com.zking.entity.Tags">
+        select
+        <include refid="Base_Column_List" />
+        from tags
+        order by id desc
+  </select>
+  <select id="findIsExitByTagName" resultType="java.lang.Integer">
+        select
+        IFNULL(max(id),0)
+        from tags
+        where tagName = #{tagName,jdbcType=VARCHAR}
+  </select>
+</mapper>

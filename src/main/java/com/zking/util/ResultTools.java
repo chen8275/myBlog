@@ -15,7 +15,9 @@
   */
  public class ResultTools {
      
+     
      public static ResultModel result(int Errcode, String Errmsg, Map<String,Object> map){
+        
          ResultModel model = new ResultModel();
          model.setErrcode(Errcode);
          switch (Errcode){

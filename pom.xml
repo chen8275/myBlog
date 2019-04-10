@@ -5,7 +5,7 @@
   <artifactId>IDEAmaven</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>IDEAmaven Maven Webapp</name>
+  <name>IDEA maven Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -13,12 +13,15 @@
     <version>1.5.3.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+    
+    
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
     <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
     <thymeleaf-layout-dialect.version>2.0.5</thymeleaf-layout-dialect.version>
+    <docker.image.prefix>myBlog</docker.image.prefix>
   </properties>
   <dependencies>
     <dependency>
@@ -74,10 +77,15 @@
           <artifactId>markdownpapers-core</artifactId>
           <version>1.4.1</version>
       </dependency>
+      <!--security-->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-security</artifactId>
+      </dependency>
   </dependencies>
 
   <build>
-    <finalName>IDEAmaven</finalName>
+    <finalName>IDEA maven</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -107,5 +115,4 @@
       <url>https://repo.spring.io/libs-release</url>
     </pluginRepository>
   </pluginRepositories>
-
 </project>

@@ -47,7 +47,7 @@
          JSONObject returnJson = new JSONObject();
          long num = visitorService.getAllVisitor();
          
-         returnJson.put("allVisitor", num);
+         returnJson.put("allVis itor", num);
          returnJson.put("allUser", userService.countUserNum());
          returnJson.put("yesterdayVisitor", num);
          returnJson.put("articleNum", articleService.countArticleNum());

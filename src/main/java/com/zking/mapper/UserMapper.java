@@ -19,6 +19,7 @@ public interface UserMapper {
     
     
     
+    String findPhoneByUsername(@Param("username") String username);
     
     User selectByUsernameAndPassword(@Param("username") String username,@Param("password") String password);
     

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.mapper.FeedbackMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.entity.Feedback" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="contactInfo" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="personId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="feedbackDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.zking.entity.Feedback" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="contactInfo" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="personId" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="feedbackDate" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="feedbackContent" jdbcType="LONGVARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, contactInfo, personId, feedbackDate
+  </sql>
+  <sql id="Blob_Column_List" >
+    feedbackContent
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from feedback
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from feedback
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zking.entity.Feedback" >
+    insert into feedback (id, contactInfo, personId, 
+      feedbackDate, feedbackContent)
+    values (#{id,jdbcType=INTEGER}, #{contactinfo,jdbcType=VARCHAR}, #{personid,jdbcType=INTEGER}, 
+      #{feedbackdate,jdbcType=VARCHAR}, #{feedbackcontent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.entity.Feedback" >
+    insert into feedback
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="contactinfo != null" >
+        contactInfo,
+      </if>
+      <if test="personid != null" >
+        personId,
+      </if>
+      <if test="feedbackdate != null" >
+        feedbackDate,
+      </if>
+      <if test="feedbackcontent != null" >
+        feedbackContent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="contactinfo != null" >
+        #{contactinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="personid != null" >
+        #{personid,jdbcType=INTEGER},
+      </if>
+      <if test="feedbackdate != null" >
+        #{feedbackdate,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackcontent != null" >
+        #{feedbackcontent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zking.entity.Feedback" >
+    update feedback
+    <set >
+      <if test="contactinfo != null" >
+        contactInfo = #{contactinfo,jdbcType=VARCHAR},
+      </if>
+      <if test="personid != null" >
+        personId = #{personid,jdbcType=INTEGER},
+      </if>
+      <if test="feedbackdate != null" >
+        feedbackDate = #{feedbackdate,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackcontent != null" >
+        feedbackContent = #{feedbackcontent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zking.entity.Feedback" >
+    update feedback
+    set contactInfo = #{contactinfo,jdbcType=VARCHAR},
+      personId = #{personid,jdbcType=INTEGER},
+      feedbackDate = #{feedbackdate,jdbcType=VARCHAR},
+      feedbackContent = #{feedbackcontent,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zking.entity.Feedback" >
+    update feedback
+    set contactInfo = #{contactinfo,jdbcType=VARCHAR},
+      personId = #{personid,jdbcType=INTEGER},
+      feedbackDate = #{feedbackdate,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+    <select id="getAllFeedback" resultType="com.zking.entity.Feedback">
+        select
+        <include refid="Base_Column_List" />
+        ,
+        <include refid="Blob_Column_List" />
+        from feedback
+    </select>
+</mapper>

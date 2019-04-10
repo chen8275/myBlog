@@ -1,5 +1,7 @@
 package com.zking.entity;
 
+import java.util.List;
+
 public class User {
     
     private Integer id;
@@ -23,6 +25,16 @@ public class User {
     private String trueName;
 
     private String username;
+    
+    private List<Role> roles;
+    
+    public List<Role> getRoles() {
+        return roles;
+    }
+    
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
     
     public User(Integer id, String avatarImgUrl, String birthday, String email, String gender, String password, String personalBrief, String phone, String recentlyLanded, String trueName, String username) {
         this.id = id;

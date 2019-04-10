@@ -7,10 +7,8 @@
   */
  package com.zking.controller;
 
- import com.alibaba.fastjson.JSONArray;
  import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Article;
- import com.zking.entity.Categories;
  import com.zking.service.ArticleService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
@@ -19,8 +17,7 @@
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
 
- import javax.servlet.http.HttpServletRequest;
- import javax.servlet.http.HttpServletResponse;
+
  import java.util.HashMap;
  import java.util.List;
  import java.util.Map;
