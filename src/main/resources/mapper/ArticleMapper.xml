@@ -458,15 +458,9 @@
         ,
         <include refid="Blob_Column_List" />
         from article
+        order by id desc 
     </select>
-    <select id="listArticlesPage" resultType="com.zking.entity.Article">
-        select
-        <include refid="Base_Column_List" />
-        ,
-        <include refid="Blob_Column_List" />
-        from article
-        limit #{pageNum},#{pageSize}
-    </select>
+   
     
     <select id="countArticle" resultType="java.lang.Integer">
         select

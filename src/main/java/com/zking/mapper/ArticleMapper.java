@@ -18,12 +18,9 @@ public interface ArticleMapper {
     int insertSelective(@Param("article") Article article);
     Article selectByPrimaryKey(Integer id);
     
-    
     int updateByPrimaryKeySelective(Article record);
     int updateByPrimaryKeyWithBLOBs(Article record);
     int updateByPrimaryKey(Article record);
-    
-    
     
     Article findEndArticleId();
     void insertArticle(Article article);
@@ -34,7 +31,7 @@ public interface ArticleMapper {
     List<Article> findArticleByCategory(String category);
     List<Article> findAllArticlesPartInfo();
     List<Article> listArticles();
-    List<Article> listArticlesPage(@Param("pageNum") int pageNum,@Param("pageSize") int pageSize);
+
     
     int countArticleCategoryByCategory(@Param("category") String category);
     List<Article> findArticleByTag(@Param("tag") String tag);

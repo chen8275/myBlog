@@ -9,6 +9,7 @@
 
  import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Article;
+ import net.sf.json.JSONArray;
  import org.springframework.transaction.annotation.Transactional;
 
  import java.util.List;
@@ -69,6 +70,14 @@
       * @return
       */
      List<Article> listArticles();
+    
+     /**
+      * 分页获取文章
+      * @param rows
+      * @param pageNO
+      * @return
+      */
+     JSONArray findAllArticles(String rows, String pageNO);
      /**
       * 通过id获得文章
       * @return
@@ -90,14 +99,7 @@
       * @return
       */
      int countArticleByTags(String tagsName);
-    
-     /**
-      * 分页获得所有文章
-      * @param pageNum
-      * @param pageSize
-      * @return
-      */
-     List<Article> listAllArticles(int pageNum,int pageSize);
+     
      /**
       * 分页获得文章管理
       */

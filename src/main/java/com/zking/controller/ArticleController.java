@@ -12,10 +12,9 @@
  import com.zking.service.ArticleService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
+ import net.sf.json.JSONArray;
  import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.web.bind.annotation.RequestBody;
- import org.springframework.web.bind.annotation.RequestMapping;
- import org.springframework.web.bind.annotation.RestController;
+ import org.springframework.web.bind.annotation.*;
 
 
  import java.util.HashMap;
@@ -60,6 +59,20 @@
              return ResultTools.result(404,e.getMessage(),null);
          }
      }
+     /**
+      * 分页获得当前页文章
+      * @param rows 一页的大小
+      * @param pageNum 当前页
+      */
+     @PostMapping("/myArticles")
+     public @ResponseBody JSONArray myArticles(@RequestParam("rows") String rows,
+                          @RequestParam("pageNum") String pageNum){
+        
+         return articleService.findAllArticles(rows, pageNum);
+        
+     }
+     
+     
      
      @RequestMapping(value = "/getById")
      public ResultModel getById(Integer id){

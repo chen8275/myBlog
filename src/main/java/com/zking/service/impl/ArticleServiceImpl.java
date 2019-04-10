@@ -7,7 +7,6 @@
   */
  package com.zking.service.impl;
 
- import com.alibaba.fastjson.JSONArray;
  import com.alibaba.fastjson.JSONObject;
  import com.github.pagehelper.PageHelper;
  import com.github.pagehelper.PageInfo;
@@ -18,12 +17,17 @@
  import com.zking.mapper.TagsMapper;
  import com.zking.service.*;
  import com.zking.util.TimeUtil;
+
+ import net.sf.json.JSONArray;
  import org.slf4j.Logger;
  import org.slf4j.LoggerFactory;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
 
+ import java.util.ArrayList;
+ import java.util.HashMap;
  import java.util.List;
+ import java.util.Map;
 
 
  /**
@@ -243,6 +247,45 @@
      }
     
      @Override
+     public JSONArray findAllArticles(String rows, String pageNO) {
+         int pageNum = Integer.parseInt(pageNO);
+         int pageSize = Integer.parseInt(rows);
+    
+         PageHelper.startPage(pageNum,pageSize);
+         List<Article> articles = articleMapper.listArticles();
+         PageInfo<Article> pageInfo = new PageInfo<>(articles);
+         List<Map<String, Object>> newArticles = new ArrayList<>();
+         Map<String, Object> map;
+    
+         for(Article article : articles){
+             map = new HashMap<>();
+             map.put("id",article.getId());
+             map.put("articleTitle", article.getArticletitle());
+             map.put("articleType", article.getArticletype());
+             map.put("publishDate", article.getPublishdate());
+             map.put("author", article.getAuthor());
+             map.put("articleCategories", article.getArticlecategories());
+             map.put("articleTabloid", article.getArticletabloid());
+            
+             newArticles.add(map);
+         }
+         JSONArray jsonArray = JSONArray.fromObject(newArticles);
+         
+         Map<String, Object> thisPageInfo = new HashMap<>();
+         thisPageInfo.put("pageNum",pageInfo.getPageNum());
+         thisPageInfo.put("pageSize",pageInfo.getPageSize());
+         thisPageInfo.put("total",pageInfo.getTotal());
+         thisPageInfo.put("pages",pageInfo.getPages());
+         thisPageInfo.put("isFirstPage",pageInfo.isIsFirstPage());
+         thisPageInfo.put("isLastPage",pageInfo.isIsLastPage());
+    
+         jsonArray.add(thisPageInfo);
+         return jsonArray;
+     }
+     
+     
+     
+     @Override
      public Article getById(int id) {
          return articleMapper.selectByPrimaryKey(id);
      }
@@ -262,12 +305,9 @@
          return articleMapper.countByTags(tagsName);
      }
     
-     @Override
-     public List<Article> listAllArticles(int pageNum, int pageSize) {
-         return articleMapper.listArticlesPage(pageNum,pageSize);
-     }
+     
     
-     //todo 
+     // todo 
      // 每篇文章的浏览量需要pageName来查找
      @Override
      public JSONObject getArticleManagement(int rows, int pageNum) {
@@ -280,11 +320,13 @@
          for(Article article : articles){
              articleJson = new JSONObject();
              articleJson.put("id",article.getId());
-             articleJson.put("articleId",article.getArticleid());
-             articleJson.put("originalAuthor",article.getOriginalauthor());
              articleJson.put("articleTitle",article.getArticletitle());
-             articleJson.put("articleCategories",article.getArticlecategories());
+             articleJson.put("author",article.getAuthor());
              articleJson.put("publishDate",article.getPublishdate());
+             articleJson.put("articleType",article.getArticletype());
+             articleJson.put("articleTabloid",article.getArticletabloid());
+             articleJson.put("articleCategories",article.getArticlecategories());
+             
 //             String pageName = "findArticle?articleId=" + article.getArticleid() + "&originalAuthor=" + article.getOriginalauthor();
              String pageName = "findArticle?articleId=1533196734&originalAuthor=张海洋";
              articleJson.put("visitorNum",visitorService.getNumByPageName(pageName));

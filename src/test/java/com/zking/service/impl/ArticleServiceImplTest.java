@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.CollectionUtils;
 
+import javax.persistence.Temporal;
 import java.util.Collections;
 import java.util.List;
 
@@ -31,5 +32,10 @@ public class ArticleServiceImplTest {
         int pageSize = 2;
         List<Article> articles = articleService.listArticles();
         log.info("articles:"+articles.size());
+    }
+    
+    @Test
+    public void testFindAllArticles(){
+        
     }
 }

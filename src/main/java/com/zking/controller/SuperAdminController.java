@@ -14,7 +14,7 @@
  import org.springframework.web.bind.annotation.*;
 
  import javax.servlet.http.HttpServletRequest;
- import java.security.Principal;
+
 
 
  /**
@@ -57,7 +57,7 @@
       * 获得文章管理
       * @return
       */
-     @GetMapping("/getArticleManagement")
+     @RequestMapping("/getArticleManagement")
      public JSONObject getArticleManagement(@RequestParam("rows") String rows,
                                             @RequestParam("pageNum") String pageNum){
         

@@ -37,6 +37,7 @@
     insert into categories (id, categoryName)
     values (#{id,jdbcType=INTEGER}, #{categoryname,jdbcType=VARCHAR})
   </insert>
+    
   <insert id="insertSelective" parameterType="com.zking.entity.Categories" >
     insert into categories
     <trim prefix="(" suffix=")" suffixOverrides="," >

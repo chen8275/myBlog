@@ -1,13 +1,18 @@
 package com.zking.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 public class Article {
     
     private Integer id;
-
+    
+    @JsonSerialize(include = JsonSerialize.Inclusion.NON_EMPTY)
     private Long articleid;
 
     private String author;
-
+    
+    @JsonSerialize(include = JsonSerialize.Inclusion.NON_EMPTY)
     private String originalauthor;
 
     private String articletitle;

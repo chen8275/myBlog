@@ -23,6 +23,8 @@ import javax.servlet.http.HttpSession;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 
 /**
@@ -191,7 +193,13 @@ public class IndexController {
      */
     @RequestMapping("/saveArticle")
     public String save(Article article,HttpServletRequest request){
-        String username = request.getSession().getAttribute("userName").toString(); 
+        String username = request.getSession().getAttribute("userName").toString();
+        long min = 1;
+        long max = 10;
+        long rangeLong = min + (((long) (new Random().nextDouble() * (max - min))));
+        
+        article.setArticleid(rangeLong);
+        article.setOriginalauthor(username);
         article.setAuthor(username);
         TimeUtil timeUtil = new TimeUtil();
         String nowDate = timeUtil.getFormatDateForThree();
