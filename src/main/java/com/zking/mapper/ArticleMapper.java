@@ -14,12 +14,6 @@ public interface ArticleMapper {
     int countByCategoryName(String categoryName);
     int countByTags(String tagsName);
     
-    
-    /**
-     * 插入文章
-     * @param record
-     * @return 
-     */
     int insert(Article record);
     int insertSelective(@Param("article") Article article);
     Article selectByPrimaryKey(Integer id);

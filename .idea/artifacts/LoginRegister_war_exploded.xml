@@ -81,6 +81,8 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:4.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.4" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:19.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

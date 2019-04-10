@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.CollectionUtils;
 
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -27,7 +29,7 @@ public class ArticleServiceImplTest {
     public void listAllArticles() {
         int pageNum = 1;
         int pageSize = 2;
-        List<Article> articles = articleService.listAllArticles(pageNum,pageSize);
-        log.info("articles:"+articles);
+        List<Article> articles = articleService.listArticles();
+        log.info("articles:"+articles.size());
     }
 }
