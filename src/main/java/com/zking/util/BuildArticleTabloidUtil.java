@@ -2,7 +2,7 @@ package com.zking.util;
 
 /**
  * @author: chendesheng
- * @Date: 2018/6/24 9:51
+ * @Date: 2018/12/24 9:51
  * Describe: markdown截取文章生成摘要
  */
 public class BuildArticleTabloidUtil {

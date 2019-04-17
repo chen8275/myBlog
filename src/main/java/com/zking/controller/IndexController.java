@@ -48,6 +48,12 @@ public class IndexController {
     @Autowired
     TagService tagService;
     
+    
+    
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
     /**
      * 进入index首页
      * @return
@@ -161,15 +167,37 @@ public class IndexController {
             return "register";
         }
     }
+    
     /**
-     * 进入写博客页面
+     * 进入写博客页
+     * @param model
      * @return
      */
-    @RequestMapping("/write")
-    public String write(Model model){
+    @RequestMapping("/editor")
+    public String editor(Model model){
         List<Categories> categories = categoriesService.list();
         model.addAttribute("categories",categories);
         model.addAttribute("article",new Article());
+        return "editor";
+        
+    }
+    
+    /**
+     * 进入修改博客页面
+     * @return
+     */
+    @RequestMapping("/write")
+    public String write(Model model,HttpServletRequest request){
+        List<Categories> categories = categoriesService.list();
+        String id = request.getParameter("id");
+        if(!"".equals(id)){
+            request.getSession().setAttribute("id", id);
+        }
+        Article article = articleService.getById(Integer.valueOf(id));
+        model.addAttribute("articleBefore",article);
+        model.addAttribute("categories",categories);
+        model.addAttribute("article",new Article());
+        
         return "write";
     }
     /**
@@ -248,7 +276,7 @@ public class IndexController {
      * @return
      */
     @RequestMapping("/friendLink")
-    public String write(Model model,HttpServletRequest request){
+    public String friendLink(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
         String username = session.getAttribute("userName").toString();
         model.addAttribute("userName",username);

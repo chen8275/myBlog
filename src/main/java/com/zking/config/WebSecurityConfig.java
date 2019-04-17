@@ -7,35 +7,34 @@
   */
  package com.zking.config;
 
-
  import org.springframework.context.annotation.Configuration;
- import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
  import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+ import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
  import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
  /**
   * @author chendesheng chendesheng@tuhu.cn
-  * @since 2019/4/9 18:58
+  * @since 2019/4/12 10:22
   */
- @Configuration
- @EnableGlobalMethodSecurity(prePostEnabled = true)
+/* @Configuration
+ @EnableWebSecurity*/
  public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
      
      @Override
      protected void configure(HttpSecurity http) throws Exception {
          http
                  .authorizeRequests()
-                 .antMatchers("/","/index","/aboutme","/archives","/categories","/friendLink","/tags","/update")
+                 .antMatchers("/front/show", "/front/index","/front/register","/front/addregister","/front/detail/*","/front/friendLink","/front/aboutme","/front/update","/front/tags","/front/categories").permitAll()
+                 .anyRequest().authenticated()
+                 .antMatchers("/front/user","/front/write","/front/saveArticle","/front/writeUpdate/*").hasAnyRole("USER")
+                 .and()
+                 .formLogin()
+                 .loginPage("/front/login")
+                 .loginProcessingUrl("/front/login")
                  .permitAll()
-                 .antMatchers("/mylove","/editor","/user").hasAnyRole("USER")
-                 .antMatchers("/ali").hasAnyRole("ADMIN")
-                 .antMatchers("/superadmin").hasAnyRole("SUPERADMIN")
                  .and()
-                 .formLogin().loginPage("/login").failureUrl("/login?error").defaultSuccessUrl("/")
-                 .and()
-                 .logout().logoutUrl("/logout").logoutSuccessUrl("/");
-        
+                 .logout().logoutUrl("/front/logout")
+                 .permitAll();
          http.csrf().disable();
      }
  }

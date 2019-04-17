@@ -71,7 +71,7 @@
                  article.setOriginalauthor(article.getAuthor());
              }
              if ("".equals(article.getArticleurl())){
-                 String url = "https://www.zhyocean.cn/findArticle?articleId=" + article.getArticleid() + "&originalAuthor=" + article.getOriginalauthor();
+                 String url = "https://www.hellotiger.top/findArticle?articleId=" + article.getArticleid() + "&originalAuthor=" + article.getOriginalauthor();
                  article.setArticleurl(url);
              }
              Article endArticleId = articleMapper.findEndArticleId();
@@ -125,7 +125,7 @@
          Article a = articleMapper.getArticleUrlById(article.getId());
          if("原创".equals(article.getArticletype())){
              article.setOriginalauthor(article.getAuthor());
-             String url = "https://www.zhyocean.cn/findArticle?articleId=" + a.getArticleid() + "&originalAuthor=" + a.getOriginalauthor();
+             String url = "https://www.hellotiger.top/findArticle?articleId=" + a.getArticleid() + "&originalAuthor=" + a.getOriginalauthor();
              article.setArticleurl(url);
          }
          articleMapper.updateArticleById(article);
@@ -241,11 +241,12 @@
          return jsonObject;
      }
     
+
      @Override
      public List<Article> listArticles() {
          return articleMapper.listArticles();
      }
-    
+     
      @Override
      public JSONArray findAllArticles(String rows, String pageNO) {
          int pageNum = Integer.parseInt(pageNO);
@@ -390,5 +391,5 @@
          return 1;
      }
     
-    
+     
  }

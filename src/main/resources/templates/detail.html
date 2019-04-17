@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/dashboard.css">
+
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -42,7 +42,7 @@
 
         <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
             <li>
-                <a th:href="@{/front/write}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
+                <a th:href="@{/front/editor}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -72,6 +72,7 @@
         <div class="row">
             <div class="col-xs-offset-2 col-sm-8">
                 <br>
+                
                 <h3 class="text-center" th:utext="${article.articletitle}">主题</h3><br/>
                 <p class="text-center"><span class="glyphicon glyphicon-calendar"></span> <span th:text="${article.publishdate}">2018-02-18</span> <span class="glyphicon glyphicon-user"></span> <span th:text="${article.author}">陈德生</span> <span class="glyphicon glyphicon-folder-close"></span> <span th:text="${article.articlecategories}">我的故事</span> </p>
                 <br/>
@@ -87,12 +88,7 @@
                     <p><strong>原文链接：</strong><a href="#">https://www.hellotiger.top</a></p>
                     <p><strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by/3.0/cn/">CC BY 3.0 CN</a>协议进行许可。转载请署名作者且注明文章出处。</p>
                 </blockquote>
-                <!--留言-->
-                <div class="col-xs-offset-3 col-sm-6">
-                    <div class="zhy-link-word">
-                        <div class="comment"></div>
-                    </div>
-                </div>
+          
             </div>
             
            
@@ -141,6 +137,14 @@
 </div>
 
 
+
+<!--留言-->
+<div class="col-xs-offset-3 col-sm-6">
+    <div class="zhy-link-word">
+        <div class="comment"></div>
+    </div>
+</div>
+
 <script src="../js/all.js"></script>
 <script src="../js/detail.js"></script>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -158,5 +162,6 @@
         placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // 留言框占位提示文字
     });
 </script>
+
 </body>
 </html>

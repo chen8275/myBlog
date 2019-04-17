@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/dashboard.css">
+ 
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link th:href="@{/editormd/css/editormd.css}" rel="stylesheet"/>
     
@@ -67,7 +67,7 @@
 
         <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
             <li>
-                <a th:href="@{/front/write}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
+                <a th:href="@{/front/editor}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -91,7 +91,7 @@
     </div>
 </nav>
 
-<form method="post" th:action="@{/front/saveArticle}" th:object="${article}">
+<form method="post" th:action="@{/front/saveArticle}"  th:object="${articleBefore}">
     <div class="container">
         <br/>
         <br/>
@@ -126,7 +126,7 @@
     <!--文本标记区-->
     <div id="layout" style="width: 100%;height: 100%">
         <div id="test-editormd">
-            <textarea style="display:none;" name="content" th:field="*{articlecontent}"></textarea>
+            <textarea style="display:none;" name="content" th:field="*{articlecontent}" th:text="${articleBefore.articlecontent}"></textarea>
         </div>
     </div>
     <!--提交按钮-->

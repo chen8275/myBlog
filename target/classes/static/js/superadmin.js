@@ -72,7 +72,7 @@
         $('.articleManagementBtn').click(function () {
             var $this = $(this);
             var id = $this.parent().parent().parent().attr("id").substring(1);
-            window.location.replace("/front/writeUpdate/" + id);
+            window.location.replace("/front/write?id="+id);
         });
         
         $('.articleDeleteBtn').click(function () {

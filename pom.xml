@@ -83,6 +83,17 @@
           <artifactId>mybatis-spring-boot-starter</artifactId>
           <version>1.1.1</version>
       </dependency>
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.16.18</version>
+          <scope>provided</scope>
+      </dependency>
+      <!--redis-->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-redis</artifactId>
+      </dependency>
       <!--markdown-->
       <dependency>
           <groupId>org.tautua.markdownpapers</groupId>

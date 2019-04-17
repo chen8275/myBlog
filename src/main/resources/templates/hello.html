@@ -7,5 +7,23 @@
 <body>
 <h3 th:text="'欢迎您：：' + ${session.userName}"></h3>
 <h4><a href="/front/listUsers">查看用户</a></h4>
+
+<div class="comment"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="../js/Valine.min.js"></script>
+<script>
+    new Valine({
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV,
+        el: '.comment',
+        emoticon_url: 'https://cloud.panjunwen.com/alu',
+        emoticon_list: ["吐.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png"],
+        app_id: 'kdQs34lL7suNPnkPmq8APkA8-gzGzoHsz', // 这里填写上面得到的APP ID
+        app_key: 'YEXD5D7qjfwvA8C0LzUMpTvh', // 这里填写上面得到的APP KEY
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', // 留言框占位提示文字
+    });
+</script>
 </body>
 </html>

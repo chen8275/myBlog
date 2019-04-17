@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/dashboard.css">
+
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link th:href="@{/css/update.css}" rel="stylesheet"/>
     
@@ -45,7 +45,7 @@
 
         <ul class="nav navbar-nav navbar-right" th:if="${session.userName}">
             <li>
-                <a th:href="@{/front/write}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
+                <a th:href="@{/front/editor}"><span class="glyphicon glyphicon-pencil"></span> 写博客</a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -77,7 +77,7 @@
                 <br><br>
                 <div class="col-sm-7">
                     <div class="site-inner-img">
-                        <img alt="140x140" src="https://zhy-myblog.oss-cn-shenzhen.aliyuncs.com/static/img/sun.jpg" class="img-thumbnail" />
+                        <img alt="140x140" src="http://ww1.sinaimg.cn/large/005O54Flly1g1xic5j909j30x71ah4r4.jpg" class="img-thumbnail" />
                     </div>
                     <div class="site-inner-mywords">
                         <p><span class="glyphicon glyphicon-hand-right" style="float: left"></span></p><br>

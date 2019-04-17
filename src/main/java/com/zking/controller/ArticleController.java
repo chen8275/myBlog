@@ -72,8 +72,6 @@
         
      }
      
-     
-     
      @RequestMapping(value = "/getById")
      public ResultModel getById(Integer id){
          try {
