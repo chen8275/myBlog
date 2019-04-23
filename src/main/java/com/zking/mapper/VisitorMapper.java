@@ -14,6 +14,6 @@ public interface VisitorMapper {
     int updateByPrimaryKeyWithBLOBs(Visitor record);
     int updateByPrimaryKey(Visitor record);
     
-    long getAllVisitor();
+    public long getAllVisitor();
     long getVisitorNumByPageName(String pageName);
 }

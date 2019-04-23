@@ -29,6 +29,10 @@
      @Autowired
      ArticleService articleService;
     
+     /**
+      * 获得标签云
+      * @return
+      */
      @GetMapping("/getTagCloud")
      public JSONObject getTagCloud(){
          return tagService.findTagsCloud();
@@ -40,7 +44,7 @@
       * @param tag
       * @return
       */
-     @RequestMapping("/getTagArticle")
+     @PostMapping("/getTagArticle")
      public JSONObject getTagArticle(@RequestParam("tag") String tag,
                                      HttpServletRequest request){
          try {
@@ -62,7 +66,7 @@
       * @param tagSize 标签大小               
       * @return
       */
-     @RequestMapping("/insertTag")
+     @PostMapping("/insertTag")
      public JSONObject insertTag(String tagName,Integer tagSize){
          Tags tags = new Tags();
          tags.setTagname(tagName);
@@ -85,7 +89,7 @@
       * 判断标签是否存在
       *
       */
-     @RequestMapping("/IsExitByTagName")
+     @PostMapping("/IsExitByTagName")
      public JSONObject IsExitByTagName(String tagName){
          JSONObject jsonObject = new JSONObject();
          try {
@@ -98,6 +102,17 @@
              jsonObject.put("code:","500");
          }
          return jsonObject;
+     }
+    
+     /**
+      * 测试redis
+      * @param id
+      * @return
+      */
+     @PostMapping("/selectById")
+     public Tags getById(String id){
+         Integer id2 = Integer.valueOf(id);
+         return tagService.selectById(id2);
      }
      
      

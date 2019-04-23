@@ -101,7 +101,7 @@
       * 获取个人信息
       * 
       */
-     @RequestMapping(value = "/getUserPersonalInfo")
+     @GetMapping(value = "/getUserPersonalInfo")
      public ResultModel getUserPersonalInfoByUsername(HttpServletRequest request){
     
          String userName = request.getSession().getAttribute("userName").toString();
@@ -137,7 +137,7 @@
       * 获得用户总数
       * 
       */
-     @RequestMapping("/countUserNum")
+     @GetMapping("/countUserNum")
      public JSONObject countUserNum(){
          JSONObject jsonObject = new JSONObject();
          try {
@@ -155,7 +155,7 @@
       * 通过用户名查找id
       *
       */
-     @RequestMapping("/findIdByUserName")
+     @PostMapping("/findIdByUserName")
      public JSONObject findIdByUserName(String userName){
          JSONObject jsonObject = new JSONObject();
          try {

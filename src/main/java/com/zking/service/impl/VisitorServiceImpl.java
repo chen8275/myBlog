@@ -10,7 +10,9 @@
  import com.alibaba.fastjson.JSONObject;
  import com.zking.mapper.VisitorMapper;
  import com.zking.service.VisitorService;
+ import lombok.extern.slf4j.Slf4j;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.cache.annotation.Cacheable;
  import org.springframework.stereotype.Service;
 
  /**
@@ -18,10 +20,13 @@
   * @date 2019/2/19
   */
  @Service
+ @Slf4j
  public class VisitorServiceImpl implements VisitorService {
      @Autowired
      VisitorMapper visitorMapper;
      
+     
+
      @Override
      public long getAllVisitor() {
          return visitorMapper.getAllVisitor();

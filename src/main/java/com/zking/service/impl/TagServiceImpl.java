@@ -13,8 +13,11 @@
  import com.zking.entity.Tags;
  import com.zking.mapper.TagsMapper;
  import com.zking.service.TagService;
+ import lombok.extern.slf4j.Slf4j;
+ import org.hibernate.engine.jdbc.internal.DDLFormatterImpl;
  import org.slf4j.LoggerFactory;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.cache.annotation.Cacheable;
  import org.springframework.stereotype.Service;
 
  import java.util.List;
@@ -25,6 +28,7 @@
   * @date 2019/1/31
   */
  @Service
+ @Slf4j
  public class TagServiceImpl implements TagService {
      private org.slf4j.Logger logger = LoggerFactory.getLogger(ArticleServiceImpl.class);
      
@@ -32,9 +36,13 @@
      TagsMapper tagsMapper;
      @Autowired
      TagService tagService;
+     
+     @Cacheable(cacheNames = "tags",key = "123")
      @Override
      public JSONObject findTagsCloud() {
+         
          List<Tags> tags = tagsMapper.findTagsCloud();
+         log.info("tagsCloud:[{}]",tags.size());
          JSONObject jsonObject = new JSONObject();
          jsonObject.put("status",200);
          jsonObject.put("result",JSONArray.toJSON(tags));
@@ -63,6 +71,13 @@
      
          return tagsMapper.findIsExitByTagName(tagName);
          
+     }
+    
+     @Cacheable(cacheNames = "tag",key = "#id")
+     @Override
+     public Tags selectById(Integer id) {
+         log.info("tags:");
+         return new Tags(id,"Java",20);
      }
     
     

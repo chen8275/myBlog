@@ -74,7 +74,6 @@ $(document).ready(function () {
                     password:password.val()
                 },
                 success:function (data) {
-                    alert("hello");
                     if(data['errcode'] == 404){
                         $.get("/login",function(data,status,xhr){
                             window.location.replace("/login");

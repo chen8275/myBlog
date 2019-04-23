@@ -15,9 +15,12 @@
  import com.zking.service.UserService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
+ import lombok.extern.slf4j.Slf4j;
  import org.codehaus.groovy.runtime.RangeInfo;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.cache.annotation.Cacheable;
  import org.springframework.stereotype.Service;
+ import sun.rmi.runtime.Log;
 
  import java.text.SimpleDateFormat;
  import java.util.*;
@@ -27,6 +30,7 @@
   * @date 2019/1/24
   */
  @Service
+ @Slf4j
  public class PrivateWordServiceImpl implements PrivateWordService {
      @Autowired
      UserService userService;
@@ -48,11 +52,12 @@
         
      }
     
+     @Cacheable(cacheNames = "super",key = "privateWord")
      @Override
      public JSONObject getAllPrivateWord() {
-         
+
          List<PrivateWord> privateWords = privatewordMapper.getAllPrivateWord();
-    
+         log.info("privateWords:[{}]",privateWords);
          JSONObject returnJson = new JSONObject();
          JSONObject userJson;
          JSONArray allJsonArray = new JSONArray();

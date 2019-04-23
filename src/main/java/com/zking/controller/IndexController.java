@@ -14,7 +14,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.tautua.markdownpapers.Markdown;
 
@@ -50,7 +53,7 @@ public class IndexController {
     
     
     
-    @RequestMapping("/hello")
+    @GetMapping("/hello")
     public String hello() {
         return "hello";
     }
@@ -58,7 +61,7 @@ public class IndexController {
      * 进入index首页
      * @return
      */
-    @RequestMapping("/index")
+    @GetMapping("/index")
     public String index() {
         return "index";
     }
@@ -66,7 +69,7 @@ public class IndexController {
      * 进入注册页面
      * @return
      */
-    @RequestMapping("/register")
+    @GetMapping("/register")
     public String register(){
         return "register";
     }
@@ -74,7 +77,7 @@ public class IndexController {
      * 判断是不是登陆状态
      * @return 是返回1，不是返回0
      */
-    @RequestMapping("isLogin")
+    @GetMapping("isLogin")
     public int isLogin(HttpServletRequest request){
         String userName = request.getSession().getAttribute("userName").toString();
         if ("".equals(userName)||userName == "false"){
@@ -88,7 +91,7 @@ public class IndexController {
      * 进入登陆页面
      * @return 
      */
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login(HttpServletRequest request){
         HttpSession session = request.getSession();
         session.setAttribute("userName","false");
@@ -98,7 +101,7 @@ public class IndexController {
      * 进入个人中心页面
      * @return
      */
-    @RequestMapping("/user")
+    @GetMapping("/user")
     public String user(Model model,HttpServletRequest request){
         String userName = request.getSession().getAttribute("userName").toString();
         User user = userMapper.getUserPersonalInfo(userName);
@@ -109,7 +112,7 @@ public class IndexController {
      * 进入博客首页
      * @return
      */
-    @RequestMapping("/show")
+    @GetMapping("/show")
     public String moveShow(Model model){
         List<Article> articles = articleService.listArticles();
         model.addAttribute("articles",articles);
@@ -119,7 +122,7 @@ public class IndexController {
      * 登出
      * @return
      */
-    @RequestMapping("/logout")
+    @GetMapping("/logout")
     public String moveOut(HttpServletRequest request,Model model){
         List<Article> articles = articleService.listArticles();
         model.addAttribute("articles",articles);
@@ -131,18 +134,17 @@ public class IndexController {
      * 登陆
      * @return
      */
-    @RequestMapping("/loginPage")
+    @PostMapping("/loginPage")
     public String loginPage(HttpServletRequest request,Model model){
         List<Article> articles = articleService.listArticles();
         model.addAttribute("articles",articles);
-        
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         HttpSession session = request.getSession();
         session.setAttribute("userName",username);
         User user = userService.selectByUsernameAndPassword(username,password);
         logger.info(user.getUsername());
-        if (user !=null){
+        if (user != null){
             return "show";
         }else {
             return "login";
@@ -152,7 +154,7 @@ public class IndexController {
      * 注册
      * @return
      */
-    @RequestMapping("/addregister")
+    @PostMapping("/addregister")
     public String register(HttpServletRequest request){
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -173,7 +175,7 @@ public class IndexController {
      * @param model
      * @return
      */
-    @RequestMapping("/editor")
+    @GetMapping("/editor")
     public String editor(Model model){
         List<Categories> categories = categoriesService.list();
         model.addAttribute("categories",categories);
@@ -186,7 +188,7 @@ public class IndexController {
      * 进入修改博客页面
      * @return
      */
-    @RequestMapping("/write")
+    @PostMapping("/write")
     public String write(Model model,HttpServletRequest request){
         List<Categories> categories = categoriesService.list();
         String id = request.getParameter("id");
@@ -204,7 +206,7 @@ public class IndexController {
      * 进入文章编辑页面
      * @return
      */
-    @RequestMapping("/writeUpdate/{id}")
+    @GetMapping("/writeUpdate/{id}")
     public String update(@PathVariable("id") Integer id, Model model){
         Article article = articleService.getById(id);
         List<Categories> categories = categoriesService.list();
@@ -219,7 +221,7 @@ public class IndexController {
      * 发布文章
      * @return
      */
-    @RequestMapping("/saveArticle")
+    @PostMapping("/saveArticle")
     public String save(Article article,HttpServletRequest request){
         String username = request.getSession().getAttribute("userName").toString();
         long min = 1;
@@ -256,7 +258,7 @@ public class IndexController {
      * 进入文章详情页
      * @return
      */
-    @RequestMapping("/detail/{id}")
+    @PostMapping("/detail/{id}")
     public String detail(@PathVariable("id") Integer id, Model model){
         Article article = articleService.getById(id);
         Markdown markdown = new Markdown();
@@ -275,18 +277,20 @@ public class IndexController {
      * 进入友链页面
      * @return
      */
-    @RequestMapping("/friendLink")
+    @GetMapping("/friendLink")
     public String friendLink(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
         String username = session.getAttribute("userName").toString();
-        model.addAttribute("userName",username);
+        if (!StringUtils.isEmpty(username)){
+            model.addAttribute("userName",username);
+        }        
         return "friendLink";
     }
     /**
      * 进入关于我页面
      * @return
      */
-    @RequestMapping("/aboutme")
+    @GetMapping("/aboutme")
     public String about(){
         return "aboutme";
     }
@@ -295,40 +299,46 @@ public class IndexController {
      * 进入更新页面
      * @return
      */
-    @RequestMapping("/update")
+    @GetMapping("/update")
     public String update(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
         String username = session.getAttribute("userName").toString();
-        model.addAttribute("userName",username);
+        if (!StringUtils.isEmpty(username)){
+            model.addAttribute("userName",username);
+        }
         return "update";
     }
     /**
      * 进入标签页面
      * @return
      */
-    @RequestMapping("/tags")
+    @GetMapping("/tags")
     public String tags(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
         String username = session.getAttribute("userName").toString();
-        model.addAttribute("userName",username);
+        if(username!=null&&!"".equals(username)){
+            model.addAttribute("userName",username);
+        }
         return "tags";
     }
     /**
      * 进入分类页面
      * @return
      */
-    @RequestMapping("/categories")
+    @GetMapping("/categories")
     public String categories(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
         String username = session.getAttribute("userName").toString();
-        model.addAttribute("userName",username);
+        if (!StringUtils.isEmpty(username)){
+            model.addAttribute("userName",username);
+        }
         return "categories";
     }
     /**
      * 进入后台管理页面
      * @return
      */
-    @RequestMapping("/superadmin")
+    @GetMapping("/superadmin")
     public String superadmin(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
         String username = session.getAttribute("userName").toString();
@@ -339,7 +349,7 @@ public class IndexController {
      * 进入404
      * @return
      */
-    @RequestMapping("/404")
+    @GetMapping("/404")
     public String four(){
         return "404";
     }

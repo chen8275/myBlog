@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Properties;
 
@@ -19,6 +20,7 @@ import java.util.Properties;
 @ServletComponentScan("com.zking.config")
 @EnableTransactionManagement
 @EnableCaching
+@EnableSwagger2
 public class AppLication {
     public static void main(String[] args) {
         SpringApplication.run(AppLication.class, args);

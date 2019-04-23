@@ -11,6 +11,7 @@
  import com.zking.entity.Archives;
  import com.zking.service.ArchiveService;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.web.bind.annotation.PostMapping;
  import org.springframework.web.bind.annotation.RequestBody;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,7 @@
      
      @Autowired
      ArchiveService archiveService;
-     @RequestMapping("/insertArchive")
+     @PostMapping("/insertArchive")
      public JSONObject insertArchive(@RequestBody Archives archives){
          JSONObject jsonObject = new JSONObject();
          try {

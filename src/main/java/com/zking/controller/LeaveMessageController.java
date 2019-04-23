@@ -12,6 +12,7 @@
  import com.zking.service.ArticleService;
  import com.zking.service.LeaveMessageService;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.web.bind.annotation.PostMapping;
  import org.springframework.web.bind.annotation.RequestBody;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +31,15 @@
      @Autowired
      LeaveMessageService leaveMessageService;
     
-     @RequestMapping("/publishLeaveMessage")
+    
+     /**
+      * 发表留言
+      * @param leaveMessageContent
+      * @param pageName
+      * @param request
+      * @return
+      */
+     @PostMapping("/publishLeaveMessage")
      public JSONObject publishLeaveMessage(String leaveMessageContent, String pageName, HttpServletRequest request){
          String answerer = request.getSession().getAttribute("userName").toString();
          JSONObject jsonObject = new JSONObject();

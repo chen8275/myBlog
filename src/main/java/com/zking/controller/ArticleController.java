@@ -12,8 +12,10 @@
  import com.zking.service.ArticleService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
+ import lombok.extern.slf4j.Slf4j;
  import net.sf.json.JSONArray;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.cache.annotation.Cacheable;
  import org.springframework.web.bind.annotation.*;
 
 
@@ -27,12 +29,13 @@
   */
  @RestController
  @RequestMapping(value = "/article")
+ @Slf4j
  public class ArticleController {
-     
      
      @Autowired
      ArticleService articleService;
-     @RequestMapping("/insertArticle")
+     
+     @PostMapping("/insertArticle")
      public JSONObject insertArticle(@RequestBody Article article){
          JSONObject jsonObject = new JSONObject();
          try {
@@ -48,7 +51,11 @@
          return jsonObject;
      }
     
-     @RequestMapping(value = "/listArticles")
+     /**
+      * 获取所有文章
+      * @return
+      */
+     @GetMapping(value = "/listArticles")
      public ResultModel listArticles(){
          try {
              List<Article> articles = articleService.listArticles();
@@ -59,6 +66,8 @@
              return ResultTools.result(404,e.getMessage(),null);
          }
      }
+     
+     
      /**
       * 分页获得当前页文章
       * @param rows 一页的大小
@@ -71,8 +80,13 @@
          return articleService.findAllArticles(rows, pageNum);
         
      }
-     
-     @RequestMapping(value = "/getById")
+    
+     /**
+      * 根据id获得文章
+      * @param id
+      * @return
+      */
+     @PostMapping(value = "/getById")
      public ResultModel getById(Integer id){
          try {
              Article article = articleService.getById(id);
@@ -84,15 +98,18 @@
          }
      }
     
+     
      /**
       * 获得文章总数
       *
       */
-     @RequestMapping("/countArticleNum")
+     @Cacheable(cacheNames = "article",key = "123")
+     @GetMapping("/countArticleNum")
      public JSONObject countArticleNum(){
          JSONObject jsonObject = new JSONObject();
          try {
              int num = articleService.countArticleNum();
+             log.info("articleNums:[{}]",num);
              jsonObject.put("code:","200");
              jsonObject.put("data",num);
             
@@ -103,11 +120,12 @@
          return jsonObject;
      }
     
+     
      /**
       * 通过分类名获取文章总数
       * @param categoryName
       */
-     @RequestMapping("/countArticlesByCategoryName")
+     @PostMapping("/countArticlesByCategoryName")
      public JSONObject countArticlesByCategoryName(String categoryName){
          JSONObject jsonObject = new JSONObject();
          try {

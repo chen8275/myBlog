@@ -38,7 +38,7 @@
       * 查找所有分类
       * @return
       */
-     @RequestMapping(value = "/listCategories")
+     @GetMapping(value = "/listCategories")
      public ResultModel selectUserByAll(){
         try {
             List<Categories> categories = categoriesService.list();
@@ -49,6 +49,8 @@
             return ResultTools.result(404,e.getMessage(),null);
         }
     }
+    
+    
      /**
       * 获得分类下的所有文章
       * @return
@@ -80,7 +82,7 @@
       * 通过id查找categoryName
       *
       */
-     @RequestMapping("/selectCategoryNameById")
+     @PostMapping("/selectCategoryNameById")
      public JSONObject selectCategoryNameById(Integer id){
          JSONObject jsonObject = new JSONObject();
          try {
@@ -98,7 +100,7 @@
      /**
       * 插入分类记录
       */
-     @RequestMapping("/insertCategoriesRecord")
+     @PostMapping("/insertCategoriesRecord")
      public JSONObject insertCategoriesRecord(String categoryName){
          JSONObject jsonObject = new JSONObject();
          Categories categories = new Categories();
@@ -115,11 +117,13 @@
          }
          return jsonObject;
      }
+     
+     
      /**
       * 通过分类名删除分类
       *
       */
-     @RequestMapping("/deleteByCategoryName")
+     @DeleteMapping("/deleteByCategoryName")
      public JSONObject deleteByCategoryName(String categoryName){
          JSONObject jsonObject = new JSONObject();
          try {

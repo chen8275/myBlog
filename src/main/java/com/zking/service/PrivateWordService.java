@@ -22,7 +22,7 @@
       * 获得所有悄悄内容
       * @return
       */
-     JSONObject getAllPrivateWord();
+     public JSONObject getAllPrivateWord();
      /**
       * 回复悄悄话
       * @param replyContent 回复内容

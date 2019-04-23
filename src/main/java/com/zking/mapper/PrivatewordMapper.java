@@ -22,7 +22,7 @@ public interface PrivatewordMapper {
     /**
      * 获得所有悄悄话
      */
-    List<PrivateWord> getAllPrivateWord();
+    public List<PrivateWord> getAllPrivateWord();
     
     void replyPrivateWord(@Param("replyContent") String replyContent, @Param("replierId") int replierId, @Param("id") int id);
         

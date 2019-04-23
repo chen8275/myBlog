@@ -39,4 +39,6 @@
       * @return
       */
      Integer IsExitByTagName(String tagName);
+     
+     Tags selectById(Integer id);
  }

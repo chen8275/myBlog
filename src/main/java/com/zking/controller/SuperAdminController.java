@@ -7,11 +7,15 @@
   */
  package com.zking.controller;
 
+ import ch.qos.logback.classic.pattern.LineOfCallerConverter;
  import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Categories;
  import com.zking.service.*;
+ import lombok.extern.slf4j.Slf4j;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.cache.annotation.Cacheable;
  import org.springframework.web.bind.annotation.*;
+ import sun.rmi.runtime.Log;
 
  import javax.servlet.http.HttpServletRequest;
 
@@ -23,6 +27,7 @@
   */
  @RestController
  @RequestMapping("/superAdmin")
+ @Slf4j
  public class SuperAdminController {
     
      @Autowired
@@ -42,39 +47,43 @@
       * 获得统计信息
       * @return
       */
+     @Cacheable(cacheNames = "admin",key = "123")
      @GetMapping("/getStatisticsInfo")
      public JSONObject getStatisticsInfo(){
          JSONObject returnJson = new JSONObject();
          long num = visitorService.getAllVisitor();
-         
-         returnJson.put("allVis itor", num);
+         returnJson.put("allVisitor", num);
          returnJson.put("allUser", userService.countUserNum());
          returnJson.put("yesterdayVisitor", num);
          returnJson.put("articleNum", articleService.countArticleNum());
          return returnJson;
      }
+     
      /**
       * 获得文章管理
       * @return
       */
-     @RequestMapping("/getArticleManagement")
+     @PostMapping("/getArticleManagement")
      public JSONObject getArticleManagement(@RequestParam("rows") String rows,
                                             @RequestParam("pageNum") String pageNum){
         
          return articleService.getArticleManagement(Integer.parseInt(rows), Integer.parseInt(pageNum));
      }
+     
+     
      /**
       * 删除文章
       * @param id 文章id
       * @return 1--删除成功   0--删除失败
       */
-     @GetMapping("/deleteArticle")
+     @DeleteMapping("/deleteArticle")
      public int deleteArticle(@RequestParam("id") String id){
          if("".equals(id) || id == null){
              return 0;
          }
          return articleService.deleteArticle(Integer.parseInt(id));
      }
+     
      /**
       * 分页获得所有反馈信息
       * @param rows 一页大小
@@ -86,6 +95,7 @@
          return feedbackService.getAllFeedback(Integer.parseInt(rows),Integer.parseInt(pageNum));
      }
      
+     
      /**
       * 获得所有悄悄话
       * @return
@@ -94,6 +104,7 @@
      public JSONObject getAllPrivateWord(){
          return privateWordService.getAllPrivateWord();
      }
+     
      /**
       * 回复悄悄话
       * @return
@@ -138,6 +149,7 @@
          }
          return categoriesService.deleteCategories(Integer.parseInt(id));
      }
+     
      /**
       * 通过categoryName删除文章
       * @param categoryName 文章categoryName
@@ -150,6 +162,7 @@
          }
          return articleService.deleteArticleByCategoryName(categoryName);
      }
+     
      /**
       * 编辑文章
       * @param id 文章id

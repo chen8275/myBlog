@@ -10,6 +10,7 @@
  import com.alibaba.fastjson.JSONObject;
  import com.zking.service.VisitorService;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.web.bind.annotation.GetMapping;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +29,7 @@
       * 获得访问总数
       *
       */
-     @RequestMapping("/getAllVisitor")
+     @GetMapping("/getAllVisitor")
      public JSONObject getAllVisitor(){
          JSONObject jsonObject = new JSONObject();
          try {
