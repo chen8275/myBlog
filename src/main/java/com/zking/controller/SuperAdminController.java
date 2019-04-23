@@ -11,6 +11,7 @@
  import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Categories;
  import com.zking.service.*;
+ import io.swagger.annotations.Api;
  import lombok.extern.slf4j.Slf4j;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.cache.annotation.Cacheable;
@@ -25,6 +26,7 @@
   * @auther chendesheng
   * @date 2019/2/19
   */
+ @Api(value = "超级管理操作",description = "详细描述")
  @RestController
  @RequestMapping("/superAdmin")
  @Slf4j
@@ -89,7 +91,7 @@
       * @param rows 一页大小
       * @param pageNum 当前页
       */
-     @GetMapping("/getAllFeedback")
+     @PostMapping("/getAllFeedback")
      public JSONObject getAllFeedback(@RequestParam("rows") String rows,
                                       @RequestParam("pageNum") String pageNum){
          return feedbackService.getAllFeedback(Integer.parseInt(rows),Integer.parseInt(pageNum));
@@ -100,7 +102,7 @@
       * 获得所有悄悄话
       * @return
       */
-     @PostMapping("/getAllPrivateWord")
+     @GetMapping("/getAllPrivateWord")
      public JSONObject getAllPrivateWord(){
          return privateWordService.getAllPrivateWord();
      }

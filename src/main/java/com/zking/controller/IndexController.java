@@ -9,6 +9,7 @@ import com.zking.service.CategoriesService;
 import com.zking.service.TagService;
 import com.zking.service.UserService;
 import com.zking.util.TimeUtil;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ import java.util.UUID;
 /**
  * @author chendesheng
  */
+@Api(value = "后台操作",description = "详细描述")
 @Controller
 @RequestMapping("/front/*")
 public class IndexController {
@@ -258,7 +260,7 @@ public class IndexController {
      * 进入文章详情页
      * @return
      */
-    @PostMapping("/detail/{id}")
+    @GetMapping("/detail/{id}")
     public String detail(@PathVariable("id") Integer id, Model model){
         Article article = articleService.getById(id);
         Markdown markdown = new Markdown();

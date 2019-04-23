@@ -40,9 +40,9 @@
      private ApiInfo apiInfo() {
          return new ApiInfoBuilder()
                  .title("博客系统")
-                 .description("")
+                 .description("基于相关关系分析的博客系统开发")
                  .termsOfServiceUrl("")
-                 .contact("")
+                 .contact("hellotiger")
                  .version("1.0.0")
                  .build();
      }

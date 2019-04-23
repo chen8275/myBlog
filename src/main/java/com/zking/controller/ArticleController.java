@@ -12,6 +12,7 @@
  import com.zking.service.ArticleService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
+ import io.swagger.annotations.Api;
  import lombok.extern.slf4j.Slf4j;
  import net.sf.json.JSONArray;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@
   * @auther chendesheng
   * @date 2019/1/29
   */
+ @Api(value = "文章操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/article")
  @Slf4j

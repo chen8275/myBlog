@@ -12,6 +12,7 @@
  import com.zking.service.ArticleService;
  import com.zking.service.TagService;
  import com.zking.util.TransCodingUtil;
+ import io.swagger.annotations.Api;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,7 @@
   * @auther chendesheng
   * @date 2019/1/31
   */
+ @Api(value = "标签操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/tags")
  public class TagsController {

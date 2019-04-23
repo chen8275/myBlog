@@ -14,6 +14,7 @@
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
  import com.zking.util.TransCodingUtil;
+ import io.swagger.annotations.Api;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,7 @@
   * @auther chendesheng
   * @date 2019/1/22
   */
+ @Api(value = "分类操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/categories")
  public class CategoriesController {

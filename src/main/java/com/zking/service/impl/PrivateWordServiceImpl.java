@@ -51,8 +51,7 @@
          return ResultTools.result(200,"",map);
         
      }
-    
-     @Cacheable(cacheNames = "super",key = "privateWord")
+     
      @Override
      public JSONObject getAllPrivateWord() {
 

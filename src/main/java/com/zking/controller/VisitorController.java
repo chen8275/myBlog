@@ -9,6 +9,7 @@
 
  import com.alibaba.fastjson.JSONObject;
  import com.zking.service.VisitorService;
+ import io.swagger.annotations.Api;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.GetMapping;
  import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@
   * @auther chendesheng
   * @date 2019/2/19
   */
+ @Api(value = "游客操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/visitor")
  public class VisitorController {

@@ -14,6 +14,8 @@
  import com.zking.service.UserService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
+ import io.swagger.annotations.Api;
+ import io.swagger.annotations.ApiOperation;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +29,7 @@
   * @auther chendesheng
   * @date 2019/1/10
   */
+ @Api(value = "用户操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/user")
  public class UserController {
@@ -35,8 +38,14 @@
      @Autowired
      PrivateWordService privateWordService;
     
+     /**
+      * 根据用户名查找用户ID
+      * @param username
+      * @return
+      */
+    @ApiOperation(value = "根据用户名查找用户ID",notes = "获取用户ID") 
     @PostMapping(value = "/findUserIdByUsername")
-     public ResultModel findUserIdByUsername(String username){
+    public ResultModel findUserIdByUsername(String username){
         try {
             int userId = userService.findUserIdByUsername(username);
             
@@ -53,6 +62,7 @@
       * 发布悄悄话
       * @param privateWord 悄悄话内容
       */
+     @ApiOperation(value = "发布悄悄话",notes = "发布悄悄话")
      @PostMapping(value = "/sendPrivateWord")
      public ResultModel sendPrivateWord(String privateWord, HttpServletRequest request){
          String username = request.getSession().getAttribute("userName").toString();
@@ -70,6 +80,7 @@
       * @param username 用户名
       * @param username 密码
       */
+      @ApiOperation(value = "安全设置更新用户名和密码",notes = "用户名和密码不能为空")
       @PostMapping(value = "/updateUsernameAndPassword")
       public ResultModel updateUsernameAndPassword(String username, String password,HttpServletRequest request){
          String userName = request.getSession().getAttribute("userName").toString();
@@ -86,6 +97,7 @@
       * 保存个人信息
       * @param user 用户
       */
+     @ApiOperation(value = "保存个人信息",notes = "保存个人信息")
      @PostMapping(value = "/savePersonalDate")
      public ResultModel savePersonalDate(@RequestBody User user, HttpServletRequest request){
          
@@ -97,10 +109,13 @@
          }
     
      }
+    
      /**
       * 获取个人信息
-      * 
+      * @param request
+      * @return
       */
+     @ApiOperation(value = "获取个人信息",notes = "获取个人信息")
      @GetMapping(value = "/getUserPersonalInfo")
      public ResultModel getUserPersonalInfoByUsername(HttpServletRequest request){
     
@@ -118,6 +133,7 @@
       * 更新个人信息
       * @param user 用户
       */
+     @ApiOperation(value = "更新个人信息",notes = "更新个人信息")
      @PostMapping(value = "update")
      public JSONObject updateByPrimaryKey(@RequestBody User user){
          JSONObject jsonObject = new JSONObject();
@@ -132,11 +148,12 @@
          }
          return jsonObject;
      }
-     
+    
      /**
       * 获得用户总数
-      * 
+      * @return
       */
+     @ApiOperation(value = "获得用户总数",notes = "获得用户总数")
      @GetMapping("/countUserNum")
      public JSONObject countUserNum(){
          JSONObject jsonObject = new JSONObject();
@@ -151,10 +168,13 @@
          }
          return jsonObject;
      }
+    
      /**
-      * 通过用户名查找id
-      *
+      * 通过用户名查找ID
+      * @param userName
+      * @return
       */
+     @ApiOperation(value = "通过用户名查找ID",notes = "通过用户名查找ID")
      @PostMapping("/findIdByUserName")
      public JSONObject findIdByUserName(String userName){
          JSONObject jsonObject = new JSONObject();

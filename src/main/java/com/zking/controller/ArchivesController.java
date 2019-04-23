@@ -10,6 +10,7 @@
  import com.alibaba.fastjson.JSONObject;
  import com.zking.entity.Archives;
  import com.zking.service.ArchiveService;
+ import io.swagger.annotations.Api;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.PostMapping;
  import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +21,7 @@
   * @auther chendesheng
   * @date 2019/1/30
   */
+ @Api(value = "归档操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/archives")
  public class ArchivesController {

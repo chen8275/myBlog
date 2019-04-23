@@ -11,6 +11,7 @@
  import com.zking.entity.Article;
  import com.zking.service.ArticleService;
  import com.zking.service.LeaveMessageService;
+ import io.swagger.annotations.Api;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.PostMapping;
  import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,7 @@
   * @auther chendesheng
   * @date 2019/1/28
   */
+ @Api(value = "留言操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/leaveMessage")
  public class LeaveMessageController {

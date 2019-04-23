@@ -10,6 +10,7 @@
  import com.zking.service.CommentService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
+ import io.swagger.annotations.Api;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.PostMapping;
  import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@
   * @auther chendesheng
   * @date 2019/1/28
   */
+ @Api(value = "评论操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "comment")
  public class CommentController {

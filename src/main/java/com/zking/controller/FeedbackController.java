@@ -12,6 +12,7 @@
  import com.zking.service.UserService;
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
+ import io.swagger.annotations.Api;
  import org.slf4j.Logger;
  import org.slf4j.LoggerFactory;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@
   * @auther chendesheng
   * @date 2019/1/23
   */
+ @Api(value = "反馈操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/feedback")
  public class FeedbackController {

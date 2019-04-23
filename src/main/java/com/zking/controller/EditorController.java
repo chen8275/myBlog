@@ -13,6 +13,7 @@
  import com.zking.service.ArticleService;
  import com.zking.util.BuildArticleTabloidUtil;
  import com.zking.util.TimeUtil;
+ import io.swagger.annotations.Api;
  import org.slf4j.Logger;
  import org.slf4j.LoggerFactory;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@
   * @auther chendesheng
   * @date 2019/1/29
   */
+ @Api(value = "编辑操作",description = "详细描述")
  @Controller
  @RequestMapping(value = "/editor")
  public class EditorController {
