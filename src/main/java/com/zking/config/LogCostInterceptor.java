@@ -1,4 +1,3 @@
-/*
 
  package com.zking.config;
  import org.slf4j.Logger;
@@ -10,14 +9,11 @@
  import javax.servlet.http.HttpServletResponse;
  import javax.servlet.http.HttpSession;
  import java.io.PrintWriter;
-
-
- */
-/**
-  * @auther chendesheng
-  * @date 2019/1/10
-  *//*
-
+ /**
+  * 拦截器配置
+  * @author chendesheng chendesheng@tuhu.cn
+  * @since 2019/4/22 21:02
+  */
  @Configuration
  public class LogCostInterceptor implements HandlerInterceptor {
      private static final Logger log = LoggerFactory.getLogger(LogCostInterceptor.class);
@@ -26,7 +22,7 @@
          log.info("---------------------开始进入请求地址拦截----------------------------");
          HttpSession session = httpServletRequest.getSession();
          System.out.println(session.getAttribute("userName"));
-         if (session.getAttribute("userName")!=null){
+         if (null != session.getAttribute("userName")){
              return true;
          }else{
             
@@ -50,4 +46,3 @@
      }
  }
 
-*/

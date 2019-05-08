@@ -82,7 +82,7 @@
         select
         <include refid="Base_Column_List" />
         from tags
-        order by id desc
+        GROUP BY tagName
   </select>
   <select id="findIsExitByTagName" resultType="java.lang.Integer">
         select
