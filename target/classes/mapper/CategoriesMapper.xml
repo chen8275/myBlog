@@ -76,6 +76,7 @@
         select
         <include refid="Base_Column_List" />
         from categories
+        group by categoryName
   </select>
     <select id="findCategoriesName" resultType="java.lang.String">
         select
