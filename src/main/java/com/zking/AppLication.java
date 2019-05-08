@@ -19,7 +19,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @ServletComponentScan("com.zking.config")
 @EnableTransactionManagement
-@EnableCaching
 @EnableSwagger2
 public class AppLication{
     public static void main(String[] args) {

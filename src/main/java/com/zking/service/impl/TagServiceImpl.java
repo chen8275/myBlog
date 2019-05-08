@@ -73,10 +73,9 @@
          
      }
     
-     @Cacheable(cacheNames = "tag",key = "#id")
+     
      @Override
      public Tags selectById(Integer id) {
-         log.info("tags:");
          return new Tags(id,"Java",20);
      }
     

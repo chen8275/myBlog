@@ -13,8 +13,11 @@
  import com.zking.service.TagService;
  import com.zking.util.TransCodingUtil;
  import io.swagger.annotations.Api;
+ import lombok.extern.slf4j.Slf4j;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.cache.annotation.Cacheable;
  import org.springframework.web.bind.annotation.*;
+ import sun.rmi.runtime.Log;
 
  import javax.servlet.http.HttpServletRequest;
 
@@ -25,6 +28,7 @@
  @Api(value = "标签操作",description = "详细描述")
  @RestController
  @RequestMapping(value = "/tags")
+ @Slf4j
  public class TagsController {
      @Autowired
      TagService tagService;
@@ -112,9 +116,10 @@
       * @return
       */
      @PostMapping("/selectById")
-     public Tags getById(String id){
-         Integer id2 = Integer.valueOf(id);
-         return tagService.selectById(id2);
+     @Cacheable(value = "tags",key = "#id")
+     public Tags getById(Integer id){
+         log.info("参数id为:[{}]",id);
+         return tagService.selectById(id);
      }
      
      

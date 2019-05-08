@@ -14,7 +14,6 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
     
-    
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -53,8 +52,13 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
-  
-    <!-- Json包 -->
+     
+      <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-redis</artifactId>
+      </dependency>
+      <!-- Json包 -->
       <dependency>
           <groupId>net.sf.json-lib</groupId>
           <artifactId>json-lib-ext-spring</artifactId>

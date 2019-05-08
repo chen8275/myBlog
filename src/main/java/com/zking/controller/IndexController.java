@@ -81,8 +81,7 @@ public class IndexController {
      */
     @GetMapping("isLogin")
     public int isLogin(HttpServletRequest request){
-        String userName = request.getSession().getAttribute("userName").toString();
-        if ("".equals(userName)||userName == "false"){
+        if (null == request.getSession().getAttribute("userName")){
             return 0;
         }else 
             {
