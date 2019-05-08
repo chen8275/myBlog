@@ -373,7 +373,7 @@
             var $this = $(this);
             editorId = $this.parent().parent().parent().attr("id").substring(1);
             $('#editorCategory').modal('open');
-            //window.location.replace("/front/editor?id=" + id);
+            window.location.replace("/front/editor?id=" + id);
         });
 
         $('.categoriesDeleteBtn').click(function () {

@@ -1,6 +1,14 @@
 package com.zking.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class PrivateWord {
     private int id;
     
@@ -29,8 +37,6 @@ public class PrivateWord {
      */
     private String publisherdate;
     
-    public PrivateWord() {
-    }
     
     public PrivateWord(String privateword, int publisherid, String publisherdate) {
         this.privateword = privateword;
@@ -38,51 +44,4 @@ public class PrivateWord {
         this.publisherdate = publisherdate;
     }
     
-    public int getId() {
-        return id;
-    }
-    
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    public String getPrivateword() {
-        return privateword;
-    }
-    
-    public void setPrivateword(String privateword) {
-        this.privateword = privateword;
-    }
-    
-    public int getPublisherid() {
-        return publisherid;
-    }
-    
-    public void setPublisherid(int publisherid) {
-        this.publisherid = publisherid;
-    }
-    
-    public int getReplierid() {
-        return replierid;
-    }
-    
-    public void setReplierid(int replierid) {
-        this.replierid = replierid;
-    }
-    
-    public String getReplycontent() {
-        return replycontent;
-    }
-    
-    public void setReplycontent(String replycontent) {
-        this.replycontent = replycontent;
-    }
-    
-    public String getPublisherdate() {
-        return publisherdate;
-    }
-    
-    public void setPublisherdate(String publisherdate) {
-        this.publisherdate = publisherdate;
-    }
 }

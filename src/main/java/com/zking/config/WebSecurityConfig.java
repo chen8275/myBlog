@@ -7,7 +7,9 @@
   */
  package com.zking.config;
 
+ import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.context.annotation.Configuration;
+ import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
  import org.springframework.security.config.annotation.web.builders.HttpSecurity;
  import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
  import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -27,14 +29,25 @@
                  .antMatchers("/front/show", "/front/index","/front/register","/front/addregister","/front/detail/*","/front/friendLink","/front/aboutme","/front/update","/front/tags","/front/categories").permitAll()
                  .anyRequest().authenticated()
                  .antMatchers("/front/user","/front/write","/front/saveArticle","/front/writeUpdate/*").hasAnyRole("USER")
+                 .antMatchers("/front/superadmin").hasAnyRole("ADMIN")
                  .and()
-                 .formLogin()
-                 .loginPage("/front/login")
-                 .loginProcessingUrl("/front/login")
-                 .permitAll()
+                 .formLogin().loginPage("/front/login")
+                 .failureUrl("/front/login_error")
                  .and()
-                 .logout().logoutUrl("/front/logout")
-                 .permitAll();
+                 .exceptionHandling().accessDeniedPage("/front/404");
+         
+         http.logout().logoutUrl("/front/logout");
          http.csrf().disable();
      }
+     
+     
+     //内存中创建用户，用户名为chen，密码1234，权限为USER
+     @Autowired
+     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+         auth
+                 .inMemoryAuthentication()
+                 .withUser("chen").password("1234").roles("USER");
+     }
+     
+     
  }

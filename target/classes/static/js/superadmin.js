@@ -85,7 +85,7 @@
     //获得文章管理文章
     function getArticleManagement(currentPage) {
         $.ajax({
-            type:'get',
+            type:'post',
             url:'../superAdmin/getArticleManagement',
             dataType:'json',
             data:{
@@ -121,7 +121,7 @@
     //文章管理删除文章
     $('.sureArticleDeleteBtn').click(function () {
         $.ajax({
-            type:'get',
+            type:'post',
             url:'../superAdmin/deleteArticle',
             dataType:'json',
             data:{
@@ -192,7 +192,7 @@
     //获得反馈信息
     function getAllFeedback(currentPage) {
         $.ajax({
-            type:'get',
+            type:'post',
             url:'../superAdmin/getAllFeedback',
             dataType:'json',
             data:{
@@ -326,7 +326,7 @@
     //点击悄悄话
     $('.superAdminList .privateWord').click(function () {
         $.ajax({
-            type:'post',
+            type:'get',
             url:'../superAdmin/getAllPrivateWord',
             dataType:'json',
             data:{
@@ -345,12 +345,6 @@
     });
 
 
-    
-    
-    
-    
-    
-    
     
     //填充分类管理
     function putInCategoriesManagement(data) {
@@ -379,7 +373,7 @@
             var $this = $(this);
             editorId = $this.parent().parent().parent().attr("id").substring(1);
             $('#editorCategory').modal('open');
-            //window.location.replace("/front/editor?id=" + id);
+            window.location.replace("/front/editor?id=" + id);
         });
 
         $('.categoriesDeleteBtn').click(function () {

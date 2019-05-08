@@ -78,7 +78,7 @@
       * @param id 文章id
       * @return 1--删除成功   0--删除失败
       */
-     @DeleteMapping("/deleteArticle")
+     @PostMapping("/deleteArticle")
      public int deleteArticle(@RequestParam("id") String id){
          if("".equals(id) || id == null){
              return 0;

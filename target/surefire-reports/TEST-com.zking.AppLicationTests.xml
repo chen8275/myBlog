@@ -1,70 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.zking.AppLicationTests" time="0.003" tests="1" errors="1" skipped="0" failures="0">
+<testsuite name="com.zking.AppLicationTests" time="0.011" tests="1" errors="1" skipped="0" failures="0">
   <properties>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="D:\User\chendesheng\Softwares\jdk\jre\bin"/>
-    <property name="java.vm.version" value="25.92-b14"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\chendesheng\Desktop\鍗氬绯荤粺\LoginRegister\LoginRegister"/>
-    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="idea.version" value="2018.1.5"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\bin"/>
+    <property name="java.vm.version" value="25.152-b39"/>
+    <property name="java.vm.vendor" value="JetBrains s.r.o"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\chendesheng\Desktop\鍗氬绯荤粺\finalBlog\LoginRegister"/>
+    <property name="java.vendor.url" value="https://www.jetbrains.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="user.script" value=""/>
     <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\chendesheng\Desktop\鍗氬绯荤粺\LoginRegister\LoginRegister"/>
-    <property name="java.runtime.version" value="1.8.0_92-b14"/>
+    <property name="user.dir" value="C:\Users\chendesheng\Desktop\鍗氬绯荤粺\finalBlog\LoginRegister"/>
+    <property name="java.runtime.version" value="1.8.0_152-release-1136-b39"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="D:\User\chendesheng\Softwares\jdk\jre\lib\endorsed"/>
+    <property name="java.endorsed.dirs" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\CHENDE~1\AppData\Local\Temp\"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="D:\User\chendesheng\Downloads\Maven\apache-maven-3.5.2\bin\..\bin\m2.conf"/>
+    <property name="archetypeCatalog" value="internal"/>
+    <property name="classworlds.conf" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="GBK"/>
-    <property name="java.library.path" value="D:\User\chendesheng\Softwares\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;D:\User\chendesheng\Downloads\Maven\apache-maven-3.5.2\bin;D:\User\chendesheng\Downloads\mysql\mysql-8.0.11-winx64\bin;D:\User\chendesheng\Softwares\VScode\Microsoft VS Code\bin;D:\User\chendesheng\Softwares\jdk\bin;D:\User\chendesheng\Softwares\jdk\jre\bin;D:\User\chendesheng\Downloads\spring-boot-cli\spring-boot-cli-2.0.1.RELEASE-bin\spring-2.0.1.RELEASE\bin;D:\User\chendesheng\Softwares\node.js\;D:\User\chendesheng\Softwares\node.js\node_global;D:\User\chendesheng\Downloads\curl\curl-7.61.0\I386;D:\User\chendesheng\Softwares\curl\GnuWin32\bin;C:\ProgramData\chocolatey\bin;D:\User\chendesheng\Downloads\Hbase\hadoop-common-2.2.0-bin-master\bin;D:\User\chendesheng\Downloads\Grade\gradle-5.1-all\gradle-5.1\bin;D:\User\chendesheng\Softwares\SQL SEVER\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;D:\User\chendesheng\Softwares\SQL SEVER\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Users\chendesheng\AppData\Local\Microsoft\WindowsApps;C:\Users\chendesheng\AppData\Roaming\npm;C:\Users\chendesheng\AppData\Local\Pandoc\;C:\k8s;;."/>
-    <property name="maven.conf" value="D:\User\chendesheng\Downloads\Maven\apache-maven-3.5.2\bin\../conf"/>
+    <property name="java.library.path" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;D:\User\chendesheng\Downloads\Maven\apache-maven-3.5.2\bin;D:\User\chendesheng\Downloads\mysql\mysql-8.0.11-winx64\bin;D:\User\chendesheng\Softwares\VScode\Microsoft VS Code\bin;D:\User\chendesheng\Softwares\jdk\bin;D:\User\chendesheng\Softwares\jdk\jre\bin;D:\User\chendesheng\Downloads\spring-boot-cli\spring-boot-cli-2.0.1.RELEASE-bin\spring-2.0.1.RELEASE\bin;D:\User\chendesheng\Softwares\node.js\;D:\User\chendesheng\Softwares\node.js\node_global;D:\User\chendesheng\Downloads\curl\curl-7.61.0\I386;D:\User\chendesheng\Softwares\curl\GnuWin32\bin;C:\ProgramData\chocolatey\bin;D:\User\chendesheng\Downloads\Hbase\hadoop-common-2.2.0-bin-master\bin;D:\User\chendesheng\Downloads\Grade\gradle-5.1-all\gradle-5.1\bin;D:\User\chendesheng\Softwares\SQL SEVER\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;D:\User\chendesheng\Softwares\SQL SEVER\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Users\chendesheng\AppData\Local\Microsoft\WindowsApps;C:\Users\chendesheng\AppData\Roaming\npm;C:\Users\chendesheng\AppData\Local\Pandoc\;C:\k8s;;C:\Users\chendesheng\AppData\Local\Programs\Fiddler;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
-    <property name="library.jansi.path" value="D:\User\chendesheng\Downloads\Maven\apache-maven-3.5.2\bin\..\lib\jansi-native"/>
     <property name="user.home" value="C:\Users\chendesheng"/>
     <property name="user.timezone" value="Asia/Shanghai"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="file.encoding" value="GBK"/>
+    <property name="file.encoding" value="UTF-8"/>
     <property name="user.name" value="chendesheng"/>
-    <property name="java.class.path" value="D:\User\chendesheng\Downloads\Maven\apache-maven-3.5.2\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.class.path" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\plugins\maven\lib\maven3\boot\plexus-classworlds-2.5.2.jar;D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\lib\idea_rt.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="D:\User\chendesheng\Softwares\jdk\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="java.home" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2018.1.5 --offline package -f pom.xml"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="zh"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_92"/>
-    <property name="java.ext.dirs" value="D:\User\chendesheng\Softwares\jdk\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="D:\User\chendesheng\Softwares\jdk\jre\lib\resources.jar;D:\User\chendesheng\Softwares\jdk\jre\lib\rt.jar;D:\User\chendesheng\Softwares\jdk\jre\lib\sunrsasign.jar;D:\User\chendesheng\Softwares\jdk\jre\lib\jsse.jar;D:\User\chendesheng\Softwares\jdk\jre\lib\jce.jar;D:\User\chendesheng\Softwares\jdk\jre\lib\charsets.jar;D:\User\chendesheng\Softwares\jdk\jre\lib\jfr.jar;D:\User\chendesheng\Softwares\jdk\jre\classes"/>
-    <property name="sun.stderr.encoding" value="ms936"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="D:\User\chendesheng\Downloads\Maven\apache-maven-3.5.2\bin\.."/>
+    <property name="java.version" value="1.8.0_152-release"/>
+    <property name="java.ext.dirs" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\resources.jar;D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\rt.jar;D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\sunrsasign.jar;D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\jsse.jar;D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\jce.jar;D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\charsets.jar;D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\lib\jfr.jar;D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\jre64\classes"/>
+    <property name="java.vendor" value="JetBrains s.r.o"/>
+    <property name="maven.home" value="D:\User\chendesheng\Softwares\Intellij IDEA\IntelliJ IDEA 2018.1.5\plugins\maven\lib\maven3"/>
     <property name="file.separator" value="\"/>
-    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.vendor.url.bug" value="https://youtrack.jetbrains.com"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="sun.stdout.encoding" value="ms936"/>
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="initializationError" classname="com.zking.AppLicationTests" time="0.003">
+  <testcase name="initializationError" classname="com.zking.AppLicationTests" time="0.011">
     <error message="No runnable methods" type="java.lang.Exception"><![CDATA[java.lang.Exception: No runnable methods
 	at org.junit.runners.BlockJUnit4ClassRunner.validateInstanceMethods(BlockJUnit4ClassRunner.java:191)
 	at org.junit.runners.BlockJUnit4ClassRunner.collectInitializationErrors(BlockJUnit4ClassRunner.java:128)
@@ -91,5 +89,44 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 ]]></error>
+    <system-out><![CDATA[10:29:40.944 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.zking.service.impl.ArticleServiceImplTest]
+10:29:40.956 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+10:29:40.993 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+10:29:41.023 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.zking.service.impl.ArticleServiceImplTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+10:29:41.058 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.zking.service.impl.ArticleServiceImplTest], using SpringBootContextLoader
+10:29:41.065 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.zking.service.impl.ArticleServiceImplTest]: class path resource [com/zking/service/impl/ArticleServiceImplTest-context.xml] does not exist
+10:29:41.066 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.zking.service.impl.ArticleServiceImplTest]: class path resource [com/zking/service/impl/ArticleServiceImplTestContext.groovy] does not exist
+10:29:41.067 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.zking.service.impl.ArticleServiceImplTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+10:29:41.068 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.zking.service.impl.ArticleServiceImplTest]: ArticleServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:29:41.140 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.zking.service.impl.ArticleServiceImplTest]
+10:29:41.161 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+10:29:41.164 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+10:29:41.164 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+10:29:41.187 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [com/zking/service/impl/] to resources [URL [file:/C:/Users/chendesheng/Desktop/%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f/finalBlog/LoginRegister/target/test-classes/com/zking/service/impl/], URL [file:/C:/Users/chendesheng/Desktop/%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f/finalBlog/LoginRegister/target/classes/com/zking/service/impl/]]
+10:29:41.188 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\test-classes\com\zking\service\impl]
+10:29:41.189 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\test-classes\com\zking\service\impl] for files matching pattern [C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/target/test-classes/com/zking/service/impl/*.class]
+10:29:41.233 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl]
+10:29:41.233 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl] for files matching pattern [C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/target/classes/com/zking/service/impl/*.class]
+10:29:41.248 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:com/zking/service/impl/*.class] to resources [file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\test-classes\com\zking\service\impl\ArticleServiceImplTest.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\ArchiveServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\ArticleServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\CategoriesServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\CommentServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\FeedbackServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\LeaveMessageServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\PrivateWordServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\TagServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\UserServiceImpl.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\impl\VisitorServiceImpl.class]]
+10:29:41.386 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [com/zking/service/] to resources [URL [file:/C:/Users/chendesheng/Desktop/%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f/finalBlog/LoginRegister/target/test-classes/com/zking/service/], URL [file:/C:/Users/chendesheng/Desktop/%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f/finalBlog/LoginRegister/target/classes/com/zking/service/]]
+10:29:41.387 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\test-classes\com\zking\service]
+10:29:41.388 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\test-classes\com\zking\service] for files matching pattern [C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/target/test-classes/com/zking/service/*.class]
+10:29:41.390 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service]
+10:29:41.392 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service] for files matching pattern [C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/target/classes/com/zking/service/*.class]
+10:29:41.398 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:com/zking/service/*.class] to resources [file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\ArchiveService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\ArticleService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\CategoriesService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\CommentService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\FeedbackService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\LeaveMessageService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\PrivateWordService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\TagService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\UserService.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\service\VisitorService.class]]
+10:29:41.414 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [com/zking/] to resources [URL [file:/C:/Users/chendesheng/Desktop/%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f/finalBlog/LoginRegister/target/test-classes/com/zking/], URL [file:/C:/Users/chendesheng/Desktop/%e5%8d%9a%e5%ae%a2%e7%b3%bb%e7%bb%9f/finalBlog/LoginRegister/target/classes/com/zking/]]
+10:29:41.415 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\test-classes\com\zking]
+10:29:41.416 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\test-classes\com\zking] for files matching pattern [C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/target/test-classes/com/zking/*.class]
+10:29:41.426 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking]
+10:29:41.427 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking] for files matching pattern [C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/target/classes/com/zking/*.class]
+10:29:41.436 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:com/zking/*.class] to resources [file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\test-classes\com\zking\AppLicationTests.class], file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\AppLication.class]]
+10:29:41.550 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\target\classes\com\zking\AppLication.class]
+10:29:41.552 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.zking.AppLication for test class com.zking.service.impl.ArticleServiceImplTest
+10:29:41.558 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.zking.service.impl.ArticleServiceImplTest]: using defaults.
+10:29:41.563 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+10:29:41.673 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2aece37d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@548a102f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5762806e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@17c386de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5af97850, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5ef60048, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1d548a08, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@16aa0a0a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@780cb77, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@691a7f8f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@50a7bc6e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@161b062a]
+10:29:41.679 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.zking.service.impl.ArticleServiceImplTest]
+10:29:41.680 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.zking.service.impl.ArticleServiceImplTest]
+]]></system-out>
   </testcase>
 </testsuite>

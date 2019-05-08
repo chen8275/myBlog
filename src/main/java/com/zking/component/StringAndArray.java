@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class StringAndArray {
-
+    
     /**
      * 字符串转换成字符串数组
      * @param str 字符串

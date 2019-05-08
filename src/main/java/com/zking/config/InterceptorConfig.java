@@ -1,3 +1,4 @@
+/*
 
  package com.zking.config;
 
@@ -5,10 +6,12 @@
  import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
  import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+*/
 /**
   * @auther chendesheng
   * @date 2019/1/10
-  */
+  *//*
+
 
  @Configuration
  public class InterceptorConfig extends WebMvcConfigurerAdapter {
@@ -20,3 +23,4 @@
      }
  }
 
+*/

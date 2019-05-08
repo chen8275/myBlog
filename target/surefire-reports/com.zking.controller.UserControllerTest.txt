@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.zking.controller.UserControllerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE! - in com.zking.controller.UserControllerTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in com.zking.controller.UserControllerTest
 initializationError(com.zking.controller.UserControllerTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.Exception: No runnable methods
 	at org.junit.runners.BlockJUnit4ClassRunner.validateInstanceMethods(BlockJUnit4ClassRunner.java:191)

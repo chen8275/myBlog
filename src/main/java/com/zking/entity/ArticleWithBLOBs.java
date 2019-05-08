@@ -7,10 +7,16 @@
   */
  package com.zking.entity;
 
+ import lombok.AllArgsConstructor;
+ import lombok.Builder;
+ import lombok.Data;
+ import lombok.NoArgsConstructor;
+
  /**
   * @auther chendesheng
   * @date 2019/1/18
   */
+
  public class ArticleWithBLOBs {
      
      

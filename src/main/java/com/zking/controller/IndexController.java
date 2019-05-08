@@ -96,7 +96,7 @@ public class IndexController {
     @GetMapping("/login")
     public String login(HttpServletRequest request){
         HttpSession session = request.getSession();
-        session.setAttribute("userName","false");
+        session.setAttribute("userName",null);
         return "login";
     }
     /**
@@ -190,7 +190,7 @@ public class IndexController {
      * 进入修改博客页面
      * @return
      */
-    @PostMapping("/write")
+    @GetMapping("/write")
     public String write(Model model,HttpServletRequest request){
         List<Categories> categories = categoriesService.list();
         String id = request.getParameter("id");
@@ -282,9 +282,8 @@ public class IndexController {
     @GetMapping("/friendLink")
     public String friendLink(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
-        String username = session.getAttribute("userName").toString();
-        if (!StringUtils.isEmpty(username)){
-            model.addAttribute("userName",username);
+        if (null != session.getAttribute("userName")){
+            model.addAttribute("userName",session.getAttribute("userName").toString());
         }        
         return "friendLink";
     }
@@ -293,7 +292,11 @@ public class IndexController {
      * @return
      */
     @GetMapping("/aboutme")
-    public String about(){
+    public String about(Model model,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        if (null != session.getAttribute("userName")){
+            model.addAttribute("userName",session.getAttribute("userName").toString());
+        }
         return "aboutme";
     }
     
@@ -304,9 +307,8 @@ public class IndexController {
     @GetMapping("/update")
     public String update(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
-        String username = session.getAttribute("userName").toString();
-        if (!StringUtils.isEmpty(username)){
-            model.addAttribute("userName",username);
+        if (null != session.getAttribute("userName")){
+            model.addAttribute("userName",session.getAttribute("userName").toString());
         }
         return "update";
     }
@@ -317,9 +319,8 @@ public class IndexController {
     @GetMapping("/tags")
     public String tags(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
-        String username = session.getAttribute("userName").toString();
-        if(username!=null&&!"".equals(username)){
-            model.addAttribute("userName",username);
+        if (null!=session.getAttribute("userName")){
+            model.addAttribute("userName",session.getAttribute("userName").toString());
         }
         return "tags";
     }
@@ -330,9 +331,8 @@ public class IndexController {
     @GetMapping("/categories")
     public String categories(Model model,HttpServletRequest request){
         HttpSession session = request.getSession();
-        String username = session.getAttribute("userName").toString();
-        if (!StringUtils.isEmpty(username)){
-            model.addAttribute("userName",username);
+        if (null != session.getAttribute("userName")){
+            model.addAttribute("userName",session.getAttribute("userName").toString());
         }
         return "categories";
     }

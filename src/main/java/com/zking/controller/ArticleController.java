@@ -13,6 +13,7 @@
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
  import io.swagger.annotations.Api;
+ import io.swagger.annotations.ApiOperation;
  import lombok.extern.slf4j.Slf4j;
  import net.sf.json.JSONArray;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +37,18 @@
      
      @Autowired
      ArticleService articleService;
-     
+    
+     /**
+      * 新增文章
+      * @param article
+      * @return
+      */
+     @ApiOperation(value = "新增文章",notes = "新增文章")
      @PostMapping("/insertArticle")
      public JSONObject insertArticle(@RequestBody Article article){
          JSONObject jsonObject = new JSONObject();
          try {
              int status = articleService.insert(article);
-
              jsonObject.put("msg:","插入成功");
              jsonObject.put("status:",status);
              
@@ -57,6 +63,7 @@
       * 获取所有文章
       * @return
       */
+     @ApiOperation(value = "获取所有文章",notes = "获取所有文章")
      @GetMapping(value = "/listArticles")
      public ResultModel listArticles(){
          try {
@@ -75,6 +82,7 @@
       * @param rows 一页的大小
       * @param pageNum 当前页
       */
+     @ApiOperation(value = "分页获得当前页文章",notes = "分页获得当前页文章")
      @PostMapping("/myArticles")
      public @ResponseBody JSONArray myArticles(@RequestParam("rows") String rows,
                           @RequestParam("pageNum") String pageNum){
@@ -88,6 +96,7 @@
       * @param id
       * @return
       */
+     @ApiOperation(value = "根据id获得文章",notes = "根据id获得文章")
      @PostMapping(value = "/getById")
      public ResultModel getById(Integer id){
          try {
@@ -100,11 +109,12 @@
          }
      }
     
-     
+    
      /**
       * 获得文章总数
-      *
+      * @return
       */
+     @ApiOperation(value = "获得文章总数",notes = "获得文章总数")
      @Cacheable(cacheNames = "article",key = "123")
      @GetMapping("/countArticleNum")
      public JSONObject countArticleNum(){
@@ -127,11 +137,14 @@
       * 通过分类名获取文章总数
       * @param categoryName
       */
+     @ApiOperation(value = "通过分类名获取文章总数",notes = "通过分类名获取文章总数")
+     @Cacheable(cacheNames = "article",key = "#categoryName")
      @PostMapping("/countArticlesByCategoryName")
      public JSONObject countArticlesByCategoryName(String categoryName){
          JSONObject jsonObject = new JSONObject();
          try {
              int num = articleService.countArticleByCategoryName(categoryName);
+             log.info("articleByCategoryNum:[{}],categoryName:[{}]",num,categoryName);
              jsonObject.put("code:","200");
              jsonObject.put("data",num);
             
