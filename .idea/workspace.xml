@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91aaff30-61f1-407f-84ce-39488ed6d2e8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CategoriesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CategoriesMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InterceptorConfig.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InterceptorConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="18" column="219" selection-start-line="18" selection-start-column="219" selection-end-line="18" selection-end-column="219" />
+            <state relative-caret-position="240">
+              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,8 +72,8 @@
       <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="284" column="54" lean-forward="true" selection-start-line="284" selection-start-column="54" selection-end-line="284" selection-end-column="54" />
+            <state relative-caret-position="257">
+              <caret line="126" column="24" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -106,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoriesMapper.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CategoriesMapper.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
+            <state relative-caret-position="93">
               <caret line="77" column="23" lean-forward="true" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
             </state>
           </provider>
@@ -218,10 +217,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/LeaveMessageRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/PrivateWord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/TagsMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml" />
       </list>
     </option>
   </component>
@@ -316,61 +315,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zking" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zking" type="462c0819:PsiDirectoryNode" />
-              <item name="constant" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zking" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zking" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zking" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zking" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
@@ -655,14 +599,7 @@
       <workItem from="1556419629590" duration="550000" />
       <workItem from="1556520530571" duration="11043000" />
       <workItem from="1556603672943" duration="997000" />
-      <workItem from="1557283869020" duration="5199000" />
-    </task>
-    <task id="LOCAL-00042" summary="完成分类查找文章接口">
-      <created>1548903313526</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1548903313526</updated>
+      <workItem from="1557283869020" duration="5837000" />
     </task>
     <task id="LOCAL-00043" summary="完成所有分类名以及每个分类名的文章数目接口">
       <created>1548906700838</created>
@@ -1000,7 +937,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557296623980</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="增加拦截器配置功能">
+      <created>1557297078956</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1557297078956</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1033,7 +977,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="515362000" />
+    <option name="totallyTimeSpent" value="516000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1046,7 +990,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1380" height="745" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="6" weight="0.3281787" />
@@ -1060,7 +1003,7 @@
       <window_info anchor="right" id="Translate" order="4" weight="0.32954547" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="14" sideWeight="0.4977307" weight="0.60137457" />
+      <window_info active="true" anchor="bottom" id="Debug" order="14" sideWeight="0.4977307" visible="true" weight="0.580756" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32838285" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49924356" weight="0.43814433" />
       <window_info id="Palette&#9;" order="2" />
@@ -1071,7 +1014,7 @@
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.8453608" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3281787" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.3281787" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79349595" visible="true" weight="0.28939393" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79349595" visible="true" weight="0.19318181" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32980332" />
       <window_info id="Web" order="2" sideWeight="0.20650406" side_tool="true" weight="0.2708018" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
@@ -1153,7 +1096,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成后台管理分类管理分类信息展示功能" />
     <MESSAGE value="完成分类管理删除分类接口" />
     <MESSAGE value="完成分类管理删除分类功能" />
     <MESSAGE value="完成通过分类删除所有文章接口" />
@@ -1178,7 +1120,8 @@
     <MESSAGE value="加入lombok插件简化实体类" />
     <MESSAGE value="解决分类管理中相同分类出现的bug" />
     <MESSAGE value="解决标签重复展示bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决标签重复展示bug" />
+    <MESSAGE value="增加拦截器配置功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加拦截器配置功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1547,13 +1490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="77" column="23" lean-forward="true" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TagsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -1577,8 +1513,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="284" column="54" lean-forward="true" selection-start-line="284" selection-start-column="54" selection-end-line="284" selection-end-column="54" />
+        <state relative-caret-position="257">
+          <caret line="126" column="24" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1594,11 +1530,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="18" column="219" selection-start-line="18" selection-start-column="219" selection-end-line="18" selection-end-column="219" />
+        <state relative-caret-position="240">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="77" column="23" lean-forward="true" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
         </state>
       </provider>
     </entry>

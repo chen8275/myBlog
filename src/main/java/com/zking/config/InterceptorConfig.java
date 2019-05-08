@@ -22,5 +22,6 @@
          registry.addInterceptor(new LogCostInterceptor()).addPathPatterns("/front/*").excludePathPatterns("/front/login","/front/loginPage","/front/register","/front/index","/front/show","/front/tags","/front/aboutme","/front/categories","/front/update","/front/logout");
          super.addInterceptors(registry);
      }
+     
  }
 

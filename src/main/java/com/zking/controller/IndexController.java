@@ -129,7 +129,7 @@ public class IndexController {
         List<Article> articles = articleService.listArticles();
         model.addAttribute("articles",articles);
         HttpSession session = request.getSession();
-        session.setAttribute("userName","false");
+        session.setAttribute("userName",null);
         return "show";
     }
     /**
