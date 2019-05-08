@@ -2,84 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91aaff30-61f1-407f-84ce-39488ed6d2e8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zking/controller/sessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LoginRegister_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/LoginRegister_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_56.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_1_5_3_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginRegister.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LoginRegister.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/AppLication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/AppLication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/component/StringAndArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/component/StringAndArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/Swagger2Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/Swagger2Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/constant/OSSClientConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/controller/SuperAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/controller/SuperAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Archives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Archives.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/ArticleLikesRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/ArticleLikesRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/ArticleWithBLOBs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/ArticleWithBLOBs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Categories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/CommentLikesRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/CommentLikesRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/CommentRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/CommentRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/LeaveMessageLikesRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/LeaveMessageLikesRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/LeaveMessageRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/LeaveMessageRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/PrivateWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/PrivateWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Tags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Visitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/userRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/userRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/superadmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/superadmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/superadmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/superadmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/IDEAmaven.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/IDEAmaven/WEB-INF/classes/templates/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/IDEAmaven/WEB-INF/classes/templates/show.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/constant/OSSClientConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/controller/ArticleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/controller/ArticleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/controller/EditorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/controller/EditorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/controller/SuperAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/controller/SuperAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/controller/TagsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/controller/TagsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Archives.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Archives.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Article.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Article.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/ArticleLikesRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/ArticleLikesRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/ArticleWithBLOBs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/ArticleWithBLOBs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Categories.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Categories.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/CommentLikesRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/CommentLikesRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/CommentRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/CommentRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Feedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/LeaveMessageLikesRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/LeaveMessageLikesRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/LeaveMessageRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/LeaveMessageRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/PrivateWord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/PrivateWord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Tags.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Tags.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Visitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/userRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/userRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/service/impl/PrivateWordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/service/impl/PrivateWordServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/superadmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/superadmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/superadmin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/superadmin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.zking.AppLicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.zking.AppLicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.zking.controller.UserControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.zking.controller.UserControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.zking.AppLicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.zking.AppLicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.zking.controller.UserControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.zking.controller.UserControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,43 +18,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LeaveMessageRecord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/LeaveMessageRecord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrivateWordServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/PrivateWordServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-175">
-              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrivateWord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/PrivateWord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
+            <state relative-caret-position="197">
               <caret line="244" column="49" lean-forward="true" selection-start-line="244" selection-start-column="49" selection-end-line="244" selection-end-column="49" />
             </state>
           </provider>
@@ -143,26 +34,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Archives.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/Archives.java">
+      <file leaf-file-name="superadmin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/superadmin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="391" column="54" selection-start-line="391" selection-start-column="31" selection-end-line="391" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sessionController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/sessionController.java">
+      <file leaf-file-name="SuperAdminController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/SuperAdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="317">
+              <caret line="138" column="54" selection-start-line="138" selection-start-column="54" selection-end-line="138" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriesService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/CategoriesService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriesServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/CategoriesServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="76" column="66" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriesMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/mapper/CategoriesMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriesMapper.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="78" column="29" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -185,15 +106,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeaveMessageServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/LeaveMessageServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="42" column="65" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -208,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>saveArticle</find>
       <find>2018/6</find>
       <find>2018/</find>
       <find>统计</find>
@@ -238,6 +149,7 @@
       <find>false</find>
       <find>about</find>
       <find>login</find>
+      <find>getCategoriesManagement</find>
     </findStrings>
     <replaceStrings>
       <replace>chendesheng</replace>
@@ -250,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/service/PrivateWordService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/mapper/PrivatewordMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/service/TagService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/service/impl/TagServiceImpl.java" />
@@ -301,6 +212,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/LeaveMessageRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/PrivateWord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml" />
       </list>
     </option>
   </component>
@@ -481,7 +393,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="superad&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/SuperAdminController.java&#10;super&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/superadmin.js&#10;index&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;write&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/write.html&#10;superadmin&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/superadmin.js&#10;detail&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/detail.html&#10;show&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/show.html&#10;login.&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/login.html&#10;ta&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/tags.js&#10;user&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/user.js&#10;artic&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/service/ArticleService.java&#10;articlem&#9;PSI&#9;JAVA://com.zking.mapper.ArticleMapper&#10;ind&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;user.js&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/user.js&#10;tags&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/tags.js&#10;cacheable&#9;PSI&#9;JAVA://org.springframework.cache.annotation.Cacheable&#10;feedb&#9;PSI&#9;JAVA://com.zking.controller.FeedbackController&#10;supera&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/superadmin.html&#10;cate&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/service/impl/CategoriesServiceImpl.java&#10;indexc&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;update&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/update.html" />
+    <property name="SearchEverywhereHistoryKey" value="super&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/SuperAdminController.java&#10;superad&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/SuperAdminController.java&#10;index&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;write&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/write.html&#10;superadmin&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/superadmin.js&#10;detail&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/detail.html&#10;show&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/show.html&#10;login.&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/login.html&#10;ta&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/tags.js&#10;user&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/user.js&#10;artic&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/service/ArticleService.java&#10;articlem&#9;PSI&#9;JAVA://com.zking.mapper.ArticleMapper&#10;ind&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;user.js&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/user.js&#10;tags&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/tags.js&#10;cacheable&#9;PSI&#9;JAVA://org.springframework.cache.annotation.Cacheable&#10;feedb&#9;PSI&#9;JAVA://com.zking.controller.FeedbackController&#10;supera&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/superadmin.html&#10;cate&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/service/impl/CategoriesServiceImpl.java&#10;indexc&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;update&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/update.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -734,14 +646,7 @@
       <workItem from="1556419629590" duration="550000" />
       <workItem from="1556520530571" duration="11043000" />
       <workItem from="1556603672943" duration="997000" />
-      <workItem from="1557283869020" duration="3845000" />
-    </task>
-    <task id="LOCAL-00039" summary="完成发表留言接口">
-      <created>1548840271850</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1548840271850</updated>
+      <workItem from="1557283869020" duration="4262000" />
     </task>
     <task id="LOCAL-00040" summary="完成发表留言功能">
       <created>1548843621109</created>
@@ -1079,7 +984,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556006295459</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="加入lombok插件简化实体类">
+      <created>1557295571314</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1557295571315</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1112,7 +1024,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="514008000" />
+    <option name="totallyTimeSpent" value="514425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1150,7 +1062,7 @@
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.8453608" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3281787" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.3281787" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79349595" visible="true" weight="0.22878788" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79349595" visible="true" weight="0.023484848" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32980332" />
       <window_info id="Web" order="2" sideWeight="0.20650406" side_tool="true" weight="0.2708018" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
@@ -1232,7 +1144,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成回复悄悄话接口" />
     <MESSAGE value="完成后台管理回复悄悄话功能" />
     <MESSAGE value="完成获取所有分类接口" />
     <MESSAGE value="完成后台管理分类管理分类信息展示功能" />
@@ -1257,7 +1168,8 @@
     <MESSAGE value="修复超级管理文章编辑bug" />
     <MESSAGE value="增加swagger接口测试" />
     <MESSAGE value="完善swagger接口注解" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善swagger接口注解" />
+    <MESSAGE value="加入lombok插件简化实体类" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入lombok插件简化实体类" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1268,30 +1180,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/superadmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="108" column="38" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/chendesheng.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/FeedbackController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql/tiger.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -1422,25 +1310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="112" column="9" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/superadmin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="124" column="44" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="44" />
-          <folding>
-            <element signature="e#151#158#0" expanded="true" />
-            <element signature="e#333#340#0" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/SuperAdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="84" column="10" lean-forward="true" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1668,8 +1537,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
+        <state relative-caret-position="197">
           <caret line="244" column="49" lean-forward="true" selection-start-line="244" selection-start-column="49" selection-end-line="244" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/superadmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="391" column="54" selection-start-line="391" selection-start-column="31" selection-end-line="391" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/SuperAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="138" column="54" selection-start-line="138" selection-start-column="54" selection-end-line="138" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/CategoriesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/CategoriesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="76" column="66" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/mapper/CategoriesMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoriesMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="78" column="29" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
         </state>
       </provider>
     </entry>
