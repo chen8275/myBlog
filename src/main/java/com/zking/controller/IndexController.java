@@ -236,7 +236,7 @@ public class IndexController {
         String nowDate = timeUtil.getFormatDateForThree();
         //插入标签
         String tagName = article.getArticletags();
-        int tagSize = (int)(Math.random() * 5 + 1);
+        int tagSize = (int)(Math.random() * 10 + 1);
         tagService.addTags(tagName,tagSize);
         //插入分类
         String categoryName = article.getArticlecategories();

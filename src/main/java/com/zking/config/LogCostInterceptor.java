@@ -21,7 +21,6 @@
      public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
          log.info("---------------------开始进入请求地址拦截----------------------------");
          HttpSession session = httpServletRequest.getSession();
-         System.out.println(session.getAttribute("userName"));
          if (null != session.getAttribute("userName")){
              return true;
          }else{

@@ -214,6 +214,7 @@
              for(String str : tagsArray){
                  if(str.equals(tag)){
                      articleJson = new JSONObject();
+                     articleJson.put("id",article.getId());
                      articleJson.put("articleId", article.getArticleid());
                      articleJson.put("originalAuthor", article.getOriginalauthor());
                      articleJson.put("articleTitle", article.getArticletitle());
