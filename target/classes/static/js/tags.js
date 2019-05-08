@@ -19,10 +19,8 @@ function putInAllTags(data) {
 }
 
 
-
 //添加该标签的所有文章信息
 function putInTagArticleInfo(data) {
-    
     var siteInner = $('.site-inner');
     siteInner.empty();
     var timeLine = $('<div class="timeline timeline-wrap"></div>');
@@ -39,7 +37,7 @@ function putInTagArticleInfo(data) {
         var content = $('<div class="content am-comment-main am-animation-slide-top am-animation-delay-1"></div>');
         content.append($('<header class="am-comment-hd" style="background: #fff">' +
             '<div class="contentTitle am-comment-meta">' +
-            '<a href="/findArticle?articleId=' + obj['articleId'] + '&originalAuthor=' + obj['originalAuthor'] + '">' + obj['articleTitle'] + '</a>' +
+            '<a href="detail/' + obj['id']  +'">' + obj['articleTitle'] + '</a>' +
             '</div>' +
             '</header>'));
         var amCommentBd = $('<div class="am-comment-bd"></div>');
@@ -81,10 +79,20 @@ $.ajax({
     url : window.location.href,
     async:false,
     success:function (data, status, xhr) {
+        
         tag = xhr.getResponseHeader("tag");
     }
 });
 
+//获取url参数tag的值
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
+console.log("tag：", getQueryString("tag"));
+tag = getQueryString("tag");
 
 
 //加载tags页时请求
@@ -105,7 +113,6 @@ function ajaxFirst(currentPage) {
             } else {
                 putInTagArticleInfo(data);
                 scrollTo(0,0);//回到顶部
-
                 //分页
                 $("#pagination").paging({
                     rows:data['pageInfo']['pageSize'],//每页显示条数

@@ -2,32 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91aaff30-61f1-407f-84ce-39488ed6d2e8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoginRegister.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LoginRegister.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/CommentRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/CommentRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/PrivateWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/PrivateWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/entity/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Visitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/tags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/categories.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tags.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Article.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Article.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/CommentRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/CommentRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Feedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/PrivateWord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/PrivateWord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Tags.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Tags.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/entity/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/entity/Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/controller/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/service/impl/ArticleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/service/impl/ArticleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/tags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tags.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tags.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tags.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tags.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="3270">
+              <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
@@ -60,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tags.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tags.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/tags.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+            <state relative-caret-position="88">
+              <caret line="9" column="102" selection-start-line="9" selection-start-column="102" selection-end-line="9" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -72,8 +53,8 @@
       <file leaf-file-name="categories.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/categories.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="184" column="43" lean-forward="true" selection-start-line="184" selection-start-column="43" selection-end-line="184" selection-end-column="43" />
+            <state relative-caret-position="225">
+              <caret line="9" column="102" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -90,7 +71,7 @@
       <file leaf-file-name="categories.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/categories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="-510">
               <caret line="22" column="48" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
@@ -252,8 +233,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/categories.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/service/impl/ArticleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/tags.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/tags.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/tags.html" />
       </list>
     </option>
   </component>
@@ -689,14 +670,7 @@
       <workItem from="1556603672943" duration="997000" />
       <workItem from="1557283869020" duration="9338000" />
       <workItem from="1557301427235" duration="296000" />
-      <workItem from="1557301788703" duration="9393000" />
-    </task>
-    <task id="LOCAL-00045" summary="完成分类页面展示功能">
-      <created>1548925259266</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1548925259266</updated>
+      <workItem from="1557301788703" duration="9925000" />
     </task>
     <task id="LOCAL-00046" summary="完成标签页面展示功能">
       <created>1548927937838</created>
@@ -1034,7 +1008,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557305223865</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="增加标签中的点击标签展示文章功能">
+      <created>1557317459957</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1557317459957</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1067,7 +1048,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="529190000" />
+    <option name="totallyTimeSpent" value="529722000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1094,7 +1075,7 @@
       <window_info anchor="right" id="Translate" order="4" weight="0.32954547" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="14" sideWeight="0.4977307" weight="0.4329897" />
+      <window_info active="true" anchor="bottom" id="Debug" order="14" sideWeight="0.4977307" visible="true" weight="0.65120274" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32838285" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49924356" weight="0.6494845" />
       <window_info id="Palette&#9;" order="2" />
@@ -1187,7 +1168,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成通过分类删除所有文章接口" />
     <MESSAGE value="完成通过分类删除所有文章功能" />
     <MESSAGE value="完成插入分类接口" />
     <MESSAGE value="完成插入标签接口" />
@@ -1212,7 +1192,8 @@
     <MESSAGE value="增加拦截器配置功能" />
     <MESSAGE value="登出后清除session" />
     <MESSAGE value="增加redis缓存功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加redis缓存功能" />
+    <MESSAGE value="增加标签中的点击标签展示文章功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加标签中的点击标签展示文章功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1581,19 +1562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/categories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#header#0;n#!!top" expanded="true" />
-            <element signature="e#144#151#0" expanded="true" />
-            <element signature="e#332#339#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/TagsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
@@ -1622,24 +1590,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/categories.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/categories.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="184" column="43" lean-forward="true" selection-start-line="184" selection-start-column="43" selection-end-line="184" selection-end-column="43" />
+        <state relative-caret-position="-510">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#header#0;n#!!top" expanded="true" />
+            <element signature="e#144#151#0" expanded="true" />
+            <element signature="e#332#339#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/tags.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/categories.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+        <state relative-caret-position="225">
+          <caret line="9" column="102" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tags.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="3270">
+          <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#h2#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
@@ -1649,6 +1623,13 @@
             <element signature="e#144#151#0" expanded="true" />
             <element signature="e#332#339#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/tags.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="9" column="102" selection-start-line="9" selection-start-column="102" selection-end-line="9" selection-end-column="102" />
         </state>
       </provider>
     </entry>
