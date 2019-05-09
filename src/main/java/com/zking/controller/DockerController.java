@@ -7,19 +7,20 @@
   */
  package com.zking.controller;
 
- import com.zking.AppLicationTests;
- import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.test.web.servlet.MockMvc;
+ import org.springframework.web.bind.annotation.RequestMapping;
+ import org.springframework.web.bind.annotation.RestController;
 
  /**
-  * @auther chendesheng
-  * @date 2019/1/28
+  * @author chendesheng chendesheng@tuhu.cn
+  * @since 2019/5/9 9:41
   */
-
- public class UserControllerTest extends AppLicationTests {
+ @RestController
+ @RequestMapping("/front")
+ public class DockerController {
      
-     @Autowired
-     private MockMvc mockMvc;
-     
+     @RequestMapping("/index")
+     public String index() {
+         return "Hello Docker!";
+     }
      
  }

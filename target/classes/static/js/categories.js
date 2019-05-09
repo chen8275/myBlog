@@ -24,7 +24,7 @@ function putInTagArticleInfo(data) {
             '</div>' +
             '</header>'));
         var amCommentBd = $('<div class="am-comment-bd"></div>');
-        amCommentBd.append($('<span class="glyphicon glyphicon-calendar"></span><a href="/archives?archive='+ obj['publishDate'] + '">' + obj['publishDate'] + '&nbsp;</a></i>' +
+        amCommentBd.append($('<span class="glyphicon glyphicon-calendar"></span><a href="#">' + obj['publishDate'] + '&nbsp;</a></i>' +
             '<span class="glyphicon glyphicon-folder-close"></span> <a href="/categories?category=' + obj['articleCategories'] + '">' + obj['articleCategories'] + '&nbsp;</a></i>'));
         var amCommentBdTags = $('<span class="glyphicon glyphicon-tags"></span>');
         for(var i=0;i<obj['articleTags'].length;i++){

@@ -16,11 +16,9 @@
  import com.zking.util.ResultModel;
  import com.zking.util.ResultTools;
  import lombok.extern.slf4j.Slf4j;
- import org.codehaus.groovy.runtime.RangeInfo;
  import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.cache.annotation.Cacheable;
  import org.springframework.stereotype.Service;
- import sun.rmi.runtime.Log;
+
 
  import java.text.SimpleDateFormat;
  import java.util.*;
@@ -102,7 +100,6 @@
              }
          }
          returnJson.put("result",allJsonArray);
-         System.out.println("getAllPrivateWord result is " + returnJson);
          return returnJson;
      }
     

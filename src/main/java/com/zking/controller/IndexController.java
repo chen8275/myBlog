@@ -119,6 +119,7 @@ public class IndexController {
         model.addAttribute("articles",articles);
         return "show";
     }
+    
     /**
      * 登出
      * @return

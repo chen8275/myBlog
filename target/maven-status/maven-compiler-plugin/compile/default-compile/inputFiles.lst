@@ -6,7 +6,6 @@ C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\service\impl\TagServiceImpl.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\controller\SuperAdminController.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\config\WebSecurityConfig.java
-C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\constant\OSSClientConstants.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\entity\Feedback.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\service\impl\ArticleServiceImpl.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\mapper\CommentRecordMapper.java
@@ -51,6 +50,7 @@ C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\service\CommentService.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\controller\sessionController.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\controller\TagsController.java
+C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\controller\DockerController.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\mapper\RoleMapper.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\util\TimeUtil.java
 C:\Users\chendesheng\Desktop\博客系统\finalBlog\LoginRegister\src\main\java\com\zking\component\StringAndArray.java
