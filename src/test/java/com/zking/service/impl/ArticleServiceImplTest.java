@@ -35,7 +35,10 @@ public class ArticleServiceImplTest {
     }
     
     @Test
-    public void testFindAllArticles(){
-        
+    public void testFindArticlesByCategory(){
+        String category = "IDE";
+        List<Article> articles = articleService.findByCategory(category);
+        articles.forEach(a-> System.out.println(a.getArticletitle()));
+       
     }
 }

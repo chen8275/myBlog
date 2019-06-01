@@ -20,7 +20,7 @@
     <java.version>1.8</java.version>
     <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
     <thymeleaf-layout-dialect.version>2.0.5</thymeleaf-layout-dialect.version>
-    <docker.image.prefix>myBlog</docker.image.prefix>
+    <docker.image.prefix>springboot</docker.image.prefix>
   </properties>
   <dependencies>
     <dependency>
@@ -141,7 +141,7 @@
   </dependencies>
 
   <build>
-    <finalName>IDEA maven</finalName>
+    <finalName>spring-boot-docker-1.0</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -154,6 +154,23 @@
             <configuration>
                 <verbose>true</verbose>
                 <overwrite>true</overwrite>
+            </configuration>
+        </plugin>
+        <!-- Docker maven plugin -->
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <version>1.0.0</version>
+            <configuration>
+                <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                <dockerDirectory>src/main/docker</dockerDirectory>
+                <resources>
+                    <resource>
+                        <targetPath>/</targetPath>
+                        <directory>${project.build.directory}</directory>
+                        <include>${project.build.finalName}.jar</include>
+                    </resource>
+                </resources>
             </configuration>
         </plugin>
     </plugins>

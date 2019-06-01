@@ -25,7 +25,7 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" th:href="@{/front/show}">Tiger Blog</a>
+            <a class="navbar-brand" th:href="@{/front/show}">tiger note</a>
         </div>
         <div>
             <ul class="nav navbar-nav">
@@ -125,15 +125,14 @@
                     <a th:href="@{/front/aboutme}"><button type="button" class="btn btn-primary">查看更多</button></a>
                 </div>
             </div>
+            
+            
+            
+            
             <div class="panel panel-default">
                 <div class="panel-heading">推荐文章</div>
-                <ul class="list-group">
-                    <li class="list-group-item"><a href="http://www.ruanyifeng.com/blog/2019/04/oauth-grant-types.html">OAuth 2.0 的四种方式</a></li>
-                    <li class="list-group-item"><a href="http://www.ruanyifeng.com/blog/2018/10/git-internals.html">Git 原理入门</a></li>
-                    <li class="list-group-item"><a href="http://www.ruanyifeng.com/blog/2018/09/vimrc.html">Vim 配置入门</a></li>
-                    <li class="list-group-item"><a href="http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html">JSON Web Token 入门教程</a></li>
-                    <li class="list-group-item"><a href="http://www.ruanyifeng.com/blog/2018/02/nginx-docker.html">Nginx 容器教程</a></li>
-                    <li class="list-group-item"><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程</a></li>
+                <ul class="list-group" th:each="like:${articleLikes}">
+                    <li class="list-group-item"><a th:href="@{'/front/detail/'+${like.id}}"  th:text="${like.articletitle}">OAuth 2.0 的四种方式</a></li>
                 </ul>
             </div>
             
@@ -147,7 +146,7 @@
 
 <div class="jumbotron text-center" style="margin-bottom:0">
     <p>blog<br>
-        <small>© Copyright XXX. by the helloTiger.</small>
+        <small>© Copyright XXX. by tiger.</small>
     </p>
 </div>
 

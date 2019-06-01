@@ -18,7 +18,7 @@
   * @author chendesheng chendesheng@tuhu.cn
   * @since 2019/4/12 10:22
   */
-/* @Configuration
+ /*@Configuration
  @EnableWebSecurity*/
  public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      

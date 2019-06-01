@@ -109,5 +109,10 @@
          return userMapper.countUser();
      }
     
+     @Override
+     public void updateRecentlyLanded(String userName, String recentlyLanded) {
+         userMapper.updateRecentlyLanded(userName, recentlyLanded);
+     }
+    
     
  }

@@ -14,14 +14,18 @@ public interface UserMapper {
     int insertSelective(User record);
 
     User selectByPrimaryKey(Long id);
-
+    
+    
     int updateByPrimaryKey(User record);
     
     
     
     String findPhoneByUsername(@Param("username") String username);
     
+    
     User selectByUsernameAndPassword(@Param("username") String username,@Param("password") String password);
+    User findByUserName(String userName);
+    void updateRecentlyLanded(@Param("userName") String userName, @Param("recentlyLanded") String recentlyLanded);
     
     int findUserIdByUsername(String username);
     

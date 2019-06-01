@@ -170,9 +170,10 @@
          return jsonObject;
      }
     
-    
-    
-    
+     @Override
+     public List<Article> findByCategory(String category) {
+         return articleMapper.findArticleByCategory(category);
+     }
     
     
      /**

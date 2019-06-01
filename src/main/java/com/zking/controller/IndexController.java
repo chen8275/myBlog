@@ -29,6 +29,7 @@ import java.io.StringWriter;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 /**
@@ -114,11 +115,19 @@ public class IndexController {
      * @return
      */
     @GetMapping("/show")
-    public String moveShow(Model model){
+    public String moveShow(HttpServletRequest request,Model model){
         List<Article> articles = articleService.listArticles();
+        HttpSession session = request.getSession();
+        String category = "";
+        if (null!=session.getAttribute("like")){
+            category = session.getAttribute("like").toString();
+        }
+        List<Article> articleLikes = articleService.findByCategory(category);
+        model.addAttribute("articleLikes",articleLikes);
         model.addAttribute("articles",articles);
         return "show";
     }
+    
     /**
      * 登出
      * @return
@@ -260,8 +269,10 @@ public class IndexController {
      * @return
      */
     @GetMapping("/detail/{id}")
-    public String detail(@PathVariable("id") Integer id, Model model){
+    public String detail(@PathVariable("id") Integer id, Model model,HttpServletRequest request){
         Article article = articleService.getById(id);
+        HttpSession session = request.getSession();
+        session.setAttribute("like",article.getArticlecategories());
         Markdown markdown = new Markdown();
         try {
             StringWriter out = new StringWriter();

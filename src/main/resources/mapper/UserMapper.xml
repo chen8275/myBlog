@@ -172,7 +172,11 @@
   </update>
 
 
-
+    <update id="updateRecentlyLanded" parameterType="com.zking.entity.User" >
+    update user
+    set recentlyLanded = #{recentlyLanded,jdbcType=VARCHAR},
+    where username = #{userName,jdbcType=INTEGER}
+  </update>
    
     <select id="selectByUsernameAndPassword" resultType="com.zking.entity.User">
         select
@@ -180,6 +184,12 @@
         from user
         where username = #{username} 
         and password = #{password}
+    </select>
+    <select id="findByUserName" resultType="com.zking.entity.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where username = #{username}
     </select>
     <select id="findUserIdByUsername" resultType="java.lang.Integer">
         select

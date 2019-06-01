@@ -30,4 +30,10 @@
      String findUsernameById(int id);
      int findIdByUsername(String username);
      int countUserNum();
+     /**
+      * 更新最近登录时间
+      * @param userName 用户名
+      * @param recentlyLanded 最近登录时间
+      */
+     void updateRecentlyLanded(String userName, String recentlyLanded);
  }

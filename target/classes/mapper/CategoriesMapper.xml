@@ -80,6 +80,7 @@
   </select>
     <select id="findCategoriesName" resultType="java.lang.String">
         select
+        distinct 
         categoryname
         from categories
     </select>
