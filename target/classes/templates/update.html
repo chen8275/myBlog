@@ -54,7 +54,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a th:href="@{/front/user}">个人中心</a></li>
-                    <li><a th:href="@{/front/superadmin}">网站后台管理</a></li>
+                    <li><a th:href="@{/front/superadmin}" th:if="${session.userName} eq 'chen'">网站后台管理</a></li>
                     <li><a id="modal-870181" href="#modal-container-870181" role="button" class="btn" data-toggle="modal">反馈</a></li>
                     <li class="divider"></li>
                     <li><a th:href="@{/front/logout}">退出登录</a></li>
