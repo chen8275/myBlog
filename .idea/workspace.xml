@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91aaff30-61f1-407f-84ce-39488ed6d2e8" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zking/entity/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zking/service/CommentsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zking/service/RedisTemplateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zking/service/impl/CommentsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zking/util/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/zking/mapper/CommentsMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/zking/service/impl/TagServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/controller/TagsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/controller/TagsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zking/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zking/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zking/service/impl/TagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zking/service/impl/TagServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,20 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LogCostInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java">
+      <file leaf-file-name="CommentsMapperTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/zking/mapper/CommentsMapperTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InterceptorConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+            <state relative-caret-position="391">
+              <caret line="32" column="54" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="32" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,75 +57,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user.html">
+      <file leaf-file-name="CommentsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/CommentsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="83" column="45" lean-forward="true" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+            <state relative-caret-position="241">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/update.html">
+      <file leaf-file-name="CommentsServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/CommentsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="56" column="95" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="166" column="30" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArchivesController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/ArchivesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-209">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-222">
-              <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1320">
-              <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+            <state relative-caret-position="241">
+              <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,20 +86,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="HTML File" />
         <option value="FxmlFile" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>write</find>
-      <find>deleteArticle</find>
-      <find>lombok</find>
-      <find>false</find>
-      <find>about</find>
       <find>login</find>
       <find>getCategoriesManagement</find>
       <find>editor</find>
@@ -172,6 +120,11 @@
       <find>网站后台</find>
       <find>dependencies</find>
       <find>register</find>
+      <find>mybatis</find>
+      <find>detail</find>
+      <find>cache</find>
+      <find>cachename</find>
+      <find>findTagsCloud</find>
     </findStrings>
     <replaceStrings>
       <replace>chendesheng</replace>
@@ -197,21 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/TagsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/controller/TagsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/AppLication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/config/RedisConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/service/impl/TagServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/Tags.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/Article.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/Visitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/PrivateWord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/CommentRecord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/Feedback.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/tags.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/categories.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/controller/DockerController.java" />
         <option value="$PROJECT_DIR$/src/main/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/service/impl/PrivateWordServiceImpl.java" />
@@ -248,6 +186,21 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/util/RedisUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/util/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/service/RedisTemplateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/Book.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zking/service/impl/TagServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/service/impl/TagServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/config/RedisConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/controller/TagsController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/entity/CommentsExample.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/zking/mapper/CommentsMapperTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/mapper/CommentsMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/service/CommentsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zking/service/impl/CommentsServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -279,7 +232,13 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="IDEA maven Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="IDEA maven Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
         </path>
       </expand>
       <select />
@@ -306,9 +265,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -410,41 +366,19 @@
               <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zking" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
               <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="editormd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zking" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
@@ -483,12 +417,24 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zking" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LoginRegister" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LoginRegister" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="zking" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -499,7 +445,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="indexc&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;index&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/LoginRegister/src/main/resources/templates/index.html&#10;update.&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/LoginRegister/src/main/resources/templates/update.html&#10;webmv&#9;PSI&#9;JAVA://org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration&#10;user&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/LoginRegister/src/main/resources/static/js/user.js&#10;tagsc&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/TagsController.java&#10;categories&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/categories.js&#10;tag&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/tags.html&#10;inde&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;categor&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/categories.js&#10;tags&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/tags.js&#10;super&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/SuperAdminController.java&#10;superad&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/SuperAdminController.java&#10;write&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/write.html&#10;superadmin&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/superadmin.js&#10;detail&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/detail.html&#10;show&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/show.html&#10;login.&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/login.html&#10;ta&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/tags.js&#10;artic&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/service/ArticleService.java&#10;articlem&#9;PSI&#9;JAVA://com.zking.mapper.ArticleMapper&#10;ind&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;user.js&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/user.js&#10;cacheable&#9;PSI&#9;JAVA://org.springframework.cache.annotation.Cacheable&#10;feedb&#9;PSI&#9;JAVA://com.zking.controller.FeedbackController&#10;supera&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/superadmin.html&#10;cate&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/service/impl/CategoriesServiceImpl.java&#10;update&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/update.html" />
+    <property name="SearchEverywhereHistoryKey" value="show&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/LoginRegister/src/main/resources/templates/show.html&#10;index&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;detail&#9;PSI&#9;JAVA://javax.xml.soap.Detail&#10;indexc&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;update.&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/LoginRegister/src/main/resources/templates/update.html&#10;webmv&#9;PSI&#9;JAVA://org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration&#10;user&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/LoginRegister/src/main/resources/static/js/user.js&#10;tagsc&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/TagsController.java&#10;categories&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/categories.js&#10;tag&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/tags.html&#10;inde&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;categor&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/categories.js&#10;tags&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/tags.js&#10;super&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/SuperAdminController.java&#10;superad&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/SuperAdminController.java&#10;write&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/write.html&#10;superadmin&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/superadmin.js&#10;login.&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/login.html&#10;ta&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/tags.js&#10;artic&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/service/ArticleService.java&#10;articlem&#9;PSI&#9;JAVA://com.zking.mapper.ArticleMapper&#10;ind&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java&#10;user.js&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/static/js/user.js&#10;cacheable&#9;PSI&#9;JAVA://org.springframework.cache.annotation.Cacheable&#10;feedb&#9;PSI&#9;JAVA://com.zking.controller.FeedbackController&#10;supera&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/superadmin.html&#10;cate&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/java/com/zking/service/impl/CategoriesServiceImpl.java&#10;update&#9;FILE&#9;file://C:/Users/chendesheng/Desktop/博客系统/finalBlog/LoginRegister/src/main/resources/templates/update.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -515,15 +461,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zking.mapper" />
       <recent name="com.zking.service.impl" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zking.util" />
       <recent name="com.zking.config" />
       <recent name="com.zking.service.security" />
-      <recent name="com.zking.util" />
       <recent name="com.zking.component" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -546,7 +493,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AppLication">
+  <component name="RunManager" selected="JUnit.CommentsMapperTest.test">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -586,6 +533,75 @@
       <option name="PACKAGE_NAME" value="com.zking.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.zking.service.impl.ArticleServiceImplTest" />
       <option name="METHOD_NAME" value="testFindArticlesByCategory" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="CommentsMapperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LoginRegister" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zking.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.zking.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.zking.mapper.CommentsMapperTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TagServiceImplTest.findTagsCloud" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LoginRegister" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zking.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.zking.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.zking.service.impl.TagServiceImplTest" />
+      <option name="METHOD_NAME" value="findTagsCloud" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TagServiceImplTest.redisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LoginRegister" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zking.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.zking.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.zking.service.impl.TagServiceImplTest" />
+      <option name="METHOD_NAME" value="redisTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -642,9 +658,15 @@
       <item itemvalue="Spring Boot.AppLication" />
       <item itemvalue="JUnit.ArticleServiceImplTest.listAllArticles" />
       <item itemvalue="JUnit.ArticleServiceImplTest.testFindArticlesByCategory" />
+      <item itemvalue="JUnit.TagServiceImplTest.findTagsCloud" />
+      <item itemvalue="JUnit.TagServiceImplTest.redisTest" />
+      <item itemvalue="JUnit.CommentsMapperTest.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommentsMapperTest.test" />
+        <item itemvalue="JUnit.TagServiceImplTest.findTagsCloud" />
+        <item itemvalue="JUnit.TagServiceImplTest.redisTest" />
         <item itemvalue="JUnit.ArticleServiceImplTest.testFindArticlesByCategory" />
         <item itemvalue="JUnit.ArticleServiceImplTest.listAllArticles" />
       </list>
@@ -796,14 +818,12 @@
       <workItem from="1559360712361" duration="2032000" />
       <workItem from="1559367066881" duration="4436000" />
       <workItem from="1559637571725" duration="1211000" />
-      <workItem from="1559656619329" duration="2730000" />
-    </task>
-    <task id="LOCAL-00048" summary="完成发表文章功能">
-      <created>1550461156227</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1550461156227</updated>
+      <workItem from="1559656619329" duration="9395000" />
+      <workItem from="1559708635430" duration="1546000" />
+      <workItem from="1560302248440" duration="1199000" />
+      <workItem from="1561339265841" duration="56000" />
+      <workItem from="1563265141896" duration="7461000" />
+      <workItem from="1563278396955" duration="4232000" />
     </task>
     <task id="LOCAL-00049" summary="增加文章发表成功提示页面">
       <created>1550461347772</created>
@@ -1141,43 +1161,50 @@
       <option name="project" value="LOCAL" />
       <updated>1559367911087</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="不对注册的请求拦截、用户页面进行权限校验">
+      <created>1559660420585</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1559660420587</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArticleServiceImplTest_listAllArticles - 2019.04.10 at 10h 37m 26s.xml">
-      <configuration name="ArticleServiceImplTest.listAllArticles" configurationId="JUnit" />
+    <history-entry file="TagServiceImplTest_findTagsCloud - 2019.07.16 at 19h 25m 34s.xml">
+      <configuration name="TagServiceImplTest.findTagsCloud" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_listAllArticles - 2019.04.10 at 10h 39m 50s.xml">
-      <configuration name="ArticleServiceImplTest.listAllArticles" configurationId="JUnit" />
+    <history-entry file="TagServiceImplTest_findTagsCloud - 2019.07.16 at 19h 29m 55s.xml">
+      <configuration name="TagServiceImplTest.findTagsCloud" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_listAllArticles - 2019.04.10 at 10h 40m 50s.xml">
-      <configuration name="ArticleServiceImplTest.listAllArticles" configurationId="JUnit" />
+    <history-entry file="TagServiceImplTest_findTagsCloud - 2019.07.16 at 19h 30m 43s.xml">
+      <configuration name="TagServiceImplTest.findTagsCloud" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_listAllArticles - 2019.04.10 at 10h 41m 32s.xml">
-      <configuration name="ArticleServiceImplTest.listAllArticles" configurationId="JUnit" />
+    <history-entry file="TagServiceImplTest_findTagsCloud - 2019.07.16 at 19h 31m 07s.xml">
+      <configuration name="TagServiceImplTest.findTagsCloud" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_listAllArticles - 2019.04.10 at 10h 43m 02s.xml">
-      <configuration name="ArticleServiceImplTest.listAllArticles" configurationId="JUnit" />
+    <history-entry file="TagServiceImplTest_findTagsCloud - 2019.07.16 at 19h 33m 43s.xml">
+      <configuration name="TagServiceImplTest.findTagsCloud" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_listAllArticles - 2019.04.10 at 10h 49m 11s.xml">
-      <configuration name="ArticleServiceImplTest.listAllArticles" configurationId="JUnit" />
+    <history-entry file="TagServiceImplTest_findTagsCloud - 2019.07.16 at 19h 33m 57s.xml">
+      <configuration name="TagServiceImplTest.findTagsCloud" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_listAllArticles - 2019.04.10 at 10h 52m 01s.xml">
-      <configuration name="ArticleServiceImplTest.listAllArticles" configurationId="JUnit" />
+    <history-entry file="TagServiceImplTest_findTagsCloud - 2019.07.16 at 20h 22m 28s.xml">
+      <configuration name="TagServiceImplTest.findTagsCloud" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_testFindArticlesByCategory - 2019.05.31 at 19h 15m 18s.xml">
-      <configuration name="ArticleServiceImplTest.testFindArticlesByCategory" configurationId="JUnit" />
+    <history-entry file="TagServiceImplTest_findTagsCloud - 2019.07.16 at 20h 22m 57s.xml">
+      <configuration name="TagServiceImplTest.findTagsCloud" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_testFindArticlesByCategory - 2019.05.31 at 19h 16m 16s.xml">
-      <configuration name="ArticleServiceImplTest.testFindArticlesByCategory" configurationId="JUnit" />
+    <history-entry file="CommentsMapperTest_test - 2019.07.17 at 10h 11m 11s.xml">
+      <configuration name="CommentsMapperTest.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ArticleServiceImplTest_testFindArticlesByCategory - 2019.05.31 at 19h 17m 25s.xml">
-      <configuration name="ArticleServiceImplTest.testFindArticlesByCategory" configurationId="JUnit" />
+    <history-entry file="CommentsMapperTest_test - 2019.07.17 at 10h 12m 18s.xml">
+      <configuration name="CommentsMapperTest.test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="569775000" />
+    <option name="totallyTimeSpent" value="590934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1195,7 +1222,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="6" weight="0.3281787" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50226927" side_tool="true" weight="0.53637904" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.54545456" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.5453858" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="right" id="Designer" order="3" />
@@ -1204,20 +1231,21 @@
       <window_info anchor="right" id="Translate" order="4" weight="0.32954547" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="14" sideWeight="0.4977307" weight="0.43824026" />
+      <window_info anchor="bottom" id="Debug" order="14" sideWeight="0.4977307" weight="0.41455162" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32838285" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49924356" weight="0.6480541" />
       <window_info id="Palette&#9;" order="2" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4050152" weight="0.7309645" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.8494078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4050152" weight="0.607445" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3281787" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.3281787" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79349595" visible="true" weight="0.15960665" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79349595" visible="true" weight="0.23524962" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32954547" />
       <window_info id="Web" order="2" sideWeight="0.20650406" side_tool="true" weight="0.2708018" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
@@ -1225,43 +1253,42 @@
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.3284553" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="6" weight="0.3281787" />
       <window_info anchor="right" id="Designer" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.3284553" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.3281787" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4050152" weight="0.7580372" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4050152" weight="0.7309645" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3287037" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.3281787" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5949848" side_tool="true" weight="0.5841584" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49924356" weight="0.53170735" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50226927" side_tool="true" weight="0.53637904" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49924356" weight="0.6480541" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.32838285" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.84653467" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3290469" />
-      <window_info anchor="right" id="Translate" order="10" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79349595" visible="true" weight="0.22541603" />
-      <window_info anchor="right" id="Database" order="7" weight="0.32978722" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79349595" visible="true" weight="0.32526475" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.8494078" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.5453858" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32954547" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="6" sideWeight="0.20650406" side_tool="true" weight="0.2708018" />
       <window_info id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Translate" order="10" weight="0.32954547" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
-      <window_info anchor="right" id="Bean Validation" order="8" weight="0.32980332" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.820643" />
+      <window_info anchor="bottom" id="Debug" order="14" sideWeight="0.4977307" weight="0.41455162" />
+      <window_info anchor="right" id="Bean Validation" order="8" weight="0.32954547" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1297,7 +1324,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成插入标签接口" />
     <MESSAGE value="完成发表文章并插入标签功能" />
     <MESSAGE value="完成发表文章并插入分类功能" />
     <MESSAGE value="添加注释优化代码" />
@@ -1322,7 +1348,8 @@
     <MESSAGE value="增加标签中的点击标签展示文章功能" />
     <MESSAGE value="优化标签页文章展示" />
     <MESSAGE value="前端进行权限检验" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端进行权限检验" />
+    <MESSAGE value="不对注册的请求拦截、用户页面进行权限校验" />
+    <option name="LAST_COMMIT_MESSAGE" value="不对注册的请求拦截、用户页面进行权限校验" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1341,346 +1368,370 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/resources/templates/tags.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/util/TransCodingUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+        <state relative-caret-position="-892">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/resources/templates/categories.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/all.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="102" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="102" />
+        <state relative-caret-position="330">
+          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/java/com/zking/controller/CategoriesController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/show.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="1967">
+          <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/resources/static/js/categories.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="26" column="92" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="92" />
+        <state relative-caret-position="2087">
+          <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="54" column="90" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/java/com/zking/controller/TagsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/categories.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="62" column="95" selection-start-line="62" selection-start-column="95" selection-end-line="62" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/java/com/zking/service/ArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/detail.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/Tags.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="53" column="95" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/java/com/zking/service/impl/ArticleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5700">
-          <caret line="216" column="59" selection-start-line="216" selection-start-column="59" selection-end-line="216" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/friendLink.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="52" column="95" selection-start-line="52" selection-start-column="95" selection-end-line="52" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/hello.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="49" column="95" selection-start-line="49" selection-start-column="95" selection-end-line="49" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/publishSuccess.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="49" column="95" selection-start-line="49" selection-start-column="95" selection-end-line="49" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="62" column="95" selection-start-line="62" selection-start-column="95" selection-end-line="62" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/superadmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="61" column="95" selection-start-line="61" selection-start-column="95" selection-end-line="61" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/tags.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="61" column="95" selection-start-line="61" selection-start-column="95" selection-end-line="61" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/writeUpdate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="78" column="95" selection-start-line="78" selection-start-column="95" selection-end-line="78" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LoginRegister.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1980" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/security/CustomUserServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/editor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="78" column="58" selection-start-line="78" selection-start-column="58" selection-end-line="78" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/aboutme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="52" column="95" selection-start-line="52" selection-start-column="95" selection-end-line="52" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/component/MyUserDetailsService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-780">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/ArticleWithBLOBs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/Feedback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="240">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/CategoriesController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/ArticleWithBLOBs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="40">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/ArticleLikesRecord.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/Swagger2Configuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/component/StringAndArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/constant/RoleConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/mapper/VisitorMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/CategoriesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/write.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-689">
-          <caret line="78" column="95" selection-start-line="78" selection-start-column="95" selection-end-line="78" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zking/controller/UserControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zking/service/impl/ArticleServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zking/AppLicationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/zking/AppLicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1320">
-          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/ArchivesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-209">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../finalBlog/LoginRegister/src/main/java/com/zking/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-222">
-          <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+        <state relative-caret-position="-1135">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/LogCostInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="660">
+          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/component/StringAndArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/update.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3480">
+          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/LeaveMessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="50" column="46" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/FeedbackController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="58" column="66" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/ArchivesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/Archives.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/User/chendesheng/Softwares/jdk/src.zip!/javax/xml/soap/Detail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="166" column="30" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="30" />
+        <state relative-caret-position="7170">
+          <caret line="274" column="68" selection-start-line="274" selection-start-column="68" selection-end-line="274" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/InterceptorConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        <state relative-caret-position="4500">
+          <caret line="150" column="6" selection-start-line="150" selection-start-column="6" selection-end-line="150" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/PrivateWordServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/ArchiveServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TagsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/util/RedisUtils.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LeaveMessageLikesRecordMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/CategoriesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-802">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zking/service/impl/ArticleServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.8.3.RELEASE/spring-data-redis-1.8.3.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="56" selection-start-line="55" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/TagService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/TagServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/ArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="139" column="63" selection-start-line="139" selection-start-column="63" selection-end-line="139" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/SuperAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="53" column="43" lean-forward="true" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/config/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-449">
+          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/update.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/CategoriesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="56" column="95" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="95" />
+        <state relative-caret-position="-1522">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/controller/TagsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="83" column="45" lean-forward="true" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+        <state relative-caret-position="-1590">
+          <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/RedisTemplateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1021">
+          <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/FeedbackService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/entity/CommentsExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/CommentsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/mapper/CommentRecordMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/mapper/FeedbackMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/mapper/CommentsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zking/service/impl/TagServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="26" selection-start-line="26" selection-end-line="28" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/zking/mapper/CommentsMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="54" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="32" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zking/service/impl/CommentsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

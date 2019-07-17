@@ -138,7 +138,6 @@
       * @param categoryName
       */
      @ApiOperation(value = "通过分类名获取文章总数",notes = "通过分类名获取文章总数")
-     @Cacheable(cacheNames = "article",key = "#categoryName")
      @PostMapping("/countArticlesByCategoryName")
      public JSONObject countArticlesByCategoryName(String categoryName){
          JSONObject jsonObject = new JSONObject();

@@ -37,7 +37,7 @@
      @Autowired
      TagService tagService;
      
-     @Cacheable(cacheNames = "tags",key = "123")
+     @Cacheable(cacheNames = "tags",key = "chen")
      @Override
      public JSONObject findTagsCloud() {
          
@@ -50,6 +50,8 @@
          return jsonObject;
      }
     
+     
+     
      @Override
      public int insertTag(Tags record) {
          return tagsMapper.insert(record);

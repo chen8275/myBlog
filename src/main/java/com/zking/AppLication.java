@@ -20,6 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ServletComponentScan("com.zking.config")
 @EnableTransactionManagement
 @EnableSwagger2
+@EnableCaching  //开启注解驱动的缓存管理
 public class AppLication{
     public static void main(String[] args) {
         SpringApplication.run(AppLication.class, args);
