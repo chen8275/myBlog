@@ -14,6 +14,8 @@
  import com.zking.service.CommentsService;
  import lombok.extern.slf4j.Slf4j;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.cache.annotation.Cacheable;
+ import org.springframework.stereotype.Component;
  import org.springframework.stereotype.Service;
 
  import java.util.List;
@@ -28,13 +30,27 @@
      @Autowired
      CommentsMapper commentsMapper;
      
+
+     @Cacheable(cacheNames = "Comments",key = "#name")
      @Override
-     public List<Comments> commentsList() {
+     public List<Comments> commentsList(String name) {
          CommentsExample example = new CommentsExample();
          CommentsExample.Criteria criteria= example.createCriteria();
-         criteria.andUsernameEqualTo("xuxu");
+         criteria.andUsernameEqualTo(name);
          List<Comments> comments = commentsMapper.selectByExample(example);
          log.info("得到:{}",JSON.toJSONString(comments));
          return comments;
      }
+     
+     
+     
+     @Cacheable(cacheNames = "Comments",key = "#id")
+     @Override
+     public Comments select(String id) {
+         Comments comments = commentsMapper.selectByPrimaryKey(Integer.valueOf(id));
+         log.info("得到:{}",JSON.toJSONString(comments));
+         return comments;
+     }
+    
+    
  }

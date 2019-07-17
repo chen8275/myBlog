@@ -59,6 +59,8 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-data-redis</artifactId>
       </dependency>
+    <!-- Redis客户端 -->
+   
       <!-- Json包 -->
       <dependency>
           <groupId>net.sf.json-lib</groupId>

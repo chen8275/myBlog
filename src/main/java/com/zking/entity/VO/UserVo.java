@@ -5,20 +5,20 @@
   * use it only in accordance with the terms of the license agreement you entered
   * into with Tuhu.cn
   */
- package com.zking.service;
+ package com.zking.entity.VO;
 
- import com.zking.entity.Comments;
-
- import java.util.List;
+ import lombok.Data;
 
  /**
   * @author chendesheng chendesheng@tuhu.cn
-  * @since 2019/7/17 10:06
+  * @since 2019/7/17 14:57
   */
- 
- public interface CommentsService {
+ @Data
+ public class UserVo {
      
-     List<Comments> commentsList(String name);
-     
-     Comments select(String id);
+     public  static final String Table = "t_user";
+    
+     private String name;
+     private String address;
+     private Integer age;
  }
