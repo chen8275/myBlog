@@ -58,10 +58,7 @@
 
         <!-- 配置表的映射 -->
         
-        <table schema="test" tableName="user" domainObjectName="User"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
+        <table schema="test" tableName="user" domainObjectName="User"/>
         
         
     </context>
